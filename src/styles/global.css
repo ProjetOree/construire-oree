@@ -1,5 +1,7 @@
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/hanken-grotesk";
+@import "@fontsource-variable/jetbrains-mono";
 @import "./tokens.css";
-
 *,
 *::before,
 *::after {
@@ -70,15 +72,15 @@ a:hover {
 }
 
 ::selection {
-  background: var(--color-dawn-200);
-  color: var(--color-forest-950);
+  background: var(--color-dawn);
+  color: var(--color-canopy);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: var(--color-forest-950);
+  color: var(--color-canopy);
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.15;
@@ -140,7 +142,7 @@ pre {
   padding: var(--space-3) var(--space-4);
   transform: translateY(-200%);
   border-radius: var(--radius-md);
-  background: var(--color-forest-950);
+  background: var(--color-canopy);
   color: var(--color-white);
   font-weight: 700;
 }
