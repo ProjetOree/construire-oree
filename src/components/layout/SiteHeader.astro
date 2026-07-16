@@ -1,0 +1,99 @@
+---
+import SealMark from "../brand/SealMark.astro";
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Construire Orée — Accueil">
+      <SealMark size={48} />
+
+      <span class="brand-copy">
+        <span class="brand-kicker">Construire</span>
+        <span class="brand-name">Or<span class="brand-accent">é</span>e</span>
+      </span>
+    </a>
+
+    <span class="phase">
+      <span class="phase-dot" aria-hidden="true"></span>
+      Point zéro
+    </span>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-canvas) 94%, transparent);
+  }
+
+  .header-inner {
+    display: flex;
+    min-height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-canopy);
+    text-decoration: none;
+  }
+
+  .brand:hover {
+    color: var(--color-canopy);
+  }
+
+  .brand-copy {
+    display: grid;
+    line-height: 1;
+  }
+
+  .brand-kicker {
+    margin-bottom: var(--space-1);
+    color: var(--color-text-muted);
+    font-size: var(--text-caption);
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.65rem;
+    font-weight: 600;
+  }
+
+  .brand-accent {
+    color: var(--color-dawn);
+  }
+
+  .phase {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: var(--space-2);
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: 650;
+  }
+
+  .phase-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--color-dawn);
+  }
+
+  @media (max-width: 31rem) {
+    .phase {
+      padding-inline: var(--space-2);
+      font-size: var(--text-caption);
+    }
+  }
+</style>
