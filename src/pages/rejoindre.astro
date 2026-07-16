@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout title="Rejoindre" description="Les différents moyens de suivre et rejoindre l'aventure Orée.">
+  <section class="join-section">
+    <div class="container reading-width">
+      <p class="eyebrow">Participation</p>
+      <h1>Rejoindre l’aventure</h1>
+      <p class="introduction">
+        Orée se construit publiquement. Vous pouvez suivre notre avancement, nous rejoindre, ou simplement nous contacter.
+      </p>
+
+      <ul class="links-list">
+        <li>
+          <a href={siteConfig.links.follow} class="button button-primary">Suivre l’aventure</a>
+        </li>
+        <li>
+          <a href={siteConfig.links.join} class="button button-secondary">Rejoindre Orée</a>
+        </li>
+        <li>
+          <a href={siteConfig.links.contact} class="button button-secondary">Écrire à Orée</a>
+        </li>
+      </ul>
+      
+      <div class="actions">
+        <a class="button button-secondary" href="/">Retour à l’accueil</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .join-section {
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .introduction {
+    margin-bottom: var(--space-8);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-8) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 24rem;
+  }
+  
+  .actions {
+    margin-top: var(--space-12);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .actions .button-secondary {
+    width: auto;
+  }
+</style>
