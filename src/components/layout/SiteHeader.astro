@@ -167,6 +167,13 @@ function isCurrent(path: string) {
     color: var(--color-canopy);
   }
 
+  .main-nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 700;
+  }
+
   .nav-join {
     color: var(--color-action) !important;
   }
@@ -194,6 +201,12 @@ function isCurrent(path: string) {
     cursor: pointer;
     background: var(--color-canvas);
     user-select: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .mobile-nav-container[open] .menu-button {
+    background: var(--color-surface-soft);
+    border-color: var(--color-canopy);
   }
 
   .mobile-nav-content {
@@ -207,12 +220,6 @@ function isCurrent(path: string) {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   }
 
-  /* Hide content unless details is open. We don't really need to add this manually if we rely on native <details>, 
-     but <details> natively shows its content inside itself, not absolute positioned outside. 
-     Wait, if we use position absolute, <details> native behavior might be weird. 
-     Native details wraps everything except summary in a block that gets display:block/none.
-     If mobile-nav-content is absolute, it still obeys display:none when closed. */
-     
   .main-nav-mobile {
     display: flex;
     flex-direction: column;
@@ -233,6 +240,13 @@ function isCurrent(path: string) {
   .main-nav-mobile a:hover,
   .main-nav-mobile a[aria-current="page"] {
     color: var(--color-canopy);
+  }
+
+  .main-nav-mobile a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 700;
   }
 
   .mobile-phase {
