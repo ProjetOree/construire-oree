@@ -4,7 +4,7 @@ import { siteConfig } from "../config/site";
 ---
 
 <BaseLayout
-  title="Construire Orée — journal d’un projet au point zéro"
+  title="Journal d’un projet au point zéro"
   description="Construire Orée raconte, sans raccourci, la construction publique d’Orée : une future marketplace éthique pour artistes et artisans."
 >
   <section class="hero">
@@ -114,24 +114,24 @@ import { siteConfig } from "../config/site";
         Les quatre rôles ci-dessous sont des repères de conception. Ils aident à formuler les besoins du projet ; ils ne décrivent ni personnes déjà engagées, ni utilisateurs réels, ni témoignages.
       </p>
 
-      <div class="roles-grid">
-        <div class="role-item">
+      <ul class="roles-grid">
+        <li class="role-item">
           <strong>Bâtisseur</strong>
           <p>contribuer, selon ses compétences, aux fondations techniques, juridiques, fiscales, opérationnelles ou logistiques.</p>
-        </div>
-        <div class="role-item">
+        </li>
+        <li class="role-item">
           <strong>Artiste ou Artisan</strong>
           <p>partager ce qui freine aujourd’hui la création, la vente ou l’administration, afin d’éclairer un futur projet.</p>
-        </div>
-        <div class="role-item">
+        </li>
+        <li class="role-item">
           <strong>Éclaireur</strong>
           <p>apporter un regard de terrain sur la manière de repérer et d’accompagner des talents.</p>
-        </div>
-        <div class="role-item">
+        </li>
+        <li class="role-item">
           <strong>Écho</strong>
           <p>apporter un regard sur la recommandation, la médiation et la mise en lumière de créations.</p>
-        </div>
-      </div>
+        </li>
+      </ul>
       <div class="roles-action">
         <a class="button button-secondary" href="/rejoindre/">
           Découvrir les rôles et les actions possibles aujourd’hui
@@ -148,7 +148,7 @@ import { siteConfig } from "../config/site";
           État actuel : point zéro. La marketplace n’est pas disponible. Il n’y a ni vente, ni utilisateur, ni produit de marketplace à présenter. Construire Orée dispose d’un site statique ; cela ne signifie pas que la marketplace est construite.
         </p>
         <p>
-          Les prochaines informations publiques seront ajoutées lorsqu’elles seront prêtes à être documentées. Les contenus comme la Roadmap ou le Tableau de bord seront publiés ultérieurement.
+          Les prochaines informations publiques seront ajoutées lorsqu’elles seront prêtes à être documentées. Les contenus comme la Roadmap ou Comprendre l’architecture seront publiés ultérieurement.
         </p>
       </div>
     </div>
@@ -243,7 +243,7 @@ import { siteConfig } from "../config/site";
   }
 
   .context-note {
-    color: var(--color-text-subtle);
+    color: var(--color-text-muted);
     font-size: var(--text-sm);
     margin-top: var(--space-2);
   }
@@ -318,7 +318,6 @@ import { siteConfig } from "../config/site";
     font-weight: 650;
     cursor: pointer;
     color: var(--color-canopy);
-    list-style: none; /* Hide default arrow in some browsers if needed, but native behavior is usually fine */
   }
 
   .details-content {
@@ -327,9 +326,6 @@ import { siteConfig } from "../config/site";
     border-top: 1px solid var(--color-border);
   }
 
-  .details-content p:last-child {
-    margin-bottom: 0;
-  }
 
   .roles-intro {
     margin-bottom: var(--space-8);
@@ -340,7 +336,10 @@ import { siteConfig } from "../config/site";
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-8);
+    margin: 0;
     margin-bottom: var(--space-8);
+    padding: 0;
+    list-style: none;
   }
 
   .role-item strong {
