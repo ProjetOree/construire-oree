@@ -1,0 +1,85 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  text?: string;
+}
+
+const { title, description, heading, text } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="coming-soon">
+    <div class="container reading-width">
+      <p class="eyebrow">En préparation</p>
+      <h1>{heading}</h1>
+      <p class="introduction">
+        {text || "Cette rubrique documentera la construction d’Orée. Elle ne contient pas encore de publication."}
+      </p>
+      
+      <div class="actions">
+        <a class="button button-secondary" href="/">Retour à l’accueil</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .coming-soon {
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .introduction {
+    margin-bottom: var(--space-8);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+</style>

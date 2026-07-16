@@ -1,17 +1,256 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config/site";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Journal public de construction</p>
+
+        <h1>Construire Orée,<br />depuis le point zéro.</h1>
+
+        <p class="introduction">
+          Orée veut devenir une marketplace éthique consacrée à la création
+          originale, à l’art et à l’artisanat d’art. Ce site documentera sa
+          construction sans maquiller son état d’avancement.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href={siteConfig.links.follow}>
+            Suivre l’aventure
+          </a>
+
+          <a class="button button-secondary" href={siteConfig.repository.url}>
+            Voir le code sur GitHub
+          </a>
+        </div>
+      </div>
+
+      <aside class="status-card" aria-labelledby="etat-actuel">
+        <p class="status-label">État actuel</p>
+        <h2 id="etat-actuel">Point zéro</h2>
+
+        <p>
+          La marketplace n’est pas encore disponible. Il n’y a ni vente, ni
+          utilisateur, ni produit à présenter.
+        </p>
+
+        <dl>
+          <div>
+            <dt>Produit</dt>
+            <dd>Pas encore construit</dd>
+          </div>
+          <div>
+            <dt>Publications</dt>
+            <dd>À venir</dd>
+          </div>
+          <div>
+            <dt>Prochaine étape</dt>
+            <dd>Documenter les fondations</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="principle">
+    <div class="container principle-inner">
+      <p class="principle-number" aria-hidden="true">01</p>
+
+      <div class="reading-width">
+        <p class="eyebrow">Notre règle de départ</p>
+        <h2>Montrer ce qui existe. Nommer ce qui reste à construire.</h2>
+        <p>
+          Les intentions, hypothèses, décisions, travaux en cours et résultats
+          mesurés ne seront jamais confondus. Quand une donnée n’existe pas,
+          nous l’écrirons simplement.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.75fr);
+    align-items: start;
+    gap: clamp(3rem, 8vw, 7rem);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 12ch;
+    margin-bottom: var(--space-6);
+  }
+
+  .introduction {
+    max-width: 41rem;
+    margin-bottom: var(--space-8);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .status-card {
+    padding: var(--space-8);
+    border: 1px solid var(--color-border);
+    border-top: 0.35rem solid var(--color-dawn);
+    border-radius: var(--radius-lg);
+    background: var(--color-linen);
+  }
+
+  .status-label {
+    margin-bottom: var(--space-2);
+    color: var(--color-bark);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .status-card h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .status-card > p {
+    color: var(--color-text-muted);
+  }
+
+  .status-card dl {
+    margin: var(--space-8) 0 0;
+  }
+
+  .status-card dl div {
+    display: grid;
+    gap: var(--space-1);
+    padding-block: var(--space-3);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .status-card dt {
+    color: var(--color-text-muted);
+    font-size: var(--text-caption);
+  }
+
+  .status-card dd {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .principle {
+    padding-block: var(--space-16);
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .principle-inner {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .principle-number {
+    color: var(--color-dawn);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+
+  .principle .eyebrow {
+    color: var(--color-dawn);
+  }
+
+  .principle h2 {
+    color: var(--color-linen);
+  }
+
+  .principle p:last-child {
+    margin-bottom: 0;
+    color: var(--color-linen);
+    font-size: var(--text-md);
+  }
+
+  @media (max-width: 48rem) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .status-card {
+      max-width: 35rem;
+    }
+
+    .principle-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .actions {
+      display: grid;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .status-card {
+      padding: var(--space-6);
+    }
+  }
+</style>

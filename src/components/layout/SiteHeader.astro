@@ -1,0 +1,273 @@
+---
+import SealMark from "../brand/SealMark.astro";
+
+const pathname = Astro.url.pathname;
+
+function isCurrent(path: string) {
+  if (path === '/') {
+    return pathname === '/' ? 'page' : undefined;
+  }
+  const normalizedPathname = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
+  
+  return normalizedPathname.startsWith(normalizedPath) ? 'page' : undefined;
+}
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Construire Orée — Accueil">
+      <SealMark size={48} />
+
+      <span class="brand-copy">
+        <span class="brand-kicker">Construire</span>
+        <span class="brand-name">Or<span class="brand-accent">é</span>e</span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="desktop-nav-container">
+      <nav aria-label="Navigation principale" class="main-nav">
+        <a href="/journal/" aria-current={isCurrent('/journal/')}>Journal</a>
+        <a href="/roadmap/" aria-current={isCurrent('/roadmap/')}>Roadmap</a>
+        <a href="/decisions/" aria-current={isCurrent('/decisions/')}>Décisions</a>
+        <a href="/tableau-de-bord/" aria-current={isCurrent('/tableau-de-bord/')}>Tableau de bord</a>
+        <a href="/a-propos/" aria-current={isCurrent('/a-propos/')}>À propos</a>
+        <a href="/rejoindre/" class="nav-join" aria-current={isCurrent('/rejoindre/')}>Rejoindre</a>
+      </nav>
+      <span class="phase">
+        <span class="phase-dot" aria-hidden="true"></span>
+        Point zéro
+      </span>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <details class="mobile-nav-container">
+      <summary class="menu-button">Menu</summary>
+      <div class="mobile-nav-content">
+        <nav aria-label="Navigation mobile" class="main-nav-mobile">
+          <a href="/journal/" aria-current={isCurrent('/journal/')}>Journal</a>
+          <a href="/roadmap/" aria-current={isCurrent('/roadmap/')}>Roadmap</a>
+          <a href="/decisions/" aria-current={isCurrent('/decisions/')}>Décisions</a>
+          <a href="/tableau-de-bord/" aria-current={isCurrent('/tableau-de-bord/')}>Tableau de bord</a>
+          <a href="/a-propos/" aria-current={isCurrent('/a-propos/')}>À propos</a>
+          <a href="/rejoindre/" aria-current={isCurrent('/rejoindre/')}>Rejoindre</a>
+        </nav>
+        <div class="mobile-phase">
+          <span class="phase">
+            <span class="phase-dot" aria-hidden="true"></span>
+            Point zéro
+          </span>
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-canvas) 94%, transparent);
+    position: relative;
+    z-index: 50;
+  }
+
+  .header-inner {
+    display: flex;
+    min-height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-canopy);
+    text-decoration: none;
+  }
+
+  .brand:hover {
+    color: var(--color-canopy);
+  }
+
+  .brand-copy {
+    display: grid;
+    line-height: 1;
+  }
+
+  .brand-kicker {
+    margin-bottom: var(--space-1);
+    color: var(--color-text-muted);
+    font-size: var(--text-caption);
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.65rem;
+    font-weight: 600;
+  }
+
+  .brand-accent {
+    color: var(--color-dawn);
+  }
+
+  .phase {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: var(--space-2);
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: 650;
+    white-space: nowrap;
+  }
+
+  .phase-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--color-dawn);
+  }
+
+  /* Desktop Nav */
+  .desktop-nav-container {
+    display: none;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .main-nav a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    padding: var(--space-2);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    transition: color var(--transition-fast);
+  }
+
+  .main-nav a:hover,
+  .main-nav a[aria-current="page"] {
+    color: var(--color-canopy);
+  }
+
+  .main-nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 700;
+  }
+
+  .nav-join {
+    color: var(--color-action-hover) !important;
+  }
+
+  .nav-join:hover {
+    color: var(--color-canopy) !important;
+  }
+
+  /* Mobile Nav */
+  .mobile-nav-container {
+    display: block;
+  }
+
+  .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding-inline: var(--space-3);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-canopy);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background: var(--color-canvas);
+    user-select: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .mobile-nav-container[open] .menu-button {
+    background: var(--color-surface-soft);
+    border-color: var(--color-canopy);
+  }
+
+  .mobile-nav-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-canvas);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .main-nav-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .main-nav-mobile a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-md);
+    padding-inline: var(--space-2);
+  }
+
+  .main-nav-mobile a:hover,
+  .main-nav-mobile a[aria-current="page"] {
+    color: var(--color-canopy);
+  }
+
+  .main-nav-mobile a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 700;
+  }
+
+  .mobile-phase {
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 31rem) {
+    .phase {
+      padding-inline: var(--space-2);
+      font-size: var(--text-caption);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .desktop-nav-container {
+      display: flex;
+    }
+    .mobile-nav-container {
+      display: none;
+    }
+  }
+</style>

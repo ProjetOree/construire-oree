@@ -1,0 +1,98 @@
+---
+import { siteConfig } from "../../config/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-title">Construire Orée</p>
+      <p class="footer-description">
+        Le journal public d’une future marketplace éthique, construit sans
+        inventer ce qui n’existe pas encore.
+      </p>
+    </div>
+
+    <nav aria-label="Liens externes">
+      <ul class="footer-links">
+        <li>
+          <a href={siteConfig.links.follow}>Suivre l’aventure</a>
+        </li>
+        <li>
+          <a href={siteConfig.links.join}>Rejoindre Orée</a>
+        </li>
+        <li>
+          <a href={siteConfig.links.contact}>Écrire à Orée</a>
+        </li>
+        <li>
+          <a href={siteConfig.repository.url}>GitHub</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container footer-legal">
+    <p>
+      Code sous licence {siteConfig.licensing.code}. Contenus éditoriaux
+      concernés sous licence {siteConfig.licensing.editorialContent}.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-24);
+    padding-block: var(--space-12) var(--space-6);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-linen);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 1fr);
+    gap: var(--space-12);
+  }
+
+  .footer-title {
+    margin-bottom: var(--space-3);
+    color: var(--color-canopy);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+  }
+
+  .footer-description {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .footer-links {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-weight: 650;
+  }
+
+  .footer-legal {
+    margin-top: var(--space-12);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: var(--text-caption);
+  }
+
+  .footer-legal p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 45rem) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+</style>
