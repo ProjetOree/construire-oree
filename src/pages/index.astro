@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config/site";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Journal d’un projet au point zéro"
+  description="Construire Orée raconte, sans raccourci, la construction publique d’Orée : une future marketplace éthique pour artistes et artisans."
+>
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
@@ -12,9 +15,7 @@ import { siteConfig } from "../config/site";
         <h1>Construire Orée,<br />depuis le point zéro.</h1>
 
         <p class="introduction">
-          Orée veut devenir une marketplace éthique consacrée à la création
-          originale, à l’art et à l’artisanat d’art. Ce site documentera sa
-          construction sans maquiller son état d’avancement.
+          Orée est une future marketplace éthique pour la création originale, l’art et l’artisanat d’art. Construire Orée est le journal public de cette construction : ici, on montre ce qui existe, on nomme ce qui reste à faire et on ne transforme pas une intention en résultat.
         </p>
 
         <div class="actions">
@@ -22,10 +23,13 @@ import { siteConfig } from "../config/site";
             Suivre l’aventure
           </a>
 
-          <a class="button button-secondary" href={siteConfig.repository.url}>
-            Voir le code sur GitHub
+          <a class="button button-primary" href="/rejoindre/">
+            Rejoindre la construction
           </a>
         </div>
+        <p class="context-note">
+          Suivre ouvre un formulaire Tally pour la newsletter. Rejoindre mène d’abord à la page expliquant les rôles.
+        </p>
       </div>
 
       <aside class="status-card" aria-labelledby="etat-actuel">
@@ -55,18 +59,109 @@ import { siteConfig } from "../config/site";
     </div>
   </section>
 
-  <section class="principle">
-    <div class="container principle-inner">
-      <p class="principle-number" aria-hidden="true">01</p>
-
+  <section class="section-block">
+    <div class="container">
       <div class="reading-width">
-        <p class="eyebrow">Notre règle de départ</p>
-        <h2>Montrer ce qui existe. Nommer ce qui reste à construire.</h2>
+        <h2>Deux façons d’entrer dans la construction</h2>
         <p>
-          Les intentions, hypothèses, décisions, travaux en cours et résultats
-          mesurés ne seront jamais confondus. Quand une donnée n’existe pas,
-          nous l’écrirons simplement.
+          Tu peux suivre le projet, ses étapes publiées et ses choix documentés. Tu peux aussi dire ce que tu sais faire, ce que tu observes sur le terrain ou ce que tu aimerais aider à construire. Ces deux chemins ne promettent ni accès anticipé à une marketplace, ni rôle déjà attribué : ils permettent de rester informé ou d’ouvrir une conversation.
         </p>
+        <ul>
+          <li><strong>Suivre l’aventure</strong> : recevoir les nouvelles du projet et consulter les contenus publiés.</li>
+          <li><strong>Rejoindre la construction</strong> : découvrir les rôles envisagés, ce dont le projet a besoin maintenant et comment manifester ton intérêt.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block why-section">
+    <div class="container">
+      <div class="reading-width">
+        <h2>Pourquoi Orée existe</h2>
+        <p>
+          Vendre son art ne devrait pas exiger de devenir, en même temps, communicant, commerçant, spécialiste de l’administratif et entrepreneur. Orée part de cette conviction : la création originale mérite un cadre qui laisse davantage de place à la création.
+        </p>
+        <p>
+          La marketplace n’est pas ouverte. Cette page n’annonce ni catalogue, ni vente, ni communauté déjà active. Elle explique la direction du projet et la manière choisie pour la construire publiquement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container">
+      <div class="reading-width">
+        <h2>Le modèle inversé, en clair</h2>
+        <p>
+          L’ambition d’Orée est d’inverser le parcours habituel : au lieu de demander au créateur de franchir seul chaque obstacle, le projet cherche à imaginer un système qui va vers les talents et les outille sans décider à leur place.
+        </p>
+        <details class="vision-details">
+          <summary>Voir la vision détaillée</summary>
+          <div class="details-content">
+            <p>
+              Cette vision est celle d’une future marketplace ancrée dans l’économie sociale et solidaire, avec La Canopée comme horizon coopératif. Elle reste un projet à construire, pas une fonctionnalité disponible aujourd’hui. Les mécanismes techniques, juridiques et économiques envisagés ne sont pas l’architecture de ce site statique.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container">
+      <h2>Quatre rôles pour éclairer la construction</h2>
+      <p class="roles-intro reading-width">
+        Les quatre rôles ci-dessous sont des repères de conception. Ils aident à formuler les besoins du projet ; ils ne décrivent ni personnes déjà engagées, ni utilisateurs réels, ni témoignages.
+      </p>
+
+      <ul class="roles-grid">
+        <li class="role-item">
+          <strong>Bâtisseur</strong>
+          <p>contribuer, selon ses compétences, aux fondations techniques, juridiques, fiscales, opérationnelles ou logistiques.</p>
+        </li>
+        <li class="role-item">
+          <strong>Artiste ou Artisan</strong>
+          <p>partager ce qui freine aujourd’hui la création, la vente ou l’administration, afin d’éclairer un futur projet.</p>
+        </li>
+        <li class="role-item">
+          <strong>Éclaireur</strong>
+          <p>apporter un regard de terrain sur la manière de repérer et d’accompagner des talents.</p>
+        </li>
+        <li class="role-item">
+          <strong>Écho</strong>
+          <p>apporter un regard sur la recommandation, la médiation et la mise en lumière de créations.</p>
+        </li>
+      </ul>
+      <div class="roles-action">
+        <a class="button button-secondary" href="/rejoindre/">
+          Découvrir les rôles et les actions possibles aujourd’hui
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container">
+      <div class="reading-width">
+        <h2>Où en est le projet</h2>
+        <p>
+          État actuel : point zéro. La marketplace n’est pas disponible. Il n’y a ni vente, ni utilisateur, ni produit de marketplace à présenter. Construire Orée dispose d’un site statique ; cela ne signifie pas que la marketplace est construite.
+        </p>
+        <p>
+          Les prochaines informations publiques seront ajoutées lorsqu’elles seront prêtes à être documentées. Les contenus comme la Roadmap ou Comprendre l’architecture seront publiés ultérieurement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container">
+      <div class="reading-width">
+        <h2>Suivre, rejoindre ou écrire</h2>
+        <p>Tu veux simplement être tenu au courant ? <a href={siteConfig.links.follow}>Suis l’aventure</a>.</p>
+        <p>Tu veux comprendre où ta contribution pourrait être utile ? <a href="/rejoindre/">Rejoins la construction</a>.</p>
+        <p>Tu as une question ou une autre idée de contribution ? <a href={siteConfig.links.contact}>Écris à Orée</a>.</p>
+        <p class="context-note">Les liens Suivre et Écrire ouvrent des formulaires Tally externes.</p>
       </div>
     </div>
   </section>
@@ -94,7 +189,6 @@ import { siteConfig } from "../config/site";
   }
 
   h1 {
-    max-width: 12ch;
     margin-bottom: var(--space-6);
   }
 
@@ -109,11 +203,12 @@ import { siteConfig } from "../config/site";
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
+    margin-bottom: var(--space-4);
   }
 
   .button {
     display: inline-flex;
-    min-height: 3rem;
+    min-height: 44px;
     align-items: center;
     justify-content: center;
     padding: var(--space-3) var(--space-6);
@@ -145,6 +240,12 @@ import { siteConfig } from "../config/site";
   .button-secondary:hover {
     background: var(--color-canopy);
     color: var(--color-linen);
+  }
+
+  .context-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
   }
 
   .status-card {
@@ -193,36 +294,75 @@ import { siteConfig } from "../config/site";
     font-weight: 700;
   }
 
-  .principle {
-    padding-block: var(--space-16);
-    background: var(--color-canopy);
-    color: var(--color-linen);
+  .section-block {
+    padding-block: var(--space-12);
   }
 
-  .principle-inner {
+  .section-block h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .why-section {
+    background: var(--color-surface-emphasis);
+  }
+
+  .vision-details {
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .vision-details summary {
+    font-weight: 650;
+    cursor: pointer;
+    color: var(--color-canopy);
+  }
+
+  .details-content {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+
+  .roles-intro {
+    margin-bottom: var(--space-8);
+    color: var(--color-text-muted);
+  }
+
+  .roles-grid {
     display: grid;
-    grid-template-columns: 5rem minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-8);
+    margin: 0;
+    margin-bottom: var(--space-8);
+    padding: 0;
+    list-style: none;
   }
 
-  .principle-number {
-    color: var(--color-dawn);
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-  }
-
-  .principle .eyebrow {
-    color: var(--color-dawn);
-  }
-
-  .principle h2 {
-    color: var(--color-linen);
-  }
-
-  .principle p:last-child {
-    margin-bottom: 0;
-    color: var(--color-linen);
+  .role-item strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-canopy);
     font-size: var(--text-md);
+  }
+
+  .roles-action {
+    margin-top: var(--space-8);
+  }
+
+  @media (min-width: 64rem) {
+    .roles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .roles-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   @media (max-width: 48rem) {
@@ -232,11 +372,6 @@ import { siteConfig } from "../config/site";
 
     .status-card {
       max-width: 35rem;
-    }
-
-    .principle-inner {
-      grid-template-columns: 1fr;
-      gap: var(--space-3);
     }
   }
 

@@ -3,38 +3,137 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config/site";
 ---
 
-<BaseLayout title="Rejoindre" description="Les différents moyens de suivre et rejoindre l'aventure Orée.">
-  <section class="join-section">
+<BaseLayout
+  title="Rejoindre la construction d’Orée — contribuer au point zéro"
+  description="Découvre les besoins actuels d’Orée et les façons de contribuer comme bâtisseur, artiste ou artisan, Éclaireur ou Écho."
+>
+  <section class="join-hero">
     <div class="container reading-width">
-      <p class="eyebrow">Participation</p>
-      <h1>Rejoindre l’aventure</h1>
+      <p class="eyebrow">Participer à la construction</p>
+      <h1>Rejoindre la construction d’Orée</h1>
       <p class="introduction">
-        Orée se construit publiquement. Tu peux suivre son avancement, proposer ta contribution ou simplement nous écrire.
+        Orée est au point zéro : la marketplace n’est pas ouverte, il n’y a ni catalogue ni vente à rejoindre. En revanche, le projet peut déjà écouter des personnes qui souhaitent contribuer, partager une expérience ou suivre son évolution.
       </p>
-      <p class="note">Les formulaires sont hébergés par Tally.</p>
+      <p class="introduction">
+        Les quatre rôles ci-dessous servent à rendre les possibilités plus lisibles. Ils ne constituent ni une offre d’emploi, ni une promesse de rémunération, ni une place acquise dans le projet.
+      </p>
+    </div>
+  </section>
 
-      <ul class="links-list">
-        <li>
-          <a href={siteConfig.links.follow} class="button button-primary">Suivre l’aventure</a>
-        </li>
-        <li>
-          <a href={siteConfig.links.join} class="button button-secondary">Rejoindre Orée</a>
-        </li>
-        <li>
-          <a href={siteConfig.links.contact} class="button button-secondary">Écrire à Orée</a>
-        </li>
+  <section class="join-summary">
+    <div class="container reading-width">
+      <h2>Trouver ta place dans une construction au point zéro</h2>
+      <p>
+        Choisis la section qui te ressemble le plus, ou lis-les dans l’ordre. Chaque rôle distingue volontairement l’horizon du projet, ce qui peut être utile maintenant et l’action concrète disponible aujourd’hui.
+      </p>
+
+      <ul class="anchor-list">
+        <li><a href="#batisseur">Bâtisseur</a></li>
+        <li><a href="#artiste-ou-artisan">Artiste ou Artisan</a></li>
+        <li><a href="#eclaireur">Éclaireur</a></li>
+        <li><a href="#echo">Écho</a></li>
       </ul>
-      
-      <div class="actions">
-        <a class="button button-secondary" href="/">Retour à l’accueil</a>
+    </div>
+  </section>
+
+  <div class="roles-container">
+    <section id="batisseur" class="role-section">
+      <div class="container reading-width">
+        <h2>Bâtisseur</h2>
+
+        <h3>Ce que ce rôle pourrait devenir</h3>
+        <p>Les Bâtisseurs pourraient contribuer aux fondations techniques, juridiques, fiscales, opérationnelles et logistiques d’Orée. À long terme, ces sujets appartiennent à la vision coopérative du projet ; ils ne décrivent pas un statut existant aujourd’hui.</p>
+
+        <h3>Ce dont le projet a besoin maintenant</h3>
+        <p>Des personnes capables de regarder un problème précis, de signaler une contrainte, de proposer une approche proportionnée ou d’indiquer ce qui demande une expertise que le projet ne possède pas encore.</p>
+
+        <h3>Ce que tu peux faire aujourd’hui</h3>
+        <p>Décris le domaine dans lequel tu pourrais aider et le type de contribution que tu envisages. Le formulaire sert à ouvrir un premier échange ; il ne garantit ni mission, ni calendrier, ni engagement réciproque.</p>
+
+        <div class="role-action">
+          <a href={siteConfig.links.join} class="button button-secondary">Proposer une contribution de Bâtisseur</a>
+        </div>
+        <p class="context-note">Le formulaire ouvre un premier échange sans garantie de mission, rémunération, calendrier ou engagement.</p>
       </div>
+    </section>
+
+    <section id="artiste-ou-artisan" class="role-section">
+      <div class="container reading-width">
+        <h2>Artiste ou Artisan</h2>
+
+        <h3>Ce que ce rôle pourrait devenir</h3>
+        <p>Les artistes et artisans pourraient, lorsque la marketplace existera, aider à éprouver la manière dont le projet accueille les créations, la vente et les contraintes administratives. Aucun rôle de vendeur, de pilote ou d’utilisateur n’est ouvert aujourd’hui.</p>
+
+        <h3>Ce dont le projet a besoin maintenant</h3>
+        <p>Des retours sur les difficultés concrètes rencontrées pour créer, montrer, vendre ou gérer l’administratif. Ces retours peuvent éclairer les choix du projet sans être présentés comme une étude menée auprès d’utilisateurs.</p>
+
+        <h3>Ce que tu peux faire aujourd’hui</h3>
+        <p>Partager ton expérience, signaler ton intérêt pour suivre le projet ou indiquer si tu souhaiterais être recontacté lorsque le contexte sera plus clair. Cela n’ouvre pas l’accès à une marketplace ni à une mise en vente.</p>
+
+        <div class="role-action">
+          <a href={siteConfig.links.join} class="button button-secondary">Partager ton intérêt ou ton expérience</a>
+        </div>
+        <p class="context-note">Le formulaire ouvre un premier échange sans garantie de mission, rémunération, calendrier ou engagement.</p>
+      </div>
+    </section>
+
+    <section id="eclaireur" class="role-section">
+      <div class="container reading-width">
+        <h2>Éclaireur</h2>
+
+        <h3>Ce que ce rôle pourrait devenir</h3>
+        <p>Les Éclaireurs pourraient aider Orée à mieux comprendre comment les talents sont repérés, rencontrés et accompagnés. Les modalités éventuelles de reconnaissance ou de rémunération appartiennent au projet futur : elles ne sont pas actives aujourd’hui.</p>
+
+        <h3>Ce dont le projet a besoin maintenant</h3>
+        <p>Un regard de terrain : ce qui aide une personne créative à se sentir légitime, les lieux ou réseaux où le talent reste peu visible, et les conditions nécessaires pour qu’une mise en relation reste juste.</p>
+
+        <h3>Ce que tu peux faire aujourd’hui</h3>
+        <p>Indiquer ce que tu observes, les communautés ou contextes que tu connais et la manière dont tu aimerais contribuer. Aucun code, commission ou dispositif de suivi n’est proposé à ce stade.</p>
+
+        <div class="role-action">
+          <a href={siteConfig.links.join} class="button button-secondary">Partager un regard d’Éclaireur</a>
+        </div>
+        <p class="context-note">Le formulaire ouvre un premier échange sans garantie de mission, rémunération, calendrier ou engagement.</p>
+      </div>
+    </section>
+
+    <section id="echo" class="role-section">
+      <div class="container reading-width">
+        <h2>Écho</h2>
+
+        <h3>Ce que ce rôle pourrait devenir</h3>
+        <p>Les Échos pourraient aider à penser la recommandation, la médiation et la mise en lumière de créations auprès de communautés pertinentes. Il n’existe actuellement ni catalogue, ni vitrine, ni vente générée par Orée.</p>
+
+        <h3>Ce dont le projet a besoin maintenant</h3>
+        <p>Un retour sur les pratiques de curation, de recommandation et de transparence : ce qui rend un relais utile, crédible et respectueux des personnes qui créent.</p>
+
+        <h3>Ce que tu peux faire aujourd’hui</h3>
+        <p>Expliquer ce que tu partages déjà, les communautés que tu connais ou les questions que tu juges importantes. Cette démarche manifeste un intérêt ; elle ne crée ni partenariat ni rémunération.</p>
+
+        <div class="role-action">
+          <a href={siteConfig.links.join} class="button button-secondary">Partager un regard d’Écho</a>
+        </div>
+        <p class="context-note">Le formulaire ouvre un premier échange sans garantie de mission, rémunération, calendrier ou engagement.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="join-closure">
+    <div class="container reading-width">
+      <h2>Une autre façon de contribuer</h2>
+      <p>
+        Tu ne te reconnais pas encore dans ces rôles, ou tu préfères commencer par une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>. Si tu souhaites seulement recevoir les nouvelles publiques du projet, <a href={siteConfig.links.follow}>suis l’aventure</a>.
+      </p>
+      <p class="context-note">
+        Ces liens ouvrent des formulaires Tally externes. Leur envoi n’emporte ni réponse automatique ni engagement de part et d’autre.
+      </p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .join-section {
-    padding-block: clamp(4rem, 10vw, 8rem);
+  .join-hero {
+    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
   }
 
   .eyebrow {
@@ -56,30 +155,86 @@ import { siteConfig } from "../config/site";
     font-size: var(--text-md);
   }
 
-  .note {
-    margin-bottom: var(--space-8);
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
+  .join-summary {
+    padding-bottom: var(--space-12);
   }
 
-  .links-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 var(--space-8) 0;
+  .anchor-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    max-width: 24rem;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+    padding: 0;
+    list-style: none;
   }
-  
-  .actions {
-    margin-top: var(--space-12);
+
+  .anchor-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-canvas);
+    color: var(--color-canopy);
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .anchor-list a:hover {
+    background: var(--color-surface-soft);
+    border-color: var(--color-canopy);
+  }
+
+  @media (min-width: 48rem) {
+    .anchor-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .roles-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-block: var(--space-8);
+  }
+
+  .role-section {
+    scroll-margin-top: 6rem;
+    transition: background-color var(--transition-fast);
+    padding-block: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .role-section:target {
+    background-color: var(--color-surface-emphasis);
+  }
+
+  .role-section h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .role-section h3 {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-md);
+    font-family: var(--font-body);
+  }
+
+  .role-section p {
+    color: var(--color-text-muted);
+  }
+
+  .role-action {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-2);
   }
 
   .button {
     display: inline-flex;
     min-height: 44px;
-    width: 100%;
     align-items: center;
     justify-content: center;
     padding: var(--space-3) var(--space-6);
@@ -93,16 +248,6 @@ import { siteConfig } from "../config/site";
       color var(--transition-fast);
   }
 
-  .button-primary {
-    background: var(--color-action-hover);
-    color: var(--color-white);
-  }
-
-  .button-primary:hover {
-    background: var(--color-canopy);
-    color: var(--color-linen);
-  }
-
   .button-secondary {
     border-color: var(--color-canopy);
     color: var(--color-canopy);
@@ -113,7 +258,24 @@ import { siteConfig } from "../config/site";
     color: var(--color-linen);
   }
 
-  .actions .button-secondary {
-    width: auto;
+  @media (max-width: 30rem) {
+    .button-secondary {
+      width: 100%;
+    }
+  }
+
+  .context-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .join-closure {
+    padding-block: var(--space-16);
+    margin-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .join-closure h2 {
+    margin-bottom: var(--space-4);
   }
 </style>
