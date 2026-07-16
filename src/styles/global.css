@@ -120,7 +120,7 @@ pre {
 }
 
 .reading-width {
-  width: min(100%, var(--content-width));
+  max-width: var(--content-width);
 }
 
 .visually-hidden {
