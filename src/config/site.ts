@@ -25,11 +25,12 @@ export const siteConfig = {
     contact: "https://tally.so/r/q4eVx7",
 
     // L’adresse publique complète sera renseignée ultérieurement.
-    notion: null,
+    notion: "https://projetoree.notion.site",
   },
 
   social: {
     linkedin: "https://www.linkedin.com/in/jeremy-litique/",
+    instagram: "https://www.instagram.com/projet.oree/",
     mastodon: null,
     bluesky: null,
     medium: null,

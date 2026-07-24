@@ -1,43 +1,26 @@
-# Astro Starter Kit: Minimal
+# Construire Orée
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Construire Orée est le journal public documentant la construction d’Orée, une future marketplace éthique consacrée à la création originale, à l’art et à l’artisanat d’art.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Ce dépôt est le point zéro de la construction d’Orée. À l'heure actuelle, la plateforme n'existe pas encore et nous n'avons aucun produit.** Ce site sert uniquement de journal de bord statique.
 
-## 🚀 Project Structure
+## Principes de conception
 
-Inside of your Astro project, you'll see the following folders and files:
+Ce site est construit avec le framework [Astro](https://astro.build/). Nos principes techniques sont les suivants :
+- **Statique par défaut** : les pages sont générées statiquement.
+- **Zéro dépendance superflue** : le projet est maintenu aussi léger que possible.
+- **Zéro JavaScript client** : aucun script ne s'exécute du côté client, garantissant performance et respect de la vie privée.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Liens utiles
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- [Site Construire Orée](https://construire.projetoree.fr) *(URL à venir)*
+- [Le projet Orée (Notion public)](https://projetoree.notion.site)
+- [Rejoindre Orée (Formulaire)](https://tally.so/r/685NbB)
+- [Suivre l'aventure (Newsletter)](https://tally.so/r/Bz57ON)
+- [Écrire à Orée (Contact)](https://tally.so/r/q4eVx7)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Licences
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Code source** : [AGPL-3.0](./LICENSE)
+- **Contenu éditorial** : [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Marque exclue** : La marque « Orée », son logo et les éléments d'identité visuelle ne sont pas sous licence libre et demeurent la propriété exclusive de leurs auteurs.
