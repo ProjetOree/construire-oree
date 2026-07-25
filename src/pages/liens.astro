@@ -7,21 +7,22 @@ const utm = "?utm_source=construire-oree&utm_medium=liens&utm_campaign=bio";
 
 const links = [
   { label: "Rejoindre Orée", url: siteConfig.links.join + utm, type: "primary" },
-  { label: "Suis l'aventure — newsletter", url: siteConfig.links.follow + utm, type: "primary" },
+  { label: "Suis l’aventure — newsletter", url: siteConfig.links.follow + utm, type: "primary" },
   { label: "Le projet Orée", url: siteConfig.links.notion + utm, type: "secondary" },
   { label: "LinkedIn", url: siteConfig.social.linkedin + utm, type: "secondary" },
   { label: "Écris à Orée", url: siteConfig.links.contact + utm, type: "secondary" }
 ];
 ---
 
-<BaseLayout title="Liens" description="Retrouvez tous les liens d'Orée.">
+<BaseLayout title="Liens" description="Retrouvez tous les liens d’Orée.">
   <div class="liens-wrapper">
     <div class="liens-container">
       <header class="liens-header">
+        <h1 class="visually-hidden">Liens d’Orée</h1>
         <SealMark size={64} title="Sceau Orée" />
         <p class="liens-description">
           Le point zéro de la construction d’Orée, une future marketplace éthique. 
-          La plateforme n'existe pas encore.
+          La plateforme n’existe pas encore.
         </p>
       </header>
 
@@ -43,11 +44,10 @@ const links = [
     display: none !important;
   }
   
-  /* L'aube ambre diffuse montant du bas */
+  /* L’aube ambre diffuse montant du bas */
   body {
     background-color: #F4ECE0;
     background-image: radial-gradient(circle at bottom center, rgba(224, 164, 88, 0.4) 0%, transparent 70%);
-    background-attachment: fixed;
     background-repeat: no-repeat;
   }
 </style>
