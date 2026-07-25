@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SealMark from "../components/brand/SealMark.astro";
+import { siteConfig } from "../config/site";
+
+const utm = "?utm_source=construire-oree&utm_medium=liens&utm_campaign=bio";
+
+const links = [
+  { label: "Rejoindre Orée", url: siteConfig.links.join + utm, type: "primary" },
+  { label: "Suis l’aventure — newsletter", url: siteConfig.links.follow + utm, type: "primary" },
+  { label: "Le projet Orée", url: siteConfig.links.notion + utm, type: "secondary" },
+  { label: "LinkedIn", url: siteConfig.social.linkedin + utm, type: "secondary" },
+  { label: "Écris à Orée", url: siteConfig.links.contact + utm, type: "secondary" }
+];
+---
+
+<BaseLayout title="Liens" description="Retrouvez tous les liens d’Orée.">
+  <div class="liens-wrapper">
+    <div class="liens-container">
+      <header class="liens-header">
+        <h1 class="visually-hidden">Liens d’Orée</h1>
+        <SealMark size={64} title="Sceau Orée" />
+        <p class="liens-description">
+          Le point zéro de la construction d’Orée, une future marketplace éthique. 
+          La plateforme n’existe pas encore.
+        </p>
+      </header>
+
+      <nav class="liens-list" aria-label="Liens Orée">
+        {links.map(link => (
+          <a href={link.url} class={`lien-bouton lien-${link.type}`}>
+            {link.type === "secondary" && <span class="puce-ambre" aria-hidden="true"></span>}
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* Cacher la navigation principale et le footer (HORS navigation principale) */
+  .site-header, .site-footer {
+    display: none !important;
+  }
+  
+  /* L’aube ambre diffuse montant du bas */
+  body {
+    background-color: #F4ECE0;
+    background-image: radial-gradient(circle at bottom center, rgba(224, 164, 88, 0.4) 0%, transparent 70%);
+    background-repeat: no-repeat;
+  }
+</style>
+
+<style>
+  .liens-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .liens-container {
+    width: 100%;
+    max-width: 24rem; /* 384px */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .liens-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .liens-description {
+    color: #2C2825;
+    font-size: var(--text-md);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .liens-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lien-bouton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px; /* Cible tactile >= 44px */
+    padding: var(--space-3) var(--space-6);
+    border-radius: 16px; /* Coins arrondis ~14-18px */
+    font-weight: 700;
+    font-size: var(--text-base);
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    gap: var(--space-3);
+  }
+
+  .lien-bouton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 46, 37, 0.08);
+  }
+
+  /* Boutons pleins (1-2) */
+  .lien-primary {
+    background-color: #1B2E25;
+    color: #F4ECE0;
+    border: 2px solid #1B2E25;
+  }
+
+  .lien-primary:hover {
+    background-color: #2a473a;
+    border-color: #2a473a;
+    color: #F4ECE0;
+  }
+
+  /* Boutons doux (3-5) */
+  .lien-secondary {
+    background-color: #F4ECE0;
+    color: #2C2825;
+    border: 2px solid #1B2E25;
+  }
+
+  .lien-secondary:hover {
+    background-color: #ebe0cf;
+    color: #2C2825;
+  }
+
+  .puce-ambre {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #E0A458;
+    flex-shrink: 0;
+  }
+</style>
