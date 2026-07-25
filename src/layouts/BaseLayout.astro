@@ -7,11 +7,13 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  hideChrome?: boolean;
 }
 
 const {
   title = siteConfig.name,
   description = siteConfig.description,
+  hideChrome = false,
 } = Astro.props;
 
 const pageTitle =
@@ -45,12 +47,12 @@ const pageTitle =
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <SiteHeader />
+    {!hideChrome && <SiteHeader />}
 
     <main id="contenu">
       <slot />
     </main>
 
-    <SiteFooter />
+    {!hideChrome && <SiteFooter />}
   </body>
 </html>

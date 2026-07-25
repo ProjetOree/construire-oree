@@ -14,14 +14,14 @@ const links = [
 ];
 ---
 
-<BaseLayout title="Liens" description="Retrouvez tous les liens d’Orée.">
+<BaseLayout title="Liens" description="Retrouvez tous les liens d’Orée." hideChrome={true}>
   <div class="liens-wrapper">
     <div class="liens-container">
       <header class="liens-header">
         <h1 class="visually-hidden">Liens d’Orée</h1>
         <SealMark size={64} title="Sceau Orée" />
         <p class="liens-description">
-          Le point zéro de la construction d’Orée, une future marketplace éthique. 
+          Le point zéro de la construction d’Orée, une future marketplace éthique.
           La plateforme n’existe pas encore.
         </p>
       </header>
@@ -39,26 +39,25 @@ const links = [
 </BaseLayout>
 
 <style is:global>
-  /* Cacher la navigation principale et le footer (HORS navigation principale) */
-  .site-header, .site-footer {
-    display: none !important;
-  }
-  
   /* L’aube ambre diffuse montant du bas */
   body {
-    background-color: #F4ECE0;
-    background-image: radial-gradient(circle at bottom center, rgba(224, 164, 88, 0.4) 0%, transparent 70%);
-    background-repeat: no-repeat;
+    background-color: var(--color-linen);
   }
 </style>
 
 <style>
   .liens-wrapper {
+    --hover-canopy: #2a473a;
+    --hover-linen: #ebe0cf;
+    --shadow-soft: rgba(27, 46, 37, 0.08);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    min-height: 100dvh;
     padding: var(--space-8) var(--space-4);
+    background-image: radial-gradient(circle at bottom center, rgba(224, 164, 88, 0.4) 0%, transparent 70%);
+    background-repeat: no-repeat;
   }
 
   .liens-container {
@@ -78,7 +77,7 @@ const links = [
   }
 
   .liens-description {
-    color: #2C2825;
+    color: var(--color-charcoal);
     font-size: var(--text-md);
     margin: 0;
     font-weight: 500;
@@ -107,39 +106,39 @@ const links = [
 
   .lien-bouton:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(27, 46, 37, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-soft);
   }
 
   /* Boutons pleins (1-2) */
   .lien-primary {
-    background-color: #1B2E25;
-    color: #F4ECE0;
-    border: 2px solid #1B2E25;
+    background-color: var(--color-canopy);
+    color: var(--color-linen);
+    border: 2px solid var(--color-canopy);
   }
 
   .lien-primary:hover {
-    background-color: #2a473a;
-    border-color: #2a473a;
-    color: #F4ECE0;
+    background-color: var(--hover-canopy);
+    border-color: var(--hover-canopy);
+    color: var(--color-linen);
   }
 
   /* Boutons doux (3-5) */
   .lien-secondary {
-    background-color: #F4ECE0;
-    color: #2C2825;
-    border: 2px solid #1B2E25;
+    background-color: var(--color-linen);
+    color: var(--color-charcoal);
+    border: 2px solid var(--color-canopy);
   }
 
   .lien-secondary:hover {
-    background-color: #ebe0cf;
-    color: #2C2825;
+    background-color: var(--hover-linen);
+    color: var(--color-charcoal);
   }
 
   .puce-ambre {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: #E0A458;
+    background-color: var(--color-dawn);
     flex-shrink: 0;
   }
 </style>
