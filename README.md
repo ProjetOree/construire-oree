@@ -7,6 +7,7 @@ Construire Orée est le journal public documentant la construction d’Orée, un
 ## Principes de conception
 
 Ce site est construit avec le framework [Astro](https://astro.build/). Les principes techniques sont les suivants :
+
 - **Statique par défaut** : les pages sont générées statiquement.
 - **Zéro dépendance superflue** : le projet est maintenu aussi léger que possible.
 - **Zéro JavaScript client** : aucun script ne s’exécute du côté client, garantissant performance et respect de la vie privée.
