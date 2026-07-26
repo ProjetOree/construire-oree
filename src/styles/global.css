@@ -112,10 +112,7 @@ pre {
 }
 
 .container {
-  width: min(
-    calc(100% - (2 * var(--page-gutter))),
-    var(--layout-width)
-  );
+  width: min(calc(100% - (2 * var(--page-gutter))), var(--layout-width));
   margin-inline: auto;
 }
 

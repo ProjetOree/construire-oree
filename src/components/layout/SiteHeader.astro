@@ -4,13 +4,13 @@ import SealMark from "../brand/SealMark.astro";
 const pathname = Astro.url.pathname;
 
 function isCurrent(path: string) {
-  if (path === '/') {
-    return pathname === '/' ? 'page' : undefined;
+  if (path === "/") {
+    return pathname === "/" ? "page" : undefined;
   }
-  const normalizedPathname = pathname.endsWith('/') ? pathname : `${pathname}/`;
-  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
-  
-  return normalizedPathname.startsWith(normalizedPath) ? 'page' : undefined;
+  const normalizedPathname = pathname.endsWith("/") ? pathname : `${pathname}/`;
+  const normalizedPath = path.endsWith("/") ? path : `${path}/`;
+
+  return normalizedPathname.startsWith(normalizedPath) ? "page" : undefined;
 }
 ---
 
@@ -28,8 +28,12 @@ function isCurrent(path: string) {
     <!-- Desktop Navigation -->
     <div class="desktop-nav-container">
       <nav aria-label="Navigation principale" class="main-nav">
-        <a href="/a-propos/" aria-current={isCurrent('/a-propos/')}>À propos</a>
-        <a href="/rejoindre/" class="nav-join" aria-current={isCurrent('/rejoindre/')}>Rejoindre</a>
+        <a href="/a-propos/" aria-current={isCurrent("/a-propos/")}>À propos</a>
+        <a
+          href="/rejoindre/"
+          class="nav-join"
+          aria-current={isCurrent("/rejoindre/")}>Rejoindre</a
+        >
       </nav>
       <span class="phase">
         <span class="phase-dot" aria-hidden="true"></span>
@@ -42,8 +46,12 @@ function isCurrent(path: string) {
       <summary class="menu-button">Menu</summary>
       <div class="mobile-nav-content">
         <nav aria-label="Navigation mobile" class="main-nav-mobile">
-          <a href="/a-propos/" aria-current={isCurrent('/a-propos/')}>À propos</a>
-          <a href="/rejoindre/" aria-current={isCurrent('/rejoindre/')}>Rejoindre</a>
+          <a href="/a-propos/" aria-current={isCurrent("/a-propos/")}
+            >À propos</a
+          >
+          <a href="/rejoindre/" aria-current={isCurrent("/rejoindre/")}
+            >Rejoindre</a
+          >
         </nav>
         <div class="mobile-phase">
           <span class="phase">
@@ -193,7 +201,9 @@ function isCurrent(path: string) {
     cursor: pointer;
     background: var(--color-canvas);
     user-select: none;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast);
   }
 
   .mobile-nav-container[open] .menu-button {

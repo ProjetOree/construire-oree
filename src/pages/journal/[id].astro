@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection, render } from 'astro:content';
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const entries = await getCollection('journal');
+  const entries = await getCollection("journal");
   // On exclut strictement les brouillons des routes générées
-  const publishedEntries = entries.filter(entry => entry.data.draft !== true);
+  const publishedEntries = entries.filter((entry) => entry.data.draft !== true);
 
-  return publishedEntries.map(entry => ({
+  return publishedEntries.map((entry) => ({
     params: { id: entry.id },
     props: { entry },
   }));
@@ -17,23 +17,22 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout
-  title={entry.data.title}
-  description={entry.data.description}
->
+<BaseLayout title={entry.data.title} description={entry.data.description}>
   <article class="container reading-width journal-entry">
     <header class="entry-header">
       <p class="eyebrow">Journal</p>
       <h1>{entry.data.title}</h1>
-      {entry.data.publishedAt && (
-        <time datetime={entry.data.publishedAt.toISOString()}>
-          {new Date(entry.data.publishedAt).toLocaleDateString('fr-FR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </time>
-      )}
+      {
+        entry.data.publishedAt && (
+          <time datetime={entry.data.publishedAt.toISOString()}>
+            {new Date(entry.data.publishedAt).toLocaleDateString("fr-FR", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+        )
+      }
     </header>
 
     <div class="prose">

@@ -6,33 +6,61 @@ import { siteConfig } from "../config/site";
 const utm = "?utm_source=construire-oree&utm_medium=liens&utm_campaign=bio";
 
 const links = [
-  { label: "Rejoindre Orée", url: siteConfig.links.join + utm, type: "primary" },
-  { label: "Suis l’aventure — newsletter", url: siteConfig.links.follow + utm, type: "primary" },
-  { label: "Le projet Orée", url: siteConfig.links.notion + utm, type: "secondary" },
-  { label: "LinkedIn", url: siteConfig.social.linkedin + utm, type: "secondary" },
-  { label: "Écris à Orée", url: siteConfig.links.contact + utm, type: "secondary" }
+  {
+    label: "Rejoindre Orée",
+    url: siteConfig.links.join + utm,
+    type: "primary",
+  },
+  {
+    label: "Suis l’aventure — newsletter",
+    url: siteConfig.links.follow + utm,
+    type: "primary",
+  },
+  {
+    label: "Le projet Orée",
+    url: siteConfig.links.notion + utm,
+    type: "secondary",
+  },
+  {
+    label: "LinkedIn",
+    url: siteConfig.social.linkedin + utm,
+    type: "secondary",
+  },
+  {
+    label: "Écris à Orée",
+    url: siteConfig.links.contact + utm,
+    type: "secondary",
+  },
 ];
 ---
 
-<BaseLayout title="Liens" description="Retrouvez tous les liens d’Orée." hideChrome={true}>
+<BaseLayout
+  title="Liens"
+  description="Retrouvez tous les liens d’Orée."
+  hideChrome={true}
+>
   <div class="liens-wrapper">
     <div class="liens-container">
       <header class="liens-header">
         <h1 class="visually-hidden">Liens d’Orée</h1>
         <SealMark size={64} title="Sceau Orée" />
         <p class="liens-description">
-          Le point zéro de la construction d’Orée, une future marketplace éthique.
-          La plateforme n’existe pas encore.
+          Le point zéro de la construction d’Orée, une future marketplace
+          éthique. La plateforme n’existe pas encore.
         </p>
       </header>
 
       <nav class="liens-list" aria-label="Liens Orée">
-        {links.map(link => (
-          <a href={link.url} class={`lien-bouton lien-${link.type}`}>
-            {link.type === "secondary" && <span class="puce-ambre" aria-hidden="true"></span>}
-            {link.label}
-          </a>
-        ))}
+        {
+          links.map((link) => (
+            <a href={link.url} class={`lien-bouton lien-${link.type}`}>
+              {link.type === "secondary" && (
+                <span class="puce-ambre" aria-hidden="true" />
+              )}
+              {link.label}
+            </a>
+          ))
+        }
       </nav>
     </div>
   </div>
@@ -53,10 +81,15 @@ const links = [
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     min-height: 100vh;
     min-height: 100dvh;
     padding: var(--space-8) var(--space-4);
-    background-image: radial-gradient(circle at bottom center, rgba(224, 164, 88, 0.4) 0%, transparent 70%);
+    background-image: radial-gradient(
+      circle at bottom center,
+      rgba(224, 164, 88, 0.4) 0%,
+      transparent 70%
+    );
     background-repeat: no-repeat;
   }
 
@@ -100,7 +133,10 @@ const links = [
     font-size: var(--text-base);
     text-decoration: none;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
     gap: var(--space-3);
   }
 

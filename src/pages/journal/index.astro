@@ -1,13 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const allEntries = await getCollection('journal');
+const allEntries = await getCollection("journal");
 const publishedEntries = allEntries
-  .filter(entry => entry.data.draft !== true)
+  .filter((entry) => entry.data.draft !== true)
   .sort((a, b) => {
-    const dateA = a.data.publishedAt ? new Date(a.data.publishedAt).valueOf() : 0;
-    const dateB = b.data.publishedAt ? new Date(b.data.publishedAt).valueOf() : 0;
+    const dateA = a.data.publishedAt
+      ? new Date(a.data.publishedAt).valueOf()
+      : 0;
+    const dateB = b.data.publishedAt
+      ? new Date(b.data.publishedAt).valueOf()
+      : 0;
     return dateB - dateA;
   });
 ---
@@ -21,35 +25,50 @@ const publishedEntries = allEntries
     <h1>Le Journal de Construire Orée</h1>
 
     <div class="introduction">
-      <p>Ce Journal documente la construction réelle de Construire Orée. Il distingue ce qui est déjà versionné sur le site, ce qui reste à construire pour Orée et les décisions qui ne sont pas encore prises.</p>
-      <p>Orée est une future marketplace éthique au point zéro. Construire Orée est son site statique et son journal public : ici, une intention ne devient jamais un résultat par simple formulation.</p>
+      <p>
+        Ce Journal documente la construction réelle de Construire Orée. Il
+        distingue ce qui est déjà versionné sur le site, ce qui reste à
+        construire pour Orée et les décisions qui ne sont pas encore prises.
+      </p>
+      <p>
+        Orée est une future marketplace éthique au point zéro. Construire Orée
+        est son site statique et son journal public : ici, une intention ne
+        devient jamais un résultat par simple formulation.
+      </p>
     </div>
 
     <section class="entries-section">
-      {publishedEntries.length === 0 ? (
-        <p class="empty-state">Aucun billet n’est publié pour le moment.</p>
-      ) : (
-        <ul class="entries-list">
-          {publishedEntries.map(entry => (
-            <li>
-              {entry.data.publishedAt && (
-                <time datetime={entry.data.publishedAt.toISOString()}>
-                  {new Date(entry.data.publishedAt).toLocaleDateString('fr-FR', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </time>
-              )}
-              <h2><a href={`/journal/${entry.id}/`}>{entry.data.title}</a></h2>
-              <p>{entry.data.description}</p>
-              <a href={`/journal/${entry.id}/`} class="read-more">
-                Lire « {entry.data.title} »
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      {
+        publishedEntries.length === 0 ? (
+          <p class="empty-state">Aucun billet n’est publié pour le moment.</p>
+        ) : (
+          <ul class="entries-list">
+            {publishedEntries.map((entry) => (
+              <li>
+                {entry.data.publishedAt && (
+                  <time datetime={entry.data.publishedAt.toISOString()}>
+                    {new Date(entry.data.publishedAt).toLocaleDateString(
+                      "fr-FR",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      },
+                    )}
+                  </time>
+                )}
+                <h2>
+                  <a href={`/journal/${entry.id}/`}>{entry.data.title}</a>
+                </h2>
+                <p>{entry.data.description}</p>
+                <a href={`/journal/${entry.id}/`} class="read-more">
+                  Lire « {entry.data.title} »
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </section>
   </div>
 </BaseLayout>
