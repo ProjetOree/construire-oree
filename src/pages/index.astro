@@ -88,6 +88,34 @@ import { siteConfig } from "../config/site";
     </div>
   </section>
 
+  <section class="section-block ecosystem-card">
+    <div class="container">
+      <div class="reading-width">
+        <h2>Ce qu’Orée cherche à relier</h2>
+        <p>
+          Orée est au point zéro. L’écosystème présenté ici n’existe pas encore : il sert à rendre lisible la direction du projet et les liens que la future marketplace cherchera à créer.
+        </p>
+        <div class="ecosystem-blocks">
+          <div>
+            <strong>Cœur — créer et découvrir</strong>
+            <p>Des personnes qui créent, et d’autres qui pourront découvrir leurs œuvres ou leurs savoir-faire. C’est là que tout commence : une création, un regard, une rencontre possible.</p>
+          </div>
+          <div>
+            <strong>Accélérateurs — faire circuler les talents</strong>
+            <p>Les Éclaireurs et les Échos représentent deux façons d’aider une création à trouver son chemin : repérer, raconter, recommander, mettre en lumière.</p>
+          </div>
+          <div>
+            <strong>Fondations — rendre le projet tenable</strong>
+            <p>Les Bâtisseurs éclairent les sujets techniques, juridiques, fiscaux, opérationnels et logistiques. Leur rôle est d’aider le projet à avancer avec méthode, sans construire plus vite que ce qui peut être tenu.</p>
+          </div>
+        </div>
+        <p class="ecosystem-closure">
+          Les rôles ne sont ni des postes ouverts ni des promesses. Ils aident à situer où une expérience, un regard ou une compétence pourrait être utile. <a href="/rejoindre/">Découvrir les rôles et les contributions possibles →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="section-block why-section">
     <div class="container">
       <div class="reading-width">
@@ -147,29 +175,25 @@ import { siteConfig } from "../config/site";
         <li class="role-item">
           <strong>Bâtisseur</strong>
           <p>
-            contribuer, selon ses compétences, aux fondations techniques,
-            juridiques, fiscales, opérationnelles ou logistiques.
+            Les Bâtisseurs apportent un regard sur les fondations du projet, sans mission ni engagement déjà attribués. <a href="/rejoindre/#batisseur">Comprendre le rôle de Bâtisseur →</a>
           </p>
         </li>
         <li class="role-item">
           <strong>Artiste ou Artisan</strong>
           <p>
-            partager ce qui freine aujourd’hui la création, la vente ou
-            l’administration, afin d’éclairer un futur projet.
+            Les artistes et artisans peuvent éclairer les freins qui entourent la création, sans rejoindre une marketplace aujourd’hui. <a href="/rejoindre/#artiste-ou-artisan">Partager le regard d’un créateur →</a>
           </p>
         </li>
         <li class="role-item">
           <strong>Éclaireur</strong>
           <p>
-            apporter un regard de terrain sur la manière de repérer et
-            d’accompagner des talents.
+            Les Éclaireurs aident à penser comment repérer et accompagner les talents, sans mécanisme actif à ce stade. <a href="/rejoindre/#eclaireur">Découvrir le rôle d’Éclaireur →</a>
           </p>
         </li>
         <li class="role-item">
           <strong>Écho</strong>
           <p>
-            apporter un regard sur la recommandation, la médiation et la mise en
-            lumière de créations.
+            Les Échos aident à penser la recommandation et la mise en lumière des créations, sans vitrine ni dispositif déjà actif. <a href="/rejoindre/#echo">Découvrir le rôle d’Écho →</a>
           </p>
         </li>
       </ul>
@@ -412,9 +436,39 @@ import { siteConfig } from "../config/site";
     margin-top: var(--space-8);
   }
 
+  .ecosystem-card {
+    background: var(--color-surface);
+  }
+
+  .ecosystem-blocks {
+    display: grid;
+    gap: var(--space-6);
+    margin-block: var(--space-6);
+  }
+
+  .ecosystem-blocks > div {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    background: var(--color-canvas);
+  }
+
+  .ecosystem-blocks strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-canopy);
+  }
+
+  .ecosystem-closure {
+    margin-top: var(--space-4);
+  }
+
   @media (min-width: 64rem) {
     .roles-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+    .ecosystem-blocks {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
