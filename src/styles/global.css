@@ -227,3 +227,67 @@ pre {
 .phase-dot {
   animation: seal-pulse 3.2s ease-in-out infinite;
 }
+
+/*
+ * Bloc de couleur pleine (Lot 1 v2) — Sceau vivant.
+ * Combinaison choisie car explicitement validée par la charte graphique
+ * (Lin sur Vert Canopée = AA, texte courant). Les autres couleurs de la
+ * palette (Terre cuite, Mousse, Écorce, Bordeaux) ne sont pas validées
+ * pour du texte de lecture en fond plein ; elles restent réservées aux
+ * accents, bordures et pictogrammes tant qu'un contrôle de contraste réel
+ * n'a pas été fait par le Designer du Seuil.
+ */
+.bloc-plein {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-canopy);
+  color: var(--color-linen);
+}
+
+.bloc-plein h2,
+.bloc-plein h3 {
+  color: var(--color-linen);
+}
+
+.bloc-plein a {
+  color: var(--color-linen);
+  text-decoration-color: var(--color-dawn);
+  text-decoration-thickness: 0.12em;
+}
+
+.bloc-plein a:hover {
+  text-decoration-thickness: 0.2em;
+}
+
+/*
+ * Texture artisanale procédurale — grain léger généré en CSS pur, sans
+ * image, sans photographie. Deux trames croisées à très faible opacité,
+ * pour ne pas gêner la lecture du texte superposé.
+ */
+.texture-legere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(244, 236, 224, 0.05) 0px,
+      rgba(244, 236, 224, 0.05) 1px,
+      transparent 1px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(224, 164, 88, 0.045) 0px,
+      rgba(224, 164, 88, 0.045) 1px,
+      transparent 1px,
+      transparent 11px
+    );
+  pointer-events: none;
+}
+
+.texture-legere > * {
+  position: relative;
+  z-index: 1;
+}
