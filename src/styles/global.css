@@ -165,7 +165,7 @@ pre {
 
 .repere {
   margin-bottom: var(--space-4);
-  color: var(--color-bark);
+  color: var(--register-accent-rigueur);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 650;
@@ -184,6 +184,23 @@ pre {
 [data-register="rigueur"] h3 {
   font-family: var(--font-mono);
   letter-spacing: 0;
+}
+
+/*
+ * Accent par registre (tokens --register-accent-chaleur / --register-accent-rigueur).
+ * Décoration uniquement (bordure), jamais utilisé comme couleur de texte,
+ * afin de respecter la règle : l'Ambre ne sert jamais de texte sur Lin.
+ * Mapping accent par rôle complet (Lot 1) reste à documenter et valider
+ * avec le Designer du Seuil ; ceci couvre uniquement le défaut de tokens
+ * inutilisés signalé par l'Ingénieur de contrôle.
+ */
+.eyebrow {
+  border-left: 3px solid var(--register-accent-chaleur);
+  padding-left: var(--space-3);
+}
+
+[data-register="rigueur"] .eyebrow {
+  border-left-color: var(--register-accent-rigueur);
 }
 
 .phase,
