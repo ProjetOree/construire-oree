@@ -47,6 +47,16 @@
   --color-focus: #1f6feb;
 
   /*
+   * Registres « Le Sceau vivant » — Chaleur / Rigueur
+   * Chaleur : sceau habité en couleur, aube ambre (récit, rôles, Accueil, À propos).
+   * Rigueur : filigrane du Sceau, un seul accent sobre (chiffres, statuts, dates).
+   * Aucune nouvelle couleur : alias des tokens de palette existants.
+   */
+
+  --register-accent-chaleur: var(--color-dawn);
+  --register-accent-rigueur: var(--color-bark);
+
+  /*
    * Typographies officielles
    */
 
