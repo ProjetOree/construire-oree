@@ -6,9 +6,10 @@ interface Props {
   description: string;
   heading: string;
   text?: string;
+  repere?: string;
 }
 
-const { title, description, heading, text } = Astro.props;
+const { title, description, heading, text, repere } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,6 +17,7 @@ const { title, description, heading, text } = Astro.props;
     <div class="container reading-width">
       <p class="eyebrow">En préparation</p>
       <h1>{heading}</h1>
+      {repere && <p class="repere" aria-label="Position dans le site">Vous êtes ici · {repere}</p>}
       <p class="introduction">
         {
           text ||
