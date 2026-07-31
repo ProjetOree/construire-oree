@@ -166,7 +166,47 @@ pre {
 .repere {
   margin-bottom: var(--space-4);
   color: var(--color-bark);
+  font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 650;
   letter-spacing: 0.05em;
+}
+
+/*
+ * Registres « Le Sceau vivant » — Chaleur (défaut) / Rigueur
+ * Chaleur : Fraunces, récit et rôles (Accueil, Rejoindre, À propos).
+ * Rigueur : JetBrains Mono, filigrane du Sceau, un seul accent sobre
+ * (Journal, Roadmap, Décisions, Tableau de bord, informations d'état).
+ */
+
+[data-register="rigueur"] h1,
+[data-register="rigueur"] h2,
+[data-register="rigueur"] h3 {
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+
+.phase,
+.status-label,
+.status-card dt {
+  font-family: var(--font-mono);
+}
+
+.seal-filigrane {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+@keyframes seal-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.phase-dot {
+  animation: seal-pulse 3.2s ease-in-out infinite;
 }
