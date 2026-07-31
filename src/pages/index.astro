@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import RoleIcon from "../components/brand/RoleIcon.astro";
+import SealMark from "../components/brand/SealMark.astro";
 import { siteConfig } from "../config/site";
 ---
 
@@ -116,7 +118,10 @@ import { siteConfig } from "../config/site";
     </div>
   </section>
 
-  <section class="section-block why-section">
+  <section class="section-block why-section bloc-plein texture-legere">
+    <div class="why-seal" aria-hidden="true">
+      <SealMark size={280} variant="negatif" />
+    </div>
     <div class="container">
       <div class="reading-width">
         <h2>Pourquoi Orée existe</h2>
@@ -172,26 +177,26 @@ import { siteConfig } from "../config/site";
       </p>
 
       <ul class="roles-grid">
-        <li class="role-item">
-          <strong>Bâtisseur</strong>
+        <li class="role-item role-item--batisseur">
+          <strong><RoleIcon role="batisseur" size={24} decorative /> Bâtisseur</strong>
           <p>
             Les Bâtisseurs apportent un regard sur les fondations du projet, sans mission ni engagement déjà attribués. <a href="/rejoindre/#batisseur">Comprendre le rôle de Bâtisseur →</a>
           </p>
         </li>
-        <li class="role-item">
-          <strong>Artiste ou Artisan</strong>
+        <li class="role-item role-item--artisan">
+          <strong><RoleIcon role="artisan" size={24} decorative /> Artiste ou Artisan</strong>
           <p>
             Les artistes et artisans peuvent éclairer les freins qui entourent la création, sans rejoindre une marketplace aujourd’hui. <a href="/rejoindre/#artiste-ou-artisan">Partager le regard d’un créateur →</a>
           </p>
         </li>
-        <li class="role-item">
-          <strong>Éclaireur</strong>
+        <li class="role-item role-item--eclaireur">
+          <strong><RoleIcon role="eclaireur" size={24} decorative /> Éclaireur</strong>
           <p>
             Les Éclaireurs aident à penser comment repérer et accompagner les talents, sans mécanisme actif à ce stade. <a href="/rejoindre/#eclaireur">Découvrir le rôle d’Éclaireur →</a>
           </p>
         </li>
-        <li class="role-item">
-          <strong>Écho</strong>
+        <li class="role-item role-item--echo">
+          <strong><RoleIcon role="echo" size={24} decorative /> Écho</strong>
           <p>
             Les Échos aident à penser la recommandation et la mise en lumière des créations, sans vitrine ni dispositif déjà actif. <a href="/rejoindre/#echo">Découvrir le rôle d’Écho →</a>
           </p>
@@ -386,8 +391,14 @@ import { siteConfig } from "../config/site";
     margin-bottom: var(--space-6);
   }
 
-  .why-section {
-    background: var(--color-surface-emphasis);
+  .why-seal {
+    position: absolute;
+    top: 50%;
+    right: -4rem;
+    z-index: 0;
+    opacity: 0.16;
+    transform: translateY(-50%);
+    pointer-events: none;
   }
 
   .vision-details {
@@ -425,8 +436,31 @@ import { siteConfig } from "../config/site";
     list-style: none;
   }
 
+  .role-item {
+    padding-left: var(--space-4);
+    border-left: 3px solid transparent;
+  }
+
+  .role-item--batisseur {
+    border-left-color: var(--role-accent-batisseur);
+  }
+
+  .role-item--artisan {
+    border-left-color: var(--role-accent-artisan);
+  }
+
+  .role-item--eclaireur {
+    border-left-color: var(--role-accent-eclaireur);
+  }
+
+  .role-item--echo {
+    border-left-color: var(--role-accent-echo);
+  }
+
   .role-item strong {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
     margin-bottom: var(--space-2);
     color: var(--color-canopy);
     font-size: var(--text-md);
@@ -485,6 +519,10 @@ import { siteConfig } from "../config/site";
 
     .status-card {
       max-width: 35rem;
+    }
+
+    .why-seal {
+      display: none;
     }
   }
 
