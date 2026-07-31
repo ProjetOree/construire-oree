@@ -162,3 +162,11 @@ pre {
     transition-duration: 0.01ms !important;
   }
 }
+
+.repere {
+  margin-bottom: var(--space-4);
+  color: var(--color-bark);
+  font-size: var(--text-sm);
+  font-weight: 650;
+  letter-spacing: 0.05em;
+}
