@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import SealMark from "../components/brand/SealMark.astro";
 
 interface Props {
   title: string;
@@ -7,14 +8,25 @@ interface Props {
   heading: string;
   text?: string;
   repere?: string;
+  register?: "chaleur" | "rigueur";
 }
 
-const { title, description, heading, text, repere } = Astro.props;
+const {
+  title,
+  description,
+  heading,
+  text,
+  repere,
+  register = "rigueur",
+} = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} register={register}>
   <section class="coming-soon">
     <div class="container reading-width">
+      <div class="seal-watermark" aria-hidden="true">
+        <SealMark size={40} variant="filigrane" />
+      </div>
       <p class="eyebrow">En préparation</p>
       <h1>{heading}</h1>
       {repere && <p class="repere" aria-label="Position dans le site">Vous êtes ici · {repere}</p>}
@@ -35,6 +47,10 @@ const { title, description, heading, text, repere } = Astro.props;
 <style>
   .coming-soon {
     padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .seal-watermark {
+    margin-bottom: var(--space-4);
   }
 
   .eyebrow {
