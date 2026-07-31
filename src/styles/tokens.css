@@ -57,6 +57,17 @@
   --register-accent-rigueur: var(--color-bark);
 
   /*
+   * Accents par rôle (Lot 1 v2) — mapping documenté dans la PR #10,
+   * à valider par le Designer du Seuil lors de la revue visuelle.
+   * Aucune nouvelle couleur : alias de la palette officielle. L'Ambre
+   * reste la signature de marque ; ce n'est jamais un accent de rôle.
+   */
+  --role-accent-batisseur: var(--color-bark);
+  --role-accent-artisan: var(--color-terracotta);
+  --role-accent-eclaireur: var(--color-moss);
+  --role-accent-echo: var(--color-burgundy);
+
+  /*
    * Typographies officielles
    */
 
