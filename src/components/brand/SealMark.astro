@@ -2,9 +2,10 @@
 interface Props {
   size?: number;
   title?: string;
+  variant?: "habite" | "filigrane";
 }
 
-const { size = 48, title } = Astro.props;
+const { size = 48, title, variant = "habite" } = Astro.props;
 ---
 
 <svg
@@ -16,6 +17,7 @@ const { size = 48, title } = Astro.props;
   aria-label={title}
   aria-hidden={title ? undefined : "true"}
   focusable="false"
+  class={variant === "filigrane" ? "seal-filigrane" : undefined}
 >
   <rect width="200" height="200" rx="44" fill="#F4ECE0"></rect>
 
