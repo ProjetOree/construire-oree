@@ -76,9 +76,24 @@ a:hover {
   color: var(--color-canopy);
 }
 
-h1,
+/*
+ * Hiérarchie typographique (finition « Sceau + typographie ») — trois
+ * polices existantes uniquement, aucune police ajoutée : Fraunces pour les
+ * titres éditoriaux (h1 plus affirmé que h2), Hanken Grotesk en gras pour
+ * les sous-titres fonctionnels (h3), JetBrains Mono réservé au registre
+ * Rigueur (règle dédiée plus bas, prioritaire sur celle-ci).
+ */
+h1 {
+  color: var(--color-canopy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  text-wrap: balance;
+  font-size: var(--text-display);
+  letter-spacing: -0.035em;
+}
+
 h2,
-h3,
 h4 {
   color: var(--color-canopy);
   font-family: var(--font-display);
@@ -87,18 +102,19 @@ h4 {
   text-wrap: balance;
 }
 
-h1 {
-  font-size: var(--text-display);
-  letter-spacing: -0.035em;
-}
-
 h2 {
   font-size: var(--text-xl);
   letter-spacing: -0.02em;
 }
 
 h3 {
+  color: var(--color-canopy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
   font-size: var(--text-lg);
+  letter-spacing: -0.01em;
 }
 
 p,
@@ -193,14 +209,22 @@ pre {
  * Mapping accent par rôle complet (Lot 1) reste à documenter et valider
  * avec le Designer du Seuil ; ceci couvre uniquement le défaut de tokens
  * inutilisés signalé par l'Ingénieur de contrôle.
+ * Finition « Sceau + typographie » : l'eyebrow passe en Fraunces italique
+ * pour lui donner une voix éditoriale distincte des titres (non italiques)
+ * en Chaleur ; il repasse en JetBrains Mono droit en Rigueur, cohérent avec
+ * le reste du bloc factuel.
  */
 .eyebrow {
   border-left: 3px solid var(--register-accent-chaleur);
   padding-left: var(--space-3);
+  font-family: var(--font-display);
+  font-style: italic;
 }
 
 [data-register="rigueur"] .eyebrow {
   border-left-color: var(--register-accent-rigueur);
+  font-family: var(--font-mono);
+  font-style: normal;
 }
 
 .phase,
