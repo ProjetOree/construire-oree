@@ -244,6 +244,7 @@ pre {
   color: var(--color-linen);
 }
 
+.bloc-plein h1,
 .bloc-plein h2,
 .bloc-plein h3 {
   color: var(--color-linen);
