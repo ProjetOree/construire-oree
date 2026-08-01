@@ -33,7 +33,7 @@ import SealMark from "../components/brand/SealMark.astro";
 
   <section class="section-block bloc-plein texture-legere decouverte-block">
     <div class="decouverte-seal" aria-hidden="true">
-      <SealMark size={220} variant="negatif" />
+      <SealMark size={190} variant="negatif" />
     </div>
     <div class="container reading-width">
       <h2>Le point de départ</h2>
@@ -195,11 +195,10 @@ import SealMark from "../components/brand/SealMark.astro";
 
   .decouverte-seal {
     position: absolute;
-    top: 50%;
-    right: -3rem;
+    bottom: -2.5rem;
+    left: -2.5rem;
     z-index: 0;
-    opacity: 0.16;
-    transform: translateY(-50%);
+    opacity: 0.14;
     pointer-events: none;
   }
 
