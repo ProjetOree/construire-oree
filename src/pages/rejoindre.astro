@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RoleIcon from "../components/brand/RoleIcon.astro";
+import SealMark from "../components/brand/SealMark.astro";
 import { siteConfig } from "../config/site";
 ---
 
@@ -27,7 +28,10 @@ import { siteConfig } from "../config/site";
     </div>
   </section>
 
-  <section class="join-summary">
+  <section class="join-summary bloc-plein texture-legere">
+    <div class="join-summary-seal" aria-hidden="true">
+      <SealMark size={220} variant="negatif" />
+    </div>
     <div class="container reading-width">
       <h2>Trouver ta place dans une construction au point zéro</h2>
       <p>
@@ -305,7 +309,24 @@ import { siteConfig } from "../config/site";
   }
 
   .join-summary {
+    position: relative;
     padding-bottom: var(--space-12);
+  }
+
+  .join-summary-seal {
+    position: absolute;
+    top: 50%;
+    right: -3rem;
+    z-index: 0;
+    opacity: 0.16;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 48rem) {
+    .join-summary-seal {
+      display: none;
+    }
   }
 
   .anchor-list {
