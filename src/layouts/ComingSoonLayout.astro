@@ -118,13 +118,17 @@ const {
    * un seul accent (--register-accent-rigueur en bordure décorative), et
    * aucune animation. Le Sceau passe en variante « négatif », pensée pour un
    * fond sombre, plutôt que le filigrane clair.
+   *
+   * h1 volontairement absent de la liste ci-dessous : la règle globale
+   * .bloc-plein h1 fixe déjà le Lin sur ce titre, donc une redéclaration
+   * ici serait redondante sans le moindre effet visuel (nettoyage signalé
+   * lors de la revue critique du Designer du Seuil).
    */
   .coming-soon--rigueur {
     border-left: 4px solid var(--register-accent-rigueur);
     padding-left: calc(var(--page-gutter) - 4px);
   }
 
-  .coming-soon--rigueur h1,
   .coming-soon--rigueur .eyebrow,
   .coming-soon--rigueur .repere,
   .coming-soon--rigueur .introduction {
