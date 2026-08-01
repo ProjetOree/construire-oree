@@ -22,10 +22,18 @@ const {
 ---
 
 <BaseLayout title={title} description={description} register={register}>
-  <section class="coming-soon">
+  <section
+    class:list={[
+      "coming-soon",
+      {
+        "bloc-plein": register === "rigueur",
+        "coming-soon--rigueur": register === "rigueur",
+      },
+    ]}
+  >
     <div class="container reading-width">
       <div class="seal-watermark" aria-hidden="true">
-        <SealMark size={40} variant="filigrane" />
+        <SealMark size={40} variant={register === "rigueur" ? "negatif" : "filigrane"} />
       </div>
       <p class="eyebrow">En préparation</p>
       <h1>{heading}</h1>
@@ -102,5 +110,34 @@ const {
   .button-secondary:hover {
     background: var(--color-canopy);
     color: var(--color-linen);
+  }
+
+  /*
+   * Rupture Rigueur (recontrôle Cartographe, point 3) : fond inversé,
+   * JetBrains Mono (déjà appliqué via [data-register="rigueur"] sur le body),
+   * un seul accent (--register-accent-rigueur en bordure décorative), et
+   * aucune animation. Le Sceau passe en variante « négatif », pensée pour un
+   * fond sombre, plutôt que le filigrane clair.
+   */
+  .coming-soon--rigueur {
+    border-left: 4px solid var(--register-accent-rigueur);
+    padding-left: calc(var(--page-gutter) - 4px);
+  }
+
+  .coming-soon--rigueur h1,
+  .coming-soon--rigueur .eyebrow,
+  .coming-soon--rigueur .repere,
+  .coming-soon--rigueur .introduction {
+    color: var(--color-linen);
+  }
+
+  .coming-soon--rigueur .button-secondary {
+    border-color: var(--color-linen);
+    color: var(--color-linen);
+  }
+
+  .coming-soon--rigueur .button-secondary:hover {
+    background: var(--color-linen);
+    color: var(--color-canopy);
   }
 </style>
