@@ -288,15 +288,16 @@ pre {
  * Fond inversé Rigueur (Lot 5 — réapplication du Sceau vivant).
  * Rupture nette et distincte du bloc-plein Chaleur : fond sombre (Charcoal),
  * texte Lin, un seul accent (Écorce, --register-accent-rigueur) en bordure
- * gauche, aucune texture artisanale et aucune animation, conformément à la
- * règle Rigueur (« fond inversé, JetBrains Mono, un seul accent »). Le
- * Sceau y apparaît en variante « négatif », pensée pour un fond sombre.
+ * gauche du bloc de lecture (même convention que .eyebrow et .audit-details),
+ * aucune texture artisanale et aucune animation, conformément à la règle
+ * Rigueur (« fond inversé, JetBrains Mono, un seul accent »). Le Sceau y
+ * apparaît en variante « négatif », pensée pour un fond sombre. L'accent est
+ * porté par .container plutôt que par la section pleine largeur, pour ne
+ * pas décaler le centrage du contenu par rapport aux autres blocs de la page.
  */
 .bloc-inverse {
   position: relative;
   overflow: hidden;
-  border-left: 4px solid var(--register-accent-rigueur);
-  padding-left: calc(var(--page-gutter) - 4px);
   background-color: var(--color-charcoal);
   color: var(--color-linen);
 }
@@ -316,18 +317,24 @@ pre {
   text-decoration-color: var(--register-accent-rigueur);
 }
 
+.bloc-inverse a:hover {
+  text-decoration-thickness: 0.2em;
+}
+
 .bloc-inverse .seal-corner {
   position: absolute;
   right: -1.5rem;
   bottom: -1.5rem;
   z-index: 0;
-  opacity: 0.16;
+  opacity: 0.14;
   pointer-events: none;
 }
 
 .bloc-inverse .container {
   position: relative;
   z-index: 1;
+  border-left: 4px solid var(--register-accent-rigueur);
+  padding-left: var(--space-6);
 }
 
 @media (max-width: 48rem) {
