@@ -12,7 +12,7 @@ import { siteConfig } from "../config/site";
   <section class="join-hero">
     <div class="container reading-width">
       <p class="eyebrow">Participer à la construction</p>
-      <h1>Rejoindre la construction d’Orée</h1>
+      <h1>Aider à construire Orée, aujourd’hui</h1>
       <p class="repere" aria-label="Position dans le site">Vous êtes ici · Rejoindre</p>
       <p class="introduction">
         Orée est au point zéro : la marketplace n’est pas ouverte, il n’y a ni
@@ -21,7 +21,7 @@ import { siteConfig } from "../config/site";
         suivre son évolution.
       </p>
       <p class="introduction">
-        Les quatre rôles ci-dessous servent à rendre les possibilités plus
+        Les rôles détaillés plus bas servent à rendre les possibilités plus
         lisibles. Ils ne constituent ni une offre d’emploi, ni une promesse de
         rémunération, ni une place acquise dans le projet.
       </p>
@@ -33,53 +33,52 @@ import { siteConfig } from "../config/site";
       <SealMark size={260} variant="negatif" />
     </div>
     <div class="container reading-width">
-      <h2>Trouver ta place dans une construction au point zéro</h2>
+      <h2>Choisir une intention</h2>
       <p>
-        Choisis la section qui te ressemble le plus, ou lis-les dans l’ordre.
-        Chaque rôle distingue volontairement l’horizon du projet, ce qui peut
-        être utile maintenant et l’action concrète disponible aujourd’hui.
+        Que tu saches déjà ce qui te correspond ou non, ces quatre intentions
+        aident à trouver la bonne porte d’entrée.
       </p>
 
-      <ul class="anchor-list">
-        <li><a href="#batisseur">Bâtisseur</a></li>
-        <li><a href="#artiste-ou-artisan">Artiste ou Artisan</a></li>
-        <li><a href="#eclaireur">Éclaireur</a></li>
-        <li><a href="#echo">Écho</a></li>
+      <ul class="intent-grid">
+        <li>
+          <strong>Partager une expérience de création</strong>
+          <p>
+            Tu crées et tu rencontres des difficultés que le projet devrait
+            comprendre.
+          </p>
+          <a href="#artiste-ou-artisan">Voir le rôle Artiste ou Artisan →</a>
+        </li>
+        <li>
+          <strong>Apporter une expertise</strong>
+          <p>Technique, juridique, fiscale ou opérationnelle.</p>
+          <a href="#batisseur">Voir le rôle Bâtisseur →</a>
+        </li>
+        <li>
+          <strong>Aider à repérer ou mettre en lumière</strong>
+          <p>
+            Le repérage des talents ou leur mise en lumière auprès d’un
+            public.
+          </p>
+          <a href="#eclaireur">Voir les rôles Éclaireur et Écho →</a>
+        </li>
+        <li>
+          <strong>Poser une question, ou simplement suivre</strong>
+          <p>Tu préfères observer la construction ou échanger directement.</p>
+          <a href={siteConfig.links.contact}>Écrire à Orée →</a>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="section-block ecosystem-detailed">
-    <div class="container reading-width">
-      <h2>Une carte pour penser la suite, pas pour raconter un écosystème déjà en place</h2>
-      <p>
-        Orée est au point zéro. Cette carte ne décrit ni une communauté existante ni un parcours déjà opérationnel. Elle aide à nommer les personnes et les liens que le projet cherche à mieux comprendre avant de les construire.
+  <section class="section-block roles-intro-section">
+    <div class="container">
+      <h2>Comprendre les rôles</h2>
+      <p class="roles-lead reading-width">
+        Lecture progressive : chaque rôle explique d’abord ce dont le projet a
+        besoin aujourd’hui, puis l’horizon qu’il pourrait prendre. Une
+        situation illustrative facultative complète certains rôles pour qui
+        veut aller plus loin.
       </p>
-      <div class="ecosystem-detailed-blocks">
-        <div>
-          <strong>Le Cœur — les personnes qui créent et celles qui pourront découvrir</strong>
-          <p>Une personne qui crée ne devrait pas avoir à porter seule chaque étape : montrer son travail, le présenter, le vendre, répondre aux contraintes qui l’entourent. À l’autre bout, une personne qui cherche une création originale a besoin de pouvoir la découvrir avec confiance. Orée cherche à imaginer ce lien, sans prétendre qu’il existe déjà.</p>
-        </div>
-        <div>
-          <strong>Les Accélérateurs — Éclaireurs et Échos</strong>
-          <p>Un talent devient parfois visible parce que quelqu’un l’a repéré, puis parce qu’une autre personne a choisi de le recommander. Les Éclaireurs et les Échos sont deux figures de conception pour réfléchir à ces passages : la découverte, la médiation, la mise en lumière et la juste reconnaissance de ce travail.</p>
-        </div>
-        <div>
-          <strong>Les Fondations — Bâtisseurs</strong>
-          <p>Le projet ne pourra avancer que si ses choix techniques, juridiques, fiscaux, opérationnels et logistiques sont regardés avec exigence. Les Bâtisseurs ne sont pas une équipe constituée : ils désignent les compétences et les questions que le projet devra réunir ou instruire.</p>
-        </div>
-      </div>
-      <p class="ecosystem-closure">
-        Tu n’as pas besoin d’entrer parfaitement dans une case. Si une de ces tensions te parle, tu peux partager ton expérience, ton regard ou une question. Cela ouvre une conversation ; cela ne crée ni mission, ni partenariat, ni engagement réciproque.
-      </p>
-
-      <div class="persona">
-        <h3>Claire cherche une création à découvrir avec confiance</h3>
-        <p><strong>Persona de conception — situation illustrative.</strong> Ce scénario ne décrit ni une personne réelle, ni un témoignage, ni une expérience vécue sur Orée.</p>
-        <p>Claire représente une personne qui pourrait un jour chercher une création originale, un savoir-faire et l’histoire qui l’accompagne. Elle n’est ni cliente d’Orée ni preuve d’une demande existante. Sa place dans cette carte sert à rappeler que la découverte et la confiance devront être pensées sans effacer le travail des personnes qui créent.</p>
-        <p><strong>Tension illustrée</strong></p>
-        <p>Réfléchir à une future expérience de découverte sans annoncer de catalogue, d’achat ou de service déjà disponible.</p>
-      </div>
     </div>
   </section>
 
@@ -87,6 +86,13 @@ import { siteConfig } from "../config/site";
     <section id="batisseur" class="role-section role-section--batisseur">
       <div class="container reading-width">
         <h2><RoleIcon role="batisseur" size={28} decorative /> Bâtisseur</h2>
+
+        <h3>Ce dont le projet a besoin maintenant</h3>
+        <p>
+          Des personnes capables de regarder un problème précis, de signaler
+          une contrainte, de proposer une approche proportionnée ou d’indiquer
+          ce qui demande une expertise que le projet ne possède pas encore.
+        </p>
 
         <h3>Ce que ce rôle pourrait devenir</h3>
         <p>
@@ -96,19 +102,11 @@ import { siteConfig } from "../config/site";
           ils ne décrivent pas un statut existant aujourd’hui.
         </p>
 
-        <h3>Ce dont le projet a besoin maintenant</h3>
-        <p>
-          Des personnes capables de regarder un problème précis, de signaler une
-          contrainte, de proposer une approche proportionnée ou d’indiquer ce
-          qui demande une expertise que le projet ne possède pas encore.
-        </p>
-
         <h3>Ce que tu peux faire aujourd’hui</h3>
         <p>
           Décris le domaine dans lequel tu pourrais aider et le type de
-          contribution que tu envisages. Le formulaire sert à ouvrir un premier
-          échange ; il ne garantit ni mission, ni calendrier, ni engagement
-          réciproque.
+          contribution que tu envisages. Le formulaire sert à ouvrir un
+          premier échange.
         </p>
 
         <div class="role-action">
@@ -116,24 +114,12 @@ import { siteConfig } from "../config/site";
             >Proposer une contribution de Bâtisseur</a
           >
         </div>
-        <p class="context-note">
-          Le formulaire ouvre un premier échange sans garantie de mission,
-          rémunération, calendrier ou engagement.
-        </p>
       </div>
     </section>
 
     <section id="artiste-ou-artisan" class="role-section role-section--artisan">
       <div class="container reading-width">
         <h2><RoleIcon role="artisan" size={28} decorative /> Artiste ou Artisan</h2>
-
-        <h3>Ce que ce rôle pourrait devenir</h3>
-        <p>
-          Les artistes et artisans pourraient, lorsque la marketplace existera,
-          aider à éprouver la manière dont le projet accueille les créations, la
-          vente et les contraintes administratives. Aucun rôle de vendeur, de
-          pilote ou d’utilisateur n’est ouvert aujourd’hui.
-        </p>
 
         <h3>Ce dont le projet a besoin maintenant</h3>
         <p>
@@ -143,20 +129,41 @@ import { siteConfig } from "../config/site";
           d’utilisateurs.
         </p>
 
-        <div class="persona">
-          <h3>Marc cherche à créer sans devoir tout porter seul</h3>
-          <p><strong>Persona de conception — situation illustrative.</strong> Ce scénario ne décrit ni une personne réelle, ni un témoignage, ni une expérience vécue sur Orée.</p>
-          <p>Marc représente une personne qui crée, mais qui peut se heurter à tout ce qui entoure la création : la montrer, la présenter, la vendre ou comprendre les démarches nécessaires. Il n’est ni artiste inscrit sur Orée ni créateur pilote. Ce persona rappelle qu’un projet utile commence par écouter ces tensions avant de prétendre les résoudre.</p>
-          <p><strong>Tension illustrée</strong></p>
-          <p>Accueillir un retour sur la création, la visibilité ou l’administratif sans promettre l’accès à une marketplace.</p>
-        </div>
+        <h3>Ce que ce rôle pourrait devenir</h3>
+        <p>
+          Les artistes et artisans pourraient, lorsque la marketplace existera,
+          aider à éprouver la manière dont le projet accueille les créations, la
+          vente et les contraintes administratives. Aucun rôle de vendeur, de
+          pilote ou d’utilisateur n’est ouvert aujourd’hui.
+        </p>
+
+        <details class="persona">
+          <summary
+            >Situation illustrative — Marc
+            <span class="persona-optional">(facultatif)</span></summary
+          >
+          <div class="persona-body">
+            <p>
+              Ce scénario ne décrit ni une personne réelle, ni un témoignage,
+              ni une expérience vécue sur Orée. Marc représente une personne qui
+              crée, mais qui peut se heurter à tout ce qui entoure la
+              création : la montrer, la présenter, la vendre ou comprendre les
+              démarches nécessaires. Il n’est ni artiste inscrit sur Orée ni
+              créateur pilote.
+            </p>
+            <p><strong>Tension illustrée</strong></p>
+            <p>
+              Accueillir un retour sur la création, la visibilité ou
+              l’administratif sans promettre l’accès à une marketplace.
+            </p>
+          </div>
+        </details>
 
         <h3>Ce que tu peux faire aujourd’hui</h3>
         <p>
-          Partager ton expérience, signaler ton intérêt pour suivre le projet ou
-          indiquer si tu souhaiterais être recontacté lorsque le contexte sera
-          plus clair. Cela n’ouvre pas l’accès à une marketplace ni à une mise
-          en vente.
+          Partager ton expérience, signaler ton intérêt pour suivre le projet
+          ou indiquer si tu souhaiterais être recontacté lorsque le contexte
+          sera plus clair.
         </p>
 
         <div class="role-action">
@@ -164,16 +171,19 @@ import { siteConfig } from "../config/site";
             >Partager ton intérêt ou ton expérience</a
           >
         </div>
-        <p class="context-note">
-          Le formulaire ouvre un premier échange sans garantie de mission,
-          rémunération, calendrier ou engagement.
-        </p>
       </div>
     </section>
 
     <section id="eclaireur" class="role-section role-section--eclaireur">
       <div class="container reading-width">
         <h2><RoleIcon role="eclaireur" size={28} decorative /> Éclaireur</h2>
+
+        <h3>Ce dont le projet a besoin maintenant</h3>
+        <p>
+          Un regard de terrain : ce qui aide une personne créative à se sentir
+          légitime, les lieux ou réseaux où le talent reste peu visible, et les
+          conditions nécessaires pour qu’une mise en relation reste juste.
+        </p>
 
         <h3>Ce que ce rôle pourrait devenir</h3>
         <p>
@@ -183,26 +193,30 @@ import { siteConfig } from "../config/site";
           projet futur : elles ne sont pas actives aujourd’hui.
         </p>
 
-        <h3>Ce dont le projet a besoin maintenant</h3>
-        <p>
-          Un regard de terrain : ce qui aide une personne créative à se sentir
-          légitime, les lieux ou réseaux où le talent reste peu visible, et les
-          conditions nécessaires pour qu’une mise en relation reste juste.
-        </p>
-
-        <div class="persona">
-          <h3>Camille repère ce que d’autres ne voient pas encore</h3>
-          <p><strong>Persona de conception — situation illustrative.</strong> Ce scénario ne décrit ni une personne réelle, ni un témoignage, ni une expérience vécue sur Orée.</p>
-          <p>Camille représente une personne attentive aux talents discrets, aux ateliers, aux réseaux locaux et aux occasions de mise en relation. Ce persona aide à explorer une question : comment reconnaître la valeur d’un regard de terrain sans inventer de dispositif de recommandation ou de rémunération déjà actif ?</p>
-          <p><strong>Tension illustrée</strong></p>
-          <p>Penser une mise en lumière juste sans prétendre qu’un système d’attribution ou de commission existe déjà.</p>
-        </div>
+        <details class="persona">
+          <summary
+            >Situation illustrative — Camille
+            <span class="persona-optional">(facultatif)</span></summary
+          >
+          <div class="persona-body">
+            <p>
+              Ce scénario ne décrit ni une personne réelle, ni un témoignage,
+              ni une expérience vécue sur Orée. Camille représente une personne
+              attentive aux talents discrets, aux ateliers, aux réseaux locaux
+              et aux occasions de mise en relation.
+            </p>
+            <p><strong>Tension illustrée</strong></p>
+            <p>
+              Penser une mise en lumière juste sans prétendre qu’un système
+              d’attribution ou de commission existe déjà.
+            </p>
+          </div>
+        </details>
 
         <h3>Ce que tu peux faire aujourd’hui</h3>
         <p>
           Indiquer ce que tu observes, les communautés ou contextes que tu
-          connais et la manière dont tu aimerais contribuer. Aucun code,
-          commission ou dispositif de suivi n’est proposé à ce stade.
+          connais et la manière dont tu aimerais contribuer.
         </p>
 
         <div class="role-action">
@@ -210,24 +224,12 @@ import { siteConfig } from "../config/site";
             >Partager un regard d’Éclaireur</a
           >
         </div>
-        <p class="context-note">
-          Le formulaire ouvre un premier échange sans garantie de mission,
-          rémunération, calendrier ou engagement.
-        </p>
       </div>
     </section>
 
     <section id="echo" class="role-section role-section--echo">
       <div class="container reading-width">
         <h2><RoleIcon role="echo" size={28} decorative /> Écho</h2>
-
-        <h3>Ce que ce rôle pourrait devenir</h3>
-        <p>
-          Les Échos pourraient aider à penser la recommandation, la médiation et
-          la mise en lumière de créations auprès de communautés pertinentes. Il
-          n’existe actuellement ni catalogue, ni vitrine, ni vente générée par
-          Orée.
-        </p>
 
         <h3>Ce dont le projet a besoin maintenant</h3>
         <p>
@@ -236,19 +238,38 @@ import { siteConfig } from "../config/site";
           des personnes qui créent.
         </p>
 
-        <div class="persona">
-          <h3>Julien sait recommander sans réduire une création à une vitrine</h3>
-          <p><strong>Persona de conception — situation illustrative.</strong> Ce scénario ne décrit ni une personne réelle, ni un témoignage, ni une expérience vécue sur Orée.</p>
-          <p>Julien représente une personne qui aime raconter ce qui mérite d’être découvert et qui s’interroge sur la transparence d’une recommandation. Ce persona permet à Orée de réfléchir au rôle de la curation, de la confiance et de la médiation avant de concevoir des outils ou des parcours.</p>
-          <p><strong>Tension illustrée</strong></p>
-          <p>Réfléchir à la recommandation sans annoncer de catalogue, de vitrine, d’audience ou de vente.</p>
-        </div>
+        <h3>Ce que ce rôle pourrait devenir</h3>
+        <p>
+          Les Échos pourraient aider à penser la recommandation, la médiation
+          et la mise en lumière de créations auprès de communautés pertinentes.
+          Il n’existe actuellement ni catalogue, ni vitrine, ni vente générée
+          par Orée.
+        </p>
+
+        <details class="persona">
+          <summary
+            >Situation illustrative — Julien
+            <span class="persona-optional">(facultatif)</span></summary
+          >
+          <div class="persona-body">
+            <p>
+              Ce scénario ne décrit ni une personne réelle, ni un témoignage,
+              ni une expérience vécue sur Orée. Julien représente une personne
+              qui aime raconter ce qui mérite d’être découvert et qui
+              s’interroge sur la transparence d’une recommandation.
+            </p>
+            <p><strong>Tension illustrée</strong></p>
+            <p>
+              Réfléchir à la recommandation sans annoncer de catalogue, de
+              vitrine, d’audience ou de vente.
+            </p>
+          </div>
+        </details>
 
         <h3>Ce que tu peux faire aujourd’hui</h3>
         <p>
           Expliquer ce que tu partages déjà, les communautés que tu connais ou
-          les questions que tu juges importantes. Cette démarche manifeste un
-          intérêt ; elle ne crée ni partenariat ni rémunération.
+          les questions que tu juges importantes.
         </p>
 
         <div class="role-action">
@@ -256,21 +277,23 @@ import { siteConfig } from "../config/site";
             >Partager un regard d’Écho</a
           >
         </div>
-        <p class="context-note">
-          Le formulaire ouvre un premier échange sans garantie de mission,
-          rémunération, calendrier ou engagement.
-        </p>
       </div>
     </section>
   </div>
 
   <section class="join-closure">
     <div class="container reading-width">
-      <h2>Une autre façon de contribuer</h2>
+      <h2>Limites communes et alternatives</h2>
       <p>
-        Tu ne te reconnais pas encore dans ces rôles, ou tu préfères commencer
-        par une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>.
-        Si tu souhaites seulement recevoir les nouvelles publiques du projet, <a
+        Quel que soit le rôle envisagé, aucune contribution proposée ici
+        n’ouvre de mission, de rémunération, de commission, de place garantie
+        ou de réponse automatique. Chaque formulaire sert seulement à ouvrir
+        un premier échange.
+      </p>
+      <p class="context-note">
+        Tu ne te reconnais pas dans ces rôles, ou tu préfères commencer par
+        une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>.
+        Si tu préfères seulement recevoir les nouvelles publiques du projet, <a
           href={siteConfig.links.follow}>suis l’aventure</a
         >.
       </p>
@@ -326,41 +349,46 @@ import { siteConfig } from "../config/site";
     }
   }
 
-  .anchor-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    margin-top: var(--space-6);
+  .intent-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: var(--space-6) 0 0;
     padding: 0;
     list-style: none;
   }
 
-  .anchor-list a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding-inline: var(--space-3);
+  .intent-grid li {
+    padding: var(--space-4);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background: var(--color-canvas);
-    color: var(--color-canopy);
-    font-weight: 650;
-    text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast);
   }
 
-  .anchor-list a:hover {
-    background: var(--color-surface-soft);
-    border-color: var(--color-canopy);
+  .intent-grid strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-canopy);
+  }
+
+  .intent-grid p {
+    margin-bottom: var(--space-3);
+    color: var(--color-text-muted);
   }
 
   @media (min-width: 48rem) {
-    .anchor-list {
-      flex-direction: row;
-      flex-wrap: wrap;
+    .intent-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  .roles-intro-section {
+    padding-block: var(--space-8) 0;
+  }
+
+  .roles-lead {
+    margin-top: var(--space-2);
+    color: var(--color-text-muted);
   }
 
   .roles-container {
@@ -468,31 +496,8 @@ import { siteConfig } from "../config/site";
     margin-bottom: var(--space-4);
   }
 
-  .ecosystem-detailed {
-    background: var(--color-surface);
-  }
-
-  .ecosystem-detailed-blocks {
-    display: grid;
-    gap: var(--space-6);
-    margin-block: var(--space-6);
-  }
-
-  .ecosystem-detailed-blocks > div {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    background: var(--color-canvas);
-  }
-
-  .ecosystem-detailed-blocks strong {
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-canopy);
-  }
-
-  .ecosystem-closure {
-    margin-top: var(--space-4);
+  .join-closure p {
+    margin-bottom: var(--space-3);
   }
 
   .persona {
@@ -503,8 +508,23 @@ import { siteConfig } from "../config/site";
     background: var(--color-canvas);
   }
 
-  .persona h3 {
-    margin-bottom: var(--space-2);
+  .persona summary {
+    cursor: pointer;
+    font-weight: 700;
     color: var(--color-canopy);
+  }
+
+  .persona[open] summary {
+    margin-bottom: var(--space-3);
+  }
+
+  .persona-optional {
+    font-weight: 400;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .persona-body p {
+    margin-bottom: var(--space-2);
   }
 </style>
