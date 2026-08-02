@@ -62,7 +62,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
         Les Bâtisseurs construisent ce qui doit exister avant que l’écosystème
         puisse fonctionner à grande échelle, dans trois domaines distincts.
       </p>
-      <div class="role-grid">
+      <div class="role-grid role-grid--triple">
         <div class="role-item">
           <RoleIcon role="batisseur" size={40} />
           <div>
@@ -137,6 +137,11 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
 
   <section class="section-block point-zero-block">
     <div class="container reading-width">
+      <p>
+        Se reconnaître dans un de ces rôles est la première étape : Orée a
+        besoin de personnes qui créent, qui découvrent, qui repèrent des
+        talents et qui bâtissent les fondations, avant de pouvoir grandir.
+      </p>
       <div class="actions">
         <a class="button button-primary" href="/rejoindre/">Participer</a>
         <a class="button button-secondary" href="/projet/">Comprendre pourquoi Orée existe</a>
@@ -248,6 +253,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
+    margin-top: var(--space-6);
   }
 
   .button {
@@ -289,6 +295,10 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
   @media (min-width: 48rem) {
     .role-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .role-grid--triple {
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .persona-grid {
