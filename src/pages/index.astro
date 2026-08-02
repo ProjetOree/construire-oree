@@ -72,7 +72,7 @@ import { siteConfig } from "../config/site";
     </div>
     <div class="container">
       <div class="reading-width">
-        <h2>Le problème, et le renversement cherché</h2>
+        <h2>Le problème et le renversement cherché</h2>
         <p>
           Vendre son art ne devrait pas exiger de devenir, en même temps,
           communicant, commerçant, spécialiste de l’administratif et
@@ -95,7 +95,7 @@ import { siteConfig } from "../config/site";
   <section class="section-block ecosystem-card">
     <div class="container">
       <div class="reading-width">
-        <h2>L’écosystème, en un seul schéma</h2>
+        <h2>L’écosystème en un seul schéma</h2>
         <p>
           Orée est au point zéro. L’écosystème présenté ici n’existe pas
           encore : il sert à rendre lisible la direction du projet et les
@@ -141,6 +141,10 @@ import { siteConfig } from "../config/site";
   <section class="section-block">
     <div class="container">
       <h2>Choisir sa profondeur de lecture</h2>
+      <p class="depth-intro reading-width">
+        Selon ce que tu cherches, quatre chemins mènent plus loin dans le
+        site.
+      </p>
       <ul class="depth-grid">
         <li>
           <strong>Comprendre la vision</strong>
@@ -170,12 +174,12 @@ import { siteConfig } from "../config/site";
     <div class="container">
       <div class="reading-width">
         <h2>Participer ou suivre</h2>
-        <p>
-          Tu veux comprendre où ta contribution pourrait être utile ?
+        <p>Tu veux comprendre où ta contribution pourrait être utile ?</p>
+        <div class="actions">
           <a class="button button-primary" href="/rejoindre/"
             >Rejoins la construction</a
-          >.
-        </p>
+          >
+        </div>
         <p class="context-note">
           Tu préfères simplement être tenu au courant ?
           <a href={siteConfig.links.follow}>Suis l’aventure</a>. Une question
@@ -358,6 +362,11 @@ import { siteConfig } from "../config/site";
     margin-top: var(--space-4);
   }
 
+  .depth-intro {
+    margin-bottom: var(--space-6);
+    color: var(--color-text-muted);
+  }
+
   .depth-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -383,10 +392,6 @@ import { siteConfig } from "../config/site";
   .depth-grid p {
     margin-bottom: var(--space-3);
     color: var(--color-text-muted);
-  }
-
-  .closure-section .button {
-    margin-top: var(--space-2);
   }
 
   @media (min-width: 48rem) {
