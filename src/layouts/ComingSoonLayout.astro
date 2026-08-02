@@ -123,10 +123,15 @@ const {
    * .bloc-plein h1 fixe déjà le Lin sur ce titre, donc une redéclaration
    * ici serait redondante sans le moindre effet visuel (nettoyage signalé
    * lors de la revue critique du Designer du Seuil).
+   *
+   * L'accent est porté par .container plutôt que par la section pleine
+   * largeur, pour ne pas décaler le centrage du contenu par rapport aux
+   * autres blocs de la page (même correction que .bloc-inverse, peaufinage
+   * du Lot 5, 2 août 2026).
    */
-  .coming-soon--rigueur {
+  .coming-soon--rigueur .container {
     border-left: 4px solid var(--register-accent-rigueur);
-    padding-left: calc(var(--page-gutter) - 4px);
+    padding-left: var(--space-6);
   }
 
   .coming-soon--rigueur .eyebrow,
