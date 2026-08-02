@@ -28,15 +28,15 @@ function isCurrent(path: string) {
     <!-- Desktop Navigation -->
     <div class="desktop-nav-container">
       <nav aria-label="Navigation principale" class="main-nav">
-        <a href="/" aria-current={isCurrent("/")}>Accueil</a>
+        <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
+        <a href="/ecosysteme/" aria-current={isCurrent("/ecosysteme/")}>Écosystème</a>
+        <a href="/avancement/" aria-current={isCurrent("/avancement/")}>Avancement</a>
+        <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
         <a
           href="/rejoindre/"
           class="nav-join"
-          aria-current={isCurrent("/rejoindre/")}>Rejoindre</a
+          aria-current={isCurrent("/rejoindre/")}>Participer</a
         >
-        <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
-        <a href="/roadmap/" aria-current={isCurrent("/roadmap/")}>Roadmap</a>
-        <a href="/a-propos/" aria-current={isCurrent("/a-propos/")}>À propos</a>
       </nav>
       <span class="phase" title="Phase actuelle du projet : point zéro" aria-label="Phase actuelle du projet : point zéro">
         <span class="phase-dot" aria-hidden="true"></span>
@@ -49,11 +49,11 @@ function isCurrent(path: string) {
       <summary class="menu-button">Menu</summary>
       <div class="mobile-nav-content">
         <nav aria-label="Navigation mobile" class="main-nav-mobile">
-          <a href="/" aria-current={isCurrent("/")}>Accueil</a>
-          <a href="/rejoindre/" aria-current={isCurrent("/rejoindre/")}>Rejoindre</a>
+          <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
+          <a href="/ecosysteme/" aria-current={isCurrent("/ecosysteme/")}>Écosystème</a>
+          <a href="/avancement/" aria-current={isCurrent("/avancement/")}>Avancement</a>
           <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
-          <a href="/roadmap/" aria-current={isCurrent("/roadmap/")}>Roadmap</a>
-          <a href="/a-propos/" aria-current={isCurrent("/a-propos/")}>À propos</a>
+          <a href="/rejoindre/" aria-current={isCurrent("/rejoindre/")}>Participer</a>
         </nav>
         <div class="mobile-phase">
           <span class="phase" title="Phase actuelle du projet : point zéro" aria-label="Phase actuelle du projet : point zéro">
