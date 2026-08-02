@@ -1,0 +1,298 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RoleIcon from "../../components/brand/RoleIcon.astro";
+---
+
+<BaseLayout
+  title="Écosystème d’Orée : relations envisagées"
+  description="Le cœur, les relais humains, les fondations et les horizons collectifs que l’écosystème d’Orée cherche à construire, rôle par rôle."
+>
+  <section class="hero-section">
+    <div class="container reading-width">
+      <p class="eyebrow">Écosystème</p>
+      <h1>L’écosystème qu’Orée cherche à construire</h1>
+      <p class="repere" aria-label="Position dans le site">Vous êtes ici · Écosystème</p>
+      <p class="introduction">
+        Orée est au point zéro : aucun de ces rôles n’est aujourd’hui actif
+        à grande échelle. Cette page décrit la structure envisagée, du cœur
+        de la marketplace jusqu’aux horizons collectifs les plus lointains.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>Le Cœur</h2>
+      <p>
+        Au centre de l’écosystème se trouvent deux gestes simples : créer et
+        découvrir. Une personne crée une œuvre originale ; une autre la
+        découvre et choisit de la soutenir. Tout le reste de l’écosystème
+        existe pour rendre ce geste plus simple et plus sûr, sans jamais le
+        remplacer.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block bloc-plein texture-legere">
+    <div class="container reading-width">
+      <h2>Les relais humains</h2>
+      <div class="role-grid">
+        <div class="role-item">
+          <RoleIcon role="eclaireur" size={40} />
+          <div>
+            <p class="role-name">Les Éclaireurs</p>
+            <p>Ils repèrent des talents qui n’ont pas encore osé se présenter, et leur ouvrent une porte.</p>
+          </div>
+        </div>
+        <div class="role-item">
+          <RoleIcon role="echo" size={40} />
+          <div>
+            <p class="role-name">Les Échos</p>
+            <p>Ils font connaître les créations et les histoires d’Orée sans se substituer aux personnes qui créent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>Les fondations</h2>
+      <p>
+        Les Bâtisseurs construisent ce qui doit exister avant que l’écosystème
+        puisse fonctionner à grande échelle, dans trois domaines distincts.
+      </p>
+      <div class="role-grid">
+        <div class="role-item">
+          <RoleIcon role="batisseur" size={40} />
+          <div>
+            <p class="role-name">Tech et Données</p>
+            <p>Le site, les outils internes et la fiabilité des données de construction.</p>
+          </div>
+        </div>
+        <div class="role-item">
+          <RoleIcon role="batisseur" size={40} />
+          <div>
+            <p class="role-name">Légal et Fiscal</p>
+            <p>Les statuts, les contrats et le cadre fiscal qui restent à valider (voir Fondations).</p>
+          </div>
+        </div>
+        <div class="role-item">
+          <RoleIcon role="batisseur" size={40} />
+          <div>
+            <p class="role-name">Opérations et Logistique</p>
+            <p>Le paiement, la facturation et la livraison, encore à concevoir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block ess-block">
+    <div class="container reading-width">
+      <h2>Les horizons collectifs</h2>
+      <p>
+        Sous condition que le modèle se valide, l’écosystème pourrait
+        s’organiser en Clairières — des communautés locales — puis converger
+        vers La Canopée, un horizon coopératif où chaque personne pèserait
+        une voix, indépendamment de sa contribution financière.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>Profils de conception</h2>
+      <p class="context-note">
+        Lecture facultative. Ces profils sont des personas de conception —
+        des situations illustratives utilisées pour penser les rôles
+        ci-dessus — et non des personnes réelles ni des statistiques.
+      </p>
+      <details class="personas-details">
+        <summary>Voir les quatre profils de conception</summary>
+        <div class="details-content persona-grid">
+          <div class="persona">
+            <p class="persona-name">Marc — Persona de conception</p>
+            <p>Une personne qui crée depuis longtemps, mais qui n’a jamais osé vendre par peur du jugement.</p>
+          </div>
+          <div class="persona">
+            <p class="persona-name">Claire — Persona de conception</p>
+            <p>Une personne qui découvre des créations et cherche à soutenir directement qui les fait.</p>
+          </div>
+          <div class="persona">
+            <p class="persona-name">Camille — Persona de conception</p>
+            <p>Une personne qui repère des talents autour d’elle et pourrait devenir Éclaireuse.</p>
+          </div>
+          <div class="persona">
+            <p class="persona-name">Julien — Persona de conception</p>
+            <p>Une personne aux compétences techniques qui pourrait rejoindre les Bâtisseurs.</p>
+          </div>
+        </div>
+        <p class="context-note">
+          Retrouver ces situations en détail sur la page <a href="/rejoindre/">Rejoindre</a>.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section-block point-zero-block">
+    <div class="container reading-width">
+      <div class="actions">
+        <a class="button button-primary" href="/rejoindre/">Participer</a>
+        <a class="button button-secondary" href="/projet/">Comprendre pourquoi Orée existe</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .introduction {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .section-block {
+    padding-block: var(--space-12);
+  }
+
+  .section-block h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .role-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .role-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+
+  .role-name {
+    margin-bottom: var(--space-1);
+    color: var(--color-canopy);
+    font-weight: 700;
+  }
+
+  .role-item p:last-child {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .context-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .personas-details {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .personas-details summary {
+    font-weight: 650;
+    cursor: pointer;
+    color: var(--color-canopy);
+  }
+
+  .details-content {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .persona-grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .persona-name {
+    margin-bottom: var(--space-1);
+    font-weight: 700;
+    color: var(--color-canopy);
+  }
+
+  .persona p:last-child {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .point-zero-block {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  @media (min-width: 48rem) {
+    .role-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .persona-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
