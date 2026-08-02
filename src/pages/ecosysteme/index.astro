@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RoleIcon from "../../components/brand/RoleIcon.astro";
+import SealMark from "../../components/brand/SealMark.astro";
 ---
 
 <BaseLayout
@@ -34,6 +35,9 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
   </section>
 
   <section class="section-block bloc-plein texture-legere">
+    <div class="relais-seal" aria-hidden="true">
+      <SealMark size={200} variant="negatif" />
+    </div>
     <div class="container reading-width">
       <h2>Les relais humains</h2>
       <div class="role-grid">
@@ -180,6 +184,21 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
 
   .section-block h2 {
     margin-bottom: var(--space-6);
+  }
+
+  .relais-seal {
+    position: absolute;
+    bottom: -2rem;
+    left: -3rem;
+    z-index: 0;
+    opacity: 0.14;
+    pointer-events: none;
+  }
+
+  @media (max-width: 48rem) {
+    .relais-seal {
+      display: none;
+    }
   }
 
   .role-grid {
