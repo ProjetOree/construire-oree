@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SealMark from "../../components/brand/SealMark.astro";
 ---
 
 <BaseLayout
@@ -7,7 +8,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   description="Les contraintes techniques, juridiques, fiscales et opérationnelles qu’Orée doit résoudre avant d’opérer, avec le statut de validation de chaque point."
   register="rigueur"
 >
-  <section class="hero-section">
+  <section class="hero-section hero-section--sceau">
+    <div class="hero-seal" aria-hidden="true">
+      <SealMark size={160} variant="filigrane" />
+    </div>
     <div class="container reading-width">
       <p class="eyebrow">Fondations</p>
       <h1>Ce qu’Orée doit résoudre avant d’opérer</h1>
@@ -110,6 +114,30 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
   }
 
+  .hero-section--sceau {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-seal {
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-section--sceau .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 48rem) {
+    .hero-seal {
+      display: none;
+    }
+  }
+
   .eyebrow {
     margin-bottom: var(--space-4);
     color: var(--color-bark);
@@ -169,6 +197,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     margin-top: var(--space-6);
     padding: var(--space-4);
     border: 1px solid var(--color-border);
+    border-left: 3px solid var(--register-accent-rigueur);
     border-radius: var(--radius-md);
     background: var(--color-canvas);
   }
