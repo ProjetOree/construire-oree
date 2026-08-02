@@ -59,10 +59,11 @@ import { siteConfig } from "../config/site";
             Le repérage des talents ou leur mise en lumière auprès d’un
             public.
           </p>
-          <a href="#eclaireur">Voir les rôles Éclaireur et Écho →</a>
+          <a href="#eclaireur">Voir le rôle Éclaireur →</a>
+          <a href="#echo">Voir le rôle Écho →</a>
         </li>
         <li>
-          <strong>Poser une question, ou simplement suivre</strong>
+          <strong>Poser une question ou simplement suivre</strong>
           <p>Tu préfères observer la construction ou échanger directement.</p>
           <a href={siteConfig.links.contact}>Écrire à Orée →</a>
         </li>
@@ -285,14 +286,13 @@ import { siteConfig } from "../config/site";
     <div class="container reading-width">
       <h2>Limites communes et alternatives</h2>
       <p>
-        Quel que soit le rôle envisagé, aucune contribution proposée ici
-        n’ouvre de mission, de rémunération, de commission, de place garantie
-        ou de réponse automatique. Chaque formulaire sert seulement à ouvrir
-        un premier échange.
+        Quel que soit le rôle envisagé, aucune contribution proposée ici ne
+        garantit de mission, de rémunération, de commission, de place ou de
+        réponse. Chaque formulaire sert seulement à ouvrir un premier échange.
       </p>
       <p class="context-note">
         Tu ne te reconnais pas dans ces rôles, ou tu préfères commencer par
-        une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>.
+        une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>.
         Si tu préfères seulement recevoir les nouvelles publiques du projet, <a
           href={siteConfig.links.follow}>suis l’aventure</a
         >.
@@ -374,6 +374,10 @@ import { siteConfig } from "../config/site";
   .intent-grid p {
     margin-bottom: var(--space-3);
     color: var(--color-text-muted);
+  }
+
+  .intent-grid li a + a {
+    margin-left: var(--space-3);
   }
 
   @media (min-width: 48rem) {
