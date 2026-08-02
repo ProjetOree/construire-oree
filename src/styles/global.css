@@ -315,6 +315,7 @@ pre {
 .bloc-inverse a {
   color: var(--color-linen);
   text-decoration-color: var(--register-accent-rigueur);
+  text-decoration-thickness: 0.12em;
 }
 
 .bloc-inverse a:hover {
