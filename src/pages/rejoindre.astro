@@ -68,6 +68,30 @@ import { siteConfig } from "../config/site";
           <a href={siteConfig.links.contact}>Écrire à Orée →</a>
         </li>
       </ul>
+
+      <details class="persona claire-persona">
+        <summary
+          >Situation illustrative — Claire
+          <span class="persona-optional">(facultatif)</span></summary
+        >
+        <div class="persona-body">
+          <p>
+            Ce scénario ne décrit ni une personne réelle, ni un témoignage,
+            ni une expérience vécue sur Orée. Claire représente une personne
+            qui pourrait un jour chercher une création originale, un
+            savoir-faire et l’histoire qui l’accompagne. Elle n’est ni
+            cliente d’Orée ni preuve d’une demande existante. Sa place dans
+            cette carte sert à rappeler que la découverte et la confiance
+            devront être pensées sans effacer le travail des personnes qui
+            créent.
+          </p>
+          <p><strong>Tension illustrée</strong></p>
+          <p>
+            Réfléchir à une future expérience de découverte sans annoncer de
+            catalogue, d’achat ou de service déjà disponible.
+          </p>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -292,7 +316,7 @@ import { siteConfig } from "../config/site";
       </p>
       <p class="context-note">
         Tu ne te reconnais pas dans ces rôles, ou tu préfères commencer par
-        une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>.
+        une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>.
         Si tu préfères seulement recevoir les nouvelles publiques du projet, <a
           href={siteConfig.links.follow}>suis l’aventure</a
         >.
@@ -384,6 +408,11 @@ import { siteConfig } from "../config/site";
     .intent-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  .claire-persona {
+    position: relative;
+    z-index: 1;
   }
 
   .roles-intro-section {
