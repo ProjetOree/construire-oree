@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SealMark from "../../components/brand/SealMark.astro";
 ---
 
 <BaseLayout
@@ -39,7 +40,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="section-block bloc-plein texture-legere">
+  <section class="section-block bloc-inverse">
+    <div class="seal-corner" aria-hidden="true">
+      <SealMark size={120} variant="negatif" />
+    </div>
     <div class="container reading-width">
       <h2>Prochaine étape documentable</h2>
       <p>
