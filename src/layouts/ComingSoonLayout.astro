@@ -26,7 +26,7 @@ const {
     class:list={[
       "coming-soon",
       {
-        "bloc-plein": register === "rigueur",
+        "bloc-inverse": register === "rigueur",
         "coming-soon--rigueur": register === "rigueur",
       },
     ]}
@@ -113,27 +113,14 @@ const {
   }
 
   /*
-   * Rupture Rigueur (recontrôle Cartographe, point 3) : fond inversé,
-   * JetBrains Mono (déjà appliqué via [data-register="rigueur"] sur le body),
-   * un seul accent (--register-accent-rigueur en bordure décorative), et
-   * aucune animation. Le Sceau passe en variante « négatif », pensée pour un
-   * fond sombre, plutôt que le filigrane clair.
-   *
-   * h1 volontairement absent de la liste ci-dessous : la règle globale
-   * .bloc-plein h1 fixe déjà le Lin sur ce titre, donc une redéclaration
-   * ici serait redondante sans le moindre effet visuel (nettoyage signalé
-   * lors de la revue critique du Designer du Seuil).
-   *
-   * L'accent est porté par .container plutôt que par la section pleine
-   * largeur, pour ne pas décaler le centrage du contenu par rapport aux
-   * autres blocs de la page (même correction que .bloc-inverse, peaufinage
-   * du Lot 5, 2 août 2026).
+   * Rupture Rigueur (correction Cockpit, 2 août 2026) : le fond utilise
+   * désormais .bloc-inverse (Charbon) au lieu de .bloc-plein (Vert Canopée),
+   * pour marquer une vraie rupture avec le registre Chaleur, conformément à
+   * l'intention du Lot 5 (« fond inversé, JetBrains Mono, un seul accent »).
+   * .bloc-inverse fixe déjà le Lin sur h1/h2/h3/p/a et l'accent en bordure
+   * gauche de .container ; seules les classes utilitaires ci-dessous
+   * (absentes de .bloc-inverse) restent nécessaires ici.
    */
-  .coming-soon--rigueur .container {
-    border-left: 4px solid var(--register-accent-rigueur);
-    padding-left: var(--space-6);
-  }
-
   .coming-soon--rigueur .eyebrow,
   .coming-soon--rigueur .repere,
   .coming-soon--rigueur .introduction {
