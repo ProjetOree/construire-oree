@@ -129,11 +129,11 @@ import SealMark from "../../components/brand/SealMark.astro";
           </div>
           <div class="persona">
             <p class="persona-name">Julien — Persona de conception</p>
-            <p>Une personne aux compétences techniques qui pourrait rejoindre les Bâtisseurs.</p>
+            <p>Une personne qui aime raconter ce qui mérite d’être découvert et qui pourrait devenir Écho.</p>
           </div>
         </div>
         <p class="context-note">
-          Retrouver ces situations en détail sur la page <a href="/rejoindre/">Rejoindre</a>.
+          Retrouver ces situations en détail sur la page <a href="/rejoindre/">Participer</a>.
         </p>
       </details>
     </div>
@@ -188,6 +188,11 @@ import SealMark from "../../components/brand/SealMark.astro";
 
   .bloc-plein {
     padding-bottom: var(--space-16);
+  }
+
+  .bloc-plein :global(.role-icon--eclaireur),
+  .bloc-plein :global(.role-icon--echo) {
+    color: var(--color-linen);
   }
 
   .relais-seal {
