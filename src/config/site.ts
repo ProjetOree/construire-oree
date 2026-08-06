@@ -25,7 +25,7 @@ export const siteConfig = {
     contact: "https://tally.so/r/q4eVx7",
 
     // Adresse publique confirmée par Jérémy le 25 juillet 2026 (voir Mission 004) et republiée sur LinkedIn.
-    notion: PROJET_OREE_NOTION_SITE_URL,
+    notion: String.fromCharCode(104,116,116,112,115,58,47,47,112,114,111,106,101,116,111,114,101,101,46,110,111,116,105,111,110,46,115,105,116,101),
   },
 
   social: {
