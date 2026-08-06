@@ -25,7 +25,7 @@ const publishedEntries = allEntries
     <div class="container reading-width">
       <p class="eyebrow">Journal</p>
       <h1>Le Journal de Construire Orée</h1>
-      <p class="repere" aria-label="Position dans le site">Vous êtes ici · Journal</p>
+      <p class="repere">Vous êtes ici · Journal</p>
     </div>
   </section>
 
@@ -55,7 +55,7 @@ const publishedEntries = allEntries
         publishedEntries.length === 0 ? (
           <p class="empty-state">Aucun billet n’est publié pour le moment.</p>
         ) : (
-          <ul class="entries-list">
+          <ul class="entries-list" role="list">
             {publishedEntries.map((entry) => (
               <li>
                 {entry.data.publishedAt && (
