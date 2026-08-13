@@ -34,6 +34,7 @@ const accessibleTitle = title ?? labels[role];
   role={decorative ? undefined : "img"}
   aria-hidden={decorative ? "true" : undefined}
   aria-label={decorative ? undefined : accessibleTitle}
+  focusable="false"
 >
   {role === "batisseur" && (
     <g>
