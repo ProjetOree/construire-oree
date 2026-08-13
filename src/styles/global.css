@@ -249,7 +249,7 @@ pre {
 }
 
 .phase-dot {
-  animation: seal-pulse 3.2s ease-in-out infinite;
+  animation: seal-pulse 3.2s ease-in-out 1;
 }
 
 /*
@@ -282,6 +282,11 @@ pre {
 
 .bloc-plein a:hover {
   text-decoration-thickness: 0.2em;
+}
+
+.bloc-plein :focus-visible,
+.bloc-inverse :focus-visible {
+  outline-color: var(--color-linen);
 }
 
 /*
