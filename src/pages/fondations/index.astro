@@ -18,13 +18,17 @@ import SealMark from "../../components/brand/SealMark.astro";
       <p class="repere">Vous êtes ici · Fondations</p>
       <p class="introduction">
         Cette page adapte le Blueprint technique et fiscal interne d’Orée en
-        deux profondeurs : une synthèse compréhensible, puis des détails
-        d’audit repliables. Les choix de la future marketplace restent
-        séparés de la stack Astro de ce site.
+        deux profondeurs : une synthèse compréhensible, puis des détails d’audit
+        repliables. Les choix de la future marketplace restent séparés de la
+        stack Astro de ce site.
       </p>
       <div class="actions">
-        <a class="button button-primary" href="#details-audit">Examiner les détails</a>
-        <a class="button button-secondary" href="/avancement/">Voir l’avancement réel</a>
+        <a class="button button-primary" href="#details-audit"
+          >Examiner les détails</a
+        >
+        <a class="button button-secondary" href="/avancement/"
+          >Voir l’avancement réel</a
+        >
       </div>
     </div>
   </section>
@@ -36,27 +40,25 @@ import SealMark from "../../components/brand/SealMark.astro";
         <div class="synthese-card">
           <h3>Double flux envisagé</h3>
           <p>
-            Un flux pour les personnes qui créent — dépôt, présentation,
-            statut — et un flux pour les personnes qui découvrent —
-            recherche, confiance, paiement. Aucun des deux flux n’est actif
-            aujourd’hui.
+            Un flux pour les personnes qui créent — dépôt, présentation, statut
+            — et un flux pour les personnes qui découvrent — recherche,
+            confiance, paiement. Aucun des deux flux n’est actif aujourd’hui.
           </p>
         </div>
         <div class="synthese-card">
           <h3>Statuts des personnes qui créent</h3>
           <p>
-            Plusieurs statuts (micro-entreprise, société, structure
-            associative) pourraient être accueillis. Le cadre exact reste à
-            valider juridiquement.
+            Plusieurs statuts (micro-entreprise, société, structure associative)
+            pourraient être accueillis. Le cadre exact reste à valider
+            juridiquement.
           </p>
         </div>
         <div class="synthese-card">
           <h3>Paiement, facturation, livraison et conformité</h3>
           <p>
             Un prestataire de paiement tiers, une facturation automatisée à
-            étudier, une livraison d’abord laissée aux personnes qui créent,
-            et une conformité (RGPD, CGV, TVA) à sécuriser avant toute
-            ouverture.
+            étudier, une livraison d’abord laissée aux personnes qui créent, et
+            une conformité (RGPD, CGV, TVA) à sécuriser avant toute ouverture.
           </p>
         </div>
         <div class="synthese-card">
@@ -79,28 +81,59 @@ import SealMark from "../../components/brand/SealMark.astro";
         points ne décrit une capacité déjà livrée.
       </p>
       <details class="audit-details" open>
-        <summary>Voir les paramètres techniques, juridiques, fiscaux et opérationnels</summary>
+        <summary
+          >Voir les paramètres techniques, juridiques, fiscaux et opérationnels</summary
+        >
         <div class="details-content">
           <ul class="audit-list" role="list">
             <li>
-              <span class="audit-badge audit-badge--decision"><span class="audit-dot" aria-hidden="true"></span>Décision actée</span>
-              <p>Construire Orée reste un site statique Astro, distinct des choix techniques de la future marketplace.</p>
+              <span class="audit-badge audit-badge--decision"
+                ><span class="audit-dot" aria-hidden="true"></span>Décision
+                actée</span
+              >
+              <p>
+                Construire Orée reste un site statique Astro, distinct des choix
+                techniques de la future marketplace.
+              </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--hypothese"><span class="audit-dot" aria-hidden="true"></span>Hypothèse technique</span>
-              <p>Un modèle de double flux de paiement (créateur / acheteur) est envisagé, sans architecture arrêtée.</p>
+              <span class="audit-badge audit-badge--hypothese"
+                ><span class="audit-dot" aria-hidden="true"></span>Hypothèse
+                technique</span
+              >
+              <p>
+                Un modèle de double flux de paiement (créateur / acheteur) est
+                envisagé, sans architecture arrêtée.
+              </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--juridique"><span class="audit-dot" aria-hidden="true"></span>À valider juridiquement</span>
-              <p>Le statut salarié-associé envisagé pour l’horizon coopératif n’a pas été validé par un conseil juridique.</p>
+              <span class="audit-badge audit-badge--juridique"
+                ><span class="audit-dot" aria-hidden="true"></span>À valider
+                juridiquement</span
+              >
+              <p>
+                Le statut salarié-associé envisagé pour l’horizon coopératif n’a
+                pas été validé par un conseil juridique.
+              </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--fiscal"><span class="audit-dot" aria-hidden="true"></span>À valider fiscalement</span>
-              <p>Les seuils et le régime de TVA applicables à une marketplace de création originale restent à confirmer.</p>
+              <span class="audit-badge audit-badge--fiscal"
+                ><span class="audit-dot" aria-hidden="true"></span>À valider
+                fiscalement</span
+              >
+              <p>
+                Les seuils et le régime de TVA applicables à une marketplace de
+                création originale restent à confirmer.
+              </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--tester"><span class="audit-dot" aria-hidden="true"></span>À tester</span>
-              <p>Le parcours de paiement avec un prestataire tiers n’a fait l’objet d’aucun test à ce stade.</p>
+              <span class="audit-badge audit-badge--tester"
+                ><span class="audit-dot" aria-hidden="true"></span>À tester</span
+              >
+              <p>
+                Le parcours de paiement avec un prestataire tiers n’a fait
+                l’objet d’aucun test à ce stade.
+              </p>
             </li>
           </ul>
         </div>
