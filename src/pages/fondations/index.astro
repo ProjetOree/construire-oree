@@ -34,7 +34,7 @@ import SealMark from "../../components/brand/SealMark.astro";
       <h2>Synthèse compréhensible</h2>
       <div class="synthese-grid">
         <div class="synthese-card">
-          <strong>Double flux envisagé</strong>
+          <h3>Double flux envisagé</h3>
           <p>
             Un flux pour les personnes qui créent — dépôt, présentation,
             statut — et un flux pour les personnes qui découvrent —
@@ -43,7 +43,7 @@ import SealMark from "../../components/brand/SealMark.astro";
           </p>
         </div>
         <div class="synthese-card">
-          <strong>Statuts des personnes qui créent</strong>
+          <h3>Statuts des personnes qui créent</h3>
           <p>
             Plusieurs statuts (micro-entreprise, société, structure
             associative) pourraient être accueillis. Le cadre exact reste à
@@ -51,7 +51,7 @@ import SealMark from "../../components/brand/SealMark.astro";
           </p>
         </div>
         <div class="synthese-card">
-          <strong>Paiement, facturation, livraison et conformité</strong>
+          <h3>Paiement, facturation, livraison et conformité</h3>
           <p>
             Un prestataire de paiement tiers, une facturation automatisée à
             étudier, une livraison d’abord laissée aux personnes qui créent,
@@ -60,7 +60,7 @@ import SealMark from "../../components/brand/SealMark.astro";
           </p>
         </div>
         <div class="synthese-card">
-          <strong>Choix exclus du premier périmètre</strong>
+          <h3>Choix exclus du premier périmètre</h3>
           <p>
             Le stockage et la logistique centralisés, un SAV proactif et une
             ouverture internationale restent volontairement hors du premier
@@ -78,7 +78,7 @@ import SealMark from "../../components/brand/SealMark.astro";
         Chaque point porte un statut de validation explicite. Aucun de ces
         points ne décrit une capacité déjà livrée.
       </p>
-      <details class="audit-details">
+      <details class="audit-details" open>
         <summary>Voir les paramètres techniques, juridiques, fiscaux et opérationnels</summary>
         <div class="details-content">
           <ul class="audit-list" role="list">
@@ -177,7 +177,7 @@ import SealMark from "../../components/brand/SealMark.astro";
     background: var(--color-surface);
   }
 
-  .synthese-card strong {
+  .synthese-card h3 {
     display: block;
     margin-bottom: var(--space-2);
     color: var(--color-canopy);
