@@ -4,8 +4,8 @@ import SealMark from "../components/brand/SealMark.astro";
 ---
 
 <BaseLayout
-  title="À propos de Jérémy, fondateur d’Orée"
-  description="Découvre pourquoi Jérémy construit Orée en public : une future marketplace éthique pour la création originale, l’art et l’artisanat d’art."
+  title="Jérémy LITIQUE construit Orée en public"
+  description="Découvre pourquoi Jérémy construit Orée en public, avec une méthode transparente pour une future marketplace éthique de création originale."
 >
   <section class="hero-section">
     <div class="container reading-width">
@@ -14,6 +14,7 @@ import SealMark from "../components/brand/SealMark.astro";
       </div>
       <p class="eyebrow">À propos</p>
       <h1>Pourquoi je construis Orée</h1>
+      <p class="repere">Vous êtes ici · À propos</p>
       <p class="introduction">
         Moi, c’est Jérémy, fondateur d’Orée. Je construis une future marketplace
         éthique pour la création originale, l’art et l’artisanat d’art.
@@ -30,7 +31,10 @@ import SealMark from "../components/brand/SealMark.astro";
     </div>
   </section>
 
-  <section class="section-block">
+  <section class="section-block bloc-plein texture-legere decouverte-block">
+    <div class="decouverte-seal" aria-hidden="true">
+      <SealMark size={190} variant="negatif" />
+    </div>
     <div class="container reading-width">
       <h2>Le point de départ</h2>
       <p>
@@ -132,12 +136,12 @@ import SealMark from "../components/brand/SealMark.astro";
       </p>
       <ul class="action-list">
         <li><a href="https://tally.so/r/Bz57ON">Suivre l’aventure</a></li>
-        <li><a href="/rejoindre/">Rejoindre</a></li>
+        <li><a href="/rejoindre/">Participer</a></li>
         <li><a href="https://tally.so/r/q4eVx7">Écrire à Orée</a></li>
       </ul>
       <p class="context-note">
         Les liens Suivre et Écrire ouvrent des formulaires Tally externes.
-        Rejoindre mène vers une page interne avant toute sortie vers un
+        Participer mène vers une page interne avant toute sortie vers un
         formulaire.
       </p>
     </div>
@@ -187,6 +191,29 @@ import SealMark from "../components/brand/SealMark.astro";
     font-weight: 600;
     font-family: var(--font-display);
     line-height: 1.3;
+  }
+
+  .decouverte-seal {
+    position: absolute;
+    bottom: -2.5rem;
+    left: -2.5rem;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .decouverte-block {
+    padding-bottom: var(--space-16);
+  }
+
+  .decouverte-block .highlight-text {
+    color: var(--color-dawn);
+  }
+
+  @media (max-width: 48rem) {
+    .decouverte-seal {
+      display: none;
+    }
   }
 
   .convictions-block {

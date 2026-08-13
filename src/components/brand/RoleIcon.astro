@@ -1,0 +1,88 @@
+---
+type Role = "batisseur" | "artisan" | "eclaireur" | "echo";
+
+interface Props {
+  role: Role;
+  size?: number;
+  title?: string;
+  decorative?: boolean;
+}
+
+const { role, size = 28, title, decorative = false } = Astro.props;
+
+const labels: Record<Role, string> = {
+  batisseur: "Bâtisseur",
+  artisan: "Artiste ou Artisan",
+  eclaireur: "Éclaireur",
+  echo: "Écho",
+};
+
+const accessibleTitle = title ?? labels[role];
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 32 32"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={`role-icon role-icon--${role}`}
+  role={decorative ? undefined : "img"}
+  aria-hidden={decorative ? "true" : undefined}
+  aria-label={decorative ? undefined : accessibleTitle}
+  focusable="false"
+>
+  {
+    role === "batisseur" && (
+      <g>
+        <path d="M8 24 L24 8" stroke-width="2.5" />
+        <path d="M8 8 L24 24" stroke-width="2.5" />
+        <circle cx="8" cy="24" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="24" cy="8" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="8" cy="8" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="24" cy="24" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
+      </g>
+    )
+  }
+  {role === "artisan" && <path d="M6 22 C 11 10 16 26 26 8" />}
+  {
+    role === "eclaireur" && (
+      <g>
+        <circle cx="16" cy="16" r="11" />
+        <path d="M20 12 L15 15 L12 20 L17 17 Z" />
+      </g>
+    )
+  }
+  {
+    role === "echo" && (
+      <g>
+        <path d="M8 19 L8 13 L14 9 L14 23 Z" />
+        <path d="M18 11 C 21 13 21 19 18 21" />
+        <path d="M21 8 C 26 12 26 20 21 24" />
+      </g>
+    )
+  }
+</svg>
+
+<style>
+  .role-icon--batisseur {
+    color: var(--role-accent-batisseur);
+  }
+
+  .role-icon--artisan {
+    color: var(--role-accent-artisan);
+  }
+
+  .role-icon--eclaireur {
+    color: var(--role-accent-eclaireur);
+  }
+
+  .role-icon--echo {
+    color: var(--role-accent-echo);
+  }
+</style>

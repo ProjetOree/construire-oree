@@ -1,0 +1,278 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SealMark from "../../components/brand/SealMark.astro";
+---
+
+<BaseLayout
+  title="Pourquoi Orée : le modèle inversé"
+  description="Le manifeste, la promesse zéro frais et le modèle inversé qu’Orée cherche à construire, sans confondre vision cible et service disponible aujourd’hui."
+>
+  <section class="hero-section">
+    <div class="container reading-width">
+      <p class="eyebrow">Projet</p>
+      <h1>Pourquoi Orée</h1>
+      <p class="repere">Vous êtes ici · Projet</p>
+      <p class="introduction">
+        Orée part d’un problème simple à observer et difficile à résoudre :
+        vendre une création originale oblige aujourd’hui à devenir, en même
+        temps, communicant, commerçant, spécialiste de l’administratif et
+        entrepreneur. Ce texte explique pourquoi ce constat justifie un projet,
+        et vers quelle direction ce projet cherche à aller.
+      </p>
+      <p class="introduction">
+        Orée est au point zéro : rien de ce qui suit ne décrit un service
+        disponible aujourd’hui. C’est une vision à construire, pas une
+        fonctionnalité déjà livrée.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>Le problème</h2>
+      <p>
+        Beaucoup de personnes créatives n’osent pas encore commencer à vendre
+        leur travail. Quatre freins reviennent régulièrement : la peur du
+        jugement, la peur de l’échec, la complexité administrative et le
+        sentiment de ne pas être légitime. Ce constat vient de situations
+        observées au fil du temps ; il ne s’appuie sur aucun chiffre non sourcé,
+        et Orée ne prétend pas parler au nom d’un volume de personnes précis.
+      </p>
+      <p>
+        Le parcours actuel demande d’accumuler plusieurs métiers à la fois :
+        créer, communiquer, vendre et administrer. Cette accumulation décourage
+        des personnes qui ont du talent avant même qu’elles aient pu le montrer.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block bloc-plein texture-legere reponse-block">
+    <div class="reponse-seal" aria-hidden="true">
+      <SealMark size={240} variant="negatif" />
+    </div>
+    <div class="container reading-width">
+      <h2>La réponse envisagée</h2>
+      <p>
+        Le modèle envisagé cherche à limiter les frais avant qu’une première
+        vente n’ait eu lieu. La communication, le paiement, la facturation et le
+        service après-vente sont des services que le projet cherche à étudier ;
+        ce ne sont pas des capacités actuellement actives sur Construire Orée.
+      </p>
+      <p>
+        L’intention qui guide ces choix est de laisser davantage de place à la
+        création elle-même, plutôt que d’ajouter une charge de gestion à des
+        personnes qui n’ont pas demandé à devenir gestionnaires.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>Le modèle inversé</h2>
+      <p>
+        Le parcours courant demande à la personne qui crée de se présenter, puis
+        laisse un système la juger. Le modèle qu’Orée cherche à construire
+        fonctionnerait à l’inverse : un système qui repère un talent, lui ouvre
+        une porte, et laisse la personne choisir d’y entrer ou non.
+      </p>
+      <div class="inversion-grid">
+        <div class="inversion-card">
+          <p class="inversion-label">Parcours courant</p>
+          <p>La personne se présente seule ; le système évalue et juge.</p>
+        </div>
+        <div class="inversion-card inversion-card--cible">
+          <p class="inversion-label">Parcours cible</p>
+          <p>Le système repère et ouvre une porte ; la personne choisit.</p>
+        </div>
+      </div>
+      <p class="context-note">
+        Orée ouvrirait une porte ; elle ne déciderait pas à la place de la
+        personne qui crée.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block ess-block">
+    <div class="container reading-width">
+      <h2>L’horizon ESS</h2>
+      <p>
+        Orée démarre comme un projet solo, avec une approche volontairement
+        lean. Dans la logique de l’économie sociale et solidaire (ESS), et sous
+        condition que le modèle se valide, l’horizon envisagé irait vers une
+        première Clairière locale, puis vers La Canopée, un horizon coopératif
+        où le principe serait une personne égale une voix.
+      </p>
+      <p>
+        Cet horizon pourrait inclure une protection sociale pensée pour les
+        personnes qui construisent Orée : statut salarié-associé, mutuelle,
+        prévoyance et chômage. Rien de cela n’est acquis : ces pistes restent
+        soumises à une validation juridique et économique qui n’a pas encore eu
+        lieu.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block point-zero-block">
+    <div class="container reading-width">
+      <h2>Ce qui n’existe pas encore</h2>
+      <p>
+        Pour que cette page reste honnête sur l’état réel du projet : aucun
+        service actif de paiement, de facturation ou de SAV n’existe aujourd’hui
+        ; aucune structure coopérative n’est constituée ; aucune protection
+        sociale n’est fournie ; et aucun calendrier de mise en œuvre n’est
+        promis.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="/ecosysteme/"
+          >Comprendre l’écosystème</a
+        >
+        <a class="button button-secondary" href="/fondations/"
+          >Voir ce qu’Orée doit résoudre</a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .introduction {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .section-block {
+    padding-block: var(--space-12);
+  }
+
+  .section-block h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .reponse-block {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: var(--space-16);
+  }
+
+  .reponse-seal {
+    position: absolute;
+    top: -2.5rem;
+    right: -3rem;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  @media (max-width: 48rem) {
+    .reponse-seal {
+      display: none;
+    }
+  }
+
+  .inversion-grid {
+    display: grid;
+    gap: var(--space-4);
+    margin-block: var(--space-6);
+  }
+
+  .inversion-card {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .inversion-card--cible {
+    border-color: var(--color-canopy);
+    background: var(--color-surface-emphasis);
+  }
+
+  .inversion-label {
+    margin-bottom: var(--space-2);
+    color: var(--color-bark);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .inversion-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .context-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .point-zero-block {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  @media (min-width: 48rem) {
+    .inversion-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

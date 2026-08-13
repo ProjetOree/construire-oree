@@ -16,7 +16,12 @@ function isCurrent(path: string) {
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Construire Orée — Accueil">
+    <a
+      class="brand"
+      href="/"
+      aria-label="Construire Orée — Accueil"
+      aria-current={isCurrent("/")}
+    >
       <SealMark size={48} />
 
       <span class="brand-copy">
@@ -28,11 +33,18 @@ function isCurrent(path: string) {
     <!-- Desktop Navigation -->
     <div class="desktop-nav-container">
       <nav aria-label="Navigation principale" class="main-nav">
-        <a href="/a-propos/" aria-current={isCurrent("/a-propos/")}>À propos</a>
+        <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
+        <a href="/ecosysteme/" aria-current={isCurrent("/ecosysteme/")}
+          >Écosystème</a
+        >
+        <a href="/avancement/" aria-current={isCurrent("/avancement/")}
+          >Avancement</a
+        >
+        <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
         <a
           href="/rejoindre/"
           class="nav-join"
-          aria-current={isCurrent("/rejoindre/")}>Rejoindre</a
+          aria-current={isCurrent("/rejoindre/")}>Participer</a
         >
       </nav>
       <span class="phase">
@@ -46,11 +58,16 @@ function isCurrent(path: string) {
       <summary class="menu-button">Menu</summary>
       <div class="mobile-nav-content">
         <nav aria-label="Navigation mobile" class="main-nav-mobile">
-          <a href="/a-propos/" aria-current={isCurrent("/a-propos/")}
-            >À propos</a
+          <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
+          <a href="/ecosysteme/" aria-current={isCurrent("/ecosysteme/")}
+            >Écosystème</a
           >
+          <a href="/avancement/" aria-current={isCurrent("/avancement/")}
+            >Avancement</a
+          >
+          <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
           <a href="/rejoindre/" aria-current={isCurrent("/rejoindre/")}
-            >Rejoindre</a
+            >Participer</a
           >
         </nav>
         <div class="mobile-phase">

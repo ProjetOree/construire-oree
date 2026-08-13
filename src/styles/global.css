@@ -76,9 +76,24 @@ a:hover {
   color: var(--color-canopy);
 }
 
-h1,
+/*
+ * Hiérarchie typographique (finition « Sceau + typographie ») — trois
+ * polices existantes uniquement, aucune police ajoutée : Fraunces pour les
+ * titres éditoriaux (h1 plus affirmé que h2), Hanken Grotesk en gras pour
+ * les sous-titres fonctionnels (h3), JetBrains Mono réservé au registre
+ * Rigueur (règle dédiée plus bas, prioritaire sur celle-ci).
+ */
+h1 {
+  color: var(--color-canopy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  text-wrap: balance;
+  font-size: var(--text-display);
+  letter-spacing: -0.035em;
+}
+
 h2,
-h3,
 h4 {
   color: var(--color-canopy);
   font-family: var(--font-display);
@@ -87,18 +102,19 @@ h4 {
   text-wrap: balance;
 }
 
-h1 {
-  font-size: var(--text-display);
-  letter-spacing: -0.035em;
-}
-
 h2 {
   font-size: var(--text-xl);
   letter-spacing: -0.02em;
 }
 
 h3 {
+  color: var(--color-canopy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
   font-size: var(--text-lg);
+  letter-spacing: -0.01em;
 }
 
 p,
@@ -161,4 +177,210 @@ pre {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.repere {
+  margin-bottom: var(--space-4);
+  color: var(--register-accent-rigueur);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 650;
+  letter-spacing: 0.05em;
+}
+
+/*
+ * Registres « Le Sceau vivant » — Chaleur (défaut) / Rigueur
+ * Chaleur : Fraunces, récit et rôles (Accueil, Rejoindre, À propos, Journal).
+ * Rigueur : JetBrains Mono, filigrane du Sceau, un seul accent sobre
+ * (Roadmap, Décisions, Tableau de bord, informations d'état).
+ */
+
+[data-register="rigueur"] h1,
+[data-register="rigueur"] h2,
+[data-register="rigueur"] h3 {
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+
+/*
+ * Accent par registre (tokens --register-accent-chaleur / --register-accent-rigueur).
+ * Décoration uniquement (bordure), jamais utilisé comme couleur de texte,
+ * afin de respecter la règle : l'Ambre ne sert jamais de texte sur Lin.
+ * Mapping accent par rôle complet (Lot 1) reste à documenter et valider
+ * avec le Designer du Seuil ; ceci couvre uniquement le défaut de tokens
+ * inutilisés signalé par l'Ingénieur de contrôle.
+ * Finition « Sceau + typographie » : l'eyebrow passe en Fraunces italique
+ * pour lui donner une voix éditoriale distincte des titres (non italiques)
+ * en Chaleur ; il repasse en JetBrains Mono droit en Rigueur, cohérent avec
+ * le reste du bloc factuel.
+ */
+.eyebrow {
+  border-left: 3px solid var(--register-accent-chaleur);
+  padding-left: var(--space-3);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+[data-register="rigueur"] .eyebrow {
+  border-left-color: var(--register-accent-rigueur);
+  font-family: var(--font-mono);
+  font-style: normal;
+}
+
+.phase,
+.status-label,
+.status-card dt {
+  font-family: var(--font-mono);
+}
+
+.seal-filigrane {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+@keyframes seal-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.phase-dot {
+  animation: seal-pulse 3.2s ease-in-out 1;
+}
+
+/*
+ * Bloc de couleur pleine (Lot 1 v2) — Sceau vivant.
+ * Combinaison choisie car explicitement validée par la charte graphique
+ * (Lin sur Vert Canopée = AA, texte courant). Les autres couleurs de la
+ * palette (Terre cuite, Mousse, Écorce, Bordeaux) ne sont pas validées
+ * pour du texte de lecture en fond plein ; elles restent réservées aux
+ * accents, bordures et pictogrammes tant qu'un contrôle de contraste réel
+ * n'a pas été fait par le Designer du Seuil.
+ */
+.bloc-plein {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-canopy);
+  color: var(--color-linen);
+}
+
+.bloc-plein h1,
+.bloc-plein h2,
+.bloc-plein h3 {
+  color: var(--color-linen);
+}
+
+.bloc-plein a {
+  color: var(--color-linen);
+  text-decoration-color: var(--color-dawn);
+  text-decoration-thickness: 0.12em;
+}
+
+.bloc-plein a:hover {
+  text-decoration-thickness: 0.2em;
+}
+
+.bloc-plein :focus-visible,
+.bloc-inverse :focus-visible {
+  outline-color: var(--color-linen);
+}
+
+/*
+ * Fond inversé Rigueur (Lot 5 — réapplication du Sceau vivant).
+ * Rupture nette et distincte du bloc-plein Chaleur : fond sombre (Charcoal),
+ * texte Lin, un seul accent (Écorce, --register-accent-rigueur) en bordure
+ * gauche du bloc de lecture (même convention que .eyebrow et .audit-details),
+ * aucune texture artisanale et aucune animation, conformément à la règle
+ * Rigueur (« fond inversé, JetBrains Mono, un seul accent »). Le Sceau y
+ * apparaît en variante « négatif », pensée pour un fond sombre. L'accent est
+ * porté par .container plutôt que par la section pleine largeur, pour ne
+ * pas décaler le centrage du contenu par rapport aux autres blocs de la page.
+ */
+.bloc-inverse {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-charcoal);
+  color: var(--color-linen);
+}
+
+.bloc-inverse h1,
+.bloc-inverse h2,
+.bloc-inverse h3 {
+  color: var(--color-linen);
+}
+
+.bloc-inverse p {
+  color: var(--color-linen);
+}
+
+.bloc-inverse a {
+  color: var(--color-linen);
+  text-decoration-color: var(--register-accent-rigueur);
+  text-decoration-thickness: 0.12em;
+}
+
+.bloc-inverse a:hover {
+  text-decoration-thickness: 0.2em;
+}
+
+.bloc-inverse .seal-corner {
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1.5rem;
+  z-index: 0;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.bloc-inverse .container {
+  position: relative;
+  z-index: 1;
+  border-left: 4px solid var(--register-accent-rigueur);
+  padding-left: var(--space-6);
+}
+
+@media (max-width: 48rem) {
+  .bloc-inverse .seal-corner {
+    display: none;
+  }
+}
+
+/*
+ * Texture artisanale procédurale — grain léger généré en CSS pur, sans
+ * image, sans photographie. Deux trames croisées à très faible opacité,
+ * pour ne pas gêner la lecture du texte superposé. Opacité réduite et
+ * trame espacée (contrôle visuel du 3 août 2026) : la densité précédente
+ * rendait le texte blanc difficile à lire sur « Les relais humains »
+ * (Écosystème) et l'introduction du Journal.
+ */
+.texture-legere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(244, 236, 224, 0.035) 0px,
+      rgba(244, 236, 224, 0.035) 1px,
+      transparent 1px,
+      transparent 13px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(224, 164, 88, 0.03) 0px,
+      rgba(224, 164, 88, 0.03) 1px,
+      transparent 1px,
+      transparent 15px
+    );
+  pointer-events: none;
+}
+
+.texture-legere > * {
+  position: relative;
+  z-index: 1;
 }

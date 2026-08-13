@@ -4,7 +4,7 @@ import { siteConfig } from "../../config/site";
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div>
+    <div class="footer-brand">
       <p class="footer-title">Construire Orée</p>
       <p class="footer-description">
         Le journal public d’une future marketplace éthique, construit sans
@@ -12,28 +12,39 @@ import { siteConfig } from "../../config/site";
       </p>
     </div>
 
-    <nav aria-label="Liens externes">
-      <ul class="footer-links">
-        <li>
-          <a href={siteConfig.links.follow}>Suivre l’aventure</a>
-        </li>
-        <li>
-          <a href={siteConfig.links.join}>Rejoindre Orée</a>
-        </li>
-        <li>
-          <a href={siteConfig.links.contact}>Écrire à Orée</a>
-        </li>
-        <li>
-          <a href={siteConfig.repository.url}>GitHub</a>
-        </li>
-      </ul>
+    <nav aria-label="Plan du site" class="footer-nav">
+      <div class="footer-column">
+        <p class="footer-heading">Découvrir</p>
+        <ul role="list">
+          <li><a href="/projet/">Projet</a></li>
+          <li><a href="/ecosysteme/">Écosystème</a></li>
+          <li><a href="/a-propos/">À propos</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Suivre la construction</p>
+        <ul role="list">
+          <li><a href="/avancement/">Avancement</a></li>
+          <li><a href="/journal/">Journal</a></li>
+          <li><a href="/fondations/">Fondations</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-heading">Agir</p>
+        <ul role="list">
+          <li><a href="/rejoindre/">Participer</a></li>
+          <li><a href={siteConfig.links.follow}>Suivre l’aventure</a></li>
+          <li><a href={siteConfig.links.contact}>Écrire à Orée</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 
   <div class="container footer-legal">
     <p>
       Code sous licence {siteConfig.licensing.code}. Contenus éditoriaux
-      concernés sous licence {siteConfig.licensing.editorialContent}.
+      concernés sous licence {siteConfig.licensing.editorialContent}. Code
+      source sur <a href={siteConfig.repository.url}>GitHub</a>.
     </p>
   </div>
 </footer>
@@ -48,7 +59,7 @@ import { siteConfig } from "../../config/site";
 
   .footer-inner {
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     gap: var(--space-12);
   }
 
@@ -65,7 +76,22 @@ import { siteConfig } from "../../config/site";
     color: var(--color-text-muted);
   }
 
-  .footer-links {
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+
+  .footer-heading {
+    margin-bottom: var(--space-3);
+    color: var(--color-canopy);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer-column ul {
     display: grid;
     gap: var(--space-2);
     margin: 0;
@@ -73,7 +99,7 @@ import { siteConfig } from "../../config/site";
     list-style: none;
   }
 
-  .footer-links a {
+  .footer-column a {
     font-weight: 650;
   }
 
@@ -93,6 +119,17 @@ import { siteConfig } from "../../config/site";
     .footer-inner {
       grid-template-columns: 1fr;
       gap: var(--space-8);
+    }
+
+    .footer-nav {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  @media (min-width: 45.01rem) and (max-width: 60rem) {
+    .footer-nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>

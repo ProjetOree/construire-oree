@@ -1,21 +1,46 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import SealMark from "../components/brand/SealMark.astro";
 
 interface Props {
   title: string;
   description: string;
   heading: string;
   text?: string;
+  repere?: string;
+  register?: "chaleur" | "rigueur";
 }
 
-const { title, description, heading, text } = Astro.props;
+const {
+  title,
+  description,
+  heading,
+  text,
+  repere,
+  register = "rigueur",
+} = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="coming-soon">
+<BaseLayout title={title} description={description} register={register}>
+  <section
+    class:list={[
+      "coming-soon",
+      {
+        "bloc-inverse": register === "rigueur",
+        "coming-soon--rigueur": register === "rigueur",
+      },
+    ]}
+  >
     <div class="container reading-width">
+      <div class="seal-watermark" aria-hidden="true">
+        <SealMark
+          size={40}
+          variant={register === "rigueur" ? "negatif" : "filigrane"}
+        />
+      </div>
       <p class="eyebrow">En préparation</p>
       <h1>{heading}</h1>
+      {repere && <p class="repere">Vous êtes ici · {repere}</p>}
       <p class="introduction">
         {
           text ||
@@ -33,6 +58,10 @@ const { title, description, heading, text } = Astro.props;
 <style>
   .coming-soon {
     padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .seal-watermark {
+    margin-bottom: var(--space-4);
   }
 
   .eyebrow {
@@ -84,5 +113,30 @@ const { title, description, heading, text } = Astro.props;
   .button-secondary:hover {
     background: var(--color-canopy);
     color: var(--color-linen);
+  }
+
+  /*
+   * Rupture Rigueur (correction Cockpit, 2 août 2026) : le fond utilise
+   * désormais .bloc-inverse (Charcoal) au lieu de .bloc-plein (Vert Canopée),
+   * pour marquer une vraie rupture avec le registre Chaleur, conformément à
+   * l'intention du Lot 5 (« fond inversé, JetBrains Mono, un seul accent »).
+   * .bloc-inverse fixe déjà le Lin sur h1/h2/h3/p/a et l'accent en bordure
+   * gauche de .container ; seules les classes utilitaires ci-dessous
+   * (absentes de .bloc-inverse) restent nécessaires ici.
+   */
+  .coming-soon--rigueur .eyebrow,
+  .coming-soon--rigueur .repere,
+  .coming-soon--rigueur .introduction {
+    color: var(--color-linen);
+  }
+
+  .coming-soon--rigueur .button-secondary {
+    border-color: var(--color-linen);
+    color: var(--color-linen);
+  }
+
+  .coming-soon--rigueur .button-secondary:hover {
+    background: var(--color-linen);
+    color: var(--color-canopy);
   }
 </style>

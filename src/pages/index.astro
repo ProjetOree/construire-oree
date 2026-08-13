@@ -1,38 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SealMark from "../components/brand/SealMark.astro";
 import { siteConfig } from "../config/site";
 ---
 
 <BaseLayout
-  title="Journal d’un projet au point zéro"
-  description="Construire Orée raconte, sans raccourci, la construction publique d’Orée : une future marketplace éthique pour artistes et artisans."
+  title="Journal public d’un projet au point zéro"
+  description="Construire Orée documente, au point zéro, la construction publique d’une future marketplace éthique pour la création originale faite main."
 >
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Journal public de construction</p>
 
-        <h1>Construire Orée,<br />depuis le point zéro.</h1>
+        <h1>Construire Orée depuis le point zéro</h1>
 
         <p class="introduction">
           Orée est une future marketplace éthique pour la création originale,
-          l’art et l’artisanat d’art. Construire Orée est le journal public de
-          cette construction : ici, on montre ce qui existe, on nomme ce qui
-          reste à faire et on ne transforme pas une intention en résultat.
+          l’art et l’artisanat d’art, pensée dans une perspective d’économie
+          sociale et solidaire. Construire Orée est le journal public de cette
+          construction.
         </p>
 
         <div class="actions">
-          <a class="button button-primary" href={siteConfig.links.follow}>
-            Suivre l’aventure
+          <a class="button button-primary" href="/projet/">
+            Découvrir le projet
           </a>
 
-          <a class="button button-primary" href="/rejoindre/">
-            Rejoindre la construction
-          </a>
+          <a class="button button-secondary" href="/rejoindre/"> Participer </a>
         </div>
         <p class="context-note">
-          Suivre ouvre un formulaire Tally pour la newsletter. Rejoindre mène
-          d’abord à la page expliquant les rôles.
+          Découvrir mène au manifeste et à la vision du projet. Participer mène
+          à la page qui explique les rôles et les intentions possibles
+          aujourd’hui.
         </p>
       </div>
 
@@ -41,8 +41,9 @@ import { siteConfig } from "../config/site";
         <h2 id="etat-actuel">Point zéro</h2>
 
         <p>
-          La marketplace n’est pas encore disponible. Il n’y a ni vente, ni
-          utilisateur, ni produit à présenter.
+          La marketplace n’est pas encore ouverte : aucun catalogue, aucune
+          vente, aucun utilisateur de marketplace. Le travail actuel consiste à
+          documenter les fondations.
         </p>
 
         <dl>
@@ -63,164 +64,121 @@ import { siteConfig } from "../config/site";
     </div>
   </section>
 
-  <section class="section-block">
-    <div class="container">
-      <div class="reading-width">
-        <h2>Deux façons d’entrer dans la construction</h2>
-        <p>
-          Tu peux suivre le projet, ses étapes publiées et ses choix documentés.
-          Tu peux aussi dire ce que tu sais faire, ce que tu observes sur le
-          terrain ou ce que tu aimerais aider à construire. Ces deux chemins ne
-          promettent ni accès anticipé à une marketplace, ni rôle déjà attribué
-          : ils permettent de rester informé ou d’ouvrir une conversation.
-        </p>
-        <ul>
-          <li>
-            <strong>Suivre l’aventure</strong> : recevoir les nouvelles du projet
-            et consulter les contenus publiés.
-          </li>
-          <li>
-            <strong>Rejoindre la construction</strong> : découvrir les rôles envisagés,
-            ce dont le projet a besoin maintenant et comment manifester ton intérêt.
-          </li>
-        </ul>
-      </div>
+  <section class="section-block why-section bloc-plein texture-legere">
+    <div class="why-seal" aria-hidden="true">
+      <SealMark size={320} variant="negatif" />
     </div>
-  </section>
-
-  <section class="section-block why-section">
     <div class="container">
       <div class="reading-width">
-        <h2>Pourquoi Orée existe</h2>
+        <h2>Le problème et le renversement cherché</h2>
         <p>
           Vendre son art ne devrait pas exiger de devenir, en même temps,
           communicant, commerçant, spécialiste de l’administratif et
-          entrepreneur. Orée part de cette conviction : la création originale
-          mérite un cadre qui laisse davantage de place à la création.
+          entrepreneur. Beaucoup de personnes talentueuses n’osent pas
+          commencer, freinées par la peur du jugement, de l’échec, de
+          l’administratif ou par un manque de légitimité perçue.
         </p>
         <p>
-          La marketplace n’est pas ouverte. Cette page n’annonce ni catalogue,
-          ni vente, ni communauté déjà active. Elle explique la direction du
-          projet et la manière choisie pour la construire publiquement.
+          Aujourd’hui, la personne qui crée se présente et un système la juge.
+          Orée cherche à inverser ce mouvement : que le système repère, ouvre
+          une porte, et laisse la personne choisir.
+        </p>
+        <p>
+          <a href="/projet/">Lire le manifeste complet →</a>
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section-block">
+  <section class="section-block ecosystem-card">
     <div class="container">
       <div class="reading-width">
-        <h2>Le modèle inversé, en clair</h2>
+        <h2>L’écosystème en un seul schéma</h2>
         <p>
-          L’ambition d’Orée est d’inverser le parcours habituel : au lieu de
-          demander au créateur de franchir seul chaque obstacle, le projet
-          cherche à imaginer un système qui va vers les talents et les outille
-          sans décider à leur place.
+          Orée est au point zéro. L’écosystème présenté ici n’existe pas encore
+          : il sert à rendre lisible la direction du projet et les liens que la
+          future marketplace cherchera à créer.
         </p>
-        <details class="vision-details">
-          <summary>Voir la vision détaillée</summary>
-          <div class="details-content">
+        <div class="ecosystem-blocks">
+          <div>
+            <strong>Cœur — créer et découvrir</strong>
             <p>
-              Cette vision est celle d’une future marketplace ancrée dans
-              l’économie sociale et solidaire, avec La Canopée comme horizon
-              coopératif. Elle reste un projet à construire, pas une
-              fonctionnalité disponible aujourd’hui. Les mécanismes techniques,
-              juridiques et économiques envisagés ne sont pas l’architecture de
-              ce site statique.
+              Des personnes qui créent, et d’autres qui pourront découvrir leurs
+              œuvres ou leurs savoir-faire.
             </p>
           </div>
-        </details>
+          <div>
+            <strong>Accélérateurs — Éclaireurs et Échos</strong>
+            <p>
+              Repérer, raconter, recommander et mettre en lumière les créations.
+            </p>
+          </div>
+          <div>
+            <strong>Fondations — Bâtisseurs</strong>
+            <p>
+              Éclairer les sujets techniques, juridiques, fiscaux et
+              opérationnels du projet.
+            </p>
+          </div>
+          <div>
+            <strong>Horizons collectifs — Clairières et Canopée</strong>
+            <p>
+              Des hubs locaux envisagés et un horizon coopératif à long terme,
+              tous deux conditionnels.
+            </p>
+          </div>
+        </div>
+        <p class="ecosystem-closure">
+          <a href="/ecosysteme/">Comprendre l’écosystème en détail →</a>
+        </p>
       </div>
     </div>
   </section>
 
   <section class="section-block">
     <div class="container">
-      <h2>Quatre rôles pour éclairer la construction</h2>
-      <p class="roles-intro reading-width">
-        Les quatre rôles ci-dessous sont des repères de conception. Ils aident à
-        formuler les besoins du projet ; ils ne décrivent ni personnes déjà
-        engagées, ni utilisateurs réels, ni témoignages.
+      <h2>Choisir sa profondeur de lecture</h2>
+      <p class="depth-intro reading-width">
+        Selon ce que tu cherches, quatre chemins mènent plus loin dans le site.
       </p>
-
-      <ul class="roles-grid">
-        <li class="role-item">
-          <strong>Bâtisseur</strong>
-          <p>
-            contribuer, selon ses compétences, aux fondations techniques,
-            juridiques, fiscales, opérationnelles ou logistiques.
-          </p>
+      <ul class="depth-grid" role="list">
+        <li>
+          <strong>Comprendre la vision</strong>
+          <p>Le manifeste, la promesse cible et le modèle inversé.</p>
+          <a href="/projet/">Aller vers Projet →</a>
         </li>
-        <li class="role-item">
-          <strong>Artiste ou Artisan</strong>
-          <p>
-            partager ce qui freine aujourd’hui la création, la vente ou
-            l’administration, afin d’éclairer un futur projet.
-          </p>
+        <li>
+          <strong>Voir où en est la construction</strong>
+          <p>L’état réel et vérifiable, sans date inventée.</p>
+          <a href="/avancement/">Aller vers Avancement →</a>
         </li>
-        <li class="role-item">
-          <strong>Éclaireur</strong>
-          <p>
-            apporter un regard de terrain sur la manière de repérer et
-            d’accompagner des talents.
-          </p>
+        <li>
+          <strong>Examiner les contraintes</strong>
+          <p>Ce qu’Orée doit résoudre avant d’opérer.</p>
+          <a href="/fondations/">Aller vers Fondations →</a>
         </li>
-        <li class="role-item">
-          <strong>Écho</strong>
-          <p>
-            apporter un regard sur la recommandation, la médiation et la mise en
-            lumière de créations.
-          </p>
+        <li>
+          <strong>Proposer quelque chose</strong>
+          <p>Partager une expérience, une expertise ou une question.</p>
+          <a href="/rejoindre/">Aller vers Participer →</a>
         </li>
       </ul>
-      <div class="roles-action">
-        <a class="button button-secondary" href="/rejoindre/">
-          Découvrir les rôles et les actions possibles aujourd’hui
-        </a>
-      </div>
     </div>
   </section>
 
-  <section class="section-block">
+  <section class="section-block closure-section">
     <div class="container">
       <div class="reading-width">
-        <h2>Où en est le projet</h2>
-        <p>
-          État actuel : point zéro. La marketplace n’est pas disponible. Il n’y
-          a ni vente, ni utilisateur, ni produit de marketplace à présenter.
-          Construire Orée dispose d’un site statique ; cela ne signifie pas que
-          la marketplace est construite.
-        </p>
-        <p>
-          Les prochaines informations publiques seront ajoutées lorsqu’elles
-          seront prêtes à être documentées. Les contenus comme la Roadmap ou
-          Comprendre l’architecture seront publiés ultérieurement.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block">
-    <div class="container">
-      <div class="reading-width">
-        <h2>Suivre, rejoindre ou écrire</h2>
-        <p>
-          Tu veux simplement être tenu au courant ? <a
-            href={siteConfig.links.follow}>Suis l’aventure</a
-          >.
-        </p>
-        <p>
-          Tu veux comprendre où ta contribution pourrait être utile ? <a
-            href="/rejoindre/">Rejoins la construction</a
-          >.
-        </p>
-        <p>
-          Tu as une question ou une autre idée de contribution ? <a
-            href={siteConfig.links.contact}>Écris à Orée</a
-          >.
-        </p>
+        <h2>Participer ou suivre</h2>
+        <p>Tu veux comprendre où ta contribution pourrait être utile ?</p>
+        <div class="actions">
+          <a class="button button-primary" href="/rejoindre/">Participer</a>
+        </div>
         <p class="context-note">
-          Les liens Suivre et Écrire ouvrent des formulaires Tally externes.
+          Tu préfères simplement être tenu au courant ?
+          <a href={siteConfig.links.follow}>Suis l’aventure</a>. Une question ou
+          une autre idée de contribution ?
+          <a href={siteConfig.links.contact}>Écris à Orée</a>.
         </p>
       </div>
     </div>
@@ -363,63 +321,91 @@ import { siteConfig } from "../config/site";
   }
 
   .why-section {
-    background: var(--color-surface-emphasis);
+    padding-bottom: var(--space-16);
   }
 
-  .vision-details {
-    margin-top: var(--space-6);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+  .why-seal {
+    position: absolute;
+    top: -2rem;
+    right: -6rem;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .ecosystem-card {
     background: var(--color-surface);
   }
 
-  .vision-details summary {
-    font-weight: 650;
-    cursor: pointer;
+  .ecosystem-blocks {
+    display: grid;
+    gap: var(--space-6);
+    margin-block: var(--space-6);
+  }
+
+  .ecosystem-blocks > div {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    background: var(--color-canvas);
+  }
+
+  .ecosystem-blocks strong {
+    display: block;
+    margin-bottom: var(--space-2);
     color: var(--color-canopy);
   }
 
-  .details-content {
+  .ecosystem-closure {
     margin-top: var(--space-4);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border);
   }
 
-  .roles-intro {
-    margin-bottom: var(--space-8);
+  .depth-intro {
+    margin-bottom: var(--space-6);
     color: var(--color-text-muted);
   }
 
-  .roles-grid {
+  .depth-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-8);
+    gap: var(--space-6);
     margin: 0;
-    margin-bottom: var(--space-8);
     padding: 0;
     list-style: none;
   }
 
-  .role-item strong {
+  .depth-grid li {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-canvas);
+  }
+
+  .depth-grid strong {
     display: block;
     margin-bottom: var(--space-2);
     color: var(--color-canopy);
-    font-size: var(--text-md);
   }
 
-  .roles-action {
-    margin-top: var(--space-8);
+  .depth-grid p {
+    margin-bottom: var(--space-3);
+    color: var(--color-text-muted);
   }
 
-  @media (min-width: 64rem) {
-    .roles-grid {
+  @media (min-width: 48rem) {
+    .ecosystem-blocks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .depth-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (min-width: 80rem) {
-    .roles-grid {
+    .ecosystem-blocks {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .depth-grid {
       grid-template-columns: repeat(4, 1fr);
     }
   }
@@ -431,6 +417,10 @@ import { siteConfig } from "../config/site";
 
     .status-card {
       max-width: 35rem;
+    }
+
+    .why-seal {
+      display: none;
     }
   }
 

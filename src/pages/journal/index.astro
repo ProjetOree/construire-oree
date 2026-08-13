@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SealMark from "../../components/brand/SealMark.astro";
 import { getCollection } from "astro:content";
 
 const allEntries = await getCollection("journal");
@@ -17,32 +18,44 @@ const publishedEntries = allEntries
 ---
 
 <BaseLayout
-  title="Journal — fondations et décisions"
-  description="Le journal public de Construire Orée : fondations vérifiées, décisions et limites d’une future marketplace éthique au point zéro."
+  title="Journal de Construire Orée"
+  description="Le Journal de Construire Orée présente uniquement les contenus réellement publiés et indique honnêtement lorsqu’aucun billet n’est disponible."
 >
-  <div class="container reading-width journal-index">
-    <p class="eyebrow">Journal</p>
-    <h1>Le Journal de Construire Orée</h1>
-
-    <div class="introduction">
-      <p>
-        Ce Journal documente la construction réelle de Construire Orée. Il
-        distingue ce qui est déjà versionné sur le site, ce qui reste à
-        construire pour Orée et les décisions qui ne sont pas encore prises.
-      </p>
-      <p>
-        Orée est une future marketplace éthique au point zéro. Construire Orée
-        est son site statique et son journal public : ici, une intention ne
-        devient jamais un résultat par simple formulation.
-      </p>
+  <section class="journal-hero">
+    <div class="container reading-width">
+      <p class="eyebrow">Journal</p>
+      <h1>Le Journal de Construire Orée</h1>
+      <p class="repere">Vous êtes ici · Journal</p>
     </div>
+  </section>
 
+  <section class="journal-intro bloc-plein texture-legere">
+    <div class="journal-intro-seal" aria-hidden="true">
+      <SealMark size={190} variant="negatif" />
+    </div>
+    <div class="container reading-width">
+      <div class="introduction">
+        <p>
+          Ce Journal documente la construction réelle de Construire Orée. Il
+          distingue ce qui est déjà versionné sur le site, ce qui reste à
+          construire pour Orée et les décisions qui ne sont pas encore prises.
+        </p>
+        <p>
+          Orée est une future marketplace éthique au point zéro. Construire Orée
+          est son site statique et son journal public : ici, une intention ne
+          devient jamais un résultat par simple formulation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container reading-width journal-index">
     <section class="entries-section">
       {
         publishedEntries.length === 0 ? (
           <p class="empty-state">Aucun billet n’est publié pour le moment.</p>
         ) : (
-          <ul class="entries-list">
+          <ul class="entries-list" role="list">
             {publishedEntries.map((entry) => (
               <li>
                 {entry.data.publishedAt && (
@@ -74,7 +87,7 @@ const publishedEntries = allEntries
 </BaseLayout>
 
 <style>
-  .journal-index {
+  .journal-hero {
     padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
   }
 
@@ -91,9 +104,28 @@ const publishedEntries = allEntries
     margin-bottom: var(--space-6);
   }
 
+  .journal-intro {
+    position: relative;
+    padding-block: var(--space-12) var(--space-16);
+  }
+
+  .journal-intro-seal {
+    position: absolute;
+    top: 50%;
+    left: -3rem;
+    z-index: 0;
+    opacity: 0.2;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 48rem) {
+    .journal-intro-seal {
+      display: none;
+    }
+  }
+
   .introduction {
-    margin-bottom: var(--space-12);
-    color: var(--color-text-muted);
     font-size: var(--text-md);
   }
 
@@ -101,8 +133,12 @@ const publishedEntries = allEntries
     margin-bottom: var(--space-4);
   }
 
-  .entries-section {
-    margin-top: var(--space-12);
+  .introduction p:last-child {
+    margin-bottom: 0;
+  }
+
+  .journal-index {
+    padding-block: var(--space-12) var(--space-8);
   }
 
   .empty-state {

@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   hideChrome?: boolean;
+  register?: "chaleur" | "rigueur";
 }
 
 const {
   title = siteConfig.name,
   description = siteConfig.description,
   hideChrome = false,
+  register = "chaleur",
 } = Astro.props;
 
 const pageTitle =
@@ -51,7 +53,7 @@ const pageTitle =
     <slot name="head" />
   </head>
 
-  <body>
+  <body data-register={register}>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     {!hideChrome && <SiteHeader />}

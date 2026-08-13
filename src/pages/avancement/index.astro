@@ -1,0 +1,279 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SealMark from "../../components/brand/SealMark.astro";
+---
+
+<BaseLayout
+  title="Avancement d’Orée : état et preuves"
+  description="L’état actuel vérifiable de Construire Orée, la prochaine étape documentable et la trajectoire conditionnelle, avec des vues de preuve détaillées."
+  register="rigueur"
+>
+  <section class="hero-section">
+    <div class="container reading-width">
+      <p class="eyebrow">Avancement</p>
+      <h1>Orée est au point zéro</h1>
+      <p class="repere">Vous êtes ici · Avancement</p>
+      <p class="introduction">
+        Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en
+        cours d’examen — sans date inventée et sans promesse de calendrier.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>État actuel vérifiable</h2>
+      <div class="etat-grid">
+        <div class="etat-card">
+          <p class="etat-label">Ce qui existe</p>
+          <p>
+            Un site public qui documente la construction ; une direction
+            éditoriale et visuelle validée ; une architecture de contenu qui
+            organise le site autour de cinq questions.
+          </p>
+        </div>
+        <div class="etat-card">
+          <p class="etat-label">Ce qui n’existe pas</p>
+          <p>
+            Aucune marketplace ouverte ; aucun catalogue, aucune vente, aucun
+            utilisateur de marketplace ; aucune structure coopérative
+            constituée.
+          </p>
+        </div>
+        <div class="etat-card">
+          <p class="etat-label">Ce qui est en cours d’examen</p>
+          <p>
+            Le Blueprint technique et fiscal (voir Fondations) ; les statuts
+            possibles pour les personnes qui créent ; les premiers retours issus
+            de la page Rejoindre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block bloc-inverse">
+    <div class="seal-corner" aria-hidden="true">
+      <SealMark size={120} variant="negatif" />
+    </div>
+    <div class="container reading-width">
+      <h2>Prochaine étape documentable</h2>
+      <p>
+        Le travail en cours consiste à poursuivre la publication de
+        l’architecture de contenu et des fondations sur ce site. Il est porté en
+        solo, sans équipe constituée à ce stade. La preuve attendue sera la
+        publication elle-même et les entrées du Journal, sans date fixée à
+        l’avance.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="container reading-width">
+      <h2>Trajectoire conditionnelle</h2>
+      <ol class="trajectoire-list" role="list">
+        <li>
+          <p class="trajectoire-label">Phase 1</p>
+          <p>
+            Tester un premier MVP, une fois les fondations prioritaires
+            résolues.
+          </p>
+        </li>
+        <li>
+          <p class="trajectoire-label">Phase 2</p>
+          <p>
+            Automatiser certains parcours, si des signaux mesurables
+            apparaissent.
+          </p>
+        </li>
+        <li>
+          <p class="trajectoire-label">Phase 3</p>
+          <p>
+            Envisager La Canopée, après validation du modèle économique et
+            juridique.
+          </p>
+        </li>
+      </ol>
+      <p class="context-note">
+        Chaque phase est conditionnée à la précédente ; aucune n’est planifiée à
+        une date fixe.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-block point-zero-block">
+    <div class="container reading-width">
+      <h2>Trois vues de preuve</h2>
+      <p>
+        Ces vues détaillées restent des pages secondaires, hors navigation
+        principale.
+      </p>
+      <ul class="preuves-list" role="list">
+        <li><a href="/roadmap/">Consulter la Roadmap</a></li>
+        <li><a href="/decisions/">Consulter les décisions</a></li>
+        <li><a href="/tableau-de-bord/">Consulter le tableau de bord</a></li>
+      </ul>
+      <div class="actions">
+        <a class="button button-primary" href="/journal/"
+          >Consulter le Journal</a
+        >
+        <a class="button button-secondary" href="/fondations/"
+          >Voir les fondations à résoudre</a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .introduction {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .section-block {
+    padding-block: var(--space-12);
+  }
+
+  .section-block h2 {
+    margin-bottom: var(--space-6);
+  }
+
+  .bloc-inverse {
+    padding-bottom: var(--space-16);
+  }
+
+  .etat-grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .etat-card {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .etat-label {
+    margin-bottom: var(--space-2);
+    color: var(--color-bark);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .etat-card p:last-child {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .trajectoire-list {
+    display: grid;
+    gap: var(--space-4);
+    margin: 0 0 var(--space-4);
+    padding-left: var(--space-6);
+  }
+
+  .trajectoire-label {
+    margin-bottom: var(--space-1);
+    color: var(--color-canopy);
+    font-weight: 700;
+  }
+
+  .trajectoire-list p:last-child {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .context-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .preuves-list {
+    display: grid;
+    gap: var(--space-2);
+    margin: var(--space-4) 0 var(--space-6);
+    padding: 0;
+    list-style: none;
+  }
+
+  .point-zero-block {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  @media (min-width: 48rem) {
+    .etat-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trajectoire-list {
+      grid-template-columns: repeat(3, 1fr);
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+</style>
