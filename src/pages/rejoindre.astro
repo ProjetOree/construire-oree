@@ -407,6 +407,24 @@ import { siteConfig } from "../config/site";
     margin-left: var(--space-3);
   }
 
+  /*
+   * Mission 011 — Lot 1 : les cartes d’intention sont posées sur Canvas à
+   * l’intérieur du bloc plein. Le Lin hérité de la règle globale `.bloc-plein a`
+   * y devenait illisible ; ces surcharges sont limitées aux liens des cartes et
+   * ne touchent pas les liens Lin légitimes posés directement sur Canopée.
+   */
+  .intent-grid a {
+    color: var(--color-primary);
+  }
+
+  .intent-grid a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .intent-grid a:focus-visible {
+    outline-color: var(--color-primary);
+  }
+
   @media (min-width: 48rem) {
     .intent-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -443,8 +461,21 @@ import { siteConfig } from "../config/site";
     border-radius: var(--radius-lg);
   }
 
+  /*
+   * Mission 011 — Lot 1 : repère d’arrivée non uniquement chromatique.
+   * La barre latérale passe de 3 à 6 px, compensée par le retrait gauche pour
+   * éviter tout décalage de 3 px de la colonne de lecture.
+   */
   .role-section:target {
     background-color: var(--color-surface-emphasis);
+    border-left-width: 6px;
+    padding-left: calc(var(--space-4) - 3px);
+  }
+
+  @media (forced-colors: active) {
+    .role-section:target {
+      border-left-color: Highlight;
+    }
   }
 
   .role-section--batisseur {
