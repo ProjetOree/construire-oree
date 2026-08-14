@@ -231,6 +231,31 @@ import SealMark from "../../components/brand/SealMark.astro";
     font-size: var(--text-sm);
   }
 
+  /*
+   * Mission 011 — Lot 1 : repère d’arrivée pour l’ancre publique
+   * #details-audit. Le fond reste un indice secondaire ; la barre latérale
+   * passe de 3 à 6 px avec compensation du retrait, pour éviter tout
+   * décalage de la colonne de lecture. Aucun changement d’ancre ni de markup.
+   */
+  #details-audit {
+    scroll-margin-top: 6rem;
+  }
+
+  #details-audit:target {
+    background-color: var(--color-surface-emphasis);
+  }
+
+  #details-audit:target .audit-details {
+    border-left-width: 6px;
+    padding-left: calc(var(--space-4) - 3px);
+  }
+
+  @media (forced-colors: active) {
+    #details-audit:target .audit-details {
+      border-left-color: Highlight;
+    }
+  }
+
   .audit-details {
     margin-top: var(--space-6);
     padding: var(--space-4);
