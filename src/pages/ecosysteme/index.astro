@@ -261,6 +261,17 @@ import SealMark from "../../components/brand/SealMark.astro";
     color: var(--color-text-muted);
   }
 
+  /*
+   * Mission 011 — Lot 1 : dans le bloc plein « Les relais humains », les noms
+   * de rôle (Canopée sur Canopée) et les descriptions (Muted sur Canopée)
+   * étaient illisibles. Correction locale au seul contexte fautif ; les rôles
+   * du bloc clair « Les fondations » conservent leurs couleurs.
+   */
+  .bloc-plein .role-name,
+  .bloc-plein .role-item p:last-child {
+    color: var(--color-linen);
+  }
+
   .context-note {
     color: var(--color-text-muted);
     font-size: var(--text-sm);
