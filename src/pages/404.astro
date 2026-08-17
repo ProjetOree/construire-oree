@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page introuvable"
+  description="L’adresse demandée ne correspond à aucune page de Construire Orée."
+>
+  <section class="container not-found">
+    <h1>Page introuvable</h1>
+    <p class="not-found-intro">
+      L’adresse demandée ne correspond à aucune page de Construire Orée.
+    </p>
+    <nav class="not-found-links" aria-label="Liens de sortie">
+      <a href="/" class="not-found-link not-found-link-primary">
+        Retourner à l’accueil
+      </a>
+      <a href="/projet/" class="not-found-link not-found-link-secondary">
+        Découvrir le projet
+      </a>
+    </nav>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    --hover-canopy: #2a473a;
+    --hover-linen: #ebe0cf;
+    --shadow-soft: rgba(27, 46, 37, 0.08);
+    padding-block: var(--space-16);
+  }
+
+  .not-found-intro {
+    color: var(--color-charcoal);
+    font-size: var(--text-md);
+  }
+
+  .not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+  }
+
+  .not-found-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px; /* Cible tactile >= 44px */
+    padding: var(--space-3) var(--space-6);
+    border-radius: 16px; /* Coins arrondis ~14-18px */
+    font-weight: 700;
+    font-size: var(--text-base);
+    text-decoration: none;
+    text-align: center;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .not-found-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-soft);
+  }
+
+  /* Bouton plein — mêmes couleurs validées que les boutons de /liens/ */
+  .not-found-link-primary {
+    background-color: var(--color-canopy);
+    color: var(--color-linen);
+    border: 2px solid var(--color-canopy);
+  }
+
+  .not-found-link-primary:hover {
+    background-color: var(--hover-canopy);
+    border-color: var(--hover-canopy);
+    color: var(--color-linen);
+  }
+
+  /* Bouton doux — mêmes couleurs validées que les boutons de /liens/ */
+  .not-found-link-secondary {
+    background-color: var(--color-linen);
+    color: var(--color-charcoal);
+    border: 2px solid var(--color-canopy);
+  }
+
+  .not-found-link-secondary:hover {
+    background-color: var(--hover-linen);
+    color: var(--color-charcoal);
+  }
+</style>
