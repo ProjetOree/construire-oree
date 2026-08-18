@@ -30,8 +30,8 @@ import { siteConfig } from "../config/site";
           <a class="button button-secondary" href="/rejoindre/"> Participer </a>
         </div>
         <p class="context-note">
-          Découvrir mène au manifeste et à la vision du projet. Participer mène
-          à la page qui explique les rôles et les intentions possibles
+          Découvrir présente le problème, la vision et le modèle envisagé.
+          Participer explique les rôles et ce qu’il est possible de proposer
           aujourd’hui.
         </p>
       </div>
@@ -54,10 +54,6 @@ import { siteConfig } from "../config/site";
           <div>
             <dt>Publications</dt>
             <dd>À venir</dd>
-          </div>
-          <div>
-            <dt>Prochaine étape</dt>
-            <dd>Documenter les fondations</dd>
           </div>
         </dl>
       </aside>
@@ -108,7 +104,7 @@ import { siteConfig } from "../config/site";
             </p>
           </div>
           <div>
-            <strong>Accélérateurs — Éclaireurs et Échos</strong>
+            <strong>Relais humains — Éclaireurs et Échos</strong>
             <p>
               Repérer, raconter, recommander et mettre en lumière les créations.
             </p>
@@ -123,8 +119,8 @@ import { siteConfig } from "../config/site";
           <div>
             <strong>Horizons collectifs — Clairières et Canopée</strong>
             <p>
-              Des hubs locaux envisagés et un horizon coopératif à long terme,
-              tous deux conditionnels.
+              Des communautés locales envisagées et un horizon coopératif à long
+              terme, tous deux conditionnels.
             </p>
           </div>
         </div>
@@ -139,14 +135,9 @@ import { siteConfig } from "../config/site";
     <div class="container">
       <h2>Choisir sa profondeur de lecture</h2>
       <p class="depth-intro reading-width">
-        Selon ce que tu cherches, quatre chemins mènent plus loin dans le site.
+        Selon ce que tu cherches, deux chemins mènent plus loin dans le site.
       </p>
       <ul class="depth-grid" role="list">
-        <li>
-          <strong>Comprendre la vision</strong>
-          <p>Le manifeste, la promesse cible et le modèle inversé.</p>
-          <a href="/projet/">Aller vers Projet →</a>
-        </li>
         <li>
           <strong>Voir où en est la construction</strong>
           <p>L’état réel et vérifiable, sans date inventée.</p>
@@ -156,11 +147,6 @@ import { siteConfig } from "../config/site";
           <strong>Examiner les contraintes</strong>
           <p>Ce qu’Orée doit résoudre avant d’opérer.</p>
           <a href="/fondations/">Aller vers Fondations →</a>
-        </li>
-        <li>
-          <strong>Proposer quelque chose</strong>
-          <p>Partager une expérience, une expertise ou une question.</p>
-          <a href="/rejoindre/">Aller vers Participer →</a>
         </li>
       </ul>
     </div>
@@ -329,112 +315,4 @@ import { siteConfig } from "../config/site";
     top: -2rem;
     right: -6rem;
     z-index: 0;
-    opacity: 0.2;
-    pointer-events: none;
-  }
-
-  .ecosystem-card {
-    background: var(--color-surface);
-  }
-
-  .ecosystem-blocks {
-    display: grid;
-    gap: var(--space-6);
-    margin-block: var(--space-6);
-  }
-
-  .ecosystem-blocks > div {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    background: var(--color-canvas);
-  }
-
-  .ecosystem-blocks strong {
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-canopy);
-  }
-
-  .ecosystem-closure {
-    margin-top: var(--space-4);
-  }
-
-  .depth-intro {
-    margin-bottom: var(--space-6);
-    color: var(--color-text-muted);
-  }
-
-  .depth-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .depth-grid li {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-canvas);
-  }
-
-  .depth-grid strong {
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-canopy);
-  }
-
-  .depth-grid p {
-    margin-bottom: var(--space-3);
-    color: var(--color-text-muted);
-  }
-
-  @media (min-width: 48rem) {
-    .ecosystem-blocks {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .depth-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .ecosystem-blocks {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .depth-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  @media (max-width: 48rem) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .status-card {
-      max-width: 35rem;
-    }
-
-    .why-seal {
-      display: none;
-    }
-  }
-
-  @media (max-width: 30rem) {
-    .actions {
-      display: grid;
-    }
-
-    .button {
-      width: 100%;
-    }
-
-    .status-card {
-      padding: var(--space-6);
-    }
-  }
-</style>
+    opacity: 0
