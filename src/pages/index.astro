@@ -315,4 +315,112 @@ import { siteConfig } from "../config/site";
     top: -2rem;
     right: -6rem;
     z-index: 0;
-    opacity: 0
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .ecosystem-card {
+    background: var(--color-surface);
+  }
+
+  .ecosystem-blocks {
+    display: grid;
+    gap: var(--space-6);
+    margin-block: var(--space-6);
+  }
+
+  .ecosystem-blocks > div {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    background: var(--color-canvas);
+  }
+
+  .ecosystem-blocks strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-canopy);
+  }
+
+  .ecosystem-closure {
+    margin-top: var(--space-4);
+  }
+
+  .depth-intro {
+    margin-bottom: var(--space-6);
+    color: var(--color-text-muted);
+  }
+
+  .depth-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .depth-grid li {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-canvas);
+  }
+
+  .depth-grid strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-canopy);
+  }
+
+  .depth-grid p {
+    margin-bottom: var(--space-3);
+    color: var(--color-text-muted);
+  }
+
+  @media (min-width: 48rem) {
+    .ecosystem-blocks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .depth-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .ecosystem-blocks {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .depth-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .status-card {
+      max-width: 35rem;
+    }
+
+    .why-seal {
+      display: none;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .actions {
+      display: grid;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .status-card {
+      padding: var(--space-6);
+    }
+  }
+</style>
