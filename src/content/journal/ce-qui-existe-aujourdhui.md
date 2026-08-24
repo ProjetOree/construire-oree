@@ -30,7 +30,7 @@ L’[Accueil](/) pose l’état réel du projet : Orée est au point zéro. La m
 
 L’Accueil présente aussi deux façons d’entrer dans la construction. Il est possible de suivre les nouvelles publiques du projet. Il est aussi possible de comprendre les formes de contribution envisagées, sans que cela crée un rôle attribué, une mission, une rémunération ou un engagement réciproque.
 
-La page [Rejoindre](/rejoindre/) va plus loin sur ce deuxième chemin. Elle présente Bâtisseur, Artiste ou Artisan, Éclaireur et Écho comme des repères de conception. Ces rôles aident à formuler les besoins possibles du projet ; ils ne décrivent pas des personnes déjà engagées, des utilisateurs réels ou une communauté existante.
+La page [Participer](/rejoindre/) va plus loin sur ce deuxième chemin. Elle présente Bâtisseur, Artiste ou Artisan, Éclaireur et Écho comme des repères de conception. Ces rôles aident à formuler les besoins possibles du projet ; ils ne décrivent pas des personnes déjà engagées, des utilisateurs réels ou une communauté existante.
 
 La [PR #3 — construire le seuil d’entrée Accueil et Rejoindre](https://github.com/ProjetOree/construire-oree/pull/3) est la preuve de cette évolution. Elle documente la révision de l’Accueil, la page Rejoindre et les limites explicites associées aux rôles et aux formulaires.
 
@@ -42,7 +42,7 @@ J’y explique pourquoi je construis Orée, sans inventer de parcours idéal ni 
 
 Cette page ne prétend pas résoudre ces obstacles aujourd’hui. Elle rappelle plutôt la direction : imaginer un cadre qui enlève des frictions sans décider à la place des personnes qui créent.
 
-Elle explique également la méthode retenue pour Construire Orée. Les outils d’IA peuvent aider à explorer, structurer ou relire. Ils ne décident pas de la direction du projet, ne valident pas les faits et ne remplacent pas un arbitrage humain. Je reste responsable de ce qui est publié et de ce qui ne l’est pas.
+Elle explique également la méthode retenue pour Construire Orée. Les outils d’IA peuvent aider à explorer, structurer ou relire. Ils ne décident pas de la direction du projet, ne valident pas les faits à ma place et ne remplacent pas un arbitrage humain. Je reste responsable de ce qui est publié et de ce qui ne l’est pas.
 
 La [PR #4 — publier la page À propos](https://github.com/ProjetOree/construire-oree/pull/4) documente l’ajout de cette page, la distinction entre Orée et Construire Orée, le rappel du point zéro et l’usage du Sceau sans portrait réel.
 
@@ -65,10 +65,10 @@ Il ne servira pas à fabriquer une chronologie plus flatteuse que la réalité. 
 Pour l’instant, les faits sont simples :
 
 - un socle visuel et structurel est versionné sur `main` ;
-- l’Accueil et Rejoindre rendent le point zéro plus lisible ;
+- l’Accueil et Participer rendent le point zéro plus lisible ;
 - À propos explique qui porte le projet et comment celui-ci est construit ;
 - la marketplace Orée reste à construire.
 
-Tu peux revenir à l’[Accueil](/) pour situer le projet, lire [À propos](/a-propos/) pour comprendre son origine ou consulter [Rejoindre](/rejoindre/) pour voir les formes de contribution envisagées aujourd’hui.
+Tu peux revenir à l’[Accueil](/) pour situer le projet, lire [À propos](/a-propos/) pour comprendre son origine ou consulter [Participer](/rejoindre/) pour voir les formes de contribution envisagées aujourd’hui.
 
 [Revenir au Journal](/journal/).
