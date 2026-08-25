@@ -41,7 +41,7 @@ export const siteConfig = {
   },
 
   licensing: {
-    code: "AGPL-3.0",
+    code: "AGPL-3.0-only",
     editorialContent: "CC BY-SA 4.0",
     trademarkExcluded: true,
   },
