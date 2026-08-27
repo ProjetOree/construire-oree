@@ -21,6 +21,25 @@ Ce site est construit avec le framework [Astro](https://astro.build/). Les princ
 
 ## Licences
 
-- **Code source** : [AGPL-3.0](./LICENSE)
-- **Contenu éditorial** : [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- **Marque exclue** : La marque « Orée », son logo et les éléments d’identité visuelle ne sont pas sous licence libre et demeurent la propriété exclusive de leurs auteurs.
+- **Code source** — sauf indication contraire, le code source de Construire
+  Orée est mis à disposition sous la GNU Affero General Public License version
+  3 seulement (`AGPL-3.0-only`). Le texte intégral figure dans
+  [`LICENSE`](./LICENSE). Mention : `Copyright (c) 2026 Jérémy LITIQUE`.
+- **Contenus éditoriaux** — sauf indication contraire, la prose éditoriale
+  originale destinée à être lue sur le site, y compris dans les fichiers mixtes
+  de `src/pages/` et `src/content/`, est mise à disposition sous
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Cette
+  licence ne couvre pas le code Astro, TypeScript ou CSS qui entoure cette
+  prose. Attribution : `Jérémy LITIQUE`.
+- **Éléments de marque réservés** — la dénomination et la marque « Orée », Le
+  Sceau et ses déclinaisons, le logotype, `public/favicon.svg` et
+  `public/social/construire-oree.png` ne sont placés ni sous l’AGPL ni sous CC
+  BY-SA 4.0. Leur présence dans le dépôt n’accorde pas de licence de
+  réutilisation ; droits de marque et copyright réservés. Toute utilisation
+  exige une autorisation distincte du titulaire concerné.
+- **Fontes tierces** — Fraunces (`Copyright 2020 The Fraunces Project
+Authors`), Hanken Grotesk (`Copyright 2021 The Hanken Grotesk Project
+Authors`) et JetBrains Mono (`Copyright 2020 The JetBrains Mono Project
+Authors`) sont distribuées sous [SIL Open Font License
+  1.1](https://openfontlicense.org/open-font-license-official-text/). Les paquets `@fontsource-variable/*`
+  contiennent leurs avis et textes de licence.
