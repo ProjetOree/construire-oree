@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SealMark from "../components/brand/SealMark.astro";
+import { siteConfig } from "../config/site";
 ---
 
 <BaseLayout
@@ -135,9 +136,9 @@ import SealMark from "../components/brand/SealMark.astro";
         l’est.
       </p>
       <ul class="action-list">
-        <li><a href="https://tally.so/r/Bz57ON">Suivre l’aventure</a></li>
+        <li><a href={siteConfig.links.follow}>Suivre l’aventure</a></li>
         <li><a href="/rejoindre/">Participer</a></li>
-        <li><a href="https://tally.so/r/q4eVx7">Écrire à Orée</a></li>
+        <li><a href={siteConfig.links.contact}>Écrire à Orée</a></li>
       </ul>
       <p class="context-note">
         Les liens Suivre et Écrire ouvrent des formulaires Tally externes.
