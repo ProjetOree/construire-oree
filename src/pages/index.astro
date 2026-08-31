@@ -8,26 +8,22 @@ import { siteConfig } from "../config/site";
   title="Journal public d’un projet au point zéro"
   description="Construire Orée documente, au point zéro, la construction publique d’une future marketplace éthique pour la création originale faite main."
 >
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="container home-hero-grid">
+      <div class="home-hero-copy">
         <p class="eyebrow">Journal public de construction</p>
-
-        <h1>Construire Orée depuis le point zéro</h1>
-
+        <h1 id="home-title">Construire Orée depuis le point zéro</h1>
         <p class="introduction">
           Orée est une future marketplace éthique pour la création originale,
           l’art et l’artisanat d’art, pensée dans une perspective d’économie
           sociale et solidaire. Construire Orée est le journal public de cette
           construction.
         </p>
-
         <div class="actions">
-          <a class="button button-primary" href="/projet/">
-            Découvrir le projet
-          </a>
-
-          <a class="button button-secondary" href="/rejoindre/"> Participer </a>
+          <a class="button button-primary" href="/projet/"
+            >Découvrir le projet</a
+          >
+          <a class="button button-secondary" href="/rejoindre/">Participer</a>
         </div>
         <p class="context-note">
           Découvrir présente le problème, la vision et le modèle envisagé.
@@ -39,24 +35,75 @@ import { siteConfig } from "../config/site";
       <aside class="status-card" aria-labelledby="etat-actuel">
         <p class="status-label">État actuel</p>
         <h2 id="etat-actuel">Point zéro</h2>
-
         <p>
           La marketplace n’est pas encore ouverte : aucun catalogue, aucune
           vente, aucun utilisateur de marketplace. Le travail actuel consiste à
           documenter les fondations.
         </p>
-
         <dl>
-          <div>
-            <dt>Produit</dt>
-            <dd>Pas encore construit</dd>
-          </div>
-          <div>
-            <dt>Publications</dt>
-            <dd>À venir</dd>
-          </div>
+          <div><dt>Produit</dt><dd>Pas encore construit</dd></div>
+          <div><dt>Publications</dt><dd>À venir</dd></div>
         </dl>
       </aside>
+    </div>
+  </section>
+
+  <section class="home-facts" aria-label="État actuel">
+    <div class="container">
+      <div class="facts-grid">
+        <div class="fact-card">
+          <p class="fact-label">État actuel</p>
+          <p>
+            La marketplace n’est pas encore ouverte : aucun catalogue, aucune
+            vente, aucun utilisateur de marketplace.
+          </p>
+        </div>
+        <div class="fact-card">
+          <p class="fact-label">Ce qui est documenté</p>
+          <p>Le travail actuel consiste à documenter les fondations.</p>
+        </div>
+        <div class="fact-card">
+          <p class="fact-label">Question ouverte</p>
+          <p>Ce qu’Orée doit résoudre avant d’opérer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="orientation-section" aria-labelledby="orientation-title">
+    <div class="container">
+      <div class="orientation-intro">
+        <h2 id="orientation-title">Choisir sa profondeur de lecture</h2>
+      </div>
+      <div class="door-grid">
+        <a class="door-card" href="/projet/"
+          ><span class="door-index" aria-hidden="true">01</span><span
+            class="door-title">Comprendre</span
+          ><span class="door-copy"
+            >Découvrir présente le problème, la vision et le modèle envisagé.</span
+          ></a
+        >
+        <a class="door-card" href="/avancement/"
+          ><span class="door-index" aria-hidden="true">02</span><span
+            class="door-title">Suivre</span
+          ><span class="door-copy"
+            >L’état réel et vérifiable, sans date inventée.</span
+          ></a
+        >
+        <div class="door-card door-card--pending" aria-disabled="true">
+          <span class="door-index" aria-hidden="true">03</span><span
+            class="door-title">Discuter — espace en préparation</span
+          >
+        </div>
+        <a class="door-card" href="/rejoindre/"
+          ><span class="door-index" aria-hidden="true">04</span><span
+            class="door-title">Participer</span
+          ><span class="door-copy"
+            >Participer explique les rôles et ce qu’il est possible de proposer
+            aujourd’hui.</span
+          ></a
+        >
+      </div>
     </div>
   </section>
 
@@ -79,137 +126,131 @@ import { siteConfig } from "../config/site";
           Orée cherche à inverser ce mouvement : que le système repère, ouvre
           une porte, et laisse la personne choisir.
         </p>
-        <p>
-          <a href="/projet/">Lire le manifeste complet →</a>
-        </p>
+        <p><a href="/projet/">Lire le manifeste complet →</a></p>
       </div>
     </div>
   </section>
 
-  <section class="section-block ecosystem-card">
-    <div class="container">
-      <div class="reading-width">
-        <h2>L’écosystème en un seul schéma</h2>
+  <section
+    class="section-block ecosystem-section"
+    aria-labelledby="ecosystem-title"
+  >
+    <div class="container ecosystem-grid">
+      <div class="ecosystem-copy">
+        <h2 id="ecosystem-title">L’écosystème en un seul schéma</h2>
         <p>
           Orée est au point zéro. L’écosystème présenté ici n’existe pas encore
           : il sert à rendre lisible la direction du projet et les liens que la
           future marketplace cherchera à créer.
         </p>
-        <div class="ecosystem-blocks">
-          <div>
-            <strong>Cœur — créer et découvrir</strong>
-            <p>
-              Des personnes qui créent, et d’autres qui pourront découvrir leurs
-              œuvres ou leurs savoir-faire.
-            </p>
-          </div>
-          <div>
-            <strong>Relais humains — Éclaireurs et Échos</strong>
-            <p>
-              Repérer, raconter, recommander et mettre en lumière les créations.
-            </p>
-          </div>
-          <div>
-            <strong>Fondations — Bâtisseurs</strong>
-            <p>
-              Éclairer les sujets techniques, juridiques, fiscaux et
-              opérationnels du projet.
-            </p>
-          </div>
-          <div>
-            <strong>Horizons collectifs — Clairières et Canopée</strong>
-            <p>
-              Des communautés locales envisagées et un horizon coopératif à long
-              terme, tous deux conditionnels.
-            </p>
-          </div>
-        </div>
         <p class="ecosystem-closure">
           <a href="/ecosysteme/">Comprendre l’écosystème en détail →</a>
         </p>
       </div>
+      <div class="ecosystem-blocks">
+        <div>
+          <strong>Cœur — créer et découvrir</strong><p>
+            Des personnes qui créent, et d’autres qui pourront découvrir leurs
+            œuvres ou leurs savoir-faire.
+          </p>
+        </div>
+        <div>
+          <strong>Relais humains — Éclaireurs et Échos</strong><p>
+            Repérer, raconter, recommander et mettre en lumière les créations.
+          </p>
+        </div>
+        <div>
+          <strong>Fondations — Bâtisseurs</strong><p>
+            Éclairer les sujets techniques, juridiques, fiscaux et opérationnels
+            du projet.
+          </p>
+        </div>
+        <div>
+          <strong>Horizons collectifs — Clairières et Canopée</strong><p>
+            Des communautés locales envisagées et un horizon coopératif à long
+            terme, tous deux conditionnels.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section-block">
+  <section class="section-block path-section" aria-labelledby="path-title">
     <div class="container">
-      <h2>Choisir sa profondeur de lecture</h2>
-      <p class="depth-intro reading-width">
-        Selon ce que tu cherches, deux chemins mènent plus loin dans le site.
-      </p>
-      <ul class="depth-grid" role="list">
-        <li>
-          <strong>Voir où en est la construction</strong>
-          <p>L’état réel et vérifiable, sans date inventée.</p>
-          <a href="/avancement/">Aller vers Avancement →</a>
+      <div class="path-heading">
+        <h2 id="path-title">Cheminement de lecture</h2>
+      </div>
+      <ol class="reading-path">
+        <li><a href="/projet/">Projet</a></li><li>
+          <span>Construction</span>
+        </li><li>
+          <a href="/journal/">Journal</a>
+        </li><li><span>Discussions</span></li><li>
+          <a href="/rejoindre/">Participer</a>
         </li>
-        <li>
-          <strong>Examiner les contraintes</strong>
-          <p>Ce qu’Orée doit résoudre avant d’opérer.</p>
-          <a href="/fondations/">Aller vers Fondations →</a>
-        </li>
-      </ul>
+      </ol>
+      <div class="path-notes">
+        <p><strong>Roadmap — espace en préparation</strong></p>
+        <p><strong>Écho — rôle à explorer</strong></p>
+      </div>
     </div>
   </section>
 
   <section class="section-block closure-section">
-    <div class="container">
+    <div class="container closure-grid">
       <div class="reading-width">
-        <h2>Participer ou suivre</h2>
-        <p>Tu veux comprendre où ta contribution pourrait être utile ?</p>
-        <div class="actions">
+        <h2>Participer ou suivre</h2><p>
+          Tu veux comprendre où ta contribution pourrait être utile ?
+        </p><div class="actions">
           <a class="button button-primary" href="/rejoindre/">Participer</a>
         </div>
-        <p class="context-note">
-          Tu préfères simplement être tenu au courant ?
-          <a href={siteConfig.links.follow}>Suis l’aventure</a>. Une question ou
-          une autre idée de contribution ?
-          <a href={siteConfig.links.contact}>Écris à Orée</a>.
-        </p>
       </div>
+      <p class="context-note closure-note">
+        Tu préfères simplement être tenu au courant ? <a
+          href={siteConfig.links.follow}>Suis l’aventure (formulaire externe)</a
+        >. Une question ou une autre idée de contribution ? <a
+          href={siteConfig.links.contact}>Écris à Orée (formulaire externe)</a
+        >.
+      </p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .hero {
-    padding-block: clamp(4rem, 10vw, 8rem);
+  .home-hero,
+  .orientation-section,
+  .ecosystem-section,
+  .path-section,
+  .closure-section {
+    position: relative;
   }
-
-  .hero-grid {
+  .home-hero {
+    padding-block: clamp(4rem, 8vw, 7rem) clamp(3rem, 6vw, 5rem);
+  }
+  .home-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.75fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.72fr);
     align-items: start;
-    gap: clamp(3rem, 8vw, 7rem);
+    gap: clamp(2.5rem, 7vw, 6rem);
   }
-
-  .eyebrow {
-    margin-bottom: var(--space-4);
-    color: var(--color-bark);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  h1 {
+  .home-hero-copy h1,
+  .orientation-intro h2,
+  .path-heading h2,
+  .closure-grid h2 {
     margin-bottom: var(--space-6);
   }
-
   .introduction {
-    max-width: 41rem;
+    max-width: 43rem;
     margin-bottom: var(--space-8);
     color: var(--color-text-muted);
     font-size: var(--text-md);
   }
-
   .actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
     margin-bottom: var(--space-4);
   }
-
   .button {
     display: inline-flex;
     min-height: 44px;
@@ -223,93 +264,207 @@ import { siteConfig } from "../config/site";
     transition:
       background-color var(--transition-fast),
       border-color var(--transition-fast),
-      color var(--transition-fast);
+      color var(--transition-fast),
+      transform var(--transition-fast);
   }
-
   .button-primary {
     background: var(--color-action-hover);
     color: var(--color-white);
   }
-
   .button-primary:hover {
     background: var(--color-canopy);
     color: var(--color-linen);
+    transform: translateY(-2px);
   }
-
   .button-secondary {
     border-color: var(--color-canopy);
     color: var(--color-canopy);
   }
-
   .button-secondary:hover {
     background: var(--color-canopy);
     color: var(--color-linen);
+    transform: translateY(-2px);
   }
-
+  .button:focus-visible,
+  .door-card:focus-visible {
+    outline-color: var(--color-canopy);
+    outline-offset: 4px;
+    box-shadow:
+      0 0 0 4px var(--color-linen),
+      0 0 0 7px var(--color-dawn);
+  }
   .context-note {
+    margin-top: var(--space-2);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
-    margin-top: var(--space-2);
   }
-
   .status-card {
-    padding: var(--space-8);
+    position: relative;
+    padding: clamp(var(--space-6), 4vw, var(--space-8));
     border: 1px solid var(--color-border);
-    border-top: 0.35rem solid var(--color-dawn);
     border-radius: var(--radius-lg);
     background: var(--color-linen);
+    box-shadow: 0 1rem 2.5rem rgba(44, 40, 37, 0.06);
   }
-
-  .status-label {
-    margin-bottom: var(--space-2);
+  .status-card::before {
+    position: absolute;
+    top: var(--space-6);
+    right: var(--space-6);
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--color-dawn);
+    content: "";
+  }
+  .status-label,
+  .section-kicker {
+    margin-bottom: var(--space-3);
     color: var(--color-bark);
+    font-family: var(--font-mono);
     font-size: var(--text-caption);
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
   }
-
+  .section-kicker {
+    padding-left: var(--space-3);
+    border-left: 2px solid var(--color-dawn);
+  }
+  .section-kicker--inverse {
+    color: var(--color-linen);
+  }
   .status-card h2 {
     margin-bottom: var(--space-4);
   }
-
   .status-card > p {
     color: var(--color-text-muted);
   }
-
   .status-card dl {
     margin: var(--space-8) 0 0;
   }
-
   .status-card dl div {
     display: grid;
     gap: var(--space-1);
     padding-block: var(--space-3);
     border-top: 1px solid var(--color-border);
   }
-
   .status-card dt {
     color: var(--color-text-muted);
     font-size: var(--text-caption);
   }
-
   .status-card dd {
     margin: 0;
     font-weight: 700;
   }
-
-  .section-block {
-    padding-block: var(--space-12);
+  .orientation-section {
+    padding-block: var(--space-8) var(--space-12);
   }
-
+  .home-facts {
+    padding-bottom: var(--space-8);
+  }
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-linen);
+  }
+  .fact-card {
+    min-height: 9rem;
+    padding: var(--space-6);
+  }
+  .fact-card + .fact-card {
+    border-left: 1px solid var(--color-border);
+  }
+  .fact-label {
+    margin-bottom: var(--space-3);
+    color: var(--color-canopy);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+  }
+  .fact-card p:last-child {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+  .orientation-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    column-gap: var(--space-12);
+    margin-bottom: var(--space-8);
+  }
+  .orientation-intro .section-kicker,
+  .orientation-intro h2 {
+    grid-column: 1;
+  }
+  .orientation-intro > p:last-child {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: end;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-muted);
+  }
+  .door-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .door-card {
+    display: grid;
+    min-height: 17rem;
+    align-content: start;
+    gap: var(--space-3);
+    padding: var(--space-6);
+    color: var(--color-text);
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+  .door-card + .door-card {
+    border-left: 1px solid var(--color-border);
+  }
+  .door-card:hover {
+    background: var(--color-surface);
+    color: var(--color-primary);
+    transform: translateY(-3px);
+  }
+  .door-card--pending {
+    cursor: default;
+  }
+  .door-card--pending:hover {
+    background: var(--color-canvas);
+    color: var(--color-text);
+    transform: none;
+  }
+  .door-index {
+    color: var(--color-bark);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+  }
+  .door-title {
+    color: var(--color-canopy);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+  }
+  .door-copy {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+  .section-block {
+    padding-block: clamp(var(--space-12), 7vw, var(--space-24));
+  }
   .section-block h2 {
     margin-bottom: var(--space-6);
   }
-
   .why-section {
-    padding-bottom: var(--space-16);
+    padding-bottom: clamp(var(--space-16), 8vw, var(--space-24));
   }
-
   .why-seal {
     position: absolute;
     top: -2rem;
@@ -318,109 +473,189 @@ import { siteConfig } from "../config/site";
     opacity: 0.2;
     pointer-events: none;
   }
-
-  .ecosystem-card {
+  .ecosystem-section {
     background: var(--color-surface);
   }
-
-  .ecosystem-blocks {
+  .ecosystem-grid {
     display: grid;
-    gap: var(--space-6);
-    margin-block: var(--space-6);
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(var(--space-8), 7vw, var(--space-24));
+    align-items: start;
   }
-
-  .ecosystem-blocks > div {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    background: var(--color-canvas);
-  }
-
-  .ecosystem-blocks strong {
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-canopy);
-  }
-
-  .ecosystem-closure {
-    margin-top: var(--space-4);
-  }
-
-  .depth-intro {
-    margin-bottom: var(--space-6);
+  .ecosystem-copy p:not(.section-kicker) {
     color: var(--color-text-muted);
   }
-
-  .depth-grid {
+  .ecosystem-blocks {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+  .ecosystem-blocks > div {
+    min-height: 10.5rem;
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-canvas);
+  }
+  .ecosystem-blocks strong {
+    display: block;
+    margin-bottom: var(--space-3);
+    color: var(--color-canopy);
+  }
+  .ecosystem-blocks p {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+  .ecosystem-closure {
+    margin-top: var(--space-6);
+  }
+  .path-section {
+    overflow: hidden;
+  }
+  .path-heading {
+    max-width: 42rem;
+  }
+  .reading-path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
     padding: 0;
     list-style: none;
   }
-
-  .depth-grid li {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-canvas);
+  .reading-path li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
   }
-
-  .depth-grid strong {
-    display: block;
-    margin-bottom: var(--space-2);
+  .reading-path li:not(:last-child)::after {
+    width: 2rem;
+    height: 1px;
+    background: var(--color-dawn);
+    content: "";
+  }
+  .reading-path a,
+  .reading-path span {
     color: var(--color-canopy);
+    text-decoration: none;
   }
-
-  .depth-grid p {
-    margin-bottom: var(--space-3);
+  .reading-path span {
     color: var(--color-text-muted);
   }
-
-  @media (min-width: 48rem) {
-    .ecosystem-blocks {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .depth-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .reading-path a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-dawn);
+    text-underline-offset: 0.25em;
   }
-
-  @media (min-width: 80rem) {
-    .ecosystem-blocks {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .depth-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .path-notes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
   }
-
-  @media (max-width: 48rem) {
-    .hero-grid {
+  .path-notes p {
+    display: grid;
+    gap: var(--space-1);
+    margin-bottom: 0;
+  }
+  .path-notes strong {
+    color: var(--color-canopy);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+  }
+  .path-notes span {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+  .closure-section {
+    padding-bottom: 0;
+  }
+  .closure-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr);
+    gap: clamp(var(--space-8), 8vw, var(--space-24));
+    padding-bottom: var(--space-12);
+  }
+  .closure-note {
+    align-self: end;
+    padding: var(--space-6);
+    border-left: 2px solid var(--color-dawn);
+    background: var(--color-surface);
+  }
+  @media (max-width: 64rem) {
+    .door-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .facts-grid {
       grid-template-columns: 1fr;
     }
-
-    .status-card {
-      max-width: 35rem;
+    .fact-card + .fact-card {
+      border-top: 1px solid var(--color-border);
+      border-left: 0;
     }
-
+    .door-card:nth-child(3) {
+      border-left: 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .door-card:nth-child(4) {
+      border-top: 1px solid var(--color-border);
+    }
+  }
+  @media (max-width: 48rem) {
+    .home-hero-grid,
+    .orientation-intro,
+    .ecosystem-grid,
+    .closure-grid {
+      grid-template-columns: 1fr;
+    }
+    .orientation-intro > p:last-child {
+      grid-column: 1;
+      grid-row: auto;
+      margin-bottom: 0;
+    }
+    .status-card {
+      max-width: 38rem;
+    }
     .why-seal {
       display: none;
     }
   }
-
-  @media (max-width: 30rem) {
+  @media (max-width: 36rem) {
+    .actions,
+    .door-grid,
+    .ecosystem-blocks,
+    .path-notes,
+    .facts-grid {
+      grid-template-columns: 1fr;
+    }
     .actions {
       display: grid;
     }
-
     .button {
       width: 100%;
     }
-
-    .status-card {
-      padding: var(--space-6);
+    .door-card,
+    .door-card + .door-card,
+    .door-card:nth-child(3),
+    .door-card:nth-child(4) {
+      min-height: auto;
+      border-left: 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .door-card:first-child {
+      border-top: 0;
+    }
+    .reading-path {
+      display: grid;
+      gap: var(--space-3);
+    }
+    .reading-path li:not(:last-child)::after {
+      display: none;
     }
   }
 </style>
