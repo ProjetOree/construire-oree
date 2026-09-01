@@ -4,12 +4,9 @@ import SealMark from "../brand/SealMark.astro";
 const pathname = Astro.url.pathname;
 
 function isCurrent(path: string) {
-  if (path === "/") {
-    return pathname === "/" ? "page" : undefined;
-  }
+  if (path === "/") return pathname === "/" ? "page" : undefined;
   const normalizedPathname = pathname.endsWith("/") ? pathname : `${pathname}/`;
   const normalizedPath = path.endsWith("/") ? path : `${path}/`;
-
   return normalizedPathname.startsWith(normalizedPath) ? "page" : undefined;
 }
 ---
@@ -23,14 +20,12 @@ function isCurrent(path: string) {
       aria-current={isCurrent("/")}
     >
       <SealMark size={48} />
-
-      <span class="brand-copy">
-        <span class="brand-kicker">Construire</span>
-        <span class="brand-name">Or<span class="brand-accent">é</span>e</span>
-      </span>
+      <span class="brand-copy"
+        ><span class="brand-kicker">Construire</span><span class="brand-name"
+          >Or<span class="brand-accent">é</span>e</span
+        ></span
+      >
     </a>
-
-    <!-- Desktop Navigation -->
     <div class="desktop-nav-container">
       <nav aria-label="Navigation principale" class="main-nav">
         <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
@@ -47,13 +42,10 @@ function isCurrent(path: string) {
           aria-current={isCurrent("/rejoindre/")}>Participer</a
         >
       </nav>
-      <span class="phase">
-        <span class="phase-dot" aria-hidden="true"></span>
-        Point zéro
-      </span>
+      <span class="phase"
+        ><span class="phase-dot" aria-hidden="true"></span>Point zéro</span
+      >
     </div>
-
-    <!-- Mobile Navigation -->
     <details class="mobile-nav-container">
       <summary class="menu-button">Menu</summary>
       <div class="mobile-nav-content">
@@ -71,10 +63,9 @@ function isCurrent(path: string) {
           >
         </nav>
         <div class="mobile-phase">
-          <span class="phase">
-            <span class="phase-dot" aria-hidden="true"></span>
-            Point zéro
-          </span>
+          <span class="phase"
+            ><span class="phase-dot" aria-hidden="true"></span>Point zéro</span
+          >
         </div>
       </div>
     </details>
@@ -83,20 +74,18 @@ function isCurrent(path: string) {
 
 <style>
   .site-header {
-    border-bottom: 1px solid var(--color-border);
-    background: color-mix(in srgb, var(--color-canvas) 94%, transparent);
     position: relative;
     z-index: 50;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-canvas);
   }
-
   .header-inner {
     display: flex;
-    min-height: 5rem;
+    min-height: 5.5rem;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4);
   }
-
   .brand {
     display: inline-flex;
     align-items: center;
@@ -104,16 +93,13 @@ function isCurrent(path: string) {
     color: var(--color-canopy);
     text-decoration: none;
   }
-
   .brand:hover {
     color: var(--color-moss);
   }
-
   .brand-copy {
     display: grid;
     line-height: 1;
   }
-
   .brand-kicker {
     margin-bottom: var(--space-1);
     color: var(--color-text-muted);
@@ -122,17 +108,14 @@ function isCurrent(path: string) {
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-
   .brand-name {
     font-family: var(--font-display);
     font-size: 1.65rem;
     font-weight: 600;
   }
-
   .brand-accent {
     color: var(--color-dawn);
   }
-
   .phase {
     display: inline-flex;
     min-height: 2.75rem;
@@ -146,141 +129,124 @@ function isCurrent(path: string) {
     font-weight: 650;
     white-space: nowrap;
   }
-
   .phase-dot {
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
     background: var(--color-dawn);
   }
-
-  /* Desktop Nav */
   .desktop-nav-container {
     display: none;
     align-items: center;
     gap: var(--space-6);
   }
-
   .main-nav {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
-
   .main-nav a {
-    color: var(--color-text-muted);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: var(--text-sm);
-    padding: var(--space-2);
-    min-height: 44px;
     display: inline-flex;
+    min-height: 44px;
     align-items: center;
-    transition: color var(--transition-fast);
+    padding: var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      color var(--transition-fast),
+      text-decoration-color var(--transition-fast);
   }
-
   .main-nav a:hover,
   .main-nav a[aria-current="page"] {
     color: var(--color-canopy);
   }
-
   .main-nav a[aria-current="page"] {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
     font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--color-dawn);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.4rem;
   }
-
   .nav-join {
     color: var(--color-action-hover) !important;
   }
-
   .nav-join:hover {
     color: var(--color-canopy) !important;
   }
-
-  /* Mobile Nav */
   .mobile-nav-container {
     display: block;
   }
-
   .menu-button {
     display: inline-flex;
+    min-height: 44px;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
     padding-inline: var(--space-3);
-    font-weight: 600;
-    font-size: var(--text-sm);
-    color: var(--color-canopy);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    cursor: pointer;
     background: var(--color-canvas);
+    color: var(--color-canopy);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 700;
     user-select: none;
     transition:
       background-color var(--transition-fast),
       border-color var(--transition-fast);
   }
-
   .mobile-nav-container[open] .menu-button {
-    background: var(--color-surface-soft);
     border-color: var(--color-canopy);
+    background: var(--color-surface-soft);
   }
-
   .mobile-nav-content {
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
-    background: var(--color-canvas);
-    border-bottom: 1px solid var(--color-border);
+    left: 0;
     padding: var(--space-4);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-canvas);
+    box-shadow: 0 1rem 2.5rem rgba(44, 40, 37, 0.08);
   }
-
   .main-nav-mobile {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-1);
   }
-
   .main-nav-mobile a {
     display: flex;
-    align-items: center;
     min-height: 44px;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: var(--text-md);
+    align-items: center;
     padding-inline: var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-decoration: none;
   }
-
   .main-nav-mobile a:hover,
   .main-nav-mobile a[aria-current="page"] {
     color: var(--color-canopy);
   }
-
   .main-nav-mobile a[aria-current="page"] {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
     font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--color-dawn);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35rem;
   }
-
   .mobile-phase {
     margin-top: var(--space-6);
     padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
   }
-
   @media (max-width: 31rem) {
     .phase {
       padding-inline: var(--space-2);
       font-size: var(--text-caption);
     }
   }
-
   @media (min-width: 64rem) {
     .desktop-nav-container {
       display: flex;

@@ -66,8 +66,17 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
+a:active {
+  color: var(--color-primary-hover);
+}
+
 :focus-visible {
-  outline: 3px solid var(--color-focus);
+  outline: 3px solid var(--color-canopy);
+  outline-offset: 3px;
+}
+
+summary:focus-visible {
+  outline: 3px solid var(--color-canopy);
   outline-offset: 3px;
 }
 
