@@ -1,7 +1,8 @@
 ---
 title: "Ce qui existe aujourd’hui sur Construire Orée"
 description: "Les fondations réellement publiées de Construire Orée : identité visuelle, Accueil, Rejoindre et À propos, sans confondre le site avec la future marketplace Orée."
-draft: true
+draft: false
+publishedAt: "2026-09-01"
 ---
 
 Construire Orée existe déjà comme site statique versionné sur `main`. Orée, elle, reste au point zéro.
@@ -28,11 +29,11 @@ La deuxième fondation concerne ce que le site explique dès l’arrivée.
 
 L’[Accueil](/) pose l’état réel du projet : Orée est au point zéro. La marketplace n’est pas disponible. Il n’y a pas de produit à montrer, pas de vente à raconter et pas de promesse d’accès anticipé à faire.
 
-L’Accueil présente aussi deux façons d’entrer dans la construction. Il est possible de suivre les nouvelles publiques du projet. Il est aussi possible de comprendre les formes de contribution envisagées, sans que cela crée un rôle attribué, une mission, une rémunération ou un engagement réciproque.
+L’Accueil oriente désormais la lecture entre le projet, l’avancement, le Journal et les formes de participation envisagées. L’espace de discussion y est indiqué comme étant en préparation. Ces parcours rendent l’état du travail plus lisible ; ils ne créent ni rôle attribué, ni mission, ni rémunération, ni engagement réciproque.
 
 La page [Participer](/rejoindre/) va plus loin sur ce deuxième chemin. Elle présente Bâtisseur, Artiste ou Artisan, Éclaireur et Écho comme des repères de conception. Ces rôles aident à formuler les besoins possibles du projet ; ils ne décrivent pas des personnes déjà engagées, des utilisateurs réels ou une communauté existante.
 
-La [PR #3 — construire le seuil d’entrée Accueil et Rejoindre](https://github.com/ProjetOree/construire-oree/pull/3) est la preuve de cette évolution. Elle documente la révision de l’Accueil, la page Rejoindre et les limites explicites associées aux rôles et aux formulaires.
+La [PR #3 — construire le seuil d’entrée Accueil et Rejoindre](https://github.com/ProjetOree/construire-oree/pull/3) documente la première version de cette évolution. La [PR #21 — hub participatif](https://github.com/ProjetOree/construire-oree/pull/21) documente l’organisation actuelle du hub et ses limites explicites.
 
 ## Une page pour dire pourquoi le projet existe
 
@@ -56,16 +57,16 @@ Les projections présentes dans les documents de vision, de roadmap ou de modèl
 
 Le site est donc une fondation éditoriale et statique. Il ne doit pas être confondu avec le produit futur.
 
-## Ce que ce Journal pourra documenter
+## Ce que ce Journal documente
 
-Ce Journal servira à consigner des faits vérifiables : une page publiée, une décision prise, un test réellement effectué, une limite rencontrée ou un élément explicitement reporté.
+Ce Journal consigne des faits vérifiables : une page publiée, une décision prise, un test réellement effectué, une limite rencontrée ou un élément explicitement reporté.
 
 Il ne servira pas à fabriquer une chronologie plus flatteuse que la réalité. Une intention restera une intention tant qu’elle n’aura pas été transformée en élément public, vérifiable et utile à montrer.
 
 Pour l’instant, les faits sont simples :
 
 - un socle visuel et structurel est versionné sur `main` ;
-- l’Accueil et Participer rendent le point zéro plus lisible ;
+- l’Accueil, l’avancement, le Journal et Participer rendent le point zéro plus lisible ;
 - À propos explique qui porte le projet et comment celui-ci est construit ;
 - la marketplace Orée reste à construire.
 
