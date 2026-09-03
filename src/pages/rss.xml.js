@@ -6,7 +6,7 @@ export async function GET(context) {
   const journal = await getCollection("journal");
 
   const publishedEntries = journal
-    .filter((entry) => entry.data.draft !== true)
+    .filter((entry) => !entry.data.draft && entry.data.publishedAt)
     .sort((a, b) => {
       const dateA = a.data.publishedAt
         ? new Date(a.data.publishedAt).valueOf()
@@ -23,9 +23,7 @@ export async function GET(context) {
     site: context.site,
     items: publishedEntries.map((entry) => ({
       title: entry.data.title,
-      pubDate: entry.data.publishedAt
-        ? new Date(entry.data.publishedAt)
-        : new Date(),
+      pubDate: entry.data.publishedAt,
       description: entry.data.description,
       link: `/journal/${entry.id}/`,
     })),
