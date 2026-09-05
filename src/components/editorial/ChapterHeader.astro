@@ -1,0 +1,72 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  introduction: string;
+  repere?: string;
+  titleId?: string;
+  composition?: "revue" | "chantier" | "sceau";
+}
+
+const {
+  eyebrow,
+  title,
+  introduction,
+  repere,
+  titleId,
+  composition = "revue",
+} = Astro.props;
+---
+
+<header class="chapter-header" data-chapter-composition={composition}>
+  <p class="eyebrow chapter-header__eyebrow">{eyebrow}</p>
+  <h1 id={titleId}>{title}</h1>
+  {repere && <p class="repere">{repere}</p>}
+  <p class="chapter-header__introduction">{introduction}</p>
+  <slot />
+</header>
+
+<style>
+  .chapter-header h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .chapter-header__eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .chapter-header__introduction {
+    margin-bottom: var(--space-6);
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .chapter-header[data-chapter-composition="sceau"]
+    .chapter-header__introduction {
+    max-width: 43rem;
+    margin-bottom: var(--space-8);
+  }
+
+  [data-chapter-composition="chantier"] {
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--composition-accent-chantier);
+  }
+
+  @media (max-width: 36rem) {
+    [data-chapter-composition="chantier"] {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+  @media (forced-colors: active) {
+    [data-chapter-composition="chantier"] {
+      border-left-color: CanvasText;
+    }
+  }
+</style>

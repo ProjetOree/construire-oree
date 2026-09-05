@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   hideChrome?: boolean;
   register?: "chaleur" | "rigueur";
+  composition?: "revue" | "chantier" | "sceau";
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description = siteConfig.description,
   hideChrome = false,
   register = "chaleur",
+  composition,
 } = Astro.props;
 
 const pageTitle =
@@ -27,7 +29,7 @@ const socialImageAlt =
 ---
 
 <!doctype html>
-<html lang={siteConfig.language}>
+<html lang={siteConfig.language} data-composition={composition}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -65,7 +67,7 @@ const socialImageAlt =
     <slot name="head" />
   </head>
 
-  <body data-register={register}>
+  <body data-register={register} data-composition={composition}>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     {!hideChrome && <SiteHeader />}

@@ -57,6 +57,18 @@
   --register-accent-rigueur: var(--color-bark);
 
   /*
+   * Mission 023A — axe de composition opt-in.
+   * Ces rôles réutilisent strictement la palette et les mesures existantes.
+   */
+
+  --composition-accent-revue: var(--color-dawn);
+  --composition-accent-chantier: var(--color-bark);
+  --composition-rule: var(--color-border);
+  --composition-surface-chantier: var(--color-surface);
+  --construction-joint: var(--space-1);
+  --seal-threshold-size: clamp(6rem, 24vw, 18rem);
+
+  /*
    * Accents par rôle (Lot 1 v2) — mapping documenté dans la PR #10,
    * à valider par le Designer du Seuil lors de la revue visuelle.
    * Aucune nouvelle couleur : alias de la palette officielle. L'Ambre
