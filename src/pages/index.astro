@@ -1,35 +1,42 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SealMark from "../components/brand/SealMark.astro";
+import ChapterHeader from "../components/editorial/ChapterHeader.astro";
+import QualificationNote from "../components/editorial/QualificationNote.astro";
 import { siteConfig } from "../config/site";
 ---
 
 <BaseLayout
   title="Journal public d’un projet au point zéro"
   description="Construire Orée documente, au point zéro, la construction publique d’une future marketplace éthique pour la création originale faite main."
+  composition="sceau"
 >
   <section class="home-hero" aria-labelledby="home-title">
     <div class="container home-hero-grid">
       <div class="home-hero-copy">
-        <p class="eyebrow">Journal public de construction</p>
-        <h1 id="home-title">Construire Orée depuis le point zéro</h1>
-        <p class="introduction">
-          Orée est une future marketplace éthique pour la création originale,
-          l’art et l’artisanat d’art, pensée dans une perspective d’économie
-          sociale et solidaire. Construire Orée est le journal public de cette
-          construction.
-        </p>
-        <div class="actions">
-          <a class="button button-primary" href="/projet/"
-            >Découvrir le projet</a
-          >
-          <a class="button button-secondary" href="/rejoindre/">Participer</a>
-        </div>
-        <p class="context-note">
-          Découvrir présente le problème, la vision et le modèle envisagé.
-          Participer explique les rôles et ce qu’il est possible de proposer
-          aujourd’hui.
-        </p>
+        <ChapterHeader
+          eyebrow="Journal public de construction"
+          title="Construire Orée depuis le point zéro"
+          titleId="home-title"
+          introduction="Orée est une future marketplace éthique pour la création originale, l’art et l’artisanat d’art, pensée dans une perspective d’économie sociale et solidaire. Construire Orée est le journal public de cette construction."
+          composition="sceau"
+        >
+          <div class="actions">
+            <a class="button button-primary" href="/projet/"
+              >Découvrir le projet</a
+            >
+            <a class="button button-secondary" href="/rejoindre/">Participer</a>
+          </div>
+          <p class="context-note">
+            Découvrir présente le problème, la vision et le modèle envisagé.
+            Participer explique les rôles et ce qu’il est possible de proposer
+            aujourd’hui.
+          </p>
+        </ChapterHeader>
+      </div>
+
+      <div class="home-portico-figure" aria-hidden="true">
+        <SealMark size={288} />
       </div>
 
       <aside class="status-card" aria-labelledby="etat-actuel">
@@ -51,21 +58,18 @@ import { siteConfig } from "../config/site";
   <section class="home-facts" aria-label="État actuel">
     <div class="container">
       <div class="facts-grid">
-        <div class="fact-card">
-          <p class="fact-label">État actuel</p>
+        <QualificationNote label="État actuel" kind="fact">
           <p>
             La marketplace n’est pas encore ouverte : aucun catalogue, aucune
             vente, aucun utilisateur de marketplace.
           </p>
-        </div>
-        <div class="fact-card">
-          <p class="fact-label">Ce qui est documenté</p>
+        </QualificationNote>
+        <QualificationNote label="Ce qui est documenté" kind="documented">
           <p>Le travail actuel consiste à documenter les fondations.</p>
-        </div>
-        <div class="fact-card">
-          <p class="fact-label">Question ouverte</p>
+        </QualificationNote>
+        <QualificationNote label="Question ouverte" kind="open">
           <p>Ce qu’Orée doit résoudre avant d’opérer.</p>
-        </div>
+        </QualificationNote>
       </div>
     </div>
   </section>
@@ -108,9 +112,6 @@ import { siteConfig } from "../config/site";
   </section>
 
   <section class="section-block why-section bloc-plein texture-legere">
-    <div class="why-seal" aria-hidden="true">
-      <SealMark size={320} variant="negatif" />
-    </div>
     <div class="container">
       <div class="reading-width">
         <h2>Le problème et le renversement cherché</h2>
@@ -230,20 +231,36 @@ import { siteConfig } from "../config/site";
   .home-hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.72fr);
+    grid-template-areas:
+      "copy seal"
+      "copy status";
     align-items: start;
     gap: clamp(2.5rem, 7vw, 6rem);
+  }
+  .home-hero-copy {
+    grid-area: copy;
+  }
+  .home-portico-figure {
+    display: grid;
+    grid-area: seal;
+    min-height: var(--seal-threshold-size);
+    place-items: center;
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg) var(--radius-lg) 50% 50%;
+    background: var(--color-linen);
+  }
+  .home-portico-figure :global(svg) {
+    width: min(100%, var(--seal-threshold-size));
+  }
+  .status-card {
+    grid-area: status;
   }
   .home-hero-copy h1,
   .orientation-intro h2,
   .path-heading h2,
   .closure-grid h2 {
     margin-bottom: var(--space-6);
-  }
-  .introduction {
-    max-width: 43rem;
-    margin-bottom: var(--space-8);
-    color: var(--color-text-muted);
-    font-size: var(--text-md);
   }
   .actions {
     display: flex;
@@ -369,24 +386,12 @@ import { siteConfig } from "../config/site";
     border-radius: var(--radius-lg);
     background: var(--color-linen);
   }
-  .fact-card {
+  .facts-grid :global(.qualification-note) {
     min-height: 9rem;
     padding: var(--space-6);
   }
-  .fact-card + .fact-card {
+  .facts-grid :global(.qualification-note + .qualification-note) {
     border-left: 1px solid var(--color-border);
-  }
-  .fact-label {
-    margin-bottom: var(--space-3);
-    color: var(--color-canopy);
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: 600;
-  }
-  .fact-card p:last-child {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
   }
   .orientation-intro {
     display: grid;
@@ -464,14 +469,6 @@ import { siteConfig } from "../config/site";
   }
   .why-section {
     padding-bottom: clamp(var(--space-16), 8vw, var(--space-24));
-  }
-  .why-seal {
-    position: absolute;
-    top: -2rem;
-    right: -6rem;
-    z-index: 0;
-    opacity: 0.2;
-    pointer-events: none;
   }
   .ecosystem-section {
     background: var(--color-surface);
@@ -613,6 +610,20 @@ import { siteConfig } from "../config/site";
     .closure-grid {
       grid-template-columns: 1fr;
     }
+    .home-hero-grid {
+      grid-template-areas:
+        "seal"
+        "copy"
+        "status";
+      gap: var(--space-8);
+    }
+    .home-portico-figure {
+      min-height: auto;
+      justify-self: start;
+      width: 6rem;
+      padding: var(--space-3);
+      border-radius: var(--radius-lg);
+    }
     .orientation-intro > p:last-child {
       grid-column: 1;
       grid-row: auto;
@@ -620,9 +631,6 @@ import { siteConfig } from "../config/site";
     }
     .status-card {
       max-width: 38rem;
-    }
-    .why-seal {
-      display: none;
     }
   }
   @media (max-width: 36rem) {
@@ -656,6 +664,14 @@ import { siteConfig } from "../config/site";
     }
     .reading-path li:not(:last-child)::after {
       display: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .home-portico-figure,
+    .facts-grid,
+    .facts-grid :global(.qualification-note + .qualification-note) {
+      border-color: CanvasText;
     }
   }
 </style>

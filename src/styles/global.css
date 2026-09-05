@@ -15,6 +15,10 @@ html {
   text-size-adjust: 100%;
 }
 
+html[data-composition] {
+  min-width: 0;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -209,6 +213,28 @@ pre {
 [data-register="rigueur"] h3 {
   font-family: var(--font-mono);
   letter-spacing: 0;
+}
+
+/*
+ * Mission 023A — la composition s'ajoute au registre historique sans en
+ * changer le sens sur les routes hors lot. La Revue conserve les titres de
+ * chapitre ; le Chantier réserve Mono aux repères et aux états.
+ */
+[data-composition="chantier"] h1,
+[data-composition="chantier"] h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+[data-composition="chantier"] h3 {
+  font-family: var(--font-body);
+  letter-spacing: -0.01em;
+}
+
+[data-composition="chantier"] .repere,
+[data-composition="chantier"] .status-label,
+[data-composition="chantier"] .status-card dt {
+  font-family: var(--font-mono);
 }
 
 /*

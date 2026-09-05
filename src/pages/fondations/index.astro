@@ -1,35 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SealMark from "../../components/brand/SealMark.astro";
+import ChapterHeader from "../../components/editorial/ChapterHeader.astro";
+import ConstructionState from "../../components/structure/ConstructionState.astro";
 ---
 
 <BaseLayout
   title="Fondations d’Orée : contraintes à résoudre"
   description="Les contraintes techniques, juridiques, fiscales et opérationnelles qu’Orée doit résoudre avant d’opérer, avec le statut de validation de chaque point."
   register="rigueur"
+  composition="chantier"
 >
-  <section class="hero-section hero-section--sceau">
-    <div class="hero-seal" aria-hidden="true">
-      <SealMark size={160} variant="filigrane" />
-    </div>
+  <section class="hero-section">
     <div class="container reading-width">
-      <p class="eyebrow">Fondations</p>
-      <h1>Ce qu’Orée doit résoudre avant d’opérer</h1>
-      <p class="repere">Vous êtes ici · Fondations</p>
-      <p class="introduction">
-        Cette page adapte le document de travail technique et fiscal interne
-        d’Orée en deux profondeurs : une synthèse compréhensible, puis des
-        détails d’audit repliables. Les choix de la future marketplace restent
-        séparés de la stack Astro de ce site.
-      </p>
-      <div class="actions">
-        <a class="button button-primary" href="#details-audit"
-          >Examiner les détails</a
-        >
-        <a class="button button-secondary" href="/avancement/"
-          >Voir l’avancement</a
-        >
-      </div>
+      <ChapterHeader
+        eyebrow="Fondations"
+        title="Ce qu’Orée doit résoudre avant d’opérer"
+        repere="Vous êtes ici · Fondations"
+        introduction="Cette page adapte le document de travail technique et fiscal interne d’Orée en deux profondeurs : une synthèse compréhensible, puis des détails d’audit repliables. Les choix de la future marketplace restent séparés de la stack Astro de ce site."
+        composition="chantier"
+      >
+        <div class="actions">
+          <a class="button button-primary" href="#details-audit"
+            >Examiner les détails</a
+          >
+          <a class="button button-secondary" href="/avancement/"
+            >Voir l’avancement</a
+          >
+        </div>
+      </ChapterHeader>
     </div>
   </section>
 
@@ -37,38 +35,43 @@ import SealMark from "../../components/brand/SealMark.astro";
     <div class="container reading-width">
       <h2>Synthèse compréhensible</h2>
       <div class="synthese-grid">
-        <div class="synthese-card">
-          <h3>Double flux envisagé</h3>
+        <ConstructionState title="Double flux envisagé" state="constraint">
           <p>
             Un flux pour les personnes qui créent — dépôt, présentation, statut
             — et un flux pour les personnes qui découvrent — recherche,
             confiance, paiement. Aucun des deux flux n’est actif aujourd’hui.
           </p>
-        </div>
-        <div class="synthese-card">
-          <h3>Statuts des personnes qui créent</h3>
+        </ConstructionState>
+        <ConstructionState
+          title="Statuts des personnes qui créent"
+          state="constraint"
+        >
           <p>
             Plusieurs statuts (micro-entreprise, société, structure associative)
             pourraient être accueillis. Le cadre exact reste à valider
             juridiquement.
           </p>
-        </div>
-        <div class="synthese-card">
-          <h3>Paiement, facturation, livraison et conformité</h3>
+        </ConstructionState>
+        <ConstructionState
+          title="Paiement, facturation, livraison et conformité"
+          state="constraint"
+        >
           <p>
             Un prestataire de paiement tiers, une facturation automatisée à
             étudier, une livraison d’abord laissée aux personnes qui créent, et
             une conformité (RGPD, CGV, TVA) à sécuriser avant toute ouverture.
           </p>
-        </div>
-        <div class="synthese-card">
-          <h3>Choix exclus du premier périmètre</h3>
+        </ConstructionState>
+        <ConstructionState
+          title="Choix exclus du premier périmètre"
+          state="constraint"
+        >
           <p>
             Le stockage et la logistique centralisés, un SAV proactif et une
             ouverture internationale restent volontairement hors du premier
             périmètre, le temps de sécuriser les fondations prioritaires.
           </p>
-        </div>
+        </ConstructionState>
       </div>
     </div>
   </section>
@@ -147,49 +150,6 @@ import SealMark from "../../components/brand/SealMark.astro";
     padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
   }
 
-  .hero-section--sceau {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-seal {
-    position: absolute;
-    top: -1.5rem;
-    right: -1.5rem;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .hero-section--sceau .container {
-    position: relative;
-    z-index: 1;
-  }
-
-  @media (max-width: 48rem) {
-    .hero-seal {
-      display: none;
-    }
-  }
-
-  .eyebrow {
-    margin-bottom: var(--space-4);
-    color: var(--color-bark);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    margin-bottom: var(--space-6);
-  }
-
-  .introduction {
-    margin-bottom: var(--space-6);
-    color: var(--color-text-muted);
-    font-size: var(--text-md);
-  }
-
   .section-block {
     padding-block: var(--space-12);
   }
@@ -201,29 +161,6 @@ import SealMark from "../../components/brand/SealMark.astro";
   .synthese-grid {
     display: grid;
     gap: var(--space-4);
-  }
-
-  .synthese-card {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-  }
-
-  .synthese-card h3 {
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-canopy);
-    font-family: var(--font-body);
-    font-size: inherit;
-    font-weight: 700;
-    letter-spacing: normal;
-    line-height: inherit;
-  }
-
-  .synthese-card p {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
   }
 
   .context-note {

@@ -1,22 +1,24 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SealMark from "../../components/brand/SealMark.astro";
+import ChapterHeader from "../../components/editorial/ChapterHeader.astro";
+import ConstructionState from "../../components/structure/ConstructionState.astro";
 ---
 
 <BaseLayout
   title="Avancement d’Orée : état et suivi"
   description="L’état actuel vérifiable de Construire Orée, la prochaine étape documentable et la trajectoire conditionnelle, avec des vues de suivi détaillées."
   register="rigueur"
+  composition="chantier"
 >
   <section class="hero-section">
     <div class="container reading-width">
-      <p class="eyebrow">Avancement</p>
-      <h1>Orée est au point zéro</h1>
-      <p class="repere">Vous êtes ici · Avancement</p>
-      <p class="introduction">
-        Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en
-        cours d’examen — sans date inventée et sans promesse de calendrier.
-      </p>
+      <ChapterHeader
+        eyebrow="Avancement"
+        title="Orée est au point zéro"
+        repere="Vous êtes ici · Avancement"
+        introduction="Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en cours d’examen — sans date inventée et sans promesse de calendrier."
+        composition="chantier"
+      />
     </div>
   </section>
 
@@ -24,38 +26,32 @@ import SealMark from "../../components/brand/SealMark.astro";
     <div class="container reading-width">
       <h2>État actuel vérifiable</h2>
       <div class="etat-grid">
-        <div class="etat-card">
-          <p class="etat-label">Éléments publiés</p>
+        <ConstructionState label="Éléments publiés" state="published">
           <p>
             Un site public qui documente la construction ; une direction
             éditoriale et visuelle validée ; une architecture de contenu qui
             organise le site autour de cinq questions.
           </p>
-        </div>
-        <div class="etat-card">
-          <p class="etat-label">Capacités absentes</p>
+        </ConstructionState>
+        <ConstructionState label="Capacités absentes" state="absent">
           <p>
             Aucune marketplace ouverte ; aucun catalogue, aucune vente, aucun
             utilisateur de marketplace ; aucune structure coopérative
             constituée.
           </p>
-        </div>
-        <div class="etat-card">
-          <p class="etat-label">Questions en examen</p>
+        </ConstructionState>
+        <ConstructionState label="Questions en examen" state="review">
           <p>
             Le document de travail technique et fiscal (voir Fondations) ; les
             statuts possibles pour les personnes qui créent ; le traitement
             d’éventuels retours reçus via le formulaire externe de contribution.
           </p>
-        </div>
+        </ConstructionState>
       </div>
     </div>
   </section>
 
   <section class="section-block bloc-inverse">
-    <div class="seal-corner" aria-hidden="true">
-      <SealMark size={120} variant="negatif" />
-    </div>
     <div class="container reading-width">
       <h2>Prochaine étape documentable</h2>
       <p>
@@ -132,25 +128,6 @@ import SealMark from "../../components/brand/SealMark.astro";
     padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
   }
 
-  .eyebrow {
-    margin-bottom: var(--space-4);
-    color: var(--color-bark);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    margin-bottom: var(--space-6);
-  }
-
-  .introduction {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
-    font-size: var(--text-md);
-  }
-
   .section-block {
     padding-block: var(--space-12);
   }
@@ -166,28 +143,6 @@ import SealMark from "../../components/brand/SealMark.astro";
   .etat-grid {
     display: grid;
     gap: var(--space-4);
-  }
-
-  .etat-card {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-  }
-
-  .etat-label {
-    margin-bottom: var(--space-2);
-    color: var(--color-bark);
-    font-family: var(--font-mono);
-    font-size: var(--text-caption);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .etat-card p:last-child {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
   }
 
   .trajectoire-list {

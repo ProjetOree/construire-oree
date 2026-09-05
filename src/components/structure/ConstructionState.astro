@@ -1,0 +1,60 @@
+---
+interface Props {
+  label?: string;
+  title?: string;
+  state?: "published" | "absent" | "review" | "constraint";
+}
+
+const { label, title, state = "constraint" } = Astro.props;
+---
+
+<article class="construction-state" data-construction-state={state}>
+  {label && <p class="construction-state__label">{label}</p>}
+  {title && <h3>{title}</h3>}
+  <div class="construction-state__body">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .construction-state {
+    height: 100%;
+    padding: var(--space-4);
+    border: 1px solid var(--composition-rule);
+    border-left: var(--construction-joint) solid
+      var(--composition-accent-chantier);
+    border-radius: var(--radius-md);
+    background: var(--composition-surface-chantier);
+  }
+
+  .construction-state__label {
+    margin-bottom: var(--space-2);
+    color: var(--color-bark);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .construction-state h3 {
+    margin-bottom: var(--space-2);
+    font-family: var(--font-body);
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: inherit;
+  }
+
+  .construction-state__body :global(p:last-child) {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  @media (forced-colors: active) {
+    .construction-state {
+      border-color: CanvasText;
+      forced-color-adjust: auto;
+    }
+  }
+</style>
