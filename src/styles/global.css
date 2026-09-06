@@ -9,14 +9,9 @@
 }
 
 html {
-  min-width: 20rem;
   background: var(--color-background);
   scroll-behavior: smooth;
   text-size-adjust: 100%;
-}
-
-html[data-composition] {
-  min-width: 0;
 }
 
 body {
