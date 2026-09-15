@@ -29,44 +29,39 @@ function isCurrent(path: string) {
     <div class="desktop-nav-container">
       <nav aria-label="Navigation principale" class="main-nav">
         <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
-        <a href="/ecosysteme/" aria-current={isCurrent("/ecosysteme/")}
-          >Écosystème</a
-        >
         <a href="/avancement/" aria-current={isCurrent("/avancement/")}
           >Avancement</a
         >
         <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
+        <a href="/fondations/" aria-current={isCurrent("/fondations/")}
+          >Fondations</a
+        >
         <a
           href="/rejoindre/"
           class="nav-join"
           aria-current={isCurrent("/rejoindre/")}>Participer</a
         >
       </nav>
-      <span class="phase"
-        ><span class="phase-dot" aria-hidden="true"></span>Point zéro</span
-      >
     </div>
     <details class="mobile-nav-container">
-      <summary class="menu-button">Menu</summary>
+      <summary class="menu-button">
+        <span class="menu-label menu-label--closed">Ouvrir le menu</span>
+        <span class="menu-label menu-label--open">Fermer le menu</span>
+      </summary>
       <div class="mobile-nav-content">
         <nav aria-label="Navigation mobile" class="main-nav-mobile">
           <a href="/projet/" aria-current={isCurrent("/projet/")}>Projet</a>
-          <a href="/ecosysteme/" aria-current={isCurrent("/ecosysteme/")}
-            >Écosystème</a
-          >
           <a href="/avancement/" aria-current={isCurrent("/avancement/")}
             >Avancement</a
           >
           <a href="/journal/" aria-current={isCurrent("/journal/")}>Journal</a>
+          <a href="/fondations/" aria-current={isCurrent("/fondations/")}
+            >Fondations</a
+          >
           <a href="/rejoindre/" aria-current={isCurrent("/rejoindre/")}
             >Participer</a
           >
         </nav>
-        <div class="mobile-phase">
-          <span class="phase"
-            ><span class="phase-dot" aria-hidden="true"></span>Point zéro</span
-          >
-        </div>
       </div>
     </details>
   </div>
@@ -80,14 +75,13 @@ function isCurrent(path: string) {
     background: var(--color-canvas);
   }
   .header-inner {
-    display: flex;
+    position: relative;
+    display: block;
     min-height: 5.5rem;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
   }
   .brand {
     display: inline-flex;
+    min-height: 5.5rem;
     align-items: center;
     gap: var(--space-3);
     color: var(--color-canopy);
@@ -115,25 +109,6 @@ function isCurrent(path: string) {
   }
   .brand-accent {
     color: var(--color-dawn);
-  }
-  .phase {
-    display: inline-flex;
-    min-height: 2.75rem;
-    align-items: center;
-    gap: var(--space-2);
-    padding-inline: var(--space-3);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-    font-weight: 650;
-    white-space: nowrap;
-  }
-  .phase-dot {
-    width: 0.6rem;
-    height: 0.6rem;
-    border-radius: 50%;
-    background: var(--color-dawn);
   }
   .desktop-nav-container {
     display: none;
@@ -179,6 +154,9 @@ function isCurrent(path: string) {
     display: block;
   }
   .menu-button {
+    position: absolute;
+    top: 1.375rem;
+    right: 0;
     display: inline-flex;
     min-height: 44px;
     align-items: center;
@@ -200,15 +178,17 @@ function isCurrent(path: string) {
     border-color: var(--color-canopy);
     background: var(--color-surface-soft);
   }
+  .menu-label--open {
+    display: none;
+  }
+  .mobile-nav-container[open] .menu-label--closed {
+    display: none;
+  }
+  .mobile-nav-container[open] .menu-label--open {
+    display: inline;
+  }
   .mobile-nav-content {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    padding: var(--space-4);
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-canvas);
-    box-shadow: 0 1rem 2.5rem rgba(44, 40, 37, 0.08);
+    padding-bottom: var(--space-4);
   }
   .main-nav-mobile {
     display: flex;
@@ -236,18 +216,16 @@ function isCurrent(path: string) {
     text-decoration-thickness: 2px;
     text-underline-offset: 0.35rem;
   }
-  .mobile-phase {
-    margin-top: var(--space-6);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border);
-  }
-  @media (max-width: 31rem) {
-    .phase {
-      padding-inline: var(--space-2);
-      font-size: var(--text-caption);
-    }
-  }
   @media (min-width: 64rem) {
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .brand {
+      min-height: auto;
+    }
     .desktop-nav-container {
       display: flex;
     }

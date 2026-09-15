@@ -55,10 +55,10 @@ import { siteConfig } from "../../config/site";
   <div class="container footer-legal">
     <p>
       Code sous GNU AGPL version 3 seulement ({siteConfig.licensing.code}).
-      Prose éditoriale originale concernée sous licence
+      Prose éditoriale originale concernée sous licence{" "}
       {siteConfig.licensing.editorialContent}. La marque Orée, Le Sceau, le
       favicon et l’image sociale sont exclus de ces licences ; droits de marque
-      et copyright réservés. Code source sur
+      et copyright réservés. Code source sur{" "}
       <a href={siteConfig.repository.url}>GitHub</a>.
     </p>
   </div>
@@ -68,8 +68,9 @@ import { siteConfig } from "../../config/site";
   .site-footer {
     margin-top: var(--space-24);
     padding-block: var(--space-12) var(--space-6);
-    border-top: 1px solid var(--color-border);
-    background: var(--color-linen);
+    border-top: 2px solid var(--color-dawn);
+    background: var(--color-canopy);
+    color: var(--color-linen);
   }
 
   .footer-inner {
@@ -87,7 +88,7 @@ import { siteConfig } from "../../config/site";
 
   .footer-title {
     margin: 0;
-    color: var(--color-canopy);
+    color: var(--color-linen);
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 600;
@@ -95,7 +96,7 @@ import { siteConfig } from "../../config/site";
 
   .footer-description {
     margin-bottom: 0;
-    color: var(--color-text-muted);
+    color: var(--color-linen);
   }
 
   .footer-nav {
@@ -106,7 +107,7 @@ import { siteConfig } from "../../config/site";
 
   .footer-heading {
     margin-bottom: var(--space-3);
-    color: var(--color-canopy);
+    color: var(--color-dawn);
     font-family: var(--font-mono);
     font-size: var(--text-caption);
     font-weight: 700;
@@ -126,19 +127,43 @@ import { siteConfig } from "../../config/site";
     display: inline-flex;
     min-height: 44px;
     align-items: center;
+    color: var(--color-linen);
     font-weight: 650;
+    text-decoration-color: var(--color-dawn);
+  }
+
+  .footer-column a:hover {
+    color: var(--color-white);
   }
 
   .footer-legal {
     margin-top: var(--space-12);
     padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-muted);
+    border-top: 1px solid rgba(244, 236, 224, 0.55);
+    color: var(--color-linen);
     font-size: var(--text-caption);
   }
 
   .footer-legal p {
     margin-bottom: 0;
+  }
+
+  .footer-legal a {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    color: var(--color-linen);
+    text-decoration-color: var(--color-dawn);
+  }
+
+  .footer-legal a:hover {
+    color: var(--color-white);
+  }
+
+  .site-footer :is(a, button, summary):focus-visible {
+    outline-color: var(--color-linen);
+    box-shadow: 0 0 0 3px var(--color-canopy);
   }
 
   @media (max-width: 45rem) {
