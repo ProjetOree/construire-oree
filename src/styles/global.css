@@ -65,17 +65,21 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
+a:visited {
+  color: var(--color-bark);
+}
+
 a:active {
   color: var(--color-primary-hover);
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-canopy);
+  outline: 3px solid var(--color-action);
   outline-offset: 3px;
 }
 
 summary:focus-visible {
-  outline: 3px solid var(--color-canopy);
+  outline: 3px solid var(--color-action);
   outline-offset: 3px;
 }
 
@@ -268,20 +272,6 @@ pre {
   filter: grayscale(1);
 }
 
-@keyframes seal-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.55;
-  }
-}
-
-.phase-dot {
-  animation: seal-pulse 3.2s ease-in-out 1;
-}
-
 /*
  * Bloc de couleur pleine (Lot 1 v2) — Sceau vivant.
  * Combinaison choisie car explicitement validée par la charte graphique
@@ -413,4 +403,22 @@ pre {
 .texture-legere > * {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 20rem) {
+  :root {
+    --page-gutter: 1rem;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible,
+  summary:focus-visible {
+    outline-color: Highlight;
+  }
+
+  a,
+  a:visited {
+    color: LinkText;
+  }
 }
