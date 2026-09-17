@@ -1,11 +1,151 @@
 ---
-import ComingSoonLayout from "../../layouts/ComingSoonLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<ComingSoonLayout
+<BaseLayout
   title="Décisions : arbitrages à documenter"
   description="Les décisions d’Orée seront publiées ici lorsqu’elles pourront être partagées avec leur contexte, les options examinées et leurs preuves."
-  heading="Décisions"
-  text="Les décisions qui façonnent Orée ne sont pas encore réunies dans un registre public. Lorsqu’un arbitrage pourra être partagé, cette page indiquera son contexte, les options examinées et la raison du choix. En attendant, elle ne prétend pas offrir une transparence déjà constituée."
-  repere="Décisions"
-/>
+>
+  <section class="absence-page">
+    <div class="container reading-width">
+      <header class="page-header">
+        <p class="eyebrow">En préparation</p>
+        <h1>Décisions</h1>
+        <p class="repere">Vous êtes ici · Décisions</p>
+      </header>
+
+      <div class="decision-copy">
+        <p class="decision-finding">
+          Les décisions qui façonnent Orée ne sont pas encore réunies dans un
+          registre public.
+        </p>
+        <div class="decision-context">
+          <p>
+            Lorsqu’un arbitrage pourra être partagé, cette page indiquera son
+            contexte, les options examinées et la raison du choix.
+          </p>
+          <p>
+            En attendant, elle ne prétend pas offrir une transparence déjà
+            constituée.
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="button button-primary" href="/fondations/"
+          >Voir les fondations à résoudre</a
+        >
+        <a class="button button-secondary" href="/avancement/"
+          >Voir l’avancement</a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .absence-page {
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .decision-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    padding-block: var(--space-6);
+    border-block: 1px solid var(--color-border);
+  }
+
+  .decision-finding {
+    margin-bottom: 0;
+    color: var(--color-canopy);
+    font-size: var(--text-lg);
+    font-weight: 700;
+  }
+
+  .decision-context {
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .decision-context p {
+    color: var(--color-text-muted);
+  }
+
+  .decision-context p:last-child {
+    margin-bottom: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  @media (min-width: 48rem) {
+    .decision-copy {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-8);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .decision-copy,
+    .decision-context,
+    .button {
+      border-color: CanvasText;
+    }
+  }
+</style>

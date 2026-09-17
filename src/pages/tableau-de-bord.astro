@@ -1,11 +1,124 @@
 ---
-import ComingSoonLayout from "../layouts/ComingSoonLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<ComingSoonLayout
+<BaseLayout
   title="Tableau de bord : aucune mesure publiée"
   description="Cette page présentera uniquement des mesures réelles, datées et définies, lorsqu’Orée disposera d’éléments publics à partager."
-  heading="Tableau de bord"
-  text="Aucun indicateur public n’est publié pour le moment. Lorsqu’Orée aura des éléments mesurables à partager, cette page précisera ce qui est compté, sur quel périmètre et à quelle date. Un tableau de bord n’a de valeur que s’il décrit une réalité : il ne sera pas rempli par des objectifs, des projections ou des chiffres de décor."
-  repere="Tableau de bord"
-/>
+>
+  <section class="absence-page">
+    <div class="container reading-width">
+      <header class="page-header">
+        <p class="eyebrow">En préparation</p>
+        <h1>Tableau de bord</h1>
+        <p class="repere">Vous êtes ici · Tableau de bord</p>
+      </header>
+
+      <div class="measurement-absence">
+        <p class="measurement-absence__lead">
+          Aucun indicateur public n’est publié pour le moment.
+        </p>
+        <div class="measurement-rules">
+          <p>
+            Lorsqu’Orée aura des éléments mesurables à partager, cette page
+            précisera ce qui est compté, sur quel périmètre et à quelle date.
+          </p>
+          <p>
+            Un tableau de bord n’a de valeur que s’il décrit une réalité : il ne
+            sera pas rempli par des objectifs, des projections ou des chiffres
+            de décor.
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="button button-secondary" href="/avancement/"
+          >Voir l’avancement</a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .absence-page {
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .measurement-absence {
+    margin-top: var(--space-8);
+    border-block: 1px solid var(--color-border);
+  }
+
+  .measurement-absence__lead {
+    margin-bottom: 0;
+    padding-block: var(--space-6);
+    color: var(--color-canopy);
+    font-size: var(--text-lg);
+    font-weight: 700;
+  }
+
+  .measurement-rules {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .measurement-rules p {
+    margin-bottom: 0;
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .actions {
+    margin-top: var(--space-8);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  @media (forced-colors: active) {
+    .measurement-absence,
+    .measurement-rules p,
+    .button {
+      border-color: CanvasText;
+    }
+  }
+</style>

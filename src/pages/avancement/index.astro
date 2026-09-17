@@ -1,57 +1,56 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ChapterHeader from "../../components/editorial/ChapterHeader.astro";
-import ConstructionState from "../../components/structure/ConstructionState.astro";
 ---
 
 <BaseLayout
   title="Avancement d’Orée : état et suivi"
   description="L’état actuel vérifiable de Construire Orée, la prochaine étape documentable et la trajectoire conditionnelle, avec des vues de suivi détaillées."
-  register="rigueur"
-  composition="chantier"
 >
-  <section class="hero-section">
-    <div class="container reading-width">
-      <ChapterHeader
-        eyebrow="Avancement"
-        title="Orée est au point zéro"
-        repere="Vous êtes ici · Avancement"
-        introduction="Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en cours d’examen — sans date inventée et sans promesse de calendrier."
-        composition="chantier"
-      />
-    </div>
+  <section class="page-intro">
+    <header class="container reading-width">
+      <p class="eyebrow">Avancement</p>
+      <h1>Orée est au point zéro</h1>
+      <p class="repere">Vous êtes ici · Avancement</p>
+      <p class="introduction">
+        Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en
+        cours d’examen — sans date inventée et sans promesse de calendrier.
+      </p>
+    </header>
   </section>
 
   <section class="section-block">
     <div class="container reading-width">
       <h2>État actuel vérifiable</h2>
-      <div class="etat-grid">
-        <ConstructionState label="Éléments publiés" state="published">
-          <p>
+      <dl class="state-list">
+        <div class="state-row" data-state="published">
+          <dt>Éléments publiés</dt>
+          <dd>
             Un site public qui documente la construction ; une direction
             éditoriale et visuelle validée ; une architecture de contenu qui
             organise le site autour de cinq questions.
-          </p>
-        </ConstructionState>
-        <ConstructionState label="Capacités absentes" state="absent">
-          <p>
+          </dd>
+        </div>
+        <div class="state-row" data-state="absent">
+          <dt>Capacités absentes</dt>
+          <dd>
             Aucune marketplace ouverte ; aucun catalogue, aucune vente, aucun
             utilisateur de marketplace ; aucune structure coopérative
             constituée.
-          </p>
-        </ConstructionState>
-        <ConstructionState label="Questions en examen" state="review">
-          <p>
+          </dd>
+        </div>
+        <div class="state-row" data-state="review">
+          <dt>Questions en examen</dt>
+          <dd>
             Le document de travail technique et fiscal (voir Fondations) ; les
             statuts possibles pour les personnes qui créent ; le traitement
             d’éventuels retours reçus via le formulaire externe de contribution.
-          </p>
-        </ConstructionState>
-      </div>
+          </dd>
+        </div>
+      </dl>
     </div>
   </section>
 
-  <section class="section-block bloc-inverse">
+  <section class="section-block next-step">
     <div class="container reading-width">
       <h2>Prochaine étape documentable</h2>
       <p>
@@ -67,44 +66,44 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
   <section class="section-block">
     <div class="container reading-width">
       <h2>Trajectoire conditionnelle</h2>
-      <ol class="trajectoire-list" role="list">
+      <p class="context-note">
+        Chaque phase est conditionnée à la précédente ; aucune n’est planifiée à
+        une date fixe.
+      </p>
+      <ol class="trajectory-list" role="list">
         <li>
-          <p class="trajectoire-label">Phase 1</p>
+          <p class="trajectory-label">Phase 1</p>
           <p>
             Tester un premier MVP, une fois les fondations prioritaires
             résolues.
           </p>
         </li>
         <li>
-          <p class="trajectoire-label">Phase 2</p>
+          <p class="trajectory-label">Phase 2</p>
           <p>
             Automatiser certains parcours, si des signaux mesurables
             apparaissent.
           </p>
         </li>
         <li>
-          <p class="trajectoire-label">Phase 3</p>
+          <p class="trajectory-label">Phase 3</p>
           <p>
             Envisager La Canopée, après validation du modèle économique et
             juridique.
           </p>
         </li>
       </ol>
-      <p class="context-note">
-        Chaque phase est conditionnée à la précédente ; aucune n’est planifiée à
-        une date fixe.
-      </p>
     </div>
   </section>
 
-  <section class="section-block point-zero-block">
+  <section class="section-block follow-up-block">
     <div class="container reading-width">
       <h2>Trois vues de suivi en préparation</h2>
       <p>
         Ces pages secondaires rendent leur état visible, mais elles ne
         constituent pas encore des preuves publiées ni des sources complètes.
       </p>
-      <ul class="preuves-list" role="list">
+      <ul class="follow-up-list" role="list">
         <li><a href="/roadmap/">Voir la Roadmap en préparation</a></li>
         <li><a href="/decisions/">Voir les décisions en préparation</a></li>
         <li>
@@ -112,11 +111,11 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
         </li>
       </ul>
       <div class="actions">
-        <a class="button button-primary" href="/journal/"
-          >Voir l’état du Journal</a
-        >
-        <a class="button button-secondary" href="/fondations/"
+        <a class="button button-primary" href="/fondations/"
           >Voir les fondations à résoudre</a
+        >
+        <a class="button button-secondary" href="/journal/"
+          >Voir l’état du Journal</a
         >
       </div>
     </div>
@@ -124,8 +123,27 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
 </BaseLayout>
 
 <style>
-  .hero-section {
+  .page-intro {
     padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+  }
+
+  .page-intro h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-intro .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .introduction {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
   }
 
   .section-block {
@@ -136,48 +154,99 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
     margin-bottom: var(--space-6);
   }
 
-  .bloc-inverse {
-    padding-bottom: var(--space-16);
+  .state-list {
+    margin: 0;
   }
 
-  .etat-grid {
+  .state-row {
     display: grid;
-    gap: var(--space-4);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--color-border);
   }
 
-  .trajectoire-list {
-    display: grid;
-    gap: var(--space-4);
-    margin: 0 0 var(--space-4);
-    padding-left: var(--space-6);
+  .state-row:last-child {
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .trajectoire-label {
-    margin-bottom: var(--space-1);
+  .state-row dt {
     color: var(--color-canopy);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
     font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
-  .trajectoire-list p:last-child {
-    margin-bottom: 0;
+  .state-row dd {
+    margin: 0;
     color: var(--color-text-muted);
   }
 
+  .next-step .container {
+    padding-block: var(--space-6);
+    border-block: 1px solid var(--color-border);
+  }
+
+  .next-step p:last-child {
+    margin-bottom: 0;
+  }
+
   .context-note {
+    margin-bottom: var(--space-6);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
   }
 
-  .preuves-list {
+  .trajectory-list {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .trajectory-list li {
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .trajectory-list li:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .trajectory-label {
+    margin-bottom: var(--space-2);
+    color: var(--color-bark);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+  }
+
+  .trajectory-list p:last-child {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .follow-up-block {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .follow-up-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-2);
     margin: var(--space-4) 0 var(--space-6);
     padding: 0;
     list-style: none;
   }
 
-  .point-zero-block {
-    border-top: 1px solid var(--color-border);
+  .follow-up-list a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
   }
 
   .actions {
@@ -195,6 +264,7 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
     border: 2px solid transparent;
     border-radius: var(--radius-md);
     font-weight: 700;
+    text-align: center;
     text-decoration: none;
     transition:
       background-color var(--transition-fast),
@@ -223,14 +293,22 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
   }
 
   @media (min-width: 48rem) {
-    .etat-grid {
-      grid-template-columns: repeat(3, 1fr);
+    .state-row {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-8);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .state-row,
+    .trajectory-list li,
+    .next-step .container,
+    .follow-up-block {
+      border-color: CanvasText;
     }
 
-    .trajectoire-list {
-      grid-template-columns: repeat(3, 1fr);
-      padding-left: 0;
-      list-style: none;
+    .button {
+      border-color: ButtonText;
     }
   }
 </style>
