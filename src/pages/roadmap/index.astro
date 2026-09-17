@@ -1,11 +1,111 @@
 ---
-import ComingSoonLayout from "../../layouts/ComingSoonLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<ComingSoonLayout
+<BaseLayout
   title="Roadmap : jalons à documenter"
   description="Les étapes d’Orée seront publiées ici lorsqu’elles pourront être documentées avec leurs preuves, leurs limites et leur statut réel."
-  heading="Roadmap"
-  text="La trajectoire d’Orée ne peut pas encore être présentée comme une feuille de route publique : le projet est au point zéro et ses étapes doivent être documentées avant d’être annoncées. Cette page accueillera les jalons réellement retenus, avec ce qu’ils impliquent et ce qui reste à vérifier. Tant que ces éléments ne sont pas prêts à être publiés, il serait plus honnête de ne pas les simuler."
-  repere="Roadmap"
-/>
+>
+  <section class="absence-page">
+    <div class="container reading-width">
+      <header class="page-header">
+        <p class="eyebrow">En préparation</p>
+        <h1>Roadmap</h1>
+        <p class="repere">Vous êtes ici · Roadmap</p>
+      </header>
+
+      <div class="roadmap-copy">
+        <p>
+          La trajectoire d’Orée ne peut pas encore être présentée comme une
+          feuille de route publique : le projet est au point zéro et ses étapes
+          doivent être documentées avant d’être annoncées.
+        </p>
+        <p>
+          Cette page accueillera les jalons réellement retenus, avec ce qu’ils
+          impliquent et ce qui reste à vérifier.
+        </p>
+        <p>
+          Tant que ces éléments ne sont pas prêts à être publiés, il serait plus
+          honnête de ne pas les simuler.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a class="button button-secondary" href="/avancement/"
+          >Voir l’avancement</a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .absence-page {
+    padding-block: clamp(4rem, 10vw, 8rem);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .roadmap-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    padding-left: var(--space-6);
+    border-left: 3px solid var(--color-bark);
+  }
+
+  .roadmap-copy p {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+
+  .actions {
+    margin-top: var(--space-8);
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background-color var(--transition-fast),
+      border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .button-secondary {
+    border-color: var(--color-canopy);
+    color: var(--color-canopy);
+  }
+
+  .button-secondary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+
+  @media (forced-colors: active) {
+    .roadmap-copy,
+    .button {
+      border-color: CanvasText;
+    }
+  }
+</style>

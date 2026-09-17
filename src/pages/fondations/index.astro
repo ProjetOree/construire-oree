@@ -1,78 +1,70 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ChapterHeader from "../../components/editorial/ChapterHeader.astro";
-import ConstructionState from "../../components/structure/ConstructionState.astro";
 ---
 
 <BaseLayout
   title="Fondations d’Orée : contraintes à résoudre"
   description="Les contraintes techniques, juridiques, fiscales et opérationnelles qu’Orée doit résoudre avant d’opérer, avec le statut de validation de chaque point."
-  register="rigueur"
-  composition="chantier"
 >
-  <section class="hero-section">
-    <div class="container reading-width">
-      <ChapterHeader
-        eyebrow="Fondations"
-        title="Ce qu’Orée doit résoudre avant d’opérer"
-        repere="Vous êtes ici · Fondations"
-        introduction="Cette page adapte le document de travail technique et fiscal interne d’Orée en deux profondeurs : une synthèse compréhensible, puis des détails d’audit repliables. Les choix de la future marketplace restent séparés de la stack Astro de ce site."
-        composition="chantier"
-      >
-        <div class="actions">
-          <a class="button button-primary" href="#details-audit"
-            >Examiner les détails</a
-          >
-          <a class="button button-secondary" href="/avancement/"
-            >Voir l’avancement</a
-          >
-        </div>
-      </ChapterHeader>
-    </div>
+  <section class="page-intro">
+    <header class="container reading-width">
+      <p class="eyebrow">Fondations</p>
+      <h1>Ce qu’Orée doit résoudre avant d’opérer</h1>
+      <p class="repere">Vous êtes ici · Fondations</p>
+      <p class="introduction">
+        Cette page adapte le document de travail technique et fiscal interne
+        d’Orée en deux profondeurs : une synthèse compréhensible, puis des
+        détails d’audit repliables. Les choix de la future marketplace restent
+        séparés de la stack Astro de ce site.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="#details-audit"
+          >Examiner les détails</a
+        >
+        <a class="button button-secondary" href="/avancement/"
+          >Voir l’avancement</a
+        >
+      </div>
+    </header>
   </section>
 
   <section class="section-block">
     <div class="container reading-width">
       <h2>Synthèse compréhensible</h2>
-      <div class="synthese-grid">
-        <ConstructionState title="Double flux envisagé" state="constraint">
-          <p>
+      <dl class="foundation-list">
+        <div class="foundation-row">
+          <dt>Double flux envisagé</dt>
+          <dd>
             Un flux pour les personnes qui créent — dépôt, présentation, statut
             — et un flux pour les personnes qui découvrent — recherche,
             confiance, paiement. Aucun des deux flux n’est actif aujourd’hui.
-          </p>
-        </ConstructionState>
-        <ConstructionState
-          title="Statuts des personnes qui créent"
-          state="constraint"
-        >
-          <p>
+          </dd>
+        </div>
+        <div class="foundation-row">
+          <dt>Statuts des personnes qui créent</dt>
+          <dd>
             Plusieurs statuts (micro-entreprise, société, structure associative)
             pourraient être accueillis. Le cadre exact reste à valider
             juridiquement.
-          </p>
-        </ConstructionState>
-        <ConstructionState
-          title="Paiement, facturation, livraison et conformité"
-          state="constraint"
-        >
-          <p>
+          </dd>
+        </div>
+        <div class="foundation-row">
+          <dt>Paiement, facturation, livraison et conformité</dt>
+          <dd>
             Un prestataire de paiement tiers, une facturation automatisée à
             étudier, une livraison d’abord laissée aux personnes qui créent, et
             une conformité (RGPD, CGV, TVA) à sécuriser avant toute ouverture.
-          </p>
-        </ConstructionState>
-        <ConstructionState
-          title="Choix exclus du premier périmètre"
-          state="constraint"
-        >
-          <p>
+          </dd>
+        </div>
+        <div class="foundation-row">
+          <dt>Choix exclus du premier périmètre</dt>
+          <dd>
             Le stockage et la logistique centralisés, un SAV proactif et une
             ouverture internationale restent volontairement hors du premier
             périmètre, le temps de sécuriser les fondations prioritaires.
-          </p>
-        </ConstructionState>
-      </div>
+          </dd>
+        </div>
+      </dl>
     </div>
   </section>
 
@@ -83,56 +75,42 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
         Chaque point porte un statut de validation explicite. Aucun de ces
         points ne décrit une capacité déjà livrée.
       </p>
-      <details class="audit-details" open>
+      <details class="audit-details">
         <summary
           >Voir les paramètres techniques, juridiques, fiscaux et opérationnels</summary
         >
         <div class="details-content">
           <ul class="audit-list" role="list">
             <li>
-              <span class="audit-badge audit-badge--decision"
-                ><span class="audit-dot" aria-hidden="true"></span>Décision
-                actée</span
-              >
+              <p class="qualification">Décision actée</p>
               <p>
                 Construire Orée reste un site statique Astro, distinct des choix
                 techniques de la future marketplace.
               </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--hypothese"
-                ><span class="audit-dot" aria-hidden="true"></span>Hypothèse
-                technique</span
-              >
+              <p class="qualification">Hypothèse technique</p>
               <p>
                 Un modèle de double flux de paiement (créateur / acheteur) est
                 envisagé, sans architecture arrêtée.
               </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--juridique"
-                ><span class="audit-dot" aria-hidden="true"></span>À valider
-                juridiquement</span
-              >
+              <p class="qualification">À valider juridiquement</p>
               <p>
                 Le statut salarié-associé envisagé pour l’horizon coopératif n’a
                 pas été validé par un conseil juridique.
               </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--fiscal"
-                ><span class="audit-dot" aria-hidden="true"></span>À valider
-                fiscalement</span
-              >
+              <p class="qualification">À valider fiscalement</p>
               <p>
                 Les seuils et le régime de TVA applicables à une marketplace de
                 création originale restent à confirmer.
               </p>
             </li>
             <li>
-              <span class="audit-badge audit-badge--tester"
-                ><span class="audit-dot" aria-hidden="true"></span>À tester</span
-              >
+              <p class="qualification">À tester</p>
               <p>
                 Le parcours de paiement avec un prestataire tiers n’a fait
                 l’objet d’aucun test à ce stade.
@@ -146,8 +124,27 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
 </BaseLayout>
 
 <style>
-  .hero-section {
+  .page-intro {
     padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+  }
+
+  .page-intro h1 {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-intro .eyebrow {
+    margin-bottom: var(--space-4);
+    color: var(--color-bark);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .introduction {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
   }
 
   .section-block {
@@ -158,22 +155,32 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
     margin-bottom: var(--space-6);
   }
 
-  .synthese-grid {
+  .foundation-list {
+    margin: 0;
+  }
+
+  .foundation-row {
     display: grid;
-    gap: var(--space-4);
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--color-border);
   }
 
-  .context-note {
+  .foundation-row:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .foundation-row dt {
+    color: var(--color-canopy);
+    font-weight: 700;
+  }
+
+  .foundation-row dd {
+    margin: 0;
     color: var(--color-text-muted);
-    font-size: var(--text-sm);
   }
 
-  /*
-   * Mission 011 — Lot 1 : repère d’arrivée pour l’ancre publique
-   * #details-audit. Le fond reste un indice secondaire ; la barre latérale
-   * passe de 3 à 6 px avec compensation du retrait, pour éviter tout
-   * décalage de la colonne de lecture. Aucun changement d’ancre ni de markup.
-   */
   #details-audit {
     scroll-margin-top: 6rem;
   }
@@ -182,78 +189,59 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
     background-color: var(--color-surface-emphasis);
   }
 
-  #details-audit:target .audit-details {
-    border-left-width: 6px;
-    padding-left: calc(var(--space-4) - 3px);
-  }
-
-  @media (forced-colors: active) {
-    #details-audit:target .audit-details {
-      border-left-color: Highlight;
-    }
+  .context-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .audit-details {
     margin-top: var(--space-6);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-left: 3px solid var(--register-accent-rigueur);
-    border-radius: var(--radius-md);
-    background: var(--color-canvas);
+    padding-left: var(--space-4);
+    border-left: 3px solid var(--color-bark);
   }
 
   .audit-details summary {
-    font-weight: 650;
-    cursor: pointer;
+    min-height: 44px;
+    padding-block: var(--space-2);
     color: var(--color-canopy);
+    font-weight: 700;
+    cursor: pointer;
   }
 
   .details-content {
     margin-top: var(--space-4);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2);
   }
 
   .audit-list {
     display: grid;
-    gap: var(--space-4);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  .audit-list p {
-    margin-top: var(--space-2);
+  .audit-list li {
+    padding-block: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .audit-list li:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .audit-list p:last-child {
     margin-bottom: 0;
     color: var(--color-text-muted);
   }
 
-  .audit-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding-inline: var(--space-3);
-    padding-block: var(--space-1);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+  .qualification {
+    margin-bottom: var(--space-2);
+    color: var(--color-canopy);
     font-family: var(--font-mono);
     font-size: var(--text-caption);
-    font-weight: 650;
-    color: var(--color-text-muted);
-  }
-
-  .audit-dot {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-radius: 50%;
-  }
-
-  .audit-badge--decision .audit-dot,
-  .audit-badge--hypothese .audit-dot,
-  .audit-badge--juridique .audit-dot,
-  .audit-badge--fiscal .audit-dot,
-  .audit-badge--tester .audit-dot {
-    background: var(--register-accent-rigueur);
+    font-weight: 700;
   }
 
   .actions {
@@ -272,6 +260,7 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
     border: 2px solid transparent;
     border-radius: var(--radius-md);
     font-weight: 700;
+    text-align: center;
     text-decoration: none;
     transition:
       background-color var(--transition-fast),
@@ -300,8 +289,23 @@ import ConstructionState from "../../components/structure/ConstructionState.astr
   }
 
   @media (min-width: 48rem) {
-    .synthese-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .foundation-row {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-8);
+    }
+  }
+
+  @media (forced-colors: active) {
+    #details-audit:target {
+      outline: 2px solid Highlight;
+      outline-offset: -2px;
+    }
+
+    .foundation-row,
+    .audit-details,
+    .audit-list li,
+    .button {
+      border-color: CanvasText;
     }
   }
 </style>
