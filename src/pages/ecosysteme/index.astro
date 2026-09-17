@@ -1,188 +1,217 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RoleIcon from "../../components/brand/RoleIcon.astro";
-import SealMark from "../../components/brand/SealMark.astro";
 ---
 
 <BaseLayout
   title="Écosystème d’Orée : relations envisagées"
   description="Le cœur, les relais humains, les fondations et les horizons collectifs que l’écosystème d’Orée cherche à construire, rôle par rôle."
 >
-  <section class="hero-section">
-    <div class="container reading-width">
-      <p class="eyebrow">Écosystème</p>
-      <h1>L’écosystème qu’Orée cherche à construire</h1>
-      <p class="repere">Vous êtes ici · Écosystème</p>
-      <p class="introduction">
-        Orée est au point zéro : ces rôles décrivent une structure envisagée,
-        mais aucun n’est actif aujourd’hui et personne ne les occupe au nom
-        d’Orée. Cette page en présente l’architecture, du cœur de la marketplace
-        jusqu’aux horizons collectifs les plus lointains.
-      </p>
-    </div>
-  </section>
-
-  <section class="section-block">
-    <div class="container reading-width">
-      <h2>Le Cœur</h2>
-      <p>
-        Au centre de l’écosystème se trouvent deux gestes simples : créer et
-        découvrir. Une personne crée une œuvre originale ; une autre la découvre
-        et choisit de la soutenir. Tout le reste de l’écosystème existe pour
-        rendre ce geste plus simple et plus sûr, sans jamais le remplacer.
-      </p>
-    </div>
-  </section>
-
-  <section class="section-block bloc-plein texture-legere">
-    <div class="relais-seal" aria-hidden="true">
-      <SealMark size={200} variant="negatif" />
-    </div>
-    <div class="container reading-width">
-      <h2>Les relais humains</h2>
-      <div class="role-grid">
-        <div class="role-item">
-          <RoleIcon role="eclaireur" size={40} decorative />
-          <div>
-            <p class="role-name">Les Éclaireurs</p>
-            <p>
-              Les Éclaireurs pourraient repérer des talents qui n’ont pas encore
-              osé se présenter et leur ouvrir une porte.
-            </p>
-          </div>
-        </div>
-        <div class="role-item">
-          <RoleIcon role="echo" size={40} decorative />
-          <div>
-            <p class="role-name">Les Échos</p>
-            <p>
-              Les Échos pourraient faire connaître les créations et les
-              histoires d’Orée sans se substituer aux personnes qui créent.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block">
-    <div class="container reading-width">
-      <h2>Les fondations</h2>
-      <p>
-        Ce qui doit exister avant que l’écosystème puisse fonctionner reste à
-        construire. Les sujets techniques, juridiques, fiscaux, opérationnels et
-        logistiques sont encore à cadrer.
-      </p>
-      <div class="role-grid role-grid--triple">
-        <div class="role-item">
-          <RoleIcon role="batisseur" size={40} decorative />
-          <div>
-            <p class="role-name">Tech et Données</p>
-            <p>
-              Le site, les outils internes et la fiabilité des données de
-              construction.
-            </p>
-          </div>
-        </div>
-        <div class="role-item">
-          <RoleIcon role="batisseur" size={40} decorative />
-          <div>
-            <p class="role-name">Légal et Fiscal</p>
-            <p>
-              Les statuts, les contrats et le cadre fiscal qui restent à valider
-              (voir Fondations).
-            </p>
-          </div>
-        </div>
-        <div class="role-item">
-          <RoleIcon role="batisseur" size={40} decorative />
-          <div>
-            <p class="role-name">Opérations et Logistique</p>
-            <p>
-              Le paiement, la facturation et la livraison, encore à concevoir.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block ess-block">
-    <div class="container reading-width">
-      <h2>Les horizons collectifs</h2>
-      <p>
-        Sous condition que le modèle se valide, l’écosystème pourrait
-        s’organiser en Clairières — des communautés locales — puis converger
-        vers La Canopée, un horizon coopératif où chaque personne pèserait une
-        voix, indépendamment de sa contribution financière.
-      </p>
-    </div>
-  </section>
-
-  <section class="section-block">
-    <div class="container reading-width">
-      <h2>Profils de conception</h2>
-      <p class="context-note">
-        Lecture facultative. Ces profils sont des personas de conception — des
-        situations illustratives utilisées pour penser les rôles ci-dessus — et
-        non des personnes réelles ni des statistiques.
-      </p>
-      <details class="personas-details">
-        <summary>Voir les quatre profils de conception</summary>
-        <div class="details-content persona-grid">
-          <div class="persona">
-            <p class="persona-name">Marc — Persona de conception</p>
-            <p>
-              Une personne qui crée depuis longtemps, mais qui n’a jamais osé
-              vendre par peur du jugement.
-            </p>
-          </div>
-          <div class="persona">
-            <p class="persona-name">Claire — Persona de conception</p>
-            <p>
-              Une personne qui découvre des créations et cherche à soutenir
-              directement qui les fait.
-            </p>
-          </div>
-          <div class="persona">
-            <p class="persona-name">Camille — Persona de conception</p>
-            <p>
-              Une personne qui repère des talents autour d’elle et pourrait
-              devenir Éclaireuse.
-            </p>
-          </div>
-          <div class="persona">
-            <p class="persona-name">Julien — Persona de conception</p>
-            <p>
-              Une personne qui aime raconter ce qui mérite d’être découvert et
-              qui pourrait devenir Écho.
-            </p>
-          </div>
-        </div>
-        <p class="context-note">
-          Retrouver ces situations en détail sur la page <a href="/rejoindre/"
-            >Participer</a
-          >.
+  <article class="page-article">
+    <header class="hero-section">
+      <div class="container reading-width">
+        <p class="eyebrow">Écosystème</p>
+        <h1>L’écosystème qu’Orée cherche à construire</h1>
+        <p class="repere">Vous êtes ici · Écosystème</p>
+        <p class="introduction">
+          Orée est au point zéro : ces rôles décrivent une structure envisagée,
+          mais aucun n’est actif aujourd’hui et personne ne les occupe au nom
+          d’Orée. Cette page en présente l’architecture, du cœur de la
+          marketplace jusqu’aux horizons collectifs les plus lointains.
         </p>
-      </details>
-    </div>
-  </section>
-
-  <section class="section-block point-zero-block">
-    <div class="container reading-width">
-      <p>
-        Ces rôles décrivent des besoins et des possibilités de contribution. Ils
-        ne constituent ni une équipe, ni une communauté active, ni une promesse
-        de mission ou de croissance.
-      </p>
-      <div class="actions">
-        <a class="button button-primary" href="/rejoindre/">Participer</a>
-        <a class="button button-secondary" href="/projet/"
-          >Comprendre pourquoi Orée existe</a
-        >
       </div>
-    </div>
-  </section>
+    </header>
+
+    <ol class="ecosystem-layers">
+      <li>
+        <section class="section-block" aria-labelledby="coeur-title">
+          <div class="container reading-width">
+            <h2 id="coeur-title">Le Cœur</h2>
+            <p class="role-family">
+              <RoleIcon role="artisan" size={28} decorative />
+              <strong>Artiste ou Artisan</strong>
+            </p>
+            <p>
+              Au centre de l’écosystème se trouvent deux gestes simples : créer
+              et découvrir. Une personne crée une œuvre originale ; une autre la
+              découvre et choisit de la soutenir. Tout le reste de l’écosystème
+              existe pour rendre ce geste plus simple et plus sûr, sans jamais
+              le remplacer.
+            </p>
+          </div>
+        </section>
+      </li>
+
+      <li>
+        <section class="section-block" aria-labelledby="relais-title">
+          <div class="container reading-width">
+            <h2 id="relais-title">Les relais humains</h2>
+            <div class="role-grid">
+              <section class="role-item" aria-labelledby="eclaireurs-title">
+                <RoleIcon role="eclaireur" size={40} decorative />
+                <div>
+                  <h3 class="role-name" id="eclaireurs-title">
+                    Les Éclaireurs
+                  </h3>
+                  <p>
+                    Les Éclaireurs pourraient repérer des talents qui n’ont pas
+                    encore osé se présenter et leur ouvrir une porte.
+                  </p>
+                </div>
+              </section>
+              <section class="role-item" aria-labelledby="echos-title">
+                <RoleIcon role="echo" size={40} decorative />
+                <div>
+                  <h3 class="role-name" id="echos-title">Les Échos</h3>
+                  <p>
+                    Les Échos pourraient faire connaître les créations et les
+                    histoires d’Orée sans se substituer aux personnes qui
+                    créent.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </li>
+
+      <li>
+        <section class="section-block" aria-labelledby="fondations-title">
+          <div class="container reading-width">
+            <h2 id="fondations-title">Les fondations</h2>
+            <p class="role-family">
+              <RoleIcon role="batisseur" size={28} decorative />
+              <strong>Bâtisseur</strong>
+            </p>
+            <p>
+              Ce qui doit exister avant que l’écosystème puisse fonctionner
+              reste à construire. Les sujets techniques, juridiques, fiscaux,
+              opérationnels et logistiques sont encore à cadrer.
+            </p>
+            <div class="role-grid role-grid--triple">
+              <section class="role-item" aria-labelledby="tech-donnees-title">
+                <RoleIcon role="batisseur" size={40} decorative />
+                <div>
+                  <h3 class="role-name" id="tech-donnees-title">
+                    Tech et Données
+                  </h3>
+                  <p>
+                    Le site, les outils internes et la fiabilité des données de
+                    construction.
+                  </p>
+                </div>
+              </section>
+              <section class="role-item" aria-labelledby="legal-fiscal-title">
+                <RoleIcon role="batisseur" size={40} decorative />
+                <div>
+                  <h3 class="role-name" id="legal-fiscal-title">
+                    Légal et Fiscal
+                  </h3>
+                  <p>
+                    Les statuts, les contrats et le cadre fiscal qui restent à
+                    valider (voir Fondations).
+                  </p>
+                </div>
+              </section>
+              <section
+                class="role-item"
+                aria-labelledby="operations-logistique-title"
+              >
+                <RoleIcon role="batisseur" size={40} decorative />
+                <div>
+                  <h3 class="role-name" id="operations-logistique-title">
+                    Opérations et Logistique
+                  </h3>
+                  <p>
+                    Le paiement, la facturation et la livraison, encore à
+                    concevoir.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </li>
+
+      <li>
+        <section class="section-block" aria-labelledby="horizons-title">
+          <div class="container reading-width">
+            <h2 id="horizons-title">Les horizons collectifs</h2>
+            <p>
+              Sous condition que le modèle se valide, l’écosystème pourrait
+              s’organiser en Clairières — des communautés locales — puis
+              converger vers La Canopée, un horizon coopératif où chaque
+              personne pèserait une voix, indépendamment de sa contribution
+              financière.
+            </p>
+          </div>
+        </section>
+      </li>
+    </ol>
+
+    <section class="section-block" aria-labelledby="profils-title">
+      <div class="container reading-width">
+        <h2 id="profils-title">Profils de conception</h2>
+        <p class="context-note">
+          Lecture facultative. Ces profils sont des personas de conception — des
+          situations illustratives utilisées pour penser les rôles ci-dessus —
+          et non des personnes réelles ni des statistiques.
+        </p>
+        <details class="personas-details">
+          <summary>Voir les quatre profils de conception</summary>
+          <div class="details-content persona-grid">
+            <article class="persona">
+              <h3 class="persona-name">Marc — Persona de conception</h3>
+              <p>
+                Une personne qui crée depuis longtemps, mais qui n’a jamais osé
+                vendre par peur du jugement.
+              </p>
+            </article>
+            <article class="persona">
+              <h3 class="persona-name">Claire — Persona de conception</h3>
+              <p>
+                Une personne qui découvre des créations et cherche à soutenir
+                directement qui les fait.
+              </p>
+            </article>
+            <article class="persona">
+              <h3 class="persona-name">Camille — Persona de conception</h3>
+              <p>
+                Une personne qui repère des talents autour d’elle et pourrait
+                devenir Éclaireuse.
+              </p>
+            </article>
+            <article class="persona">
+              <h3 class="persona-name">Julien — Persona de conception</h3>
+              <p>
+                Une personne qui aime raconter ce qui mérite d’être découvert et
+                qui pourrait devenir Écho.
+              </p>
+            </article>
+          </div>
+          <p class="context-note">
+            Retrouver ces situations en détail sur la page <a href="/rejoindre/"
+              >Participer</a
+            >.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-block point-zero-block" aria-label="Point zéro">
+      <div class="container reading-width">
+        <p>
+          Ces rôles décrivent des besoins et des possibilités de contribution.
+          Ils ne constituent ni une équipe, ni une communauté active, ni une
+          promesse de mission ou de croissance.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="/projet/">Projet</a>
+          <a class="button button-secondary" href="/avancement/">Avancement</a>
+        </div>
+      </div>
+    </section>
+  </article>
 </BaseLayout>
 
 <style>
@@ -217,33 +246,23 @@ import SealMark from "../../components/brand/SealMark.astro";
     margin-bottom: var(--space-6);
   }
 
-  .bloc-plein {
-    padding-bottom: var(--space-16);
-  }
-
-  .bloc-plein :global(.role-icon--eclaireur),
-  .bloc-plein :global(.role-icon--echo) {
-    color: var(--color-linen);
-  }
-
-  .relais-seal {
-    position: absolute;
-    bottom: -2rem;
-    left: -3rem;
-    z-index: 0;
-    opacity: 0.2;
-    pointer-events: none;
-  }
-
-  @media (max-width: 48rem) {
-    .relais-seal {
-      display: none;
-    }
+  .ecosystem-layers {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .role-grid {
     display: grid;
     gap: var(--space-6);
+  }
+
+  .role-family {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    color: var(--color-canopy);
   }
 
   .role-item {
@@ -261,17 +280,6 @@ import SealMark from "../../components/brand/SealMark.astro";
   .role-item p:last-child {
     margin-bottom: 0;
     color: var(--color-text-muted);
-  }
-
-  /*
-   * Mission 011 — Lot 1 : dans le bloc plein « Les relais humains », les noms
-   * de rôle (Canopée sur Canopée) et les descriptions (Muted sur Canopée)
-   * étaient illisibles. Correction locale au seul contexte fautif ; les rôles
-   * du bloc clair « Les fondations » conservent leurs couleurs.
-   */
-  .bloc-plein .role-name,
-  .bloc-plein .role-item p:last-child {
-    color: var(--color-linen);
   }
 
   .context-note {
@@ -364,15 +372,15 @@ import SealMark from "../../components/brand/SealMark.astro";
 
   @media (min-width: 48rem) {
     .role-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .role-grid--triple {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .persona-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>
