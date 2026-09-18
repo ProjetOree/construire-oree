@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SealMark from "../../components/brand/SealMark.astro";
 import { getCollection } from "astro:content";
 
 const allEntries = await getCollection("journal");
@@ -21,19 +20,11 @@ const publishedEntries = allEntries
   title="Journal de Construire Orée"
   description="Le Journal de Construire Orée présente uniquement les contenus réellement publiés et indique honnêtement lorsqu’aucun billet n’est disponible."
 >
-  <section class="journal-hero">
+  <section class="journal-intro">
     <div class="container reading-width">
       <p class="eyebrow">Journal</p>
       <h1>Le Journal de Construire Orée</h1>
       <p class="repere">Vous êtes ici · Journal</p>
-    </div>
-  </section>
-
-  <section class="journal-intro bloc-plein texture-legere">
-    <div class="journal-intro-seal" aria-hidden="true">
-      <SealMark size={190} variant="negatif" />
-    </div>
-    <div class="container reading-width">
       <div class="introduction">
         <p>
           Ce Journal documentera la construction réelle de Construire Orée à
@@ -71,9 +62,7 @@ const publishedEntries = allEntries
                     })}
                   </time>
                 )}
-                <h2>
-                  <a href={`/journal/${entry.id}/`}>{entry.data.title}</a>
-                </h2>
+                <h2>{entry.data.title}</h2>
                 <p>{entry.data.description}</p>
                 <a href={`/journal/${entry.id}/`} class="read-more">
                   Lire « {entry.data.title} »
@@ -88,10 +77,6 @@ const publishedEntries = allEntries
 </BaseLayout>
 
 <style>
-  .journal-hero {
-    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
-  }
-
   .eyebrow {
     margin-bottom: var(--space-4);
     color: var(--color-bark);
@@ -102,32 +87,17 @@ const publishedEntries = allEntries
   }
 
   h1 {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
   }
 
   .journal-intro {
-    position: relative;
-    padding-block: var(--space-12) var(--space-16);
-  }
-
-  .journal-intro-seal {
-    position: absolute;
-    top: 50%;
-    left: -3rem;
-    z-index: 0;
-    opacity: 0.2;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-
-  @media (max-width: 48rem) {
-    .journal-intro-seal {
-      display: none;
-    }
+    padding-block: clamp(4rem, 10vw, 6rem) var(--space-12);
   }
 
   .introduction {
+    margin-top: var(--space-8);
     font-size: var(--text-md);
+    line-height: 1.65;
   }
 
   .introduction p {
@@ -139,7 +109,7 @@ const publishedEntries = allEntries
   }
 
   .journal-index {
-    padding-block: var(--space-12) var(--space-8);
+    padding-block: var(--space-8) var(--space-12);
   }
 
   .empty-state {
@@ -153,13 +123,14 @@ const publishedEntries = allEntries
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
+    gap: var(--space-10);
   }
 
   .entries-list li {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 40rem;
   }
 
   .entries-list time {
@@ -173,19 +144,9 @@ const publishedEntries = allEntries
     margin-bottom: var(--space-2);
   }
 
-  .entries-list h2 a {
-    color: inherit;
-    text-decoration-line: underline;
-    text-decoration-thickness: 0.08em;
-    text-underline-offset: 0.18em;
-  }
-
-  .entries-list h2 a:hover {
-    color: var(--color-primary);
-  }
-
   .entries-list p {
     margin-bottom: var(--space-3);
+    line-height: 1.6;
   }
 
   .read-more {
@@ -194,5 +155,7 @@ const publishedEntries = allEntries
     align-items: center;
     font-size: var(--text-sm);
     font-weight: 600;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
   }
 </style>
