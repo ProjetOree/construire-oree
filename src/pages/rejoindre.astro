@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RoleIcon from "../components/brand/RoleIcon.astro";
-import SealMark from "../components/brand/SealMark.astro";
 import { siteConfig } from "../config/site";
 ---
 
@@ -30,10 +29,7 @@ import { siteConfig } from "../config/site";
     </div>
   </section>
 
-  <section class="join-summary bloc-plein texture-legere">
-    <div class="join-summary-seal" aria-hidden="true">
-      <SealMark size={260} variant="negatif" />
-    </div>
+  <section class="join-summary texture-legere">
     <div class="container reading-width">
       <h2>Choisir une intention</h2>
       <p>
@@ -335,7 +331,8 @@ import { siteConfig } from "../config/site";
 
 <style>
   .join-hero {
-    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+    padding-block: clamp(4rem, 9vw, 7rem) var(--space-12);
+    border-bottom: 2px solid var(--color-border);
   }
 
   .eyebrow {
@@ -351,6 +348,10 @@ import { siteConfig } from "../config/site";
     margin-bottom: var(--space-6);
   }
 
+  .repere {
+    margin-bottom: 0;
+  }
+
   .introduction {
     margin-bottom: var(--space-4);
     color: var(--color-text-muted);
@@ -358,64 +359,71 @@ import { siteConfig } from "../config/site";
   }
 
   .join-summary {
-    position: relative;
-    padding-bottom: var(--space-12);
+    padding-block: var(--space-12);
+    border-bottom: 2px solid var(--color-border);
   }
 
-  .join-summary-seal {
-    position: absolute;
-    top: -3rem;
-    right: -2rem;
-    z-index: 0;
-    opacity: 0.2;
-    pointer-events: none;
-  }
-
-  @media (max-width: 48rem) {
-    .join-summary-seal {
-      display: none;
-    }
+  .join-hero .container.reading-width,
+  .join-summary .container.reading-width,
+  .role-section .container.reading-width,
+  .join-closure .container.reading-width {
+    max-width: 74rem;
   }
 
   .intent-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-    margin: var(--space-6) 0 0;
+    display: flex;
+    flex-direction: column;
+    margin: var(--space-6) 0 var(--space-8);
     padding: 0;
+    counter-reset: intention;
     list-style: none;
+    border-top: 1px solid var(--color-border);
   }
 
   .intent-grid li {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-canvas);
+    display: grid;
+    width: 100%;
+    max-width: none;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    column-gap: var(--space-3);
+    align-items: start;
+    padding-block: var(--space-4);
+    counter-increment: intention;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .intent-grid li::before {
+    grid-row: 1 / span 3;
+    color: var(--color-action);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    content: counter(intention, decimal-leading-zero);
   }
 
   .intent-grid strong {
     display: block;
     margin-bottom: var(--space-2);
-    color: var(--color-canopy);
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    line-height: 1.15;
   }
 
   .intent-grid p {
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
     color: var(--color-text-muted);
   }
 
-  .intent-grid li a + a {
-    margin-left: var(--space-3);
-  }
-
-  /*
-   * Mission 011 — Lot 1 : les cartes d’intention sont posées sur Canvas à
-   * l’intérieur du bloc plein. Le Lin hérité de la règle globale `.bloc-plein a`
-   * y devenait illisible ; ces surcharges sont limitées aux liens des cartes et
-   * ne touchent pas les liens Lin légitimes posés directement sur Canopée.
-   */
   .intent-grid a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    border-bottom: 2px solid currentColor;
     color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
   }
 
   .intent-grid a:hover {
@@ -426,19 +434,21 @@ import { siteConfig } from "../config/site";
     outline-color: var(--color-primary);
   }
 
-  @media (min-width: 48rem) {
-    .intent-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .intent-grid li:nth-child(3) a {
+    grid-column: 2;
+    width: fit-content;
+  }
+
+  .intent-grid li:nth-child(3) a + a {
+    margin-top: var(--space-2);
   }
 
   .claire-persona {
-    position: relative;
-    z-index: 1;
+    margin-top: 0;
   }
 
   .roles-intro-section {
-    padding-block: var(--space-8) 0;
+    padding-block: var(--space-12) 0;
   }
 
   .roles-lead {
@@ -449,67 +459,52 @@ import { siteConfig } from "../config/site";
   .roles-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-16);
+    gap: 0;
     padding-block: var(--space-8);
+    counter-reset: role;
   }
 
   .role-section {
     scroll-margin-top: 6rem;
     transition: background-color var(--transition-fast);
-    padding-block: var(--space-4);
-    padding-left: var(--space-4);
-    border-left: 3px solid transparent;
-    border-radius: var(--radius-lg);
+    padding-block: var(--space-12);
+    counter-increment: role;
+    border-top: 2px solid var(--color-border);
   }
 
-  /*
-   * Mission 011 — Lot 1 : repère d’arrivée non uniquement chromatique.
-   * La barre latérale passe de 3 à 6 px, compensée par le retrait gauche pour
-   * éviter tout décalage de 3 px de la colonne de lecture.
-   */
+  /* L’arrivée par ancre ajoute un trait intérieur sans déplacer la lecture. */
   .role-section:target {
     background-color: var(--color-surface-emphasis);
-    border-left-width: 6px;
-    padding-left: calc(var(--space-4) - 3px);
+    border-top-color: var(--color-primary);
+    box-shadow: inset 5px 0 0 var(--color-primary);
   }
 
   @media (forced-colors: active) {
     .role-section:target {
-      border-left-color: Highlight;
+      outline: 3px solid Highlight;
+      outline-offset: -3px;
     }
-  }
-
-  .role-section--batisseur {
-    border-left-color: var(--role-accent-batisseur);
-  }
-
-  .role-section--artisan {
-    border-left-color: var(--role-accent-artisan);
-  }
-
-  .role-section--eclaireur {
-    border-left-color: var(--role-accent-eclaireur);
-  }
-
-  .role-section--echo {
-    border-left-color: var(--role-accent-echo);
   }
 
   .role-section h2 {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
   }
 
   .role-section h3 {
-    margin-top: var(--space-6);
+    margin-top: 0;
     margin-bottom: var(--space-2);
     font-size: var(--text-md);
   }
 
   .role-section p {
     color: var(--color-text-muted);
+  }
+
+  .role-section h3 + p {
+    margin-bottom: var(--space-6);
   }
 
   .role-action {
@@ -534,12 +529,12 @@ import { siteConfig } from "../config/site";
   }
 
   .button-secondary {
-    border-color: var(--color-canopy);
-    color: var(--color-canopy);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
   }
 
   .button-secondary:hover {
-    background: var(--color-canopy);
+    background: var(--color-primary);
     color: var(--color-linen);
   }
 
@@ -555,9 +550,8 @@ import { siteConfig } from "../config/site";
   }
 
   .join-closure {
-    padding-block: var(--space-16);
-    margin-top: var(--space-8);
-    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-12);
+    border-top: 2px solid var(--color-border);
   }
 
   .join-closure h2 {
@@ -570,16 +564,19 @@ import { siteConfig } from "../config/site";
 
   .persona {
     margin-top: var(--space-6);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-canvas);
+    padding: var(--space-3) 0;
+    border-block: 1px solid var(--color-border);
+    background: transparent;
   }
 
   .persona summary {
+    min-height: 44px;
+    display: list-item;
+    padding-block: var(--space-2);
+    list-style-position: inside;
     cursor: pointer;
     font-weight: 700;
-    color: var(--color-canopy);
+    color: var(--color-text);
   }
 
   .persona[open] summary {
@@ -587,6 +584,7 @@ import { siteConfig } from "../config/site";
   }
 
   .persona-optional {
+    margin-left: var(--space-1);
     font-weight: 400;
     color: var(--color-text-muted);
     font-size: var(--text-sm);
@@ -594,5 +592,134 @@ import { siteConfig } from "../config/site";
 
   .persona-body p {
     margin-bottom: var(--space-2);
+  }
+
+  @media (min-width: 48rem) {
+    .join-hero .container {
+      max-width: 74rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+      column-gap: clamp(var(--space-8), 8vw, var(--space-16));
+      align-items: start;
+    }
+
+    .join-hero .eyebrow {
+      grid-column: 1 / -1;
+    }
+
+    .join-hero h1 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .join-hero .repere {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .join-hero .introduction {
+      grid-column: 2;
+      margin-bottom: var(--space-6);
+    }
+
+    .join-hero .repere + .introduction {
+      grid-row: 2;
+      padding-left: var(--space-6);
+      border-left: 2px solid var(--color-action);
+    }
+
+    .join-hero .introduction:last-of-type {
+      grid-row: 3;
+      padding-left: var(--space-6);
+      border-left: 2px solid var(--color-action);
+    }
+
+    .intent-grid li {
+      grid-template-columns: 5rem minmax(0, 1fr) minmax(13rem, 0.72fr);
+      column-gap: var(--space-6);
+      align-items: center;
+    }
+
+    .intent-grid li::before {
+      grid-row: 1 / span 2;
+    }
+
+    .intent-grid strong,
+    .intent-grid p {
+      grid-column: 2;
+    }
+
+    .intent-grid li a {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      justify-self: start;
+    }
+
+    .intent-grid li:nth-child(3) a {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .intent-grid li:nth-child(3) a + a {
+      grid-row: 2;
+    }
+
+    .role-section .container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(var(--space-8), 7vw, var(--space-16));
+    }
+
+    .role-section h2,
+    .role-section details,
+    .role-section .role-action,
+    .role-section h3:nth-of-type(3),
+    .role-section h3:nth-of-type(3) + p {
+      grid-column: 1 / -1;
+    }
+
+    .role-section h3:nth-of-type(1),
+    .role-section h3:nth-of-type(1) + p {
+      grid-column: 1;
+    }
+
+    .role-section h3:nth-of-type(2),
+    .role-section h3:nth-of-type(2) + p {
+      grid-column: 2;
+    }
+
+    .role-section h3:nth-of-type(2) {
+      border-left: 2px solid var(--color-action);
+      padding-left: var(--space-6);
+    }
+
+    .role-section h3:nth-of-type(2) + p {
+      border-left: 2px solid var(--color-action);
+      padding-left: var(--space-6);
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .join-hero {
+      padding-top: var(--space-8);
+    }
+
+    .intent-grid li {
+      grid-template-columns: 2.5rem minmax(0, 1fr);
+      column-gap: var(--space-2);
+    }
+
+    .intent-grid strong {
+      font-size: var(--text-md);
+    }
+
+    .role-section h2::before {
+      flex: 0 0 auto;
+      color: var(--color-action);
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-variant-numeric: tabular-nums;
+      content: counter(role, decimal-leading-zero);
+    }
   }
 </style>
