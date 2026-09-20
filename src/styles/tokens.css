@@ -22,6 +22,7 @@
 
   --color-canvas: #faf8f5;
   --color-surface-soft: #f3ede7;
+  --color-section-warm: #f0e5d6;
   --color-border: #e8e0d8;
   --color-text-muted: #6b5e54;
   --color-text-subtle: #9c8f84;
@@ -133,4 +134,6 @@
   --radius-lg: 0.75rem;
 
   --transition-fast: 160ms ease;
+  --transition-section: 420ms ease-out;
+  --transition-opening: 760ms ease-out;
 }
