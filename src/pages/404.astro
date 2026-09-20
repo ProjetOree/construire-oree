@@ -31,6 +31,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .not-found-intro {
+    max-width: 62ch;
     color: var(--color-charcoal);
     font-size: var(--text-md);
   }
@@ -48,7 +49,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     justify-content: center;
     min-height: 56px; /* Cible tactile >= 44px */
     padding: var(--space-3) var(--space-6);
-    border-radius: 16px; /* Coins arrondis ~14-18px */
+    border-radius: var(--radius-lg);
     font-weight: 700;
     font-size: var(--text-base);
     text-decoration: none;
@@ -71,10 +72,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border: 2px solid var(--color-canopy);
   }
 
-  .not-found-link-primary:hover {
+  .not-found-link-primary:hover,
+  .not-found-link-primary:visited {
     background-color: var(--hover-canopy);
     border-color: var(--hover-canopy);
     color: var(--color-linen);
+  }
+
+  .not-found-link-primary:visited:not(:hover) {
+    background-color: var(--color-canopy);
+    border-color: var(--color-canopy);
   }
 
   /* Bouton doux — mêmes couleurs validées que les boutons de /liens/ */
@@ -84,8 +91,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border: 2px solid var(--color-canopy);
   }
 
-  .not-found-link-secondary:hover {
+  .not-found-link-secondary:hover,
+  .not-found-link-secondary:visited {
     background-color: var(--hover-linen);
     color: var(--color-charcoal);
+  }
+
+  .not-found-link-secondary:visited:not(:hover) {
+    background-color: var(--color-linen);
   }
 </style>
