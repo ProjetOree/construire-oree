@@ -37,13 +37,17 @@ Marc a 40 ans. Il est en formation ébénisterie, sa cinquième reconversion. Av
 - Sans cursus des Beaux-Arts, sans réseau, sans expérience de vente, il se convainc que ce n'est _pas pour lui_.
 - Il ne poste jamais ses créations. Il offre parfois des pièces à des proches. Il enchaîne les petits boulots.
 
-  **Ce qu'il veut vraiment**
+<!-- Fin de liste. -->
+
+**Ce qu'il veut vraiment**
 
 - Pas un cours de marketing. Pas un abonnement à une plateforme.
 - Il veut que quelqu'un prenne ses objets, les vende, et lui vire l'argent.
 - C'est tout.
 
-  **Son moment de bascule**
+<!-- Fin de liste. -->
+
+**Son moment de bascule**
 
 > **📍**
 > Marc n'a jamais rien vendu : il offre ses pièces à ses proches, sans plus. C'est l'un de ces cadeaux — un couteau forgé à la main, aperçu chez une amie commune — qui met Camille sur sa piste. Elle le retrouve, s'émerveille devant ses peintures, sa musique, ses figurines, puis lui parle d'Orée — _"Tu n'as rien à perdre, c'est gratuit."_ Il hésite, puis se connecte à la plateforme le soir même, lit les histoires d'autres artisans, se reconnaît. Il dépose un couteau pour voir, sans frais, sans engagement. Douze jours plus tard : _"Votre couteau a été acheté par Claire M., 85 €."_ Pour la première fois, Marc se dit : _peut-être que je suis un artiste._
@@ -81,13 +85,17 @@ Claire a 35 ans. Elle achète pour tous les budgets : un cadeau à 40 €, une p
 - Les galeries l'intimident. Etsy est devenu un bazar industriel.
 - Elle veut de l'authentique mais n'a pas les outils pour le trouver, et encore moins pour faire confiance à ce qu'elle trouve.
 
-  **Ce qu'elle veut vraiment**
+<!-- Fin de liste. -->
+
+**Ce qu'elle veut vraiment**
 
 - Découvrir une pièce qui lui parle, comprendre qui l'a fabriquée.
 - Acheter en confiance sur une marketplace éthique, pas une vitrine froide.
 - Avoir l'impression de contribuer à quelque chose qui a du sens.
 
-  **Son moment de bascule**
+<!-- Fin de liste. -->
+
+**Son moment de bascule**
 
 > **📍**
 > Julien, un curateur qu'elle suit, partage sur Instagram un couteau artisanal avec la légende : _"Fabriqué par Marc, artisan autodidacte."_ Claire clique, arrive sur Orée et navigue de fiche en fiche. Elle découvre le profil de Marc et lit son histoire — l'autodidacte, les cinq reconversions, le talent jamais montré. Parmi ses créations, c'est le couteau forgé à la main — celui-là même que Julien avait partagé — qui la bouleverse. Elle craque : 85 €. Quand le couteau arrive chez elle (avec son certificat d'authenticité et un mot de l'artiste), son conjoint demande : _"C'est quoi ?"_ Elle raconte l'histoire de Marc. Deux mois plus tard, elle revient acheter un cadeau. Elle suit maintenant trois artisans.
@@ -126,12 +134,16 @@ Camille est ce qu'on appelle dans l'écosystème Orée une **Éclaireure** : une
 - Elle présente des gens, facilite des rencontres, ouvre des portes, sans jamais en tirer quoi que ce soit.
 - Son énergie est réelle. Le modèle économique, lui, n'existait pas encore.
 
-  **Ce qu'elle veut vraiment**
+<!-- Fin de liste. -->
+
+**Ce qu'elle veut vraiment**
 
 - Être rémunérée pour ce qu'elle fait déjà : aller chercher les talents invisibles et les convaincre de franchir le premier pas.
 - Se construire un revenu honnête, tracé et transparent, qui grandit à mesure qu'elle déniche de nouveaux talents.
 
-  **Son moment de bascule**
+<!-- Fin de liste. -->
+
+**Son moment de bascule**
 
 > **📍**
 > Chez une amie, Camille s'arrête sur un couteau forgé à la main — une pièce magnifique. _"Qui a fait ça ?"_ Un certain Marc, qui n'a jamais rien vendu et offre ses créations à ses proches. Camille le retrouve, découvre ses peintures, sa musique, ses figurines. Elle lui parle d'Orée : _"Tu n'as rien à perdre, c'est gratuit."_ Trois mois plus tard, Marc a vendu 8 pièces. Camille est tracée comme source de cette découverte. Elle touche une commission. Elle recommence.
@@ -171,13 +183,17 @@ Julien est ce qu'on appelle dans l'écosystème Orée un **Écho** : un curateur
 - Boutique en dropshipping : revendre sans créer lui semblait creux.
 - Il voulait **un modèle où sa contribution est réelle, transparente, et alignée avec les créateurs qu'il défend.**
 
-  **Ce qu'il veut vraiment**
+<!-- Fin de liste. -->
+
+**Ce qu'il veut vraiment**
 
 - Construire sa vitrine — une curation qui lui ressemble, pas une boutique à lui.
 - Partager des coups de cœur avec une commission honnête et transparente, visible de tous, sans que le créateur n'en pâtisse.
 - Être la résonance qui fait voyager une histoire d'atelier jusqu'à des inconnus.
 
-  **Son moment de bascule**
+<!-- Fin de liste. -->
+
+**Son moment de bascule**
 
 > **📍**
 > Julien tombe sur la page de Marc. Le couteau, l'histoire, la photo un peu floue mais vraie. Il partage avec son code Écho — sur Instagram et dans sa newsletter du dimanche : deux paragraphes, une image, le lien. Quatre jours plus tard, il reçoit une notification : trois ventes générées, dont le fameux couteau de Marc. Sa première commission tombe, modeste, mais bien réelle. Pas une fortune. Mais la preuve que son œil a de la valeur. Il crée sa vitrine la semaine suivante. Il l'appelle _Matières Premières_.

@@ -102,7 +102,9 @@ Déplie les toggles « Détail bâtisseur » : stack, livrables et contraintes y
 - Renfort de **quelques Éclaireurs déjà identifiés**, amorcés avant la première vente
 - Objectif : un premier noyau de **créateurs pilotes** (voir [Rejoindre Orée](/documents/rejoindre/))
 
-  **🛍️ Côté demande — les premiers acheteurs**
+<!-- Fin de liste. -->
+
+**🛍️ Côté demande — les premiers acheteurs**
 
 - **Réseau personnel** + bouche-à-oreille
 - **Premiers Échos** et leurs audiences
@@ -137,8 +139,10 @@ Déplie les toggles « Détail bâtisseur » : stack, livrables et contraintes y
 - **Modèle de données « invoice-ready »** : génération auto du **certificat d'authenticité PDF** + reçus/factures à la vente, structurés pour la future PA.
 - **Code créateur + code Écho** : liens uniques de tracking (traçabilité manuelle, pas de dashboard).
 
-  **🧱 Détail bâtisseur — Le schéma SQL « invoice-ready » (à poser dès le MVP)**
-  Brancher la future Plateforme Agréée en 2026-2027 = simple remplissage des champs `pa_*`, **zéro refonte de la base**.
+<!-- Fin de liste. -->
+
+**🧱 Détail bâtisseur — Le schéma SQL « invoice-ready » (à poser dès le MVP)**
+Brancher la future Plateforme Agréée en 2026-2027 = simple remplissage des champs `pa_*`, **zéro refonte de la base**.
 
 ```sql
 -- Référentiel unique des acteurs (artiste, client, Orée, Écho, Éclaireur)
@@ -245,19 +249,25 @@ CREATE TABLE payments (
     - **(b) Précompte — manuel au MVP, automatisé plus tard dans la Phase 1** : pour les cas rares sans SIRET, précompte appliqué **à la main** (tracé dans `Urssaf_Diffuseur`). Le moteur auto n'est codé qu'au sein de la Phase 1, et **seulement si 3 déclencheurs sont réunis** : (1) EC partenaire signé · (2) abandon réel mesuré à l'étape SIRET · (3) volume rendant le manuel douloureux.
 - _Protection plateforme : aucun versement « brut » sans dispense ; le délai **`payout_release_date`** (livraison + 14 j) couvre le temps de régularisation._
 
-  **⚖️ Détail bâtisseur — TVA & partenaire expert-comptable**
+<!-- Fin de liste. -->
+
+**⚖️ Détail bâtisseur — TVA & partenaire expert-comptable**
 
 - **TVA, trois cas** : Flux 1 franchise / **5,5 %** (œuvre originale) · royalty Flux 2 = **10 % ou franchise** (cession de droit de reproduction) · vente du produit édité Orée → client = **20 %**. **Seuils centralisés en configuration** (50 k€/35 k€, à surveiller PLF 2026).
 - **Sortie de franchise en cours d'année** anticipée : **alerte automatique** à l'approche du seuil + bascule du `vat_regime` (ajout TVA, mise à jour des mentions de facture) sans rupture de la numérotation.
 - **Partenaire EC (modèle prescripteur)** : Orée fournit l'outil (livre de recettes pré-rempli, validé par l'artiste) ; tout acte réservé (bilan, déclaration contrôlée, choix de régime) est **routé vers un EC inscrit**. **Jamais de tenue de compta par Orée.**
 
-  **⚖️ Détail bâtisseur — Facturation électronique & mandat**
+<!-- Fin de liste. -->
+
+**⚖️ Détail bâtisseur — Facturation électronique & mandat**
 
 - **Facturation électronique — réception** opérationnelle pour le **1ᵉʳ sept. 2026** : **PA choisie et active**.
 - **Mandat d'auto-facturation — notification & droit de contestation** : l'auto-facturation (Orée émet _au nom_ de l'artiste, Flux 1) est légale **sous mandat** ; l'artiste doit pouvoir **être informé de chaque facture et la contester** → notification + fenêtre de contestation tracées.
 - **Facture de commission distincte** : Orée émet aussi sa propre facture de commission à l'artiste (intermédiation, TVA 20 %, `doc_type = 'commission'`), à inclure dans le périmètre e-invoicing dès maintenant.
 
-  **⚖️ Détail bâtisseur — RGPD, CGV & autres obligations**
+<!-- Fin de liste. -->
+
+**⚖️ Détail bâtisseur — RGPD, CGV & autres obligations**
 
 - **RGPD** : consentement, registre, **DPA** avec chaque sous-traitant, hébergement UE, droit à l'effacement. **Validation externe avant lancement.**
 - **CGV — deux jeux distincts** (créations originales vs produits édités), **validés par avocat**.
@@ -292,8 +302,10 @@ Compte Connect en **payouts manuels** pilotés par API (le `delay_days` Stripe n
 - **Expédition Flux 2 = manuelle** (produits édités à la demande).
 - **Retours & remboursements partiels** : frais de retour à la charge de l'acheteur (s'il en a été informé) ; sur rétractation, remboursement du prix + livraison aller standard. Mécaniquement : `refund` Stripe (total ou partiel) avec `reverse_transfer` et `refund_application_fee` calculés au prorata.
 
-  **📦 Détail bâtisseur — Clôture mensuelle sur tableur (automatisation lean)**
-  Objectif : clôture sous la ½ journée, même à 50 ventes/mois.
+<!-- Fin de liste. -->
+
+**📦 Détail bâtisseur — Clôture mensuelle sur tableur (automatisation lean)**
+Objectif : clôture sous la ½ journée, même à 50 ventes/mois.
 
 - **Metadata auto-portante sur chaque ****`PaymentIntent`** : `flux`, `artiste_id`, `artiste_siret`, `statut`, `tva_taux`, `brut_artiste_cents`, `commission_cents`, `echo_id`, `commission_echo_cents`, `eclaireur_id`, `commission_eclaireur_cents`. L'export devient auto-documenté.
 - **Script d'export mensuel** (Node + SDK Stripe, Vercel Cron le 5) : `stripe.balanceTransactions.list(...)` → mappe la metadata → écrit dans **Google Sheets**. Sheets plutôt qu'Airtable : c'est un _registre fiscal_ lu par l'EC/l'avocat, et les calculs critiques sont des `SUMIFS`/`QUERY`. Onglets : `Ventes` · `Commissions_Intermédiaires` · `TVA_Ventilation` · `Urssaf_Diffuseur` · `DAS2` · `Clôture`.
@@ -301,7 +313,9 @@ Compte Connect en **payouts manuels** pilotés par API (le `delay_days` Stripe n
 - **Auditabilité (codée dans le script)** : duplication de `Clôture` en `Clôture_AAAA-MM` figé (snapshot immuable) ; validation de données (listes fermées) ; cellule de contrôle `Σ Sheets − Σ payout Stripe = 0`, sinon alerte.
 - **Avoirs & corrections inter-périodes** : un remboursement en N+1 annule l'Urssaf et la TVA déclarées en N → ligne « Corrections / Avoirs », avoir rattaché (`related_invoice`).
 
-  **📦 Détail bâtisseur — Modèle de marge & gestion du risque**
+<!-- Fin de liste. -->
+
+**📦 Détail bâtisseur — Modèle de marge & gestion du risque**
 
 - **Modèle de marge / point-mort chiffré (avant la 1ʳᵉ vente)** : mini-modèle de 3 scénarios (80 € / 300 € / 1 500 €, avec et sans Écho + Éclaireur). Ordre de priorité : frais Stripe → Urssaf 1,1 % sur le brut artiste → commissions intermédiaires (plancher plateforme 50 % de la commission nette de TVA) → coûts fixes. **Raisonner net de TVA** (commission ÷ 1,20). Sortie : prix et taux de commission planchers.
 - **Risque chargeback — défense par blocage des fonds** : en _destination charges_, un litige débite le solde Orée. Comme le payout reste **bloqué** jusqu'à livraison + 14 j, la majorité des litiges (« non reçu »/« non conforme ») est couverte par un `transfer.reversal` à réception de `charge.dispute.created`.
@@ -438,7 +452,9 @@ Compte Connect en **payouts manuels** pilotés par API (le `delay_days` Stripe n
 - **Production de produits édités internalisée** dans Les Clairières (outillage, traçabilité).
 - **Modèle réplicable** : essaimage technique vers d'autres secteurs créatifs.
 
-  **⚖️ Détail bâtisseur — Légal, Fiscal & Conformité**
+<!-- Fin de liste. -->
+
+**⚖️ Détail bâtisseur — Légal, Fiscal & Conformité**
 
 - **Transition formelle vers le statut SCIC (multisociétariat)** sous l'égide de La Canopée — collèges d'associés : salariés (dont les **Bâtisseurs**), producteurs (artistes, artisans), contributeurs (Éclaireurs, Échos) et bénéficiaires (clients).
 - **Coexistence statut artiste-auteur / salarié-associé** documentée et sécurisée.
@@ -447,7 +463,9 @@ Compte Connect en **payouts manuels** pilotés par API (le `delay_days` Stripe n
 - **Gouvernance démocratique** : chaque membre vote les décisions stratégiques.
 - **Conformité multi-pays UE** consolidée (Belgique, Allemagne, Espagne).
 
-  **📦 Détail bâtisseur — Opérations & Logistique**
+<!-- Fin de liste. -->
+
+**📦 Détail bâtisseur — Opérations & Logistique**
 
 - **2 à 3 nouvelles Clairières** en France, ateliers partagés élargis.
 - Les artistes, artisans, **Éclaireurs, Échos et Bâtisseurs actifs deviennent associés** (les Bâtisseurs salariés-associés).

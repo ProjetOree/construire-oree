@@ -44,7 +44,9 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 - **Revenu du créateur :** prix de vente − commission plateforme.
 - **TVA :** franchise sous seuil, ou **5,5 %** (œuvre d'art originale) **ou 20 %** (objet artisanal) — voir §5.
 
-  👕 **Flux 2 — Produit édité**
+<!-- Fin de liste. -->
+
+👕 **Flux 2 — Produit édité**
 
 - **Qui vend ?** La plateforme Orée.
 - **Statut artiste-auteur :** sans objet.
@@ -52,7 +54,9 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 - **Revenu du créateur :** royalty sur chaque vente (sur la marge nette).
 - **TVA :** vente Orée → client **20 %** ; royalty artiste (droit de reproduction) **10 %** ou franchise (voir §5).
 
-  **▶ **Rigueur technique & fondements légaux****
+<!-- Fin de liste. -->
+
+**▶ **Rigueur technique & fondements légaux****
 
 > **🛠️**
 > **Montage Stripe Connect — Flux 1.** Orée opère en **destination charges** avec `on_behalf_of` pointant vers le compte de l'artiste (comptes **Express**). L'artiste demeure _merchant of record_ ; la commission est prélevée via `application_fee_amount` ; la plateforme absorbe le risque de _chargeback_.
@@ -201,14 +205,18 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 - Alerter sur les seuils (franchise TVA, plafond micro).
 - Émettre factures + auto-facturation par mandat ; déclaration diffuseur Urssaf.
 
-  🔴 **Orée ne peut pas (réservé à l'expert-comptable)**
+<!-- Fin de liste. -->
+
+🔴 **Orée ne peut pas (réservé à l'expert-comptable)**
 
 - Tenir, centraliser ou corriger les comptes à la place de l'artiste.
 - Remplir et déposer les déclarations fiscales **au nom** de l'artiste.
 - Établir un bilan, une déclaration contrôlée, la compta d'une société.
 - Garantir / attester la « sincérité » des comptes.
 
-  **▶ **Rigueur technique & fondements légaux****
+<!-- Fin de liste. -->
+
+**▶ **Rigueur technique & fondements légaux****
 
 > **⚖️**
 > **Critère : acte matériel vs mission intellectuelle.** L'**art. 2 de l'ordonnance n° 45-2138 du 19 sept. 1945** réserve le fait de _tenir, centraliser, arrêter, surveiller, redresser, réviser, apprécier_ les comptabilités d'autrui. La **Cass. com. 17 sept. 2025 (n° 24-14.689)** distingue l'**acte technique** de saisie (libre) de la **mission intellectuelle** (réservée). Une plateforme étant habituelle par nature, **le bouclier d'Orée est « c'est l'artiste qui agit, Orée n'est que l'outil »**.
@@ -259,7 +267,9 @@ Tout acte réservé est confié à un **partenaire expert-comptable**. Grâce à
 - **Flux 2 :** cession de droit de reproduction → royalty = droit d'auteur (TVA **10 %** ou franchise).
 - **Diffuseur 1,1 % :** oui (Orée diffuseur) + précompte / dispense.
 
-  ⚒️ **Artisan d'art**
+<!-- Fin de liste. -->
+
+⚒️ **Artisan d'art**
 
 - **Ce qu'il crée :** objets artisanaux (céramique, bijou, maroquinerie, bois…).
 - **Régime :** micro-entreprise / EI (BIC) + qualité d'artisan, inscription CMA.

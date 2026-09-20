@@ -43,7 +43,9 @@ Au cœur, deux personnes : le créateur qui dépose et le client qui achète. **
 - 🏡 **Les Clairières** : les hubs physiques locaux qui ancrent la communauté dans le réel — en commençant par une, puis en essaimant
 - 🌲 **La Canopée** : la structure coopérative (SCIC) qui protège l'ensemble de l'écosystème sur le long terme
 
-  Ce projet ne s'adresse pas à ceux qui ont déjà réussi, mais à ceux qui n'ont jamais osé commencer.
+<!-- Fin de liste. -->
+
+Ce projet ne s'adresse pas à ceux qui ont déjà réussi, mais à ceux qui n'ont jamais osé commencer.
 
 ---
 
@@ -79,8 +81,10 @@ La protection sociale n'est pas une option. Elle fait partie du modèle :
 - Mutuelle et prévoyance
 - Accès au chômage
 
-  Ce que la grande majorité des plateformes créatives ne proposent tout simplement pas.
-  On n'y est pas encore. On construit dans cette direction, dès maintenant.
+<!-- Fin de liste. -->
+
+Ce que la grande majorité des plateformes créatives ne proposent tout simplement pas.
+On n'y est pas encore. On construit dans cette direction, dès maintenant.
 
 ---
 

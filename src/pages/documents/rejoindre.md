@@ -61,19 +61,25 @@ Une Web App hybride SSR/SPA : **Next.js**, **Stripe Connect**, **Cloudinary**, r
 - **DevOps / Infra** : Vercel, pipelines de déploiement, monitoring
 - **Tests & qualité** : parce que la première vente de Marc ne doit jamais échouer à cause d'un bug
 
-  **⚖️ **Légal & Fiscal****
+<!-- Fin de liste. -->
+
+**⚖️ **Légal & Fiscal****
 
 - **TVA double flux, diffuseur Urssaf, facturation électronique** : sécuriser le montage fiscal
 - **Contrats** : CGV (deux jeux), contrat artiste-plateforme, contrats Écho & Éclaireur, RGPD, DSA
 - **Partenariats** : expert-comptable et avocat, en modèle prescripteur puis marque blanche
 
-  **📦 **Opérations & Logistique****
+<!-- Fin de liste. -->
+
+**📦 **Opérations & Logistique****
 
 - **Expédition & SAV** : protocole transporteurs, suivi, retours, litiges
 - **Clôture mensuelle** : rapprochements, TVA, DAS2, relation partenaires
 - **La Clairière** : préparer le premier hub physique (Phase 2)
 
-  **Comment démarrer**
+<!-- Fin de liste. -->
+
+**Comment démarrer**
 
 > **🚀**
 >
@@ -117,7 +123,9 @@ On cherche des **créateurs pilotes** pour le lancement. Pas des ambassadeurs. P
 - Donner un retour honnête sur ce qui freine, ce qui aide, ce qui manque
 - Être présent dans la communauté — pas tous les jours, juste quand ça t'inspire
 
-  **Ce que tu reçois en retour**
+<!-- Fin de liste. -->
+
+**Ce que tu reçois en retour**
 
 - Visibilité prioritaire au lancement : ton profil mis en avant
 - Accès direct à Jérémy pour tout problème ou question
@@ -125,7 +133,9 @@ On cherche des **créateurs pilotes** pour le lancement. Pas des ambassadeurs. P
 - Le statut de créateur fondateur, tracé dans l'histoire du projet
 - Et demain, **une place dans La Clairière** : le hub physique local où ta création rencontre le public en vrai
 
-  [**Devenir créateur pilote →**](https://tally.so/r/685NbB) — dépose ta candidature, sans frais ni engagement.
+<!-- Fin de liste. -->
+
+[**Devenir créateur pilote →**](https://tally.so/r/685NbB) — dépose ta candidature, sans frais ni engagement.
 
 > **🎯**
 > **On cherche toutes les formes de création.**
@@ -156,15 +166,19 @@ Tu connais des gens créatifs qui n'osent pas. Tu es le genre de personne qui re
 - Tu es animateur de communauté, organisateur d'événements culturels, enseignant en arts
 - Tu parles déjà de l'artisanat autour de toi, sans que ça te rapporte quoi que ce soit
 
-  **Ce que ça veut dire concrètement au MVP**
+<!-- Fin de liste. -->
+
+**Ce que ça veut dire concrètement au MVP**
 
 - Repérer et convaincre des artistes ou artisans de rejoindre Orée
 - Nous signaler les créateurs que tu as amenés : tu es tracé comme source de la découverte
 - Quand ils vendent, tu touches une commission réelle — plafonnée dans le temps (pas un pourcentage à vie) —, même si le dashboard automatique arrive en Phase 2
 - Le suivi est manuel au MVP : basé sur la confiance, volontaire, et transparent
 
-  _La mécanique de commission Éclaireur est tracée : taux et plafond (durée ou montant) communiqués lors de l'onboarding. Le calcul automatique arrive en Phase 2._
-  → Règles d'amorçage, d'attribution et de cumul (plafond, arbitrage) : voir la [Roadmap Orée](/documents/roadmap/), Phase 1.
+<!-- Fin de liste. -->
+
+_La mécanique de commission Éclaireur est tracée : taux et plafond (durée ou montant) communiqués lors de l'onboarding. Le calcul automatique arrive en Phase 2._
+→ Règles d'amorçage, d'attribution et de cumul (plafond, arbitrage) : voir la [Roadmap Orée](/documents/roadmap/), Phase 1.
 
 > **🌱**
 > **Comment démarrer comme Éclaireur**
@@ -197,13 +211,17 @@ Chaque vente générée via ton code Écho te rapporte une commission **prélev�
 - Partager ton code Écho dans tes espaces habituels
 - Recevoir ta commission manuellement au MVP, le temps que le dashboard temps réel arrive en Phase 2
 
-  **Ce que tu reçois en retour**
+<!-- Fin de liste. -->
+
+**Ce que tu reçois en retour**
 
 - Un modèle honnête : ta recommandation a de la valeur, elle est reconnue comme telle
 - Statut d'Écho fondateur : tu shapes la fonctionnalité avec nous
 - Accès direct à Jérémy pour construire les bons outils dès le départ
 
-  [**Devenir Écho fondateur →**](https://tally.so/r/685NbB) — dis-nous où tu partages tes coups de cœur.
+<!-- Fin de liste. -->
+
+[**Devenir Écho fondateur →**](https://tally.so/r/685NbB) — dis-nous où tu partages tes coups de cœur.
 
 > **💡**
 > **Pas besoin d'une grande audience.** Une communauté de 200 personnes qui te fait vraiment confiance vaut plus que 20 000 abonnés passifs. On cherche des Échos authentiques, pas des méga-influenceurs.
