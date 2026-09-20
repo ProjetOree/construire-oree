@@ -109,7 +109,11 @@ const doors = [
     </div>
   </section>
 
-  <section class="home-section" aria-labelledby="problem-title">
+  <section
+    class="home-section"
+    aria-labelledby="problem-title"
+    data-section-enter
+  >
     <div class="container reading-width">
       <p class="section-kicker">Question de départ</p>
       <h2 id="problem-title">Le problème et le renversement cherché</h2>
@@ -132,6 +136,7 @@ const doors = [
   <section
     class="home-section home-section--ruled"
     aria-labelledby="ecosystem-title"
+    data-section-enter
   >
     <div class="container reading-width">
       <p class="section-kicker">Vision d’ensemble</p>
@@ -163,6 +168,7 @@ const doors = [
   <section
     class="home-section home-section--ruled"
     aria-labelledby="journal-title"
+    data-section-enter
   >
     <div class="container reading-width">
       <p class="section-kicker">Journal</p>
@@ -208,6 +214,26 @@ const doors = [
       </p>
     </div>
   </section>
+  <script>
+    if (
+      "IntersectionObserver" in window &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("section-entered");
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.15 },
+      );
+      document
+        .querySelectorAll("[data-section-enter]")
+        .forEach((section) => observer.observe(section));
+    }
+  </script>
 </BaseLayout>
 
 <style>

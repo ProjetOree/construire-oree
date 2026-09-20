@@ -23,9 +23,6 @@ export const siteConfig = {
     follow: "https://tally.so/r/Bz57ON",
     join: "https://tally.so/r/685NbB",
     contact: "https://tally.so/r/q4eVx7",
-
-    // Adresse publique confirmée par Jérémy le 25 juillet 2026 (voir Mission 004) et republiée sur LinkedIn.
-    notion: "https://projetoree.notion.site",
   },
 
   social: {

@@ -1,0 +1,316 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Frontmatter {
+  title: string;
+  seoTitle: string;
+  description: string;
+  contextPath: string;
+  contextLabel: string;
+  sourceUpdated: string;
+  kind: "racine" | "profils" | "blueprint" | "roadmap" | "rejoindre";
+}
+
+const { frontmatter } = Astro.props as { frontmatter: Frontmatter };
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const children = [
+  {
+    href: "/documents/profils/",
+    label: "Les quatre profils",
+    detail: "Portraits et scénarios de conception",
+  },
+  {
+    href: "/documents/blueprint-technique-fiscal/",
+    label: "Le Blueprint technique et fiscal",
+    detail: "Hypothèses techniques et juridiques",
+  },
+  {
+    href: "/documents/roadmap/",
+    label: "La Roadmap de conception",
+    detail: "Phases et calendrier historiques",
+  },
+  {
+    href: "/documents/rejoindre/",
+    label: "Rejoindre Orée, document d’origine",
+    detail: "Rôles et invitations envisagés",
+  },
+];
+
+const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
+  {
+    racine: [],
+    profils: [
+      { id: "marc", label: "Marc" },
+      { id: "claire", label: "Claire" },
+      { id: "camille", label: "Camille" },
+      { id: "julien", label: "Julien" },
+    ],
+    blueprint: [
+      { id: "volet-technique", label: "Volet technique" },
+      { id: "volet-fiscal-legal-operationnel", label: "Volet fiscal et légal" },
+      { id: "section-1", label: "Architecture à double flux" },
+      { id: "section-2", label: "Stack technique" },
+      { id: "section-3", label: "Intermédiaires et clôture" },
+      { id: "section-4", label: "Accompagnement comptable" },
+      { id: "section-5", label: "Onboarding des créateurs" },
+      { id: "section-6", label: "Conformité de lancement" },
+      { id: "section-7", label: "Cadre opérationnel" },
+    ],
+    roadmap: [
+      { id: "calendrier-historique", label: "Calendrier historique" },
+      { id: "phase-1", label: "Phase 1" },
+      { id: "seuils-phase-2", label: "Seuils envisagés" },
+      { id: "phase-2", label: "Phase 2" },
+      { id: "phase-3", label: "Phase 3" },
+    ],
+    rejoindre: [
+      { id: "batisseurs", label: "Bâtisseurs" },
+      { id: "artistes-artisans", label: "Artistes et artisans" },
+      { id: "eclaireurs", label: "Éclaireurs" },
+      { id: "echos", label: "Échos" },
+      { id: "derniere-chose", label: "Une dernière chose" },
+    ],
+  };
+---
+
+<BaseLayout
+  title={frontmatter.seoTitle}
+  description={frontmatter.description}
+  composition="revue"
+>
+  <link slot="head" rel="canonical" href={canonical} />
+  <article class="document">
+    <header class="document-hero">
+      <div class="container">
+        <p class="document-eyebrow">Document de conception · issu de Notion</p>
+        <h1>{frontmatter.title}</h1>
+        <p class="document-provenance">
+          Texte source conservé. La mention de dernière mise à jour du document
+          indique le {frontmatter.sourceUpdated} ; le connecteur signalait une édition
+          le 21 août 2026. Collecte pour cette migration : 20 septembre 2026. Les
+          notes « Note actuelle » sont ajoutées par Construire Orée et ne font pas
+          partie du texte source.
+        </p>
+        <nav class="document-returns" aria-label="Repères du corpus">
+          {
+            frontmatter.kind !== "racine" && (
+              <a href="/documents/">Index des documents</a>
+            )
+          }
+          <a href={frontmatter.contextPath}>{frontmatter.contextLabel}</a>
+        </nav>
+      </div>
+    </header>
+
+    {
+      frontmatter.kind === "racine" ? (
+        <nav
+          class="document-index"
+          id="documents-lies"
+          aria-label="Documents liés"
+        >
+          <div class="container">
+            <h2>Les quatre documents liés</h2>
+            <p>
+              Ces textes conservent la conception d’origine. Les pages actuelles
+              du site décrivent séparément ce qui existe aujourd’hui.
+            </p>
+            <ul>
+              {children.map((child) => (
+                <li>
+                  <a href={child.href}>{child.label}</a>
+                  <span>{child.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      ) : (
+        <nav
+          class="document-summary container"
+          aria-label="Sommaire du document"
+        >
+          <h2>Dans ce document</h2>
+          <ul>
+            {summaries[frontmatter.kind].map((section) => (
+              <li>
+                <a href={`#${section.id}`}>{section.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <div class="document-body">
+      <div class="container">
+        <div class="document-prose"><slot /></div>
+      </div>
+    </div>
+
+    <nav class="document-bottom container" aria-label="Retour après la lecture">
+      {
+        frontmatter.kind !== "racine" && (
+          <a href="/documents/">Tous les documents</a>
+        )
+      }
+      <a href={frontmatter.contextPath}>{frontmatter.contextLabel}</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .document-hero {
+    padding-block: clamp(3rem, 7vw, 6rem);
+    background: var(--color-linen);
+  }
+
+  .document-hero .container,
+  .document-summary,
+  .document-bottom {
+    max-width: var(--layout-width);
+  }
+
+  .document-eyebrow {
+    color: var(--color-bark);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  h1 {
+    max-width: 17ch;
+    margin-block: var(--space-4) var(--space-8);
+  }
+
+  .document-provenance {
+    max-width: var(--content-width);
+  }
+
+  .document-returns,
+  .document-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-8);
+    margin-top: var(--space-8);
+  }
+
+  .document-returns a,
+  .document-bottom a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 700;
+  }
+
+  .document-index,
+  .document-summary {
+    padding-block: var(--space-12);
+    background: var(--color-surface-soft);
+  }
+
+  .document-index h2,
+  .document-summary h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .document-index ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    max-width: var(--layout-width);
+    padding: 0;
+    list-style: none;
+  }
+
+  .document-index li {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+    padding: var(--space-6);
+    background: var(--color-canvas);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .document-index a {
+    font-weight: 700;
+  }
+
+  .document-summary ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    margin: 0;
+    padding-left: var(--space-6);
+  }
+
+  .document-summary a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .document-body {
+    padding-block: var(--space-12);
+    background: var(--color-canvas);
+  }
+
+  .document-prose {
+    max-width: var(--content-width);
+    overflow-wrap: anywhere;
+  }
+
+  .document-prose :global(h2) {
+    margin-block: var(--space-16) var(--space-6);
+    scroll-margin-top: var(--space-8);
+  }
+
+  .document-prose :global(h3),
+  .document-prose :global(h4) {
+    margin-block: var(--space-8) var(--space-4);
+  }
+
+  .document-prose :global(p),
+  .document-prose :global(ul),
+  .document-prose :global(ol),
+  .document-prose :global(blockquote) {
+    margin-bottom: var(--space-6);
+  }
+
+  .document-prose :global(blockquote) {
+    margin-inline: 0;
+    padding: var(--space-4) var(--space-6);
+    border-left: 3px solid var(--color-dawn);
+    background: var(--color-surface-soft);
+  }
+
+  .document-prose :global(span[id]) {
+    display: block;
+    scroll-margin-top: var(--space-8);
+  }
+
+  .document-prose :global(table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .document-bottom {
+    padding-block: var(--space-8) var(--space-16);
+  }
+
+  @media (max-width: 48rem) {
+    .document-index ul {
+      grid-template-columns: 1fr;
+    }
+
+    .document-index,
+    .document-summary,
+    .document-body {
+      padding-block: var(--space-8);
+    }
+  }
+</style>

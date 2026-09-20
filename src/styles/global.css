@@ -422,3 +422,200 @@ pre {
     color: LinkText;
   }
 }
+
+/* Cadre ample, prose mesurée et fonds liés à la fonction de chaque section. */
+.document-door {
+  max-width: var(--content-width);
+  margin-top: var(--space-6);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-dawn);
+}
+
+.document-door a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+}
+
+.document-door span {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+main .page-projet .hero-section .container.reading-width,
+main .page-about .hero-section .container.reading-width,
+main .page-ecosysteme .container.reading-width,
+main .page-about .section-block .container.reading-width,
+main .page-avancement .container.reading-width,
+main .page-fondations .container.reading-width,
+main .journal-intro .container.reading-width,
+main .journal-index {
+  max-width: var(--layout-width);
+}
+
+main .page-projet :is(p, .point-zero-note),
+main .page-ecosysteme p,
+main .page-about p,
+main .page-avancement p,
+main .page-fondations p,
+main .journal-intro p,
+main .journal-index p {
+  max-width: var(--content-width);
+}
+
+main .page-projet .chapter-grid {
+  grid-template-columns: var(--space-8) minmax(0, 1fr);
+}
+
+main .journal-index .entries-list li {
+  max-width: none;
+  width: 100%;
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--color-border);
+}
+
+main .home-orientation,
+main .home-participate,
+main .page-projet .hero-section,
+main .page-projet #reponse,
+main .page-projet #ce-qui-nexiste-pas,
+main .page-ecosysteme .ecosystem-layers > li:first-child,
+main .page-ecosysteme section[aria-labelledby="profils-title"],
+main .page-about .hero-section,
+main .page-about section[aria-labelledby="methode-title"],
+main .page-fondations > .section-block:not(.audit-block),
+main .page-avancement > .section-block:nth-of-type(4),
+main .journal-intro,
+main .absence-page,
+main .page-rejoindre .join-summary,
+main .page-rejoindre .role-section--eclaireur {
+  background-color: var(--color-linen);
+}
+
+main .home-section:nth-of-type(4),
+main .page-projet #modele-inverse,
+main .page-ecosysteme .ecosystem-layers > li:nth-child(3),
+main .page-about .section-block:nth-of-type(2),
+main .page-avancement > .section-block:nth-of-type(2),
+main .page-fondations .audit-block,
+main .page-rejoindre .role-section--batisseur,
+main .page-rejoindre .role-section--echo {
+  background-color: var(--color-section-warm);
+}
+
+main .page-about .section-block,
+main .page-ecosysteme .ecosystem-layers > li,
+main .page-projet .section-block,
+main .page-avancement > .section-block,
+main .page-fondations > .section-block {
+  border-color: var(--color-border);
+}
+
+main :where(.button, .door-link, .document-door a, .document-returns a) {
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform 200ms ease-out;
+}
+
+main :where(.button, .door-link):hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-threshold .threshold-copy::after {
+    animation: opening-line var(--transition-opening) both;
+  }
+
+  .home-threshold .section-kicker--inverse {
+    animation: opening-mark var(--transition-opening) both;
+  }
+
+  .home-threshold h1 {
+    animation: opening-settle var(--transition-opening) both;
+  }
+
+  .home-threshold .threshold-status {
+    animation: opening-settle var(--transition-opening) 80ms both;
+  }
+
+  .home-threshold .threshold-action {
+    animation: opening-settle var(--transition-opening) 140ms both;
+  }
+
+  [data-section-enter].section-entered :is(h2, .section-kicker, .eyebrow) {
+    animation: section-settle var(--transition-section) both;
+  }
+}
+
+/* The bar takes up space before animation; only its painted scale changes. */
+.home-threshold .threshold-copy::after {
+  display: block;
+  width: min(15rem, 45%);
+  height: 3px;
+  margin-top: var(--space-6);
+  background: var(--color-dawn);
+  content: "";
+  transform-origin: left center;
+}
+
+@keyframes opening-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes opening-mark {
+  from {
+    border-left-color: transparent;
+    background-size: 0 100%;
+  }
+  to {
+    border-left-color: var(--color-dawn);
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes opening-settle {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes section-settle {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 20rem) {
+  .site-header .brand {
+    gap: var(--space-1);
+  }
+
+  .site-header .brand svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-header .brand-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .site-header .brand-name {
+    font-size: 1.4rem;
+  }
+}
