@@ -7,6 +7,13 @@ const utm = "?utm_source=construire-oree&utm_medium=liens&utm_campaign=bio";
 
 const links = [
   {
+    id: "decouvrir",
+    label: "Découvrir Orée",
+    url: "/projet/",
+    type: "primary",
+    detail: "Présentation du projet · sur ce site",
+  },
+  {
     id: "rejoindre",
     label: "Rejoindre Orée",
     url: siteConfig.links.join + utm,
@@ -46,7 +53,9 @@ const links = [
     <div class="liens-container">
       <header class="liens-header">
         <h1 class="visually-hidden">Liens d’Orée</h1>
-        <SealMark size={64} title="Sceau Orée" />
+        <a class="brand-home" href="/" aria-label="Accueil de Construire Orée">
+          <SealMark size={64} title="Sceau Orée" />
+        </a>
         <p class="liens-description">
           Le point zéro de la construction d’Orée, une future marketplace
           éthique. La plateforme n’existe pas encore.
@@ -124,6 +133,11 @@ const links = [
     font-size: var(--text-md);
     margin: 0;
     font-weight: 500;
+  }
+
+  .brand-home {
+    display: inline-flex;
+    border-radius: var(--radius-lg);
   }
 
   .liens-list {
