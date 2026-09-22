@@ -16,6 +16,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en
           cours d’examen — sans date inventée et sans promesse de calendrier.
         </p>
+        <p class="verification-note">
+          <strong>Contenu vérifié le 22 septembre 2026.</strong> Cette date décrit
+          la vérification de cette page ; elle n’est ni la date de lancement d’Orée
+          ni un calendrier.
+        </p>
       </header>
     </section>
 
@@ -26,9 +31,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <div class="state-row" data-state="published">
             <dt>Éléments publiés</dt>
             <dd>
-              Un site public qui documente la construction ; une direction
-              éditoriale et visuelle validée ; une architecture de contenu qui
-              organise le site autour de cinq questions.
+              Le site public comprend <a href="/">l’Accueil</a>,
+              <a href="/projet/">Projet</a>,
+              <a href="/avancement/">Avancement</a>, le
+              <a href="/journal/">Journal</a> avec un billet publié,
+              <a href="/fondations/">Fondations</a>,
+              <a href="/rejoindre/">Participer</a> et
+              <a href="/documents/">cinq documents complets</a>. Ces pages
+              documentent la construction ; elles ne constituent pas une
+              marketplace ouverte.
             </dd>
           </div>
           <div class="state-row" data-state="absent">
@@ -56,11 +67,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="container reading-width">
         <h2>Prochaine étape documentable</h2>
         <p>
-          Le travail en cours consiste à documenter les fondations prioritaires
-          et à tenir à jour l’état réel du projet sur ce site. Il reste porté en
-          solo, sans équipe constituée. Les preuves attendues sont les mises à
-          jour effectivement publiées et, lorsqu’ils existeront, les billets du
-          Journal ; aucune date n’est fixée à l’avance.
+          Aucun prochain sujet n’est arrêté à la date de cette vérification. Le
+          projet reste porté en solo, sans équipe constituée. Le prochain
+          résultat sera nommé ici lorsqu’un sujet et sa prise en charge seront
+          réellement décidés ; aucune date n’est fixée à l’avance.
         </p>
       </div>
     </section>
@@ -102,8 +112,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="container reading-width">
         <h2>Trois vues de suivi en préparation</h2>
         <p>
-          Ces pages secondaires rendent leur état visible, mais elles ne
-          constituent pas encore des preuves publiées ni des sources complètes.
+          Ces pages conservent leurs URL pour rendre visible ce qui n’est pas
+          encore publié. La Roadmap donne aussi accès à la feuille de route
+          historique ; Décisions et Tableau de bord n’ajoutent aujourd’hui
+          aucune donnée à l’état ci-dessus. Avancement reste la synthèse de
+          l’état présent.
         </p>
         <ul class="follow-up-list" role="list">
           <li><a href="/roadmap/">Voir la Roadmap en préparation</a></li>
@@ -169,6 +182,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     margin-bottom: 0;
     color: var(--color-text-muted);
     font-size: var(--text-md);
+  }
+
+  .verification-note {
+    margin-top: var(--space-6);
+    margin-bottom: 0;
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .section-block {
@@ -325,6 +347,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   }
 
   @media (forced-colors: active) {
+    .verification-note,
     .state-row,
     .trajectory-list li,
     .next-step .container,
