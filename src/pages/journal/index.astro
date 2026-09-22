@@ -27,15 +27,22 @@ const publishedEntries = allEntries
       <p class="repere">Vous êtes ici · Journal</p>
       <div class="introduction">
         <p>
-          Ce Journal documentera la construction réelle de Construire Orée à
-          mesure que des billets seront publiés. Chaque billet distinguera ce
-          qui est déjà versionné sur le site, ce qui reste à construire pour
-          Orée et les décisions qui ne sont pas encore prises.
+          Ce Journal rassemble les billets réellement publiés sur la
+          construction de Construire Orée. Chaque billet distingue ce qui
+          existe, ce qui reste à construire pour Orée et les décisions qui ne
+          sont pas encore prises. Aucun rythme de publication n’est promis.
         </p>
         <p>
           Orée est une future marketplace éthique au point zéro. Construire Orée
           est son site statique et son journal public : ici, une intention ne
           devient jamais un résultat par simple formulation.
+        </p>
+        <p class="rss-follow">
+          <a href="/rss.xml">Suivre les billets par RSS</a>
+          <span
+            >Le flux contient uniquement les billets publiés et se lit sans
+            compte.</span
+          >
         </p>
       </div>
     </div>
@@ -106,6 +113,22 @@ const publishedEntries = allEntries
 
   .introduction p:last-child {
     margin-bottom: 0;
+  }
+
+  .rss-follow {
+    display: grid;
+    gap: var(--space-1);
+    align-items: start;
+  }
+
+  .rss-follow a {
+    width: fit-content;
+    font-weight: 700;
+  }
+
+  .rss-follow span {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .journal-index {

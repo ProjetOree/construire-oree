@@ -39,6 +39,11 @@ const publishedDate = entry.data.publishedAt?.toLocaleDateString("fr-FR", {
       }
     </header>
 
+    <aside class="entry-context" aria-label="Contexte du billet">
+      Ce billet est une trace publiée à la date indiquée. Pour l’état présent du
+      projet, consulter <a href="/avancement/">Avancement</a>.
+    </aside>
+
     <div class="prose">
       <Content />
     </div>
@@ -77,6 +82,20 @@ const publishedDate = entry.data.publishedAt?.toLocaleDateString("fr-FR", {
   time {
     color: var(--color-text-muted);
     font-size: var(--text-sm);
+  }
+
+  .entry-context {
+    max-width: 40rem;
+    margin-bottom: var(--space-8);
+    padding: var(--space-4);
+    border-left: 2px solid var(--color-dawn);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .entry-context a {
+    font-weight: 700;
   }
 
   .prose {
@@ -127,6 +146,12 @@ const publishedDate = entry.data.publishedAt?.toLocaleDateString("fr-FR", {
   @media (max-width: 24rem) {
     h1 {
       font-size: 2.25rem;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .entry-context {
+      border-color: CanvasText;
     }
   }
 </style>
