@@ -16,7 +16,7 @@ const doors = [
   {
     index: "01",
     title: "Comprendre — Projet",
-    copy: "Découvrir présente le problème, la vision et le modèle envisagé.",
+    copy: "Le problème de départ, l’utilité recherchée et le modèle envisagé.",
     href: "/projet/",
   },
   {
@@ -28,19 +28,19 @@ const doors = [
   {
     index: "03",
     title: "Lire — Journal",
-    copy: "Le Journal réunit les billets réellement publiés sur la construction de Construire Orée.",
+    copy: "Les billets réellement publiés sur la construction de Construire Orée.",
     href: "/journal/",
   },
   {
     index: "04",
     title: "Approfondir — Fondations",
-    copy: "Le travail actuel consiste à documenter les fondations.",
+    copy: "Les contraintes et arbitrages techniques, juridiques, fiscaux et opérationnels.",
     href: "/fondations/",
   },
   {
     index: "05",
     title: "Participer — Rejoindre",
-    copy: "Participer explique les rôles et ce qu’il est possible de proposer aujourd’hui.",
+    copy: "Les rôles envisagés et les manières de proposer un appui aujourd’hui.",
     href: "/rejoindre/",
   },
 ];
@@ -59,10 +59,16 @@ const doors = [
         </p>
         <h1 id="home-title">Construire Orée depuis le point zéro</h1>
         <p class="threshold-introduction">
-          Orée est une future marketplace éthique pour la création originale,
-          l’art et l’artisanat d’art, pensée dans une perspective d’économie
-          sociale et solidaire. Construire Orée est le journal public de cette
-          construction.
+          Orée est un projet de future marketplace éthique où découvrir et
+          vendre des créations originales, de l’art et de l’artisanat d’art.
+          Elle cherche à simplifier le premier pas des artistes et artisans —
+          visibilité, vente et administratif — sans leur demander de tout
+          porter.
+        </p>
+        <p class="threshold-introduction">
+          Construire Orée rend publics les arbitrages nécessaires pour donner
+          vie à cette plateforme, dans une perspective d’économie sociale et
+          solidaire.
         </p>
       </div>
 
@@ -70,14 +76,19 @@ const doors = [
         <p class="section-kicker section-kicker--inverse">État actuel</p>
         <h2 id="etat-actuel">Point zéro</h2>
         <p>
-          La marketplace n’est pas encore ouverte : aucun catalogue, aucune
-          vente, aucun utilisateur de marketplace. Le travail actuel consiste à
-          documenter les fondations.
+          La marketplace n’est pas ouverte : aucun catalogue, aucune vente et
+          aucun utilisateur de marketplace. Le travail actuel porte sur les
+          fondations et les arbitrages techniques, juridiques, fiscaux et
+          opérationnels.
         </p>
+        <a class="threshold-status-link" href="/avancement/"
+          >Voir l’état actuel <span aria-hidden="true">→</span></a
+        >
       </aside>
 
       <div class="threshold-action">
-        <a class="button button-primary" href="/projet/">Découvrir le projet</a>
+        <a class="button button-primary" href="/projet/">Comprendre le projet</a
+        >
       </div>
     </div>
   </section>
@@ -86,6 +97,12 @@ const doors = [
     <div class="container">
       <p class="section-kicker">Orientation</p>
       <h2 id="orientation-title">Cinq portes</h2>
+      <p class="orientation-introduction">
+        Construire Orée sert aujourd’hui à rendre les choix compréhensibles, à
+        les confronter aux expériences d’artistes, d’artisans, d’Éclaireurs et
+        d’Échos, et à chercher les expertises ou partenariats, institutionnels
+        ou non, capables d’aider à donner vie à la plateforme.
+      </p>
       <ol class="door-list">
         {
           doors.map((door) => (
@@ -290,6 +307,10 @@ const doors = [
     font-size: var(--text-md);
   }
 
+  .threshold-introduction + .threshold-introduction {
+    margin-top: var(--space-4);
+  }
+
   .threshold-status {
     grid-area: status;
     padding-left: var(--space-6);
@@ -302,6 +323,21 @@ const doors = [
 
   .threshold-status p:last-child {
     margin-bottom: 0;
+  }
+
+  .threshold-status-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    color: var(--color-linen);
+    font-weight: 700;
+    text-underline-offset: 0.18em;
+  }
+
+  .threshold-status-link:hover {
+    color: var(--color-white);
   }
 
   .threshold-action {
@@ -335,6 +371,10 @@ const doors = [
     outline-color: var(--color-linen);
   }
 
+  .home-threshold .threshold-status-link:focus-visible {
+    outline-color: var(--color-linen);
+  }
+
   .home-orientation,
   .home-section {
     padding-block: clamp(var(--space-12), 7vw, var(--space-24));
@@ -343,6 +383,12 @@ const doors = [
   .home-orientation h2,
   .home-section h2 {
     margin-bottom: var(--space-6);
+  }
+
+  .orientation-introduction {
+    max-width: 62rem;
+    margin-bottom: var(--space-8);
+    font-size: var(--text-md);
   }
 
   .door-list {
