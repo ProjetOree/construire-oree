@@ -1,0 +1,373 @@
+---
+const questions = [
+  {
+    href: "/projet/",
+    label: "Pourquoi Orée ?",
+    detail: "Comprendre le problème, l’utilité et la vision.",
+  },
+  {
+    href: "/documents/blueprint-technique-fiscal/",
+    label: "Comment Orée pourrait-elle fonctionner ?",
+    detail: "Examiner les hypothèses de conception et leurs limites.",
+  },
+  {
+    href: "/avancement/",
+    label: "Où en est la construction ?",
+    detail:
+      "Distinguer ce qui existe, ce qui manque et les décisions ouvertes.",
+  },
+  {
+    href: "/rejoindre/",
+    label: "Comment prendre part ?",
+    detail: "Partager une expérience, éclairer un choix ou proposer un appui.",
+  },
+];
+
+const documents = [
+  { href: "#document-source", label: "Texte racine" },
+  { href: "/documents/profils/", label: "Profils" },
+  {
+    href: "/documents/blueprint-technique-fiscal/",
+    label: "Blueprint",
+  },
+  { href: "/documents/roadmap/", label: "Roadmap" },
+  { href: "/documents/rejoindre/", label: "Rejoindre" },
+];
+---
+
+<section class="document-explorer" aria-labelledby="document-explorer-title">
+  <div class="container">
+    <header class="explorer-heading">
+      <p class="explorer-kicker">Explorer Orée</p>
+      <h1 id="document-explorer-title">
+        Par quelle question voulez-vous entrer ?
+      </h1>
+      <p class="explorer-introduction">
+        Les pages actuelles décrivent ce qui existe aujourd’hui. Les documents
+        complets conservent la conception d’origine.
+      </p>
+    </header>
+
+    <div class="explorer-grid">
+      <nav class="question-panel" aria-labelledby="question-panel-title">
+        <h2 id="question-panel-title">Entrer par une question</h2>
+        <ol class="question-list">
+          {
+            questions.map((question, index) => (
+              <li>
+                <span class="question-number" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div class="question-content">
+                  <a class="question-link" href={question.href}>
+                    {question.label}
+                  </a>
+                  <p>{question.detail}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+
+      <section class="content-map" aria-labelledby="content-map-title">
+        <h2 id="content-map-title">Situer les contenus</h2>
+        <p class="content-map-introduction">
+          Une carte de lecture pour situer chaque document.
+        </p>
+
+        <dl class="content-statuses">
+          <div>
+            <dt>Synthèse actuelle</dt>
+            <dd>
+              Le problème, l’utilité et la direction du projet aujourd’hui.
+            </dd>
+          </div>
+          <div>
+            <dt>État actuel</dt>
+            <dd>Ce qui est réalisé, ouvert ou encore absent.</dd>
+          </div>
+          <div class="corpus-status" id="documents-lies">
+            <dt>Corpus historique conservé</dt>
+            <dd>
+              <span
+                >Les documents d’origine et leurs annotations actuelles.</span
+              >
+              <ul aria-label="Documents historiques conservés">
+                {
+                  documents.map((document) => (
+                    <li>
+                      <a href={document.href}>{document.label}</a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Possibilités actuelles</dt>
+            <dd>
+              Les manières de contribuer ou de proposer un partenariat
+              aujourd’hui.
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+
+    <div class="source-transition">
+      <a href="#document-source">Lire le texte source conservé</a>
+      <p>
+        Le document d’origine est présenté ci-dessous, avec sa provenance et ses
+        notes actuelles.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .document-explorer {
+    padding-top: var(--space-8);
+    padding-bottom: 0;
+    background: var(--color-linen);
+  }
+
+  .document-explorer .container {
+    width: min(calc(100% - (2 * var(--page-gutter))), 80rem);
+    max-width: none;
+  }
+
+  .explorer-heading {
+    max-width: 67rem;
+  }
+
+  .explorer-kicker {
+    margin-bottom: var(--space-3);
+    color: var(--color-action);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .explorer-heading h1 {
+    max-width: 17ch;
+    margin-bottom: var(--space-3);
+    font-size: clamp(2.75rem, 5vw, 3.5rem);
+  }
+
+  .explorer-introduction {
+    max-width: 64rem;
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .explorer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.16fr) minmax(18rem, 0.84fr);
+    gap: clamp(var(--space-8), 5vw, var(--space-16));
+    margin-top: var(--space-4);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .question-panel h2,
+  .content-map h2 {
+    margin-bottom: var(--space-2);
+  }
+
+  .question-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .question-list li {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: var(--space-4);
+    max-width: none;
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .question-number {
+    color: var(--color-text-subtle);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-variant-numeric: lining-nums;
+    line-height: 1.1;
+  }
+
+  .question-content {
+    min-width: 0;
+  }
+
+  .question-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--color-action);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
+    font-weight: 600;
+    line-height: 1.15;
+    text-decoration-color: var(--color-terracotta);
+  }
+
+  .question-content p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-text-muted);
+  }
+
+  .content-map {
+    padding-left: clamp(var(--space-6), 3vw, var(--space-8));
+    border-left: 1px solid var(--color-border);
+  }
+
+  .content-map-introduction {
+    margin-bottom: var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .content-statuses {
+    margin: 0;
+  }
+
+  .content-statuses > div {
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .content-statuses > div:last-child {
+    border-bottom: 0;
+  }
+
+  .content-statuses dt {
+    color: var(--color-canopy);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .content-statuses dd {
+    margin: var(--space-1) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .corpus-status ul {
+    margin: var(--space-3) 0 0 var(--space-4);
+    padding-left: var(--space-6);
+    border-left: 1px solid var(--color-text-subtle);
+    list-style: none;
+  }
+
+  .corpus-status li {
+    max-width: none;
+  }
+
+  .corpus-status a {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    color: var(--color-action);
+  }
+
+  .source-transition {
+    margin-top: var(--space-4);
+    padding-block: var(--space-4);
+    border-block: 1px solid var(--color-border);
+  }
+
+  .source-transition a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--color-action);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+  }
+
+  .source-transition p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  @media (max-width: 48rem) {
+    .document-explorer {
+      padding-top: var(--space-12);
+    }
+
+    .explorer-heading h1 {
+      max-width: 15ch;
+      font-size: clamp(2.5rem, 11vw, 3.5rem);
+    }
+
+    .explorer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .question-list li {
+      padding-block: var(--space-4);
+    }
+
+    .content-map {
+      padding-top: var(--space-8);
+      padding-left: 0;
+      border-top: 1px solid var(--color-border);
+      border-left: 0;
+    }
+
+    .corpus-status a {
+      min-height: 44px;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .question-list li {
+      grid-template-columns: 2.75rem minmax(0, 1fr);
+      gap: var(--space-2);
+    }
+
+    .question-number {
+      font-size: 1.75rem;
+    }
+
+    .question-link {
+      font-size: 1.25rem;
+    }
+
+    .corpus-status ul {
+      margin-left: var(--space-2);
+      padding-left: var(--space-4);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .explorer-grid,
+    .question-list,
+    .question-list li,
+    .content-map,
+    .content-statuses > div,
+    .corpus-status ul,
+    .source-transition {
+      border-color: CanvasText;
+    }
+
+    .question-link:focus-visible,
+    .corpus-status a:focus-visible,
+    .source-transition a:focus-visible {
+      outline-color: Highlight;
+    }
+  }
+</style>

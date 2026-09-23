@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import DocumentExplorer from "../components/editorial/DocumentExplorer.astro";
 
 interface Frontmatter {
   title: string;
@@ -13,29 +14,6 @@ interface Frontmatter {
 
 const { frontmatter } = Astro.props as { frontmatter: Frontmatter };
 const canonical = new URL(Astro.url.pathname, Astro.site);
-
-const children = [
-  {
-    href: "/documents/profils/",
-    label: "Les quatre profils",
-    detail: "Portraits et scénarios de conception",
-  },
-  {
-    href: "/documents/blueprint-technique-fiscal/",
-    label: "Le Blueprint technique et fiscal",
-    detail: "Hypothèses techniques et juridiques",
-  },
-  {
-    href: "/documents/roadmap/",
-    label: "La Roadmap de conception",
-    detail: "Phases et calendrier historiques",
-  },
-  {
-    href: "/documents/rejoindre/",
-    label: "Rejoindre Orée, document d’origine",
-    detail: "Rôles et invitations envisagés",
-  },
-];
 
 const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
   {
@@ -81,10 +59,24 @@ const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
 >
   <link slot="head" rel="canonical" href={canonical} />
   <article class="document">
-    <header class="document-hero">
+    {frontmatter.kind === "racine" && <DocumentExplorer />}
+
+    <header
+      class:list={[
+        "document-hero",
+        { "document-hero--root": frontmatter.kind === "racine" },
+      ]}
+      id="document-source"
+    >
       <div class="container">
         <p class="document-eyebrow">Document de conception · issu de Notion</p>
-        <h1>{frontmatter.title}</h1>
+        {
+          frontmatter.kind === "racine" ? (
+            <h2 class="document-source-title">{frontmatter.title}</h2>
+          ) : (
+            <h1>{frontmatter.title}</h1>
+          )
+        }
         <p class="document-provenance">
           Texte source conservé. La mention de dernière mise à jour du document
           indique le {frontmatter.sourceUpdated} ; le connecteur signalait une édition
@@ -104,29 +96,7 @@ const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
     </header>
 
     {
-      frontmatter.kind === "racine" ? (
-        <nav
-          class="document-index"
-          id="documents-lies"
-          aria-label="Documents liés"
-        >
-          <div class="container">
-            <h2>Les quatre documents liés</h2>
-            <p>
-              Ces textes conservent la conception d’origine. Les pages actuelles
-              du site décrivent séparément ce qui existe aujourd’hui.
-            </p>
-            <ul>
-              {children.map((child) => (
-                <li>
-                  <a href={child.href}>{child.label}</a>
-                  <span>{child.detail}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-      ) : (
+      frontmatter.kind !== "racine" && (
         <nav
           class="document-summary container"
           aria-label="Sommaire du document"
@@ -164,6 +134,11 @@ const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
   .document-hero {
     padding-block: clamp(3rem, 7vw, 6rem);
     background: var(--color-linen);
+    scroll-margin-top: var(--space-4);
+  }
+
+  .document-hero.document-hero--root {
+    padding-top: var(--space-6);
   }
 
   .document-hero .container,
@@ -180,7 +155,8 @@ const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
     letter-spacing: 0.03em;
   }
 
-  h1 {
+  h1,
+  .document-source-title {
     max-width: 17ch;
     margin-block: var(--space-4) var(--space-8);
   }
@@ -205,38 +181,13 @@ const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
     font-weight: 700;
   }
 
-  .document-index,
   .document-summary {
     padding-block: var(--space-12);
     background: var(--color-surface-soft);
   }
 
-  .document-index h2,
   .document-summary h2 {
     margin-bottom: var(--space-4);
-  }
-
-  .document-index ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-4);
-    max-width: var(--layout-width);
-    padding: 0;
-    list-style: none;
-  }
-
-  .document-index li {
-    display: grid;
-    align-content: start;
-    gap: var(--space-2);
-    padding: var(--space-6);
-    background: var(--color-canvas);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-  }
-
-  .document-index a {
-    font-weight: 700;
   }
 
   .document-summary ul {
@@ -303,11 +254,6 @@ const summaries: Record<Frontmatter["kind"], { id: string; label: string }[]> =
   }
 
   @media (max-width: 48rem) {
-    .document-index ul {
-      grid-template-columns: 1fr;
-    }
-
-    .document-index,
     .document-summary,
     .document-body {
       padding-block: var(--space-8);
