@@ -23,6 +23,12 @@ export const siteConfig = {
     follow: "https://tally.so/r/Bz57ON",
     join: "https://tally.so/r/685NbB",
     contact: "https://tally.so/r/q4eVx7",
+    forum: "https://construire-oree.discourse.group/",
+    forumWelcome:
+      "https://construire-oree.discourse.group/t/bienvenue-sur-construire-oree/12",
+    forumProject: "https://construire-oree.discourse.group/c/construire-oree/6",
+    forumExperiences:
+      "https://construire-oree.discourse.group/c/experiences-besoins/7",
   },
 
   social: {
