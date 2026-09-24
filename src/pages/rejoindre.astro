@@ -112,6 +112,47 @@ import { siteConfig } from "../config/site";
       </div>
     </section>
 
+    <section
+      class="discussion-section bloc-inverse texture-legere"
+      aria-labelledby="discussions-title"
+    >
+      <div class="container">
+        <div class="discussion-grid">
+          <div class="discussion-copy">
+            <p class="discussion-kicker">Discussions publiques</p>
+            <h2 id="discussions-title">
+              Lire les échanges et prendre part aux arbitrages
+            </h2>
+            <p>
+              Le forum Construire Orée rassemble les questions ouvertes, les
+              propositions, les retours d’expérience et les décisions
+              documentées. La lecture est publique. Pour répondre ou ouvrir un
+              sujet, un compte Discourse est nécessaire. Une discussion peut
+              éclairer une décision ; elle ne vaut ni vote ni représentation de
+              l’ensemble des artistes, artisans ou futurs usagers.
+            </p>
+          </div>
+          <div class="discussion-actions">
+            <a class="discussion-primary" href={siteConfig.links.forumWelcome}
+              >Commencer par le sujet de bienvenue</a
+            >
+            <div class="discussion-paths">
+              <a href={siteConfig.links.forumProject}
+                >Discuter d’un choix ou d’une hypothèse</a
+              >
+              <a href={siteConfig.links.forumExperiences}
+                >Partager une expérience ou un besoin</a
+              >
+            </div>
+            <p class="discussion-responsibility">
+              Le forum est accueilli, modéré et suivi par la personne qui porte
+              actuellement le projet. Aucun délai de réponse n’est promis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-block roles-intro-section" data-section-enter>
       <div class="container">
         <h2>Comprendre les rôles, ensuite</h2>
@@ -540,6 +581,91 @@ import { siteConfig } from "../config/site";
     font-size: var(--text-sm);
   }
 
+  .discussion-section {
+    padding-block: var(--space-12);
+  }
+
+  .discussion-section .container {
+    max-width: 74rem;
+  }
+
+  .discussion-grid {
+    display: grid;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .discussion-copy h2 {
+    max-width: 18ch;
+    margin-bottom: var(--space-6);
+  }
+
+  .discussion-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .discussion-kicker {
+    margin-bottom: var(--space-4);
+    color: var(--color-dawn);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .discussion-actions,
+  .discussion-paths {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .discussion-actions {
+    gap: var(--space-6);
+  }
+
+  .discussion-paths {
+    gap: var(--space-2);
+  }
+
+  .discussion-primary,
+  .discussion-paths a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .discussion-primary {
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid var(--color-linen);
+    border-radius: var(--radius-md);
+    background: var(--color-linen);
+    color: var(--color-canopy);
+    text-decoration: none;
+  }
+
+  .discussion-primary:hover {
+    background: transparent;
+    color: var(--color-linen);
+  }
+
+  .discussion-paths a {
+    color: var(--color-linen);
+    text-decoration-color: var(--color-dawn);
+  }
+
+  .discussion-paths a:hover {
+    color: var(--color-white);
+  }
+
+  .discussion-responsibility {
+    margin-bottom: 0;
+    color: var(--color-linen);
+    font-size: var(--text-sm);
+  }
+
   .claire-persona {
     margin-top: var(--space-6);
   }
@@ -723,6 +849,11 @@ import { siteConfig } from "../config/site";
   }
 
   @media (min-width: 48rem) {
+    .discussion-grid {
+      grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+      gap: clamp(var(--space-8), 7vw, var(--space-16));
+    }
+
     .join-hero .container {
       max-width: 74rem;
       display: grid;
