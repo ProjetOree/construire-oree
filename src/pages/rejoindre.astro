@@ -15,65 +15,130 @@ import { siteConfig } from "../config/site";
         <h1>Aider à construire Orée, aujourd’hui</h1>
         <p class="repere">Vous êtes ici · Participer</p>
         <p class="introduction">
-          Orée est au point zéro : la marketplace n’est pas ouverte, il n’y a ni
-          catalogue ni vente à rejoindre. En revanche, le projet peut déjà
-          écouter des personnes qui souhaitent contribuer, partager une
-          expérience ou suivre son évolution.
+          Orée est au point zéro : la marketplace n’est pas ouverte. Tu peux
+          pourtant déjà partager une expérience, éclairer un choix, proposer un
+          appui ou un partenariat, poser une question en privé ou suivre la
+          construction. Tu n’as pas besoin de choisir un rôle maintenant.
         </p>
         <p class="introduction">
-          Les rôles et les situations détaillés plus bas servent à rendre les
-          possibilités plus lisibles. Les situations sont des personas de
-          conception, pas des personnes réelles ni des témoignages. Les rôles,
-          eux, ne constituent ni une offre d’emploi, ni une promesse de
-          rémunération, ni une place acquise dans le projet.
+          Ces échanges ne constituent ni une offre d’emploi, ni une mission, ni
+          une promesse de rémunération ou de réponse.
         </p>
-        <p class="document-door">
-          <a href="/documents/rejoindre/"
-            >Lire le document d’origine complet sur les rôles →</a
-          >
-        </p>
+        <a class="button button-primary hero-action" href="#agir-maintenant"
+          >Voir ce qui est utile aujourd’hui</a
+        >
       </div>
     </section>
 
-    <section class="join-summary texture-legere">
+    <section id="agir-maintenant" class="join-summary texture-legere">
       <div class="container reading-width">
-        <h2>Choisir une intention</h2>
+        <h2>Choisir un premier geste</h2>
         <p>
-          Que tu saches déjà ce qui te correspond ou non, ces quatre intentions
-          aident à trouver la bonne porte d’entrée.
+          Le projet cherche des expériences, des questions et des appuis
+          concrets, pas une disponibilité à plein temps. Choisis le geste le
+          plus simple pour commencer.
         </p>
 
         <ul class="intent-grid" role="list">
           <li>
             <strong>Partager une expérience de création</strong>
             <p>
-              Tu crées et tu rencontres des difficultés que le projet devrait
-              comprendre.
+              Ce qui complique le fait de créer, montrer, vendre ou gérer
+              l’administratif.
             </p>
-            <a href="#artiste-ou-artisan">Voir le rôle Artiste ou Artisan →</a>
+            <div class="intent-actions">
+              <a href={siteConfig.links.join}
+                >Partager ton expérience — formulaire externe</a
+              >
+            </div>
           </li>
           <li>
-            <strong>Apporter une expertise</strong>
-            <p>Technique, juridique, fiscale ou opérationnelle.</p>
-            <a href="#batisseur">Voir le rôle Bâtisseur →</a>
+            <strong>Éclairer un arbitrage</strong>
+            <p>
+              Un regard technique, juridique, fiscal, opérationnel ou issu du
+              terrain.
+            </p>
+            <div class="intent-actions">
+              <a href={siteConfig.links.join}
+                >Proposer un éclairage — formulaire externe</a
+              >
+            </div>
           </li>
           <li>
             <strong>Aider à repérer ou mettre en lumière</strong>
             <p>
-              Le repérage des talents ou leur mise en lumière auprès d’un
-              public.
+              Ce qui rend le repérage, la curation ou la recommandation utile et
+              juste.
             </p>
-            <a href="#eclaireur">Voir le rôle Éclaireur →</a>
-            <a href="#echo">Voir le rôle Écho →</a>
+            <div class="intent-actions">
+              <a href={siteConfig.links.join}
+                >Partager ton regard — formulaire externe</a
+              >
+            </div>
           </li>
           <li>
-            <strong>Poser une question ou simplement suivre</strong>
-            <p>Tu préfères observer la construction ou échanger directement.</p>
-            <a href={siteConfig.links.contact}>Écrire à Orée →</a>
+            <strong>Proposer un appui ou un partenariat</strong>
+            <p>
+              Une expertise, une ressource, une mise en relation ou un soutien
+              institutionnel ou non.
+            </p>
+            <div class="intent-actions">
+              <a href={siteConfig.links.contact}
+                >Écrire à Orée — formulaire externe</a
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Poser une question ou suivre sans s’engager</strong>
+            <p>
+              Tu peux écrire en privé ou lire les nouvelles publiques sans
+              choisir de rôle.
+            </p>
+            <div class="intent-actions">
+              <a href={siteConfig.links.contact}
+                >Écrire en privé — formulaire externe</a
+              >
+              <a href="/journal/">Lire le Journal et suivre par RSS</a>
+            </div>
           </li>
         </ul>
+        <p class="actions-note">
+          Les trois premières actions ouvrent le même formulaire de
+          contribution. Le libellé précise ton intention mais ne crée ni routage
+          automatique ni traitement différencié. Écrire à Orée ouvre un
+          formulaire de contact distinct. Aucun délai de réponse n’est promis et
+          aucun formulaire n’engage l’une ou l’autre partie.
+        </p>
+      </div>
+    </section>
 
-        <details class="persona claire-persona">
+    <section class="section-block roles-intro-section" data-section-enter>
+      <div class="container">
+        <h2>Comprendre les rôles, ensuite</h2>
+        <p class="roles-lead reading-width">
+          Les rôles donnent un vocabulaire aux besoins du projet ; ils ne
+          désignent ni une équipe ni des personnes déjà engagées. Chaque section
+          présente le besoin actuel, ce que tu peux faire maintenant, puis
+          l’horizon possible du rôle.
+        </p>
+        <p class="roles-lead reading-width">
+          Les situations sont des personas de conception, pas des personnes
+          réelles ni des témoignages. Les rôles ne constituent ni une offre
+          d’emploi, ni une promesse de rémunération, ni une place acquise dans
+          le projet.
+        </p>
+        <nav class="roles-index" aria-label="Accès direct aux rôles">
+          <a href="#batisseur">Bâtisseur</a>
+          <a href="#artiste-ou-artisan">Artiste ou Artisan</a>
+          <a href="#eclaireur">Éclaireur</a>
+          <a href="#echo">Écho</a>
+        </nav>
+        <p class="document-door">
+          <a href="/documents/rejoindre/"
+            >Lire le document d’origine complet sur les rôles →</a
+          >
+        </p>
+        <details class="persona claire-persona reading-width">
           <summary
             >Situation illustrative — Claire
             <span class="persona-optional">(facultatif)</span></summary
@@ -97,23 +162,6 @@ import { siteConfig } from "../config/site";
       </div>
     </section>
 
-    <section class="section-block roles-intro-section" data-section-enter>
-      <div class="container">
-        <h2>Comprendre les rôles</h2>
-        <p class="roles-lead reading-width">
-          Lecture progressive : chaque rôle explique d’abord ce dont le projet a
-          besoin aujourd’hui, puis l’horizon qu’il pourrait prendre. Une
-          situation illustrative facultative complète certains rôles pour qui
-          veut aller plus loin.
-        </p>
-        <p class="roles-lead reading-width">
-          Les quatre boutons de contribution ci-dessous ouvrent tous le même
-          formulaire Tally externe. Leurs libellés servent seulement à préciser
-          l’intention : ils ne créent ni parcours ni traitement différencié.
-        </p>
-      </div>
-    </section>
-
     <div class="roles-container">
       <section id="batisseur" class="role-section role-section--batisseur">
         <div class="container reading-width">
@@ -124,14 +172,6 @@ import { siteConfig } from "../config/site";
             Des personnes capables de regarder un problème précis, de signaler
             une contrainte, de proposer une approche proportionnée ou d’indiquer
             ce qui demande une expertise que le projet ne possède pas encore.
-          </p>
-
-          <h3>Ce que ce rôle pourrait devenir</h3>
-          <p>
-            Les Bâtisseurs pourraient contribuer aux fondations techniques,
-            juridiques, fiscales, opérationnelles et logistiques d’Orée. À long
-            terme, ces sujets appartiennent à la vision coopérative du projet ;
-            ils ne décrivent pas un statut existant aujourd’hui.
           </p>
 
           <h3>Ce que tu peux faire aujourd’hui</h3>
@@ -146,6 +186,14 @@ import { siteConfig } from "../config/site";
               >Proposer une contribution de Bâtisseur</a
             >
           </div>
+
+          <h3>Ce que ce rôle pourrait devenir</h3>
+          <p>
+            Les Bâtisseurs pourraient contribuer aux fondations techniques,
+            juridiques, fiscales, opérationnelles et logistiques d’Orée. À long
+            terme, ces sujets appartiennent à la vision coopérative du projet ;
+            ils ne décrivent pas un statut existant aujourd’hui.
+          </p>
         </div>
       </section>
 
@@ -165,6 +213,19 @@ import { siteConfig } from "../config/site";
             éclairer les choix du projet sans être présentés comme une étude
             menée auprès d’utilisateurs.
           </p>
+
+          <h3>Ce que tu peux faire aujourd’hui</h3>
+          <p>
+            Partager ton expérience, signaler ton intérêt pour suivre le projet
+            ou indiquer si tu souhaiterais être recontacté lorsque le contexte
+            sera plus clair.
+          </p>
+
+          <div class="role-action">
+            <a href={siteConfig.links.join} class="button button-secondary"
+              >Partager ton intérêt ou ton expérience</a
+            >
+          </div>
 
           <h3>Ce que ce rôle pourrait devenir</h3>
           <p>
@@ -193,19 +254,6 @@ import { siteConfig } from "../config/site";
               </p>
             </div>
           </details>
-
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Partager ton expérience, signaler ton intérêt pour suivre le projet
-            ou indiquer si tu souhaiterais être recontacté lorsque le contexte
-            sera plus clair.
-          </p>
-
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Partager ton intérêt ou ton expérience</a
-            >
-          </div>
         </div>
       </section>
 
@@ -223,6 +271,18 @@ import { siteConfig } from "../config/site";
             légitime, les lieux ou réseaux où le talent reste peu visible, et
             les conditions nécessaires pour qu’une mise en relation reste juste.
           </p>
+
+          <h3>Ce que tu peux faire aujourd’hui</h3>
+          <p>
+            Indiquer ce que tu observes, les communautés ou contextes que tu
+            connais et la manière dont tu aimerais contribuer.
+          </p>
+
+          <div class="role-action">
+            <a href={siteConfig.links.join} class="button button-secondary"
+              >Partager un regard d’Éclaireur</a
+            >
+          </div>
 
           <h3>Ce que ce rôle pourrait devenir</h3>
           <p>
@@ -251,18 +311,6 @@ import { siteConfig } from "../config/site";
               </p>
             </div>
           </details>
-
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Indiquer ce que tu observes, les communautés ou contextes que tu
-            connais et la manière dont tu aimerais contribuer.
-          </p>
-
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Partager un regard d’Éclaireur</a
-            >
-          </div>
         </div>
       </section>
 
@@ -280,6 +328,18 @@ import { siteConfig } from "../config/site";
             transparence : ce qui rend un relais utile, crédible et respectueux
             des personnes qui créent.
           </p>
+
+          <h3>Ce que tu peux faire aujourd’hui</h3>
+          <p>
+            Expliquer ce que tu partages déjà, les communautés que tu connais ou
+            les questions que tu juges importantes.
+          </p>
+
+          <div class="role-action">
+            <a href={siteConfig.links.join} class="button button-secondary"
+              >Partager un regard d’Écho</a
+            >
+          </div>
 
           <h3>Ce que ce rôle pourrait devenir</h3>
           <p>
@@ -308,40 +368,31 @@ import { siteConfig } from "../config/site";
               </p>
             </div>
           </details>
-
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Expliquer ce que tu partages déjà, les communautés que tu connais ou
-            les questions que tu juges importantes.
-          </p>
-
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Partager un regard d’Écho</a
-            >
-          </div>
         </div>
       </section>
     </div>
 
     <section class="join-closure">
       <div class="container reading-width">
-        <h2>Limites communes et alternatives</h2>
+        <h2>Avant d’envoyer</h2>
         <p>
-          Quel que soit le rôle envisagé, aucune contribution proposée ici ne
-          garantit de mission, de rémunération, de commission, de place ou de
-          réponse. Chaque formulaire sert seulement à ouvrir un premier échange.
+          Les formulaires externes servent à ouvrir un échange. Aucune
+          proposition ne garantit une mission, une rémunération, une commission,
+          une place ou une réponse. Aucun délai n’est promis.
         </p>
         <p class="context-note">
-          Tu ne te reconnais pas dans ces rôles, ou tu préfères commencer par
-          une question ? <a href={siteConfig.links.contact}>Écris à Orée</a>. Si
-          tu préfères seulement recevoir les nouvelles publiques du projet, <a
-            href={siteConfig.links.follow}>suis l’aventure</a
+          Tu ne sais pas encore quel rôle te correspond ? Le <a
+            href={siteConfig.links.join}
+            >formulaire de contribution — formulaire externe</a
+          > conserve l’option « Autre / je ne sais pas encore ». Pour une question
+          ou un partenariat, tu peux <a href={siteConfig.links.contact}
+            >écrire en privé — formulaire externe</a
+          >. Pour suivre sans formulaire, le <a href="/journal/">Journal</a> et son
+          <a href="/rss.xml">flux RSS</a> restent publics ; l’inscription aux nouvelles
+          par email demeure facultative et distincte : <a
+            href={siteConfig.links.follow}
+            >recevoir les nouvelles — formulaire externe</a
           >.
-        </p>
-        <p class="context-note">
-          Ces liens ouvrent des formulaires Tally externes. Leur envoi n’emporte
-          ni réponse automatique ni engagement de part et d’autre.
         </p>
       </div>
     </section>
@@ -398,6 +449,7 @@ import { siteConfig } from "../config/site";
   }
 
   .join-summary {
+    scroll-margin-top: 6rem;
     padding-block: var(--space-12);
     border-bottom: 2px solid var(--color-border);
   }
@@ -473,17 +525,23 @@ import { siteConfig } from "../config/site";
     outline-color: var(--color-primary);
   }
 
-  .intent-grid li:nth-child(3) a {
+  .intent-actions {
     grid-column: 2;
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
   }
 
-  .intent-grid li:nth-child(3) a + a {
-    margin-top: var(--space-2);
+  .actions-note {
+    max-width: 58rem;
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .claire-persona {
-    margin-top: 0;
+    margin-top: var(--space-6);
   }
 
   .roles-intro-section {
@@ -493,6 +551,27 @@ import { siteConfig } from "../config/site";
   .roles-lead {
     margin-top: var(--space-2);
     color: var(--color-text-muted);
+  }
+
+  .roles-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .roles-index a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    border-bottom: 2px solid currentColor;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .roles-index a:hover {
+    color: var(--color-primary-hover);
   }
 
   .roles-container {
@@ -570,6 +649,16 @@ import { siteConfig } from "../config/site";
   .button-secondary {
     border-color: var(--color-primary);
     color: var(--color-primary);
+  }
+
+  .button-primary {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+
+  .button-primary:hover {
+    background: var(--color-canopy);
+    color: var(--color-linen);
   }
 
   .button-secondary:hover {
@@ -656,6 +745,13 @@ import { siteConfig } from "../config/site";
       grid-row: 3;
     }
 
+    .join-hero .hero-action {
+      grid-column: 1;
+      grid-row: 4;
+      justify-self: start;
+      margin-top: var(--space-6);
+    }
+
     .join-hero .introduction {
       grid-column: 2;
       margin-bottom: var(--space-6);
@@ -688,19 +784,10 @@ import { siteConfig } from "../config/site";
       grid-column: 2;
     }
 
-    .intent-grid li a {
+    .intent-actions {
       grid-column: 3;
       grid-row: 1 / span 2;
-      justify-self: start;
-    }
-
-    .intent-grid li:nth-child(3) a {
-      grid-column: 3;
-      grid-row: 1;
-    }
-
-    .intent-grid li:nth-child(3) a + a {
-      grid-row: 2;
+      align-self: center;
     }
 
     .role-section .container {
