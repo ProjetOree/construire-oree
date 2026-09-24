@@ -27,6 +27,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </aside>
         <nav class="summary-nav" aria-labelledby="page-title">
           <a href="#probleme">Le problème</a>
+          <a href="#premier-appel">Le premier appel</a>
           <a href="#reponse">La réponse envisagée</a>
           <a href="#modele-inverse">Le modèle inversé</a>
           <a href="#horizon-ess">L’horizon ESS</a>
@@ -64,6 +65,47 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           décourage des personnes qui ont du talent avant même qu’elles aient pu
           le montrer.
         </p>
+      </div>
+    </section>
+
+    <section
+      class="section-block first-call-section texture-legere"
+      id="premier-appel"
+      aria-labelledby="premier-appel-title"
+      data-section-enter
+    >
+      <div class="container reading-width">
+        <div class="first-call-frame">
+          <p class="eyebrow">Premier appel</p>
+          <h2 id="premier-appel-title">
+            Raconter un moment où montrer ou vendre une création s’est compliqué
+          </h2>
+          <p class="first-call-lead">
+            Pour éprouver le point de départ du projet sans le présenter comme
+            une étude, Orée ouvre une première question : à quel moment concret
+            le passage entre créer, montrer et vendre s’est-il compliqué pour
+            toi ?
+          </p>
+          <p>
+            Un exemple court suffit. Jérémy lira les réponses pour faire émerger
+            une hypothèse ou un arbitrage à documenter. Aucune réponse n’engage
+            une décision automatique et aucun délai de réponse n’est garanti.
+          </p>
+          <div class="first-call-actions">
+            <a
+              class="first-call-link first-call-link--primary"
+              href="https://construire-oree.discourse.group/t/qu-est-ce-qui-a-rendu-une-creation-difficile-a-montrer-ou-a-vendre/16"
+              >Partager une expérience publiquement</a
+            >
+            <a class="first-call-link" href="https://tally.so/r/q4eVx7"
+              >Répondre en privé</a
+            >
+          </div>
+          <p class="first-call-note">
+            Écrire publiquement demande un compte Discourse. Le formulaire
+            Contact permet une réponse privée.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -324,6 +366,56 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   .point-zero-block {
     border-top-color: var(--color-dawn);
+  }
+
+  .first-call-section {
+    border-block: 1px solid var(--color-dawn);
+    background: var(--color-surface-soft);
+  }
+
+  .first-call-frame {
+    position: relative;
+    padding-left: var(--space-6);
+    border-left: 3px solid var(--color-dawn);
+  }
+
+  .first-call-frame h2 {
+    max-width: 18ch;
+  }
+
+  .first-call-lead {
+    font-size: var(--text-md);
+  }
+
+  .first-call-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    margin-top: var(--space-6);
+  }
+
+  .first-call-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--color-canopy);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: var(--space-1);
+  }
+
+  .first-call-link--primary {
+    color: var(--color-action-hover);
+  }
+
+  .first-call-note {
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .first-call-note:last-child {
+    margin-bottom: 0;
   }
 
   .actions {
