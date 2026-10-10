@@ -63,7 +63,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="section-block next-step" data-section-enter>
+    <section class="section-block next-step">
       <div class="container reading-width">
         <h2>Prochaine étape documentable</h2>
         <p>
@@ -108,7 +108,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section class="section-block follow-up-block" data-section-enter>
+    <section class="section-block follow-up-block">
       <div class="container reading-width">
         <h2>Trois vues de suivi en préparation</h2>
         <p>
@@ -128,41 +128,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </li>
         </ul>
         <div class="actions">
-          <a class="button button-primary" href="/fondations/"
+          <a data-seuil-button class="button button-primary" href="/fondations/"
             >Voir les fondations à résoudre</a
           >
-          <a class="button button-secondary" href="/journal/"
+          <a data-seuil-button class="button button-secondary" href="/journal/"
             >Voir l’état du Journal</a
           >
         </div>
       </div>
     </section>
   </div>
-  <script>
-    if (
-      "IntersectionObserver" in window &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            entry.target.classList.add("section-entered");
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.15 },
-      );
-      document
-        .querySelectorAll("[data-section-enter]")
-        .forEach((section) => observer.observe(section));
-    }
-  </script>
 </BaseLayout>
 
 <style>
   .page-intro {
-    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+    padding-block: clamp(3rem, 5vw, 4rem) 3rem;
+    background: var(--color-linen);
   }
 
   .page-intro h1 {
@@ -307,20 +288,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     min-height: 44px;
     align-items: center;
     justify-content: center;
-    padding: var(--space-3) var(--space-6);
+    padding: 0.875rem 1.5rem;
     border: 2px solid transparent;
-    border-radius: var(--radius-md);
+    border-radius: 3px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast),
-      color var(--transition-fast);
   }
 
   .button-primary {
-    background: var(--color-action-hover);
+    background: var(--color-action);
+    color: var(--color-white);
+  }
+
+  .button-primary:visited {
     color: var(--color-white);
   }
 

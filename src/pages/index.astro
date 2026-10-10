@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SeuilHero from "../components/home/SeuilHero.astro";
+import HomeDoors from "../components/home/HomeDoors.astro";
 import { siteConfig } from "../config/site";
 
 const publishedEntries = (await getCollection("journal"))
@@ -51,86 +53,58 @@ const doors = [
   description="Construire Orée documente, au point zéro, la construction publique d’une future marketplace éthique pour la création originale faite main."
   composition="sceau"
 >
-  <section class="home-threshold" aria-labelledby="home-title">
-    <div class="container home-threshold-grid">
-      <div class="threshold-copy">
-        <p class="section-kicker section-kicker--inverse">
-          Journal public de construction
-        </p>
-        <h1 id="home-title">Construire Orée depuis le point zéro</h1>
-        <p class="threshold-introduction">
-          Orée est un projet de future marketplace éthique où découvrir et
-          vendre des créations originales, de l’art et de l’artisanat d’art.
-          Elle cherche à simplifier le premier pas des artistes et artisans —
-          visibilité, vente et administratif — sans leur demander de tout
-          porter.
-        </p>
-        <p class="threshold-introduction">
-          Construire Orée rend publics les arbitrages nécessaires pour donner
-          vie à cette plateforme, dans une perspective d’économie sociale et
-          solidaire.
-        </p>
+  <SeuilHero />
+  <HomeDoors doors={doors} />
+
+  <section class="seuil-documents" aria-labelledby="seuil-doc-title">
+    <div class="container document-gateway">
+      <div>
+        <p class="section-kicker">Corpus et documents sources</p>
+        <h2 id="seuil-doc-title">Lire les fondations.</h2>
       </div>
-
-      <aside class="threshold-status" aria-labelledby="etat-actuel">
-        <p class="section-kicker section-kicker--inverse">État actuel</p>
-        <h2 id="etat-actuel">Point zéro</h2>
-        <p>
-          La marketplace n’est pas ouverte : aucun catalogue, aucune vente et
-          aucun utilisateur de marketplace. Le travail actuel porte sur les
-          fondations et les arbitrages techniques, juridiques, fiscaux et
-          opérationnels.
-        </p>
-        <a class="threshold-status-link" href="/avancement/"
-          >Voir l’état actuel <span aria-hidden="true">→</span></a
-        >
-      </aside>
-
-      <div class="threshold-action">
-        <a class="button button-primary" href="/projet/">Comprendre le projet</a
-        >
-      </div>
-    </div>
-  </section>
-
-  <section class="home-orientation" aria-labelledby="orientation-title">
-    <div class="container">
-      <p class="section-kicker">Orientation</p>
-      <h2 id="orientation-title">Cinq portes</h2>
-      <p class="orientation-introduction">
-        Construire Orée sert aujourd’hui à rendre les choix compréhensibles, à
-        les confronter aux expériences d’artistes, d’artisans, d’Éclaireurs et
-        d’Échos, et à chercher les expertises ou partenariats, institutionnels
-        ou non, capables d’aider à donner vie à la plateforme.
+      <p>
+        Les textes sources, leurs notes de contexte et les questions encore
+        ouvertes.
       </p>
-      <ol class="door-list">
-        {
-          doors.map((door) => (
-            <li>
-              <a href={door.href} class="door-link">
-                <span class="door-index" aria-hidden="true">
-                  {door.index}
-                </span>
-                <span class="door-content">
-                  <span class="door-title">{door.title}</span>
-                  <span class="door-copy">{door.copy}</span>
-                </span>
-                <span class="door-arrow" aria-hidden="true">
-                  →
-                </span>
-              </a>
-            </li>
-          ))
-        }
-      </ol>
+      <a class="text-link" href="/documents/"
+        >Explorer les documents <span aria-hidden="true" data-seuil-link-arrow
+          >→</span
+        ></a
+      >
     </div>
   </section>
 
   <section
-    class="home-section"
-    aria-labelledby="problem-title"
-    data-section-enter
+    class="home-section seuil-context"
+    aria-labelledby="seuil-context-title"
   >
+    <div class="container context-grid">
+      <div>
+        <p class="section-kicker">Journal public de construction</p>
+        <h2 id="seuil-context-title">Une construction publique</h2>
+      </div>
+      <div class="context-copy">
+        <p>
+          Orée cherche à simplifier le premier pas des artistes et artisans —
+          visibilité, vente et administratif — sans leur demander de tout
+          porter.
+        </p>
+        <p>
+          Construire Orée rend publics les arbitrages nécessaires pour donner
+          vie à cette plateforme, dans une perspective d’économie sociale et
+          solidaire.
+        </p>
+        <p>
+          Construire Orée sert aujourd’hui à rendre les choix compréhensibles, à
+          les confronter aux expériences d’artistes, d’artisans, d’Éclaireurs et
+          d’Échos, et à chercher les expertises ou partenariats, institutionnels
+          ou non, capables d’aider à donner vie à la plateforme.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="problem-title">
     <div class="container reading-width">
       <p class="section-kicker">Question de départ</p>
       <h2 id="problem-title">Le problème et le renversement cherché</h2>
@@ -154,7 +128,6 @@ const doors = [
   <section
     class="home-section home-section--ruled"
     aria-labelledby="ecosystem-title"
-    data-section-enter
   >
     <div class="container reading-width">
       <p class="section-kicker">Vision d’ensemble</p>
@@ -186,7 +159,6 @@ const doors = [
   <section
     class="home-section home-section--ruled"
     aria-labelledby="journal-title"
-    data-section-enter
   >
     <div class="container reading-width">
       <p class="section-kicker">Journal</p>
@@ -221,7 +193,9 @@ const doors = [
       <h2 id="participate-title">Participer ou suivre</h2>
       <p>Tu veux comprendre où ta contribution pourrait être utile ?</p>
       <div class="participate-actions">
-        <a class="button button-primary" href="/rejoindre/">Participer</a>
+        <a class="button button-primary" href="/rejoindre/" data-seuil-button
+          >Participer</a
+        >
         <a class="text-link" href={siteConfig.links.follow}
           >Suis l’aventure (formulaire externe)</a
         >
@@ -233,307 +207,167 @@ const doors = [
       </p>
     </div>
   </section>
-  <script>
-    if (
-      "IntersectionObserver" in window &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            entry.target.classList.add("section-entered");
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.15 },
-      );
-      document
-        .querySelectorAll("[data-section-enter]")
-        .forEach((section) => observer.observe(section));
-    }
-  </script>
 </BaseLayout>
 
 <style>
-  .home-threshold {
-    background: var(--color-canopy);
-    color: var(--color-linen);
-    padding-block: clamp(var(--space-12), 9vw, var(--space-24));
-  }
-
-  .home-threshold h1,
-  .home-threshold h2 {
-    color: var(--color-linen);
-  }
-
-  .home-threshold-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.62fr);
-    grid-template-areas:
-      "copy status"
-      "action status";
-    gap: var(--space-8) clamp(var(--space-12), 9vw, var(--space-24));
-    align-items: start;
-  }
-
-  .threshold-copy {
-    grid-area: copy;
-    max-width: 44rem;
-  }
-
   .section-kicker {
-    margin-bottom: var(--space-3);
-    padding-left: var(--space-3);
-    border-left: 2px solid var(--color-dawn);
+    margin-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--seuil-rule);
     color: var(--color-bark);
     font-family: var(--font-mono);
-    font-size: var(--text-caption);
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
   }
-
-  .section-kicker--inverse {
-    color: var(--color-linen);
+  .seuil-documents {
+    padding-block: 2.25rem;
+    background: var(--color-surface-soft);
+    border-bottom: 1px solid var(--color-border);
   }
-
-  .threshold-copy h1 {
-    margin-bottom: var(--space-6);
-  }
-
-  .threshold-introduction {
-    margin-bottom: 0;
-    font-size: var(--text-md);
-  }
-
-  .threshold-introduction + .threshold-introduction {
-    margin-top: var(--space-4);
-  }
-
-  .threshold-status {
-    grid-area: status;
-    padding-left: var(--space-6);
-    border-left: 2px solid var(--color-dawn);
-  }
-
-  .threshold-status h2 {
-    margin-bottom: var(--space-4);
-  }
-
-  .threshold-status p:last-child {
-    margin-bottom: 0;
-  }
-
-  .threshold-status-link {
-    display: inline-flex;
-    min-height: 44px;
+  .document-gateway {
+    display: grid;
+    gap: 1.5rem;
     align-items: center;
-    gap: var(--space-2);
-    margin-top: var(--space-4);
-    color: var(--color-linen);
+  }
+  .document-gateway h2 {
+    margin: 0;
+    font-size: 1.875rem;
+  }
+  .document-gateway p {
+    margin-bottom: 0;
+  }
+  .home-section {
+    padding-block: clamp(3rem, 6vw, 5rem);
+  }
+  .home-section h2 {
+    margin-bottom: 1.5rem;
+  }
+  .home-section p {
+    font-size: var(--text-base);
+  }
+  .home-section .reading-width {
+    max-width: var(--layout-width);
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1rem 4rem;
+  }
+  .home-section .reading-width > .section-kicker {
+    grid-column: 1;
+  }
+  .home-section .reading-width > h2 {
+    grid-column: 1;
+    grid-row: 2 / span 8;
+    max-width: 17ch;
+  }
+  .home-section
+    .reading-width
+    > :is(p:not(.section-kicker), a, .participate-actions) {
+    grid-column: 2;
+    max-width: var(--content-width);
+  }
+  .home-section .reading-width > p:not(.section-kicker) {
+    margin: 0 0 0.5rem;
+  }
+  .home-section .reading-width > p:not(.section-kicker):first-of-type {
+    grid-row: 1;
+  }
+  .home-section--ruled {
+    border-top: 1px solid var(--color-border);
+  }
+  .context-grid {
+    display: grid;
+    gap: 1.5rem 4rem;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+  .context-grid > * {
+    min-width: 0;
+  }
+  .context-copy p:last-child {
+    margin-bottom: 0;
+  }
+  .seuil-context {
+    background: var(--color-canvas);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    width: fit-content;
+    color: var(--color-action);
     font-weight: 700;
-    text-underline-offset: 0.18em;
   }
-
-  .threshold-status-link:hover {
-    color: var(--color-white);
+  .text-link:visited {
+    color: var(--color-action);
   }
-
-  .threshold-action {
-    grid-area: action;
-  }
-
   .button {
     display: inline-flex;
-    min-height: 44px;
+    min-height: 3.25rem;
     align-items: center;
     justify-content: center;
-    padding: var(--space-3) var(--space-6);
+    padding: 0.875rem 1.5rem;
     border: 2px solid transparent;
-    border-radius: var(--radius-md);
-    font-weight: 700;
+    border-radius: 3px;
+    font-weight: 650;
     text-align: center;
     text-decoration: none;
   }
-
   .button-primary {
     background: var(--color-action);
     color: var(--color-white);
   }
-
+  .button-primary:visited {
+    color: var(--color-white);
+  }
   .button-primary:hover {
     background: var(--color-action-hover);
     color: var(--color-white);
   }
-
-  .home-threshold .button:focus-visible {
-    outline-color: var(--color-linen);
-  }
-
-  .home-threshold .threshold-status-link:focus-visible {
-    outline-color: var(--color-linen);
-  }
-
-  .home-orientation,
-  .home-section {
-    padding-block: clamp(var(--space-12), 7vw, var(--space-24));
-  }
-
-  .home-orientation h2,
-  .home-section h2 {
-    margin-bottom: var(--space-6);
-  }
-
-  .orientation-introduction {
-    max-width: 62rem;
-    margin-bottom: var(--space-8);
-    font-size: var(--text-md);
-  }
-
-  .door-list {
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid var(--color-border);
-    list-style: none;
-  }
-
-  .door-list li {
-    max-width: none;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .door-link {
-    display: grid;
-    grid-template-columns: 5.5rem minmax(0, 1fr) 44px;
-    gap: var(--space-4);
-    min-height: 7.5rem;
-    align-items: center;
-    color: var(--color-text);
-    text-decoration: none;
-  }
-
-  .door-link:hover {
-    color: var(--color-action);
-  }
-
-  .door-index {
-    color: var(--color-dawn);
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-variant-numeric: lining-nums;
-  }
-
-  .door-content {
-    display: grid;
-    gap: var(--space-1);
-  }
-
-  .door-title {
-    color: var(--color-canopy);
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: 600;
-    line-height: 1.15;
-  }
-
-  .door-copy {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-  }
-
-  .door-arrow {
-    display: grid;
-    min-width: 44px;
-    min-height: 44px;
-    place-items: center;
-    color: var(--color-action);
-    font-size: 1.8rem;
-  }
-
-  .home-section--ruled {
-    border-top: 1px solid var(--color-terracotta);
-  }
-
-  .home-section p {
-    font-size: var(--text-base);
-  }
-
-  .text-link {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    color: var(--color-action);
-    font-weight: 700;
-  }
-
-  .text-link::after {
-    margin-left: var(--space-2);
-    content: "→";
-  }
-
   .participate-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-4);
-    margin-top: var(--space-6);
+    gap: 1rem;
   }
-
   .participate-note {
-    margin-top: var(--space-4);
     color: var(--color-text-muted);
-    font-size: var(--text-sm) !important;
+    font-size: 1rem !important;
   }
-
-  @media (max-width: 48rem) {
-    .home-threshold-grid {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "copy"
-        "status"
-        "action";
-      gap: var(--space-8);
-    }
-
-    .threshold-status {
-      max-width: 38rem;
+  @media (min-width: 75rem) {
+    .document-gateway {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) auto;
+      gap: 3rem;
     }
   }
-
+  @media (max-width: 56rem) {
+    .context-grid,
+    .home-section .reading-width {
+      display: block;
+    }
+    .home-section .reading-width > h2 {
+      max-width: none;
+    }
+    .home-section .reading-width > p:not(.section-kicker) {
+      margin-bottom: 1rem;
+    }
+    .context-copy {
+      margin-top: 1.5rem;
+    }
+  }
   @media (max-width: 30rem) {
-    .door-link {
-      grid-template-columns: 3.5rem minmax(0, 1fr) 32px;
-      gap: var(--space-2);
-      min-height: 0;
-      padding-block: var(--space-4);
-    }
-
-    .door-title {
-      font-size: var(--text-md);
-    }
-
-    .door-arrow {
-      min-width: 32px;
-    }
-
     .participate-actions {
       display: grid;
     }
-
     .button {
       width: 100%;
     }
   }
-
   @media (forced-colors: active) {
-    .home-threshold,
     .button-primary {
-      border: 1px solid CanvasText;
+      border-color: CanvasText;
     }
-
-    .door-link:focus-visible,
-    .text-link:focus-visible,
     .button:focus-visible {
       outline-color: Highlight;
     }

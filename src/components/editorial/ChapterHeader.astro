@@ -29,18 +29,22 @@ const {
 <style>
   .chapter-header h1 {
     margin-bottom: var(--space-6);
+    max-width: 20ch;
   }
 
   .chapter-header__eyebrow {
     margin-bottom: var(--space-4);
     color: var(--color-bark);
-    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-style: normal;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .chapter-header__introduction {
+    max-width: 65ch;
     margin-bottom: var(--space-6);
     color: var(--color-text-muted);
     font-size: var(--text-md);

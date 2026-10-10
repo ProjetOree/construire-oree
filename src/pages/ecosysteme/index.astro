@@ -164,7 +164,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
             >Lire les quatre portraits du document d’origine →</a
           >
         </p>
-        <details class="personas-details">
+        <details data-seuil-details class="personas-details">
           <summary>Voir les quatre profils de conception</summary>
           <div class="details-content persona-grid">
             <article class="persona">
@@ -217,9 +217,17 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
           aujourd’hui, consulte <a href="/rejoindre/">Participer</a>.
         </p>
         <div class="actions">
-          <a class="button button-primary" href="/rejoindre/">Participer</a>
-          <a class="button button-secondary" href="/projet/">Projet</a>
-          <a class="button button-secondary" href="/avancement/">Avancement</a>
+          <a data-seuil-button class="button button-primary" href="/rejoindre/"
+            >Participer</a
+          >
+          <a data-seuil-button class="button button-secondary" href="/projet/"
+            >Projet</a
+          >
+          <a
+            data-seuil-button
+            class="button button-secondary"
+            href="/avancement/">Avancement</a
+          >
         </div>
       </div>
     </section>
@@ -228,7 +236,8 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
 
 <style>
   .hero-section {
-    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+    padding-block: clamp(3rem, 5vw, 4rem) 3rem;
+    background: var(--color-linen);
   }
 
   .eyebrow {
@@ -303,11 +312,13 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     margin-top: var(--space-4);
     padding: var(--space-4);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: 3px;
     background: var(--color-surface);
   }
 
   .personas-details summary {
+    min-height: 44px;
+    padding-block: 0.5rem;
     font-weight: 650;
     cursor: pointer;
     color: var(--color-canopy);
@@ -351,19 +362,19 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     min-height: 44px;
     align-items: center;
     justify-content: center;
-    padding: var(--space-3) var(--space-6);
+    padding: 0.875rem 1.5rem;
     border: 2px solid transparent;
-    border-radius: var(--radius-md);
+    border-radius: 3px;
     font-weight: 700;
     text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast),
-      color var(--transition-fast);
   }
 
   .button-primary {
-    background: var(--color-action-hover);
+    background: var(--color-action);
+    color: var(--color-white);
+  }
+
+  .button-primary:visited {
     color: var(--color-white);
   }
 

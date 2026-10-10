@@ -10,7 +10,7 @@
 
 html {
   background: var(--color-background);
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   text-size-adjust: 100%;
 }
 
@@ -98,11 +98,11 @@ summary:focus-visible {
 h1 {
   color: var(--color-canopy);
   font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.07;
   text-wrap: balance;
-  font-size: var(--text-display);
-  letter-spacing: -0.035em;
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  letter-spacing: -0.038em;
 }
 
 h2,
@@ -494,7 +494,6 @@ main .page-rejoindre .role-section--eclaireur {
   background-color: var(--color-linen);
 }
 
-main .home-section:nth-of-type(4),
 main .page-projet #modele-inverse,
 main .page-ecosysteme .ecosystem-layers > li:nth-child(3),
 main .page-about .section-block:nth-of-type(2),
@@ -514,108 +513,7 @@ main .page-fondations > .section-block {
 }
 
 main :where(.button, .door-link, .document-door a, .document-returns a) {
-  transition:
-    color var(--transition-fast),
-    background-color var(--transition-fast),
-    border-color var(--transition-fast),
-    transform 200ms ease-out;
-}
-
-main :where(.button, .door-link):hover {
-  transform: translateY(-2px);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .home-threshold .threshold-copy::after {
-    animation: opening-line var(--transition-opening) both;
-  }
-
-  .home-threshold .section-kicker--inverse {
-    animation: opening-mark var(--transition-opening) both;
-  }
-
-  .home-threshold h1 {
-    animation: opening-settle var(--transition-opening) both;
-  }
-
-  .home-threshold .threshold-status {
-    animation: opening-settle var(--transition-opening) 80ms both;
-  }
-
-  .home-threshold .threshold-action {
-    animation: opening-settle var(--transition-opening) 140ms both;
-  }
-
-  [data-section-enter].section-entered :is(h2, .section-kicker, .eyebrow) {
-    animation: section-settle var(--transition-section) both;
-  }
-}
-
-/* The bar takes up space before animation; only its painted scale changes. */
-.home-threshold .threshold-copy::after {
-  display: block;
-  width: min(15rem, 45%);
-  height: 3px;
-  margin-top: var(--space-6);
-  background: var(--color-dawn);
-  content: "";
-  transform-origin: left center;
-}
-
-@keyframes opening-line {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes opening-mark {
-  from {
-    border-left-color: transparent;
-    background-size: 0 100%;
-  }
-  to {
-    border-left-color: var(--color-dawn);
-    background-size: 100% 100%;
-  }
-}
-
-@keyframes opening-settle {
-  from {
-    transform: translateY(10px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes section-settle {
-  from {
-    transform: translateY(10px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 20rem) {
-  .site-header .brand {
-    gap: var(--space-1);
-  }
-
-  .site-header .brand svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .site-header .brand-kicker {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-  }
-
-  .site-header .brand-name {
-    font-size: 1.4rem;
-  }
+  /* Les changements de palette aux ruptures restent immédiats.
+     Les ponctuations de mouvement sont détenues par motion.css. */
+  text-underline-offset: 0.25em;
 }

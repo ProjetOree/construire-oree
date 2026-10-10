@@ -71,7 +71,7 @@ import { siteConfig } from "../../config/site";
   .site-footer {
     margin-top: var(--space-24);
     padding-block: var(--space-12) var(--space-6);
-    border-top: 2px solid var(--color-dawn);
+    border-top: 1px solid var(--seuil-rule);
     background: var(--color-canopy);
     color: var(--color-linen);
   }
@@ -80,6 +80,11 @@ import { siteConfig } from "../../config/site";
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     gap: var(--space-12);
+  }
+
+  .footer-inner > *,
+  .footer-column {
+    min-width: 0;
   }
 
   .footer-lockup {
@@ -133,6 +138,7 @@ import { siteConfig } from "../../config/site";
     color: var(--color-linen);
     font-weight: 650;
     text-decoration-color: var(--color-dawn);
+    overflow-wrap: anywhere;
   }
 
   .footer-column a:hover {

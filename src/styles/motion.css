@@ -1,0 +1,174 @@
+/* Final HTML is visible before scripts, images and motion are available. */
+body[data-seuil-page] :is([data-seuil-status], [data-seuil-door]) {
+  opacity: 1;
+}
+
+@keyframes seuil-approach {
+  from {
+    transform: scale(1.01);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes seuil-seal-arrive {
+  from {
+    transform: translateY(5px) rotate(-5deg) scale(0.95);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes seuil-status-settle {
+  from {
+    transform: translateY(4px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes seuil-door-greet {
+  0% {
+    transform: translateX(-5px);
+  }
+  65% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes seuil-menu-unfold {
+  from {
+    transform: translateY(-4px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes seuil-detail-settle {
+  from {
+    transform: translateY(4px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* The media query is authoritative from the very first draw, before JS. */
+@media (prefers-reduced-motion: no-preference) {
+  body[data-seuil-page="home"][data-seuil-motion="normal"][data-seuil-enter]
+    [data-seuil-decor-ready]
+    [data-seuil-decor] {
+    animation: seuil-approach var(--seuil-duration-decor, 900ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1)) both;
+  }
+
+  body[data-seuil-page="home"][data-seuil-motion="normal"][data-seuil-enter]
+    [data-seuil-seal] {
+    animation: seuil-seal-arrive var(--seuil-duration-seal, 650ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1)) both;
+  }
+
+  body[data-seuil-page="home"][data-seuil-motion="normal"][data-seuil-enter]
+    [data-seuil-status] {
+    animation: seuil-status-settle var(--seuil-duration-status, 560ms)
+      var(--seuil-delay-status, 70ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1)) both;
+  }
+
+  body[data-seuil-motion="normal"]
+    [data-seuil-door-arrive]
+    [data-seuil-door-arrow] {
+    animation: seuil-door-greet var(--seuil-duration-door, 480ms) ease-out both;
+    animation-delay: calc(
+      var(--seuil-door-order, 0) * var(--seuil-delay-door-step, 60ms)
+    );
+  }
+
+  body[data-seuil-page] :is([data-seuil-door-arrow], [data-seuil-link-arrow]) {
+    transition: transform var(--seuil-duration-link, 220ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1));
+  }
+
+  body[data-seuil-motion="normal"]
+    :is([data-seuil-door], a):is(:hover, :focus-visible)
+    :is([data-seuil-door-arrow], [data-seuil-link-arrow]) {
+    transform: translateX(4px);
+  }
+
+  body[data-seuil-page] [data-seuil-button] {
+    transition: transform var(--seuil-duration-button, 180ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1));
+  }
+
+  body[data-seuil-motion="normal"]
+    [data-seuil-button]:is(:hover, :focus-visible) {
+    transform: translateY(-2px);
+  }
+
+  body[data-seuil-motion="normal"] [data-seuil-button]:active {
+    transform: none;
+  }
+
+  body[data-seuil-motion="normal"] [data-seuil-menu][open] > :not(summary) {
+    animation: seuil-menu-unfold var(--seuil-duration-menu, 180ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1)) both;
+  }
+
+  body[data-seuil-motion="normal"] [data-seuil-details][open] > :not(summary) {
+    animation: seuil-detail-settle var(--seuil-duration-details, 220ms)
+      var(--seuil-ease-out, cubic-bezier(0.18, 0.7, 0.2, 1)) both;
+  }
+
+  /* A focused status and its focus outline never move during the arrival. */
+  body[data-seuil-page] [data-seuil-status]:focus-within,
+  body[data-seuil-page] [data-seuil-seal]:is(:focus-within),
+  body[data-seuil-page] a:focus-visible [data-seuil-seal],
+  body[data-seuil-page]
+    [data-seuil-door]:is(:hover, :focus-within)
+    [data-seuil-door-arrow] {
+    animation: none !important;
+  }
+}
+
+body[data-seuil-motion="reduce"]
+  :is(
+    [data-seuil-decor],
+    [data-seuil-seal],
+    [data-seuil-status],
+    [data-seuil-door-arrow],
+    [data-seuil-link-arrow],
+    [data-seuil-button]
+  ),
+body[data-seuil-motion="reduce"]
+  :is([data-seuil-menu], [data-seuil-details])
+  > :not(summary) {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-seuil-page]
+    :is(
+      [data-seuil-decor],
+      [data-seuil-seal],
+      [data-seuil-status],
+      [data-seuil-door-arrow],
+      [data-seuil-link-arrow],
+      [data-seuil-button]
+    ),
+  body[data-seuil-page]
+    :is([data-seuil-menu], [data-seuil-details])
+    > :not(summary) {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
