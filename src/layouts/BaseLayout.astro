@@ -3,6 +3,7 @@ import SiteFooter from "../components/layout/SiteFooter.astro";
 import SiteHeader from "../components/layout/SiteHeader.astro";
 import { siteConfig } from "../config/site";
 import "../styles/global.css";
+import "../styles/motion.css";
 
 interface Props {
   title?: string;
@@ -67,15 +68,22 @@ const socialImageAlt =
     <slot name="head" />
   </head>
 
-  <body data-register={register} data-composition={composition}>
+  <body
+    data-register={register}
+    data-composition={composition}
+    data-seuil-page={Astro.url.pathname === "/" ? "home" : "internal"}
+  >
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     {!hideChrome && <SiteHeader />}
 
-    <main id="contenu">
+    <main id="contenu" tabindex="-1">
       <slot />
     </main>
 
     {!hideChrome && <SiteFooter />}
+    <script>
+      import "../scripts/seuil-motion";
+    </script>
   </body>
 </html>

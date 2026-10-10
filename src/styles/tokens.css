@@ -122,8 +122,8 @@
    */
 
   --content-width: 43.75rem;
-  --layout-width: 74rem;
-  --page-gutter: clamp(1.5rem, 4vw, 3rem);
+  --layout-width: 80rem;
+  --page-gutter: clamp(1.25rem, 4.4vw, 4.5rem);
 
   /*
    * Formes
@@ -136,4 +136,19 @@
   --transition-fast: 160ms ease;
   --transition-section: 420ms ease-out;
   --transition-opening: 760ms ease-out;
+
+  /* Le Seuil habité : contrat partagé avec le module de mouvement. */
+  --seuil-safe-inset: 1.5rem;
+  --seuil-rule: var(--color-dawn);
+  --seuil-duration-decor: 900ms;
+  --seuil-duration-seal: 650ms;
+  --seuil-duration-status: 560ms;
+  --seuil-duration-door: 480ms;
+  --seuil-duration-button: 180ms;
+  --seuil-duration-link: 220ms;
+  --seuil-duration-menu: 180ms;
+  --seuil-duration-details: 220ms;
+  --seuil-delay-status: 70ms;
+  --seuil-delay-door-step: 60ms;
+  --seuil-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }

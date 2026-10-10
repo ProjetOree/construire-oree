@@ -1,0 +1,295 @@
+---
+import decor from "../../assets/seuil/seuil-habite.webp";
+import texture from "../../assets/seuil/texture-mobile.webp";
+---
+
+<section class="home-threshold" aria-labelledby="home-title" data-seuil-hero>
+  <picture class="seuil-picture" aria-hidden="true">
+    <source
+      media="(min-width: 1200px)"
+      srcset={decor.src}
+      width={decor.width}
+      height={decor.height}
+    />
+    <img
+      data-seuil-decor
+      src={texture.src}
+      width={texture.width}
+      height={texture.height}
+      alt=""
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+  <div class="container home-threshold-grid">
+    <div class="threshold-copy">
+      <p class="section-kicker">Journal public de construction</p>
+      <h1 id="home-title">Construire Orée depuis le point zéro</h1>
+    </div>
+    <p class="threshold-introduction">
+      Orée est un projet de future marketplace éthique où découvrir et vendre
+      des créations originales, de l’art et de l’artisanat d’art.
+    </p>
+    <aside
+      class="threshold-status"
+      aria-labelledby="etat-actuel"
+      data-seuil-status
+    >
+      <p class="section-kicker">État actuel</p>
+      <h2 id="etat-actuel">Point zéro</h2>
+      <p>
+        La marketplace n’est pas ouverte : aucun catalogue, aucune vente et
+        aucun utilisateur de marketplace. Le travail actuel porte sur les
+        fondations et les arbitrages techniques, juridiques, fiscaux et
+        opérationnels.
+      </p>
+      <a class="threshold-status-link" href="/avancement/"
+        >Voir l’état actuel <span aria-hidden="true" data-seuil-link-arrow
+          >→</span
+        ></a
+      >
+    </aside>
+    <div class="threshold-action">
+      <a class="seuil-button" href="/projet/" data-seuil-button
+        >Comprendre le projet</a
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-threshold {
+    position: relative;
+    isolation: isolate;
+    background: var(--color-canopy);
+    color: var(--color-linen);
+    padding-block: 2.5rem;
+  }
+  .seuil-picture {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .seuil-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .home-threshold-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 47.5rem;
+  }
+  .home-threshold-grid > * {
+    min-width: 0;
+  }
+  .threshold-copy h1 {
+    margin: 1.25rem 0 0;
+    color: var(--color-linen);
+    font-size: clamp(2.375rem, 6vw, 3.625rem);
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -0.038em;
+    max-width: 15ch;
+  }
+  .section-kicker {
+    margin: 0;
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--seuil-rule);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  .threshold-introduction {
+    margin: 0;
+    max-width: 49ch;
+    font-size: 1.1875rem;
+    line-height: 1.5;
+  }
+  .threshold-status {
+    max-width: 37.5rem;
+    padding: 0 0 0 1.375rem;
+    border-left: 1px solid var(--seuil-rule);
+  }
+  .threshold-status .section-kicker {
+    border: 0;
+    padding: 0;
+  }
+  .threshold-status h2 {
+    color: var(--color-linen);
+    font-size: 1.875rem;
+    margin: 0.5rem 0 0.75rem;
+  }
+  .threshold-status > p:not(.section-kicker) {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  .threshold-status-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    margin-top: 0.75rem;
+    color: var(--color-linen);
+    font-size: 1rem;
+    font-weight: 700;
+    text-underline-offset: 0.25em;
+  }
+  .threshold-status-link:is(:visited, :hover, :active) {
+    color: var(--color-linen);
+  }
+  .seuil-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    background: var(--color-action);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 650;
+    text-align: center;
+    text-decoration: none;
+  }
+  .seuil-button:visited {
+    color: var(--color-white);
+  }
+  .seuil-button:hover {
+    background: var(--color-action-hover);
+    color: var(--color-white);
+  }
+  .home-threshold :focus-visible {
+    outline-color: var(--color-linen);
+    outline-offset: 5px;
+  }
+  @media (max-width: 30rem) {
+    .home-threshold {
+      padding-block: 1.75rem 2.25rem;
+    }
+    .home-threshold-grid {
+      gap: 1.25rem;
+    }
+    .threshold-introduction {
+      font-size: 1.125rem;
+    }
+    .threshold-status {
+      padding-left: 1.125rem;
+    }
+    .threshold-status h2 {
+      font-size: 1.75rem;
+    }
+    .threshold-status > p:not(.section-kicker) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .seuil-button {
+      width: 100%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .home-threshold {
+      padding-block: 3rem;
+      min-height: max(38.5rem, 46.6vw);
+      display: flex;
+      align-items: center;
+    }
+    .home-threshold-grid {
+      max-width: calc(80rem + max(0px, 100vw - 1920px));
+      grid-template-columns: 55% 45%;
+      grid-template-areas: "copy status" "intro status" "action status";
+      grid-template-rows: max-content max-content max-content;
+      align-content: center;
+      align-items: center;
+      min-height: 32.5rem;
+      gap: 1.5rem 0;
+    }
+    .threshold-copy {
+      grid-area: copy;
+      max-width: 40.625rem;
+    }
+    .threshold-copy h1 {
+      font-size: clamp(3.125rem, 4.45vw, 4.125rem);
+    }
+    .threshold-introduction {
+      grid-area: intro;
+      font-size: 1.25rem;
+    }
+    .threshold-action {
+      grid-area: action;
+    }
+    .threshold-status {
+      grid-area: status;
+      justify-self: center;
+      width: clamp(19.5rem, 26vw, 22.5rem);
+      max-width: none;
+      translate: calc(
+          clamp(
+              20px,
+              max(calc(15vw - 196px), calc(356px - 23.3333333333vw)),
+              110px
+            ) +
+            2px
+        )
+        0;
+      color: var(--color-text);
+      background: var(--color-linen);
+      padding: 0.25rem 0 0.25rem 1.375rem;
+      box-shadow: 0 0 0 var(--seuil-safe-inset) var(--color-linen);
+    }
+    .home-threshold[data-seuil-decor-ready] .threshold-status {
+      background: transparent;
+      box-shadow: none;
+    }
+    .threshold-status h2 {
+      color: var(--color-canopy);
+      font-size: 2.125rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .threshold-status > p:not(.section-kicker) {
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    .threshold-status-link {
+      margin-top: 0.75rem;
+      color: var(--color-canopy);
+    }
+    .threshold-status-link:is(:visited, :hover, :active) {
+      color: var(--color-canopy);
+    }
+    .threshold-status :focus-visible {
+      outline-color: var(--color-action);
+    }
+  }
+  @media (forced-colors: active) {
+    .seuil-picture {
+      display: none;
+    }
+    .home-threshold,
+    .threshold-status,
+    .seuil-button {
+      background: Canvas;
+      color: CanvasText;
+      border: 1px solid CanvasText;
+      box-shadow: none;
+    }
+    .home-threshold :is(h1, h2) {
+      color: CanvasText;
+    }
+    .home-threshold a,
+    .home-threshold a:visited {
+      color: LinkText;
+    }
+    .home-threshold :focus-visible {
+      outline-color: Highlight;
+    }
+  }
+</style>

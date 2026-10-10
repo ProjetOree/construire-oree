@@ -69,10 +69,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </section>
 
     <section
-      class="section-block first-call-section texture-legere"
+      class="section-block first-call-section"
       id="premier-appel"
       aria-labelledby="premier-appel-title"
-      data-section-enter
     >
       <div class="container reading-width">
         <div class="first-call-frame">
@@ -113,7 +112,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       class="section-block numbered-section"
       id="reponse"
       aria-labelledby="reponse-title"
-      data-section-enter
     >
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
@@ -137,7 +135,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       class="section-block numbered-section"
       id="modele-inverse"
       aria-labelledby="modele-inverse-title"
-      data-section-enter
     >
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
@@ -208,37 +205,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           œuvre n’est promis.
         </p>
         <div class="actions" id="sorties">
-          <a class="button button-primary" href="/ecosysteme/">Écosystème</a>
-          <a class="button button-secondary" href="/avancement/">Avancement</a>
+          <a data-seuil-button class="button button-primary" href="/ecosysteme/"
+            >Écosystème</a
+          >
+          <a
+            data-seuil-button
+            class="button button-secondary"
+            href="/avancement/">Avancement</a
+          >
         </div>
       </div>
     </section>
   </article>
-  <script>
-    if (
-      "IntersectionObserver" in window &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            entry.target.classList.add("section-entered");
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.15 },
-      );
-      document
-        .querySelectorAll("[data-section-enter]")
-        .forEach((section) => observer.observe(section));
-    }
-  </script>
 </BaseLayout>
 
 <style>
   .hero-section {
-    padding-block: clamp(4rem, 10vw, 6rem) var(--space-8);
+    padding-block: clamp(3rem, 5vw, 4rem) 3rem;
+    background: var(--color-linen);
   }
 
   .eyebrow {
@@ -435,7 +419,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: var(--space-1);
-    transition: color var(--transition-fast);
   }
 
   .button-primary {

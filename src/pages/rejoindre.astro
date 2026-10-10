@@ -24,13 +24,15 @@ import { siteConfig } from "../config/site";
           Ces échanges ne constituent ni une offre d’emploi, ni une mission, ni
           une promesse de rémunération ou de réponse.
         </p>
-        <a class="button button-primary hero-action" href="#agir-maintenant"
-          >Voir ce qui est utile aujourd’hui</a
+        <a
+          data-seuil-button
+          class="button button-primary hero-action"
+          href="#agir-maintenant">Voir ce qui est utile aujourd’hui</a
         >
       </div>
     </section>
 
-    <section id="agir-maintenant" class="join-summary texture-legere">
+    <section id="agir-maintenant" class="join-summary">
       <div class="container reading-width">
         <h2>Choisir un premier geste</h2>
         <p>
@@ -113,7 +115,7 @@ import { siteConfig } from "../config/site";
     </section>
 
     <section
-      class="discussion-section bloc-inverse texture-legere"
+      class="discussion-section bloc-inverse"
       aria-labelledby="discussions-title"
     >
       <div class="container">
@@ -153,7 +155,7 @@ import { siteConfig } from "../config/site";
       </div>
     </section>
 
-    <section class="section-block roles-intro-section" data-section-enter>
+    <section class="section-block roles-intro-section">
       <div class="container">
         <h2>Comprendre les rôles, ensuite</h2>
         <p class="roles-lead reading-width">
@@ -179,7 +181,10 @@ import { siteConfig } from "../config/site";
             >Lire le document d’origine complet sur les rôles →</a
           >
         </p>
-        <details class="persona claire-persona reading-width">
+        <details
+          data-seuil-details
+          class="persona claire-persona reading-width"
+        >
           <summary
             >Situation illustrative — Claire
             <span class="persona-optional">(facultatif)</span></summary
@@ -276,7 +281,7 @@ import { siteConfig } from "../config/site";
             de vendeur, de pilote ou d’utilisateur n’est ouvert aujourd’hui.
           </p>
 
-          <details class="persona">
+          <details data-seuil-details class="persona">
             <summary
               >Situation illustrative — Marc
               <span class="persona-optional">(facultatif)</span></summary
@@ -298,11 +303,7 @@ import { siteConfig } from "../config/site";
         </div>
       </section>
 
-      <section
-        id="eclaireur"
-        class="role-section role-section--eclaireur"
-        data-section-enter
-      >
+      <section id="eclaireur" class="role-section role-section--eclaireur">
         <div class="container reading-width">
           <h2><RoleIcon role="eclaireur" size={28} decorative /> Éclaireur</h2>
 
@@ -333,7 +334,7 @@ import { siteConfig } from "../config/site";
             projet futur : elles ne sont pas actives aujourd’hui.
           </p>
 
-          <details class="persona">
+          <details data-seuil-details class="persona">
             <summary
               >Situation illustrative — Camille
               <span class="persona-optional">(facultatif)</span></summary
@@ -355,11 +356,7 @@ import { siteConfig } from "../config/site";
         </div>
       </section>
 
-      <section
-        id="echo"
-        class="role-section role-section--echo"
-        data-section-enter
-      >
+      <section id="echo" class="role-section role-section--echo">
         <div class="container reading-width">
           <h2><RoleIcon role="echo" size={28} decorative /> Écho</h2>
 
@@ -390,7 +387,7 @@ import { siteConfig } from "../config/site";
             vente générée par Orée.
           </p>
 
-          <details class="persona">
+          <details data-seuil-details class="persona">
             <summary
               >Situation illustrative — Julien
               <span class="persona-optional">(facultatif)</span></summary
@@ -438,32 +435,13 @@ import { siteConfig } from "../config/site";
       </div>
     </section>
   </div>
-  <script>
-    if (
-      "IntersectionObserver" in window &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            entry.target.classList.add("section-entered");
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold: 0.15 },
-      );
-      document
-        .querySelectorAll("[data-section-enter]")
-        .forEach((section) => observer.observe(section));
-    }
-  </script>
 </BaseLayout>
 
 <style>
   .join-hero {
-    padding-block: clamp(4rem, 9vw, 7rem) var(--space-12);
-    border-bottom: 2px solid var(--color-border);
+    padding-block: clamp(3rem, 5vw, 4rem) 3.25rem;
+    background: var(--color-linen);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .eyebrow {
@@ -490,16 +468,16 @@ import { siteConfig } from "../config/site";
   }
 
   .join-summary {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 2rem;
     padding-block: var(--space-12);
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .join-hero .container.reading-width,
   .join-summary .container.reading-width,
   .role-section .container.reading-width,
   .join-closure .container.reading-width {
-    max-width: 74rem;
+    max-width: 68.75rem;
   }
 
   .intent-grid {
@@ -519,7 +497,7 @@ import { siteConfig } from "../config/site";
     grid-template-columns: 3rem minmax(0, 1fr);
     column-gap: var(--space-3);
     align-items: start;
-    padding-block: var(--space-4);
+    padding-block: 1.625rem;
     counter-increment: intention;
     border-bottom: 1px solid var(--color-border);
   }
@@ -539,7 +517,7 @@ import { siteConfig } from "../config/site";
     margin-bottom: var(--space-2);
     color: var(--color-text);
     font-family: var(--font-display);
-    font-size: var(--text-lg);
+    font-size: 1.5625rem;
     line-height: 1.15;
   }
 
@@ -581,12 +559,13 @@ import { siteConfig } from "../config/site";
     font-size: var(--text-sm);
   }
 
-  .discussion-section {
+  .page-rejoindre .discussion-section {
+    background: var(--color-canopy);
     padding-block: var(--space-12);
   }
 
   .discussion-section .container {
-    max-width: 74rem;
+    max-width: 68.75rem;
   }
 
   .discussion-grid {
@@ -637,16 +616,20 @@ import { siteConfig } from "../config/site";
     font-weight: 700;
   }
 
-  .discussion-primary {
+  .discussion-section .discussion-primary {
     padding: var(--space-3) var(--space-4);
     border: 2px solid var(--color-linen);
-    border-radius: var(--radius-md);
+    border-radius: 3px;
     background: var(--color-linen);
     color: var(--color-canopy);
     text-decoration: none;
   }
 
-  .discussion-primary:hover {
+  .discussion-section .discussion-primary:visited {
+    color: var(--color-canopy);
+  }
+
+  .discussion-section .discussion-primary:hover {
     background: transparent;
     color: var(--color-linen);
   }
@@ -710,7 +693,6 @@ import { siteConfig } from "../config/site";
 
   .role-section {
     scroll-margin-top: 6rem;
-    transition: background-color var(--transition-fast);
     padding-block: var(--space-12);
     counter-increment: role;
     border-top: 2px solid var(--color-border);
@@ -761,15 +743,11 @@ import { siteConfig } from "../config/site";
     min-height: 44px;
     align-items: center;
     justify-content: center;
-    padding: var(--space-3) var(--space-6);
+    padding: 0.875rem 1.5rem;
     border: 2px solid transparent;
-    border-radius: var(--radius-md);
+    border-radius: 3px;
     font-weight: 700;
     text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast),
-      color var(--transition-fast);
   }
 
   .button-secondary {
@@ -778,7 +756,11 @@ import { siteConfig } from "../config/site";
   }
 
   .button-primary {
-    background: var(--color-action-hover);
+    background: var(--color-action);
+    color: var(--color-white);
+  }
+
+  .button-primary:visited {
     color: var(--color-white);
   }
 
@@ -855,70 +837,33 @@ import { siteConfig } from "../config/site";
     }
 
     .join-hero .container {
-      max-width: 74rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
-      column-gap: clamp(var(--space-8), 8vw, var(--space-16));
+      max-width: 68.75rem;
+    }
+    .join-hero h1 {
+      max-width: 17ch;
+    }
+    .join-hero .introduction {
+      max-width: 65ch;
+      margin-top: 1.25rem;
+    }
+    .join-hero .hero-action {
+      margin-top: 1.75rem;
+    }
+    .intent-grid li {
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+      column-gap: 1.5rem;
       align-items: start;
     }
-
-    .join-hero .eyebrow {
-      grid-column: 1 / -1;
-    }
-
-    .join-hero h1 {
-      grid-column: 1;
-      grid-row: 2;
-    }
-
-    .join-hero .repere {
-      grid-column: 1;
-      grid-row: 3;
-    }
-
-    .join-hero .hero-action {
-      grid-column: 1;
-      grid-row: 4;
-      justify-self: start;
-      margin-top: var(--space-6);
-    }
-
-    .join-hero .introduction {
-      grid-column: 2;
-      margin-bottom: var(--space-6);
-    }
-
-    .join-hero .repere + .introduction {
-      grid-row: 2;
-      padding-left: var(--space-6);
-      border-left: 2px solid var(--color-action);
-    }
-
-    .join-hero .introduction:last-of-type {
-      grid-row: 3;
-      padding-left: var(--space-6);
-      border-left: 2px solid var(--color-action);
-    }
-
-    .intent-grid li {
-      grid-template-columns: 5rem minmax(0, 1fr) minmax(13rem, 0.72fr);
-      column-gap: var(--space-6);
-      align-items: center;
-    }
-
     .intent-grid li::before {
-      grid-row: 1 / span 2;
+      grid-row: 1 / span 3;
     }
-
     .intent-grid strong,
-    .intent-grid p {
+    .intent-grid p,
+    .intent-actions {
       grid-column: 2;
     }
-
     .intent-actions {
-      grid-column: 3;
-      grid-row: 1 / span 2;
-      align-self: center;
+      grid-row: auto;
     }
 
     .role-section .container {

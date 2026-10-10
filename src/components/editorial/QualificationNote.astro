@@ -16,17 +16,8 @@ const { label, kind = "fact" } = Astro.props;
 
 <style>
   .qualification-note {
-    position: relative;
-  }
-
-  .qualification-note::before {
-    position: absolute;
-    top: var(--space-6);
-    left: 0;
-    width: 2px;
-    height: var(--space-6);
-    background: var(--composition-accent-revue);
-    content: "";
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--seuil-rule);
   }
 
   .qualification-note__label {
@@ -44,8 +35,8 @@ const { label, kind = "fact" } = Astro.props;
   }
 
   @media (forced-colors: active) {
-    .qualification-note::before {
-      background: CanvasText;
+    .qualification-note {
+      border-color: CanvasText;
     }
   }
 </style>
