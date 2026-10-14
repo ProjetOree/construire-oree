@@ -7,12 +7,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   description="Le manifeste, la promesse zéro frais et le modèle inversé qu’Orée cherche à construire, sans confondre vision cible et service disponible aujourd’hui."
 >
   <article class="page-article page-projet">
-    <header class="hero-section">
+    <header class="hero-section" data-seuil-ambient="paper">
+      <div class="seuil-light" aria-hidden="true"></div>
       <div class="container reading-width">
-        <p class="eyebrow">Projet</p>
-        <h1 id="page-title">Pourquoi Orée</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">Projet</p>
+        <h1 id="page-title" data-seuil-intro="title">Pourquoi Orée</h1>
         <p class="repere">Vous êtes ici · Projet</p>
-        <p class="introduction">
+        <p class="introduction" data-seuil-intro="copy">
           Orée part d’un problème simple à observer et difficile à résoudre :
           vendre une création originale oblige aujourd’hui à cumuler création,
           vente et administratif. Ce texte explique pourquoi ce constat justifie
@@ -40,6 +41,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           >
         </p>
       </div>
+      <button
+        class="seuil-motion-control"
+        data-seuil-motion-control
+        type="button"
+        aria-label="Animations"
+        aria-pressed="true"
+        hidden>Animations · actives</button
+      >
     </header>
 
     <section
@@ -49,7 +58,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     >
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="probleme-title">Le problème</h2>
+        <h2 id="probleme-title" data-seuil-reveal>Le problème</h2>
         <p>
           Beaucoup de personnes créatives n’osent pas encore commencer à vendre
           leur travail. Quatre freins reviennent régulièrement : la peur du
@@ -75,8 +84,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     >
       <div class="container reading-width">
         <div class="first-call-frame">
-          <p class="eyebrow">Premier appel</p>
-          <h2 id="premier-appel-title">
+          <p class="eyebrow" data-seuil-reveal="rule">Premier appel</p>
+          <h2 id="premier-appel-title" data-seuil-reveal>
             Raconter un moment où montrer ou vendre une création s’est compliqué
           </h2>
           <p class="first-call-lead">
@@ -115,7 +124,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     >
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="reponse-title">La réponse envisagée</h2>
+        <h2 id="reponse-title" data-seuil-reveal>La réponse envisagée</h2>
         <p>
           Le modèle envisagé cherche à limiter les frais avant qu’une première
           vente n’ait eu lieu. La communication, le paiement, la facturation et
@@ -138,7 +147,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     >
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="modele-inverse-title">Le modèle inversé</h2>
+        <h2 id="modele-inverse-title" data-seuil-reveal>Le modèle inversé</h2>
         <p>
           Le parcours courant demande à la personne qui crée de se présenter,
           puis laisse un système la juger. Le modèle qu’Orée cherche à
@@ -146,12 +155,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           talent, lui ouvre une porte, et laisse la personne choisir d’y entrer
           ou non.
         </p>
-        <div class="inversion-grid">
-          <div class="inversion-card">
+        <div class="inversion-grid" data-seuil-row>
+          <div class="inversion-card" data-seuil-reveal="rule">
             <h3>Parcours courant</h3>
             <p>La personne se présente seule ; le système évalue et juge.</p>
           </div>
-          <div class="inversion-card inversion-card--cible">
+          <div
+            class="inversion-card inversion-card--cible"
+            data-seuil-reveal="rule"
+          >
             <h3>Parcours cible</h3>
             <p>Le système repère et ouvre une porte ; la personne choisit.</p>
           </div>
@@ -170,7 +182,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     >
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="horizon-ess-title">L’horizon ESS</h2>
+        <h2 id="horizon-ess-title" data-seuil-reveal>L’horizon ESS</h2>
         <p>
           Orée démarre comme un projet solo, avec une approche volontairement
           légère et progressive (« lean »). Dans la logique de l’économie
@@ -193,10 +205,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       class="section-block point-zero-block numbered-section"
       id="ce-qui-nexiste-pas"
       aria-labelledby="ce-qui-nexiste-pas-title"
+      data-seuil-ambient="paper"
     >
+      <div class="seuil-light" aria-hidden="true"></div>
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="ce-qui-nexiste-pas-title">Ce qui n’existe pas encore</h2>
+        <h2 id="ce-qui-nexiste-pas-title" data-seuil-reveal>
+          Ce qui n’existe pas encore
+        </h2>
         <p>
           Pour que cette page reste honnête sur l’état réel du projet : aucun
           service actif de paiement, de facturation ou de SAV n’existe
@@ -440,6 +456,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   @media (min-width: 48rem) {
     .inversion-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 47.99rem) {
+    .hero-section {
+      padding-bottom: 5.25rem;
     }
   }
 </style>

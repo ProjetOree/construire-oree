@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../components/motion/MotionControl.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RoleIcon from "../components/brand/RoleIcon.astro";
 import { siteConfig } from "../config/site";
@@ -11,10 +12,12 @@ import { siteConfig } from "../config/site";
   <div class="page-rejoindre">
     <section class="join-hero">
       <div class="container reading-width">
-        <p class="eyebrow">Participer à la construction</p>
-        <h1>Aider à construire Orée, aujourd’hui</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">
+          Participer à la construction
+        </p>
+        <h1 data-seuil-intro="title">Aider à construire Orée, aujourd’hui</h1>
         <p class="repere">Vous êtes ici · Participer</p>
-        <p class="introduction">
+        <p class="introduction" data-seuil-intro="copy">
           Orée est au point zéro : la marketplace n’est pas ouverte. Tu peux
           pourtant déjà partager une expérience, éclairer un choix, proposer un
           appui ou un partenariat, poser une question en privé ou suivre la
@@ -27,9 +30,11 @@ import { siteConfig } from "../config/site";
         <a
           data-seuil-button
           class="button button-primary hero-action"
+          data-seuil-intro="action"
           href="#agir-maintenant">Voir ce qui est utile aujourd’hui</a
         >
       </div>
+      <div class="container reading-width"><MotionControl /></div>
     </section>
 
     <section id="agir-maintenant" class="join-summary">
@@ -41,9 +46,11 @@ import { siteConfig } from "../config/site";
           plus simple pour commencer.
         </p>
 
-        <ul class="intent-grid" role="list">
+        <ul class="intent-grid" role="list" data-seuil-row>
           <li>
-            <strong>Partager une expérience de création</strong>
+            <strong data-seuil-reveal="choice"
+              >Partager une expérience de création</strong
+            >
             <p>
               Ce qui complique le fait de créer, montrer, vendre ou gérer
               l’administratif.
@@ -55,7 +62,7 @@ import { siteConfig } from "../config/site";
             </div>
           </li>
           <li>
-            <strong>Éclairer un arbitrage</strong>
+            <strong data-seuil-reveal="choice">Éclairer un arbitrage</strong>
             <p>
               Un regard technique, juridique, fiscal, opérationnel ou issu du
               terrain.
@@ -67,7 +74,9 @@ import { siteConfig } from "../config/site";
             </div>
           </li>
           <li>
-            <strong>Aider à repérer ou mettre en lumière</strong>
+            <strong data-seuil-reveal="choice"
+              >Aider à repérer ou mettre en lumière</strong
+            >
             <p>
               Ce qui rend le repérage, la curation ou la recommandation utile et
               juste.
@@ -79,7 +88,9 @@ import { siteConfig } from "../config/site";
             </div>
           </li>
           <li>
-            <strong>Proposer un appui ou un partenariat</strong>
+            <strong data-seuil-reveal="choice"
+              >Proposer un appui ou un partenariat</strong
+            >
             <p>
               Une expertise, une ressource, une mise en relation ou un soutien
               institutionnel ou non.
@@ -91,7 +102,9 @@ import { siteConfig } from "../config/site";
             </div>
           </li>
           <li>
-            <strong>Poser une question ou suivre sans s’engager</strong>
+            <strong data-seuil-reveal="choice"
+              >Poser une question ou suivre sans s’engager</strong
+            >
             <p>
               Tu peux écrire en privé ou lire les nouvelles publiques sans
               choisir de rôle.
@@ -116,13 +129,17 @@ import { siteConfig } from "../config/site";
 
     <section
       class="discussion-section bloc-inverse"
+      data-seuil-ambient="canopy"
       aria-labelledby="discussions-title"
     >
       <div class="container">
         <div class="discussion-grid">
+          <span class="seuil-light" aria-hidden="true"></span>
           <div class="discussion-copy">
-            <p class="discussion-kicker">Discussions publiques</p>
-            <h2 id="discussions-title">
+            <p class="discussion-kicker" data-seuil-reveal>
+              Discussions publiques
+            </p>
+            <h2 id="discussions-title" data-seuil-reveal>
               Lire les échanges et prendre part aux arbitrages
             </h2>
             <p>
@@ -211,7 +228,9 @@ import { siteConfig } from "../config/site";
     <div class="roles-container">
       <section id="batisseur" class="role-section role-section--batisseur">
         <div class="container reading-width">
-          <h2><RoleIcon role="batisseur" size={28} decorative /> Bâtisseur</h2>
+          <h2 data-seuil-reveal>
+            <RoleIcon role="batisseur" size={28} decorative /> Bâtisseur
+          </h2>
 
           <h3>Ce dont le projet a besoin maintenant</h3>
           <p>
@@ -248,7 +267,7 @@ import { siteConfig } from "../config/site";
         class="role-section role-section--artisan"
       >
         <div class="container reading-width">
-          <h2>
+          <h2 data-seuil-reveal>
             <RoleIcon role="artisan" size={28} decorative /> Artiste ou Artisan
           </h2>
 
@@ -305,7 +324,9 @@ import { siteConfig } from "../config/site";
 
       <section id="eclaireur" class="role-section role-section--eclaireur">
         <div class="container reading-width">
-          <h2><RoleIcon role="eclaireur" size={28} decorative /> Éclaireur</h2>
+          <h2 data-seuil-reveal>
+            <RoleIcon role="eclaireur" size={28} decorative /> Éclaireur
+          </h2>
 
           <h3>Ce dont le projet a besoin maintenant</h3>
           <p>
@@ -358,7 +379,9 @@ import { siteConfig } from "../config/site";
 
       <section id="echo" class="role-section role-section--echo">
         <div class="container reading-width">
-          <h2><RoleIcon role="echo" size={28} decorative /> Écho</h2>
+          <h2 data-seuil-reveal>
+            <RoleIcon role="echo" size={28} decorative /> Écho
+          </h2>
 
           <h3>Ce dont le projet a besoin maintenant</h3>
           <p>

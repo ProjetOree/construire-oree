@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../components/motion/MotionControl.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config/site";
 ---
@@ -8,12 +9,13 @@ import { siteConfig } from "../config/site";
   description="Découvre pourquoi Jérémy construit Orée en public, avec une méthode transparente pour une future marketplace éthique de création originale."
 >
   <article class="page-article page-about">
-    <header class="hero-section">
+    <header class="hero-section" data-seuil-ambient="paper">
+      <span class="seuil-light" aria-hidden="true"></span>
       <div class="container reading-width">
-        <p class="eyebrow">À propos</p>
-        <h1>Pourquoi je construis Orée</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">À propos</p>
+        <h1 data-seuil-intro="title">Pourquoi je construis Orée</h1>
         <p class="repere">Vous êtes ici · À propos</p>
-        <p class="introduction">
+        <p class="introduction" data-seuil-intro="copy">
           Moi, c’est Jérémy, fondateur d’Orée. Je construis une future
           marketplace éthique pour la création originale, l’art et l’artisanat
           d’art. Construire Orée est le journal public de ce travail : il montre
@@ -29,11 +31,12 @@ import { siteConfig } from "../config/site";
           </p>
         </aside>
       </div>
+      <div class="container reading-width"><MotionControl /></div>
     </header>
 
     <section class="section-block" aria-labelledby="point-depart-title">
       <div class="container reading-width">
-        <h2 id="point-depart-title">Le point de départ</h2>
+        <h2 id="point-depart-title" data-seuil-reveal>Le point de départ</h2>
         <p>
           Je ne viens pas du monde de l’art : pas de galerie, pas de diplôme des
           Beaux-Arts, pas de réseau dans le milieu.
@@ -54,7 +57,9 @@ import { siteConfig } from "../config/site";
 
     <section class="section-block" aria-labelledby="construction-title">
       <div class="container reading-width">
-        <h2 id="construction-title">Ce que je cherche à construire</h2>
+        <h2 id="construction-title" data-seuil-reveal>
+          Ce que je cherche à construire
+        </h2>
         <p>
           Orée part d’une conviction : vendre son art ne devrait pas obliger une
           personne à devenir à la fois communicante, commerçante, spécialiste de
@@ -86,7 +91,9 @@ import { siteConfig } from "../config/site";
 
     <section class="section-block" aria-labelledby="pourquoi-moi-title">
       <div class="container reading-width">
-        <h2 id="pourquoi-moi-title">Pourquoi moi, malgré le doute</h2>
+        <h2 id="pourquoi-moi-title" data-seuil-reveal>
+          Pourquoi moi, malgré le doute
+        </h2>
         <p>
           J’avance sans avoir toutes les réponses. Cela m’oblige à chercher des
           retours, à expliquer mes choix et à ne pas confondre une idée avec une
@@ -104,7 +111,7 @@ import { siteConfig } from "../config/site";
 
     <section class="section-block" aria-labelledby="methode-title">
       <div class="container reading-width">
-        <h2 id="methode-title">Comment je construis</h2>
+        <h2 id="methode-title" data-seuil-reveal>Comment je construis</h2>
         <p>
           Je construis en public, avec une règle simple : montrer ce qui existe
           et nommer ce qui reste à construire.
@@ -129,7 +136,9 @@ import { siteConfig } from "../config/site";
 
     <section class="section-block" aria-labelledby="ouverte-title">
       <div class="container reading-width">
-        <h2 id="ouverte-title">Une construction qui reste ouverte</h2>
+        <h2 id="ouverte-title" data-seuil-reveal>
+          Une construction qui reste ouverte
+        </h2>
         <p>
           Tu peux suivre la construction d’Orée, signaler un point qui te semble
           important ou expliquer comment tu pourrais contribuer. Cela ne

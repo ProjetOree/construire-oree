@@ -59,8 +59,10 @@ const doors = [
   <section class="seuil-documents" aria-labelledby="seuil-doc-title">
     <div class="container document-gateway">
       <div>
-        <p class="section-kicker">Corpus et documents sources</p>
-        <h2 id="seuil-doc-title">Lire les fondations.</h2>
+        <p class="section-kicker" data-seuil-reveal="rule">
+          Corpus et documents sources
+        </p>
+        <h2 id="seuil-doc-title" data-seuil-reveal>Lire les fondations.</h2>
       </div>
       <p>
         Les textes sources, leurs notes de contexte et les questions encore
@@ -80,8 +82,12 @@ const doors = [
   >
     <div class="container context-grid">
       <div>
-        <p class="section-kicker">Journal public de construction</p>
-        <h2 id="seuil-context-title">Une construction publique</h2>
+        <p class="section-kicker" data-seuil-reveal="rule">
+          Journal public de construction
+        </p>
+        <h2 id="seuil-context-title" data-seuil-reveal>
+          Une construction publique
+        </h2>
       </div>
       <div class="context-copy">
         <p>
@@ -106,8 +112,10 @@ const doors = [
 
   <section class="home-section" aria-labelledby="problem-title">
     <div class="container reading-width">
-      <p class="section-kicker">Question de départ</p>
-      <h2 id="problem-title">Le problème et le renversement cherché</h2>
+      <p class="section-kicker" data-seuil-reveal="rule">Question de départ</p>
+      <h2 id="problem-title" data-seuil-reveal>
+        Le problème et le renversement cherché
+      </h2>
       <p>
         Vendre son art ne devrait pas exiger de devenir, en même temps,
         communicant, commerçant, spécialiste de l’administratif et entrepreneur.
@@ -130,8 +138,10 @@ const doors = [
     aria-labelledby="ecosystem-title"
   >
     <div class="container reading-width">
-      <p class="section-kicker">Vision d’ensemble</p>
-      <h2 id="ecosystem-title">L’écosystème en un seul schéma</h2>
+      <p class="section-kicker" data-seuil-reveal="rule">Vision d’ensemble</p>
+      <h2 id="ecosystem-title" data-seuil-reveal>
+        L’écosystème en un seul schéma
+      </h2>
       <p>
         Orée est au point zéro. L’écosystème présenté ici n’existe pas encore :
         il sert à rendre lisible la direction du projet et les liens que la
@@ -161,11 +171,13 @@ const doors = [
     aria-labelledby="journal-title"
   >
     <div class="container reading-width">
-      <p class="section-kicker">Journal</p>
+      <p class="section-kicker" data-seuil-reveal="rule">Journal</p>
       {
         latestEntry ? (
           <>
-            <h2 id="journal-title">{latestEntry.data.title}</h2>
+            <h2 id="journal-title" data-seuil-reveal>
+              {latestEntry.data.title}
+            </h2>
             <p>{latestEntry.data.description}</p>
             <a class="text-link" href={`/journal/${latestEntry.id}/`}>
               Lire l’article
@@ -173,7 +185,9 @@ const doors = [
           </>
         ) : (
           <>
-            <h2 id="journal-title">Le Journal de Construire Orée</h2>
+            <h2 id="journal-title" data-seuil-reveal>
+              Le Journal de Construire Orée
+            </h2>
             <p>Aucun billet n’est publié pour le moment.</p>
             <a class="text-link" href="/journal/">
               Lire le Journal
@@ -187,10 +201,12 @@ const doors = [
   <section
     class="home-section home-section--ruled home-participate"
     aria-labelledby="participate-title"
+    data-seuil-ambient="paper"
   >
+    <div class="seuil-light" aria-hidden="true"></div>
     <div class="container reading-width">
-      <p class="section-kicker">Participer</p>
-      <h2 id="participate-title">Participer ou suivre</h2>
+      <p class="section-kicker" data-seuil-reveal="rule">Participer</p>
+      <h2 id="participate-title" data-seuil-reveal>Participer ou suivre</h2>
       <p>Tu veux comprendre où ta contribution pourrait être utile ?</p>
       <div class="participate-actions">
         <a class="button button-primary" href="/rejoindre/" data-seuil-button

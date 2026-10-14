@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -9,10 +10,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <div class="page-avancement">
     <section class="page-intro">
       <header class="container reading-width">
-        <p class="eyebrow">Avancement</p>
-        <h1>Orée est au point zéro</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">Avancement</p>
+        <h1 data-seuil-intro="title">Orée est au point zéro</h1>
         <p class="repere">Vous êtes ici · Avancement</p>
-        <p class="introduction">
+        <p class="introduction" data-seuil-intro="copy">
           Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en
           cours d’examen — sans date inventée et sans promesse de calendrier.
         </p>
@@ -21,12 +22,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           la vérification de cette page ; elle n’est ni la date de lancement d’Orée
           ni un calendrier.
         </p>
+        <MotionControl />
       </header>
     </section>
 
     <section class="section-block">
       <div class="container reading-width">
-        <h2>État actuel vérifiable</h2>
+        <h2 data-seuil-reveal>État actuel vérifiable</h2>
         <dl class="state-list">
           <div class="state-row" data-state="published">
             <dt>Éléments publiés</dt>
@@ -65,7 +67,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <section class="section-block next-step">
       <div class="container reading-width">
-        <h2>Prochaine étape documentable</h2>
+        <h2 data-seuil-reveal>Prochaine étape documentable</h2>
         <p>
           Aucun prochain sujet n’est arrêté à la date de cette vérification. Le
           projet reste porté en solo, sans équipe constituée. Le prochain
@@ -77,7 +79,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <section class="section-block">
       <div class="container reading-width">
-        <h2>Trajectoire conditionnelle</h2>
+        <h2 data-seuil-reveal>Trajectoire conditionnelle</h2>
         <p class="context-note">
           Chaque phase est conditionnée à la précédente ; aucune n’est planifiée
           à une date fixe.
@@ -110,7 +112,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <section class="section-block follow-up-block">
       <div class="container reading-width">
-        <h2>Trois vues de suivi en préparation</h2>
+        <h2 data-seuil-reveal>Trois vues de suivi en préparation</h2>
         <p>
           Ces pages conservent leurs URL pour rendre visible ce qui n’est pas
           encore publié. La Roadmap donne aussi accès à la feuille de route

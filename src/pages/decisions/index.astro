@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -9,8 +10,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section class="absence-page">
     <div class="container reading-width">
       <header class="page-header">
-        <p class="eyebrow">En préparation</p>
-        <h1>Décisions</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">En préparation</p>
+        <h1 data-seuil-intro="title">Décisions</h1>
         <p class="repere">Vous êtes ici · Décisions</p>
       </header>
 
@@ -31,6 +32,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </div>
       </div>
 
+      <MotionControl />
       <div class="actions">
         <a class="button button-primary" href="/fondations/"
           >Voir les fondations à résoudre</a
