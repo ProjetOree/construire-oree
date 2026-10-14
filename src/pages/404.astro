@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../components/motion/MotionControl.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -7,8 +8,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="L’adresse demandée ne correspond à aucune page de Construire Orée."
 >
   <section class="container not-found">
-    <h1>Page introuvable</h1>
-    <p class="not-found-intro">
+    <h1 data-seuil-intro="title">Page introuvable</h1>
+    <p class="not-found-intro" data-seuil-intro="title">
       L’adresse demandée ne correspond à aucune page de Construire Orée.
     </p>
     <nav class="not-found-links" aria-label="Liens de sortie">
@@ -19,6 +20,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Découvrir le projet
       </a>
     </nav>
+    <MotionControl />
   </section>
 </BaseLayout>
 

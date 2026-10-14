@@ -3,11 +3,16 @@ import decor from "../../assets/seuil/seuil-habite.webp";
 import texture from "../../assets/seuil/texture-mobile.webp";
 ---
 
-<section class="home-threshold" aria-labelledby="home-title" data-seuil-hero>
+<section
+  class="home-threshold"
+  aria-labelledby="home-title"
+  data-seuil-hero
+  data-seuil-ambient="canopy"
+>
   <picture class="seuil-picture" aria-hidden="true">
     <source
       media="(min-width: 1200px)"
-      srcset={decor.src}
+      srcset={encodeURI(decor.src)}
       width={decor.width}
       height={decor.height}
     />
@@ -22,12 +27,13 @@ import texture from "../../assets/seuil/texture-mobile.webp";
       decoding="async"
     />
   </picture>
+  <div class="seuil-light" aria-hidden="true"></div>
   <div class="container home-threshold-grid">
-    <div class="threshold-copy">
+    <div class="threshold-copy" data-seuil-intro="title">
       <p class="section-kicker">Journal public de construction</p>
       <h1 id="home-title">Construire Orée depuis le point zéro</h1>
     </div>
-    <p class="threshold-introduction">
+    <p class="threshold-introduction" data-seuil-intro="copy">
       Orée est un projet de future marketplace éthique où découvrir et vendre
       des créations originales, de l’art et de l’artisanat d’art.
     </p>
@@ -50,12 +56,20 @@ import texture from "../../assets/seuil/texture-mobile.webp";
         ></a
       >
     </aside>
-    <div class="threshold-action">
+    <div class="threshold-action" data-seuil-intro="action">
       <a class="seuil-button" href="/projet/" data-seuil-button
         >Comprendre le projet</a
       >
     </div>
   </div>
+  <button
+    class="seuil-motion-control"
+    data-seuil-motion-control
+    type="button"
+    aria-label="Animations"
+    aria-pressed="true"
+    hidden>Animations · actives</button
+  >
 </section>
 
 <style>
@@ -193,6 +207,11 @@ import texture from "../../assets/seuil/texture-mobile.webp";
     }
     .seuil-button {
       width: 100%;
+    }
+  }
+  @media (max-width: 47.99rem) {
+    .home-threshold {
+      padding-bottom: 5.25rem;
     }
   }
   @media (min-width: 1200px) {

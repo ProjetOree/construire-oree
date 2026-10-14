@@ -25,6 +25,26 @@ const pageTitle =
   title === siteConfig.name ? title : `${title} — ${siteConfig.name}`;
 const socialImageURL = new URL("/social/construire-oree.png", Astro.site);
 const pageURL = new URL(Astro.url.pathname, Astro.site);
+const motionPilot = ["/", "/projet/"].includes(Astro.url.pathname);
+const route = Astro.url.pathname;
+const motionProfile =
+  route === "/"
+    ? "home"
+    : route === "/projet/"
+      ? "pilot"
+      : [
+            "/ecosysteme/",
+            "/a-propos/",
+            "/rejoindre/",
+            "/journal/",
+            "/documents/",
+          ].includes(route)
+        ? "discovery"
+        : ["/avancement/", "/fondations/"].includes(route)
+          ? "state"
+          : route.startsWith("/documents/") || route.startsWith("/journal/")
+            ? "reading"
+            : "utility";
 const socialImageAlt =
   "Le Sceau d’Orée au-dessus du titre « Construire Orée » et de la mention « Journal public · Point zéro », sur fond lin.";
 ---
@@ -72,6 +92,8 @@ const socialImageAlt =
     data-register={register}
     data-composition={composition}
     data-seuil-page={Astro.url.pathname === "/" ? "home" : "internal"}
+    data-seuil-pilot={motionPilot || undefined}
+    data-seuil-profile={motionProfile}
   >
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 

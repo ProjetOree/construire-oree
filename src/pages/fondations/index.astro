@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -9,10 +10,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <div class="page-fondations">
     <section class="page-intro">
       <header class="container reading-width">
-        <p class="eyebrow">Fondations</p>
-        <h1>Ce qu’Orée doit résoudre avant d’opérer</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">Fondations</p>
+        <h1 data-seuil-intro="title">
+          Ce qu’Orée doit résoudre avant d’opérer
+        </h1>
         <p class="repere">Vous êtes ici · Fondations</p>
-        <p class="introduction">
+        <p class="introduction" data-seuil-intro="copy">
           Cette page adapte le document de travail technique et fiscal interne
           d’Orée en deux profondeurs : une synthèse compréhensible, puis des
           détails d’audit repliables. Les choix de la future marketplace restent
@@ -35,6 +38,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             >Lire le Blueprint de conception complet →</a
           >
         </p>
+        <MotionControl />
       </header>
     </section>
 
@@ -84,7 +88,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <section id="details-audit" class="section-block audit-block">
       <div class="container reading-width">
-        <h2>Détails d’audit</h2>
+        <h2 data-seuil-reveal>Détails d’audit</h2>
         <p class="context-note">
           Chaque point porte un statut de validation explicite. Aucun de ces
           points ne décrit une capacité déjà livrée.

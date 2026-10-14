@@ -152,3 +152,72 @@
   --seuil-delay-door-step: 60ms;
   --seuil-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* Local motion pilot: only Accueil and Projet opt in through BaseLayout. */
+body[data-seuil-pilot] {
+  --seuil-duration-decor: 3200ms;
+  --seuil-duration-seal: 1000ms;
+  --seuil-duration-link: 260ms;
+  --seuil-duration-button: 240ms;
+  --seuil-duration-arrival: 1000ms;
+  --seuil-duration-reveal: 720ms;
+  --seuil-duration-ambient: 20000ms;
+  --seuil-delay-title: 180ms;
+  --seuil-delay-copy: 320ms;
+  --seuil-delay-action: 460ms;
+  --seuil-ease-material: cubic-bezier(0.3, 0, 0.3, 1);
+  --seuil-material-scale: 1.075;
+  --seuil-arrival-distance: 12px;
+  --seuil-reveal-distance: 9px;
+  --seuil-ease-out: cubic-bezier(0.25, 0.46, 0.35, 1);
+}
+
+@media (max-width: 74.99rem) {
+  body[data-seuil-pilot] {
+    --seuil-material-scale: 1.025;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  body[data-seuil-pilot] {
+    --seuil-arrival-distance: 8px;
+    --seuil-reveal-distance: 6px;
+    --seuil-duration-ambient: 24000ms;
+  }
+}
+
+/* Inner pages share the pilot language at a quieter amplitude. */
+body[data-seuil-profile]:where(:not([data-seuil-pilot])) {
+  --seuil-duration-arrival: 1000ms;
+  --seuil-duration-reveal: 650ms;
+  --seuil-duration-ambient: 24000ms;
+  --seuil-duration-link: 220ms;
+  --seuil-delay-title: 0ms;
+  --seuil-delay-copy: 100ms;
+  --seuil-delay-action: 180ms;
+  --seuil-arrival-distance: 8px;
+  --seuil-reveal-distance: 6px;
+  --seuil-ease-out: cubic-bezier(0.25, 0.46, 0.35, 1);
+}
+body[data-seuil-profile="state"] {
+  --seuil-duration-arrival: 900ms;
+  --seuil-duration-reveal: 550ms;
+  --seuil-arrival-distance: 6px;
+}
+body[data-seuil-profile="reading"] {
+  --seuil-duration-arrival: 800ms;
+  --seuil-duration-reveal: 450ms;
+  --seuil-arrival-distance: 4px;
+}
+body[data-seuil-profile="utility"] {
+  --seuil-duration-arrival: 550ms;
+  --seuil-delay-copy: 0ms;
+  --seuil-delay-action: 0ms;
+  --seuil-arrival-distance: 4px;
+}
+@media (max-width: 47.99rem) {
+  body[data-seuil-profile]:not([data-seuil-pilot]) {
+    --seuil-arrival-distance: 4px;
+    --seuil-reveal-distance: 4px;
+  }
+}

@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../components/motion/MotionControl.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SealMark from "../components/brand/SealMark.astro";
 import { siteConfig } from "../config/site";
@@ -51,7 +52,7 @@ const links = [
 >
   <div class="liens-wrapper">
     <div class="liens-container">
-      <header class="liens-header">
+      <header class="liens-header" data-seuil-intro="title">
         <h1 class="visually-hidden">Liens d’Orée</h1>
         <a class="brand-home" href="/" aria-label="Accueil de Construire Orée">
           <SealMark size={64} title="Sceau Orée" />
@@ -83,6 +84,7 @@ const links = [
           ))
         }
       </nav>
+      <MotionControl />
     </div>
   </div>
 </BaseLayout>

@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -22,8 +23,8 @@ const publishedEntries = allEntries
 >
   <section class="journal-intro">
     <div class="container reading-width">
-      <p class="eyebrow">Journal</p>
-      <h1>Le Journal de Construire Orée</h1>
+      <p class="eyebrow" data-seuil-intro="eyebrow">Journal</p>
+      <h1 data-seuil-intro="title">Le Journal de Construire Orée</h1>
       <p class="repere">Vous êtes ici · Journal</p>
       <div class="introduction">
         <p>
@@ -46,6 +47,7 @@ const publishedEntries = allEntries
         </p>
       </div>
     </div>
+    <div class="container reading-width"><MotionControl /></div>
   </section>
 
   <div class="container journal-index">
@@ -56,7 +58,7 @@ const publishedEntries = allEntries
         ) : (
           <ul class="entries-list" role="list">
             {publishedEntries.map((entry) => (
-              <li>
+              <li data-seuil-reveal="filet">
                 {entry.data.publishedAt && (
                   <time
                     datetime={entry.data.publishedAt.toISOString().slice(0, 10)}

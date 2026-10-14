@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../motion/MotionControl.astro";
 const questions = [
   {
     href: "/projet/",
@@ -38,14 +39,15 @@ const documents = [
 <section class="document-explorer" aria-labelledby="document-explorer-title">
   <div class="container">
     <header class="explorer-heading">
-      <p class="explorer-kicker">Explorer Orée</p>
-      <h1 id="document-explorer-title">
+      <p class="explorer-kicker" data-seuil-intro="eyebrow">Explorer Orée</p>
+      <h1 data-seuil-intro="title" id="document-explorer-title">
         Par quelle question voulez-vous entrer ?
       </h1>
-      <p class="explorer-introduction">
+      <p class="explorer-introduction" data-seuil-intro="copy">
         Les pages actuelles décrivent ce qui existe aujourd’hui. Les documents
         complets conservent la conception d’origine.
       </p>
+      <MotionControl />
     </header>
 
     <div class="explorer-grid">

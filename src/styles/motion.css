@@ -172,3 +172,384 @@ body[data-seuil-motion="reduce"]
     transform: none !important;
   }
 }
+
+/* The pilot adds rhythm without making visibility depend on JavaScript. */
+body[data-seuil-profile] [data-seuil-ambient] {
+  position: relative;
+  isolation: isolate;
+}
+
+body[data-seuil-profile] .seuil-light {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Lighting over the existing material, not a replacement for its image. */
+body[data-seuil-profile] .seuil-light::before {
+  content: "";
+  position: absolute;
+  inset: -5%;
+  background: radial-gradient(
+    ellipse at 76% 30%,
+    rgb(224 164 88 / 22%),
+    rgb(224 164 88 / 6%) 34%,
+    transparent 65%
+  );
+  opacity: 0;
+}
+
+body[data-seuil-profile] [data-seuil-ambient="paper"] .seuil-light::before {
+  background: radial-gradient(
+    ellipse at 90% 15%,
+    rgb(224 164 88 / 28%),
+    rgb(224 164 88 / 8%) 30%,
+    transparent 62%
+  );
+}
+
+.seuil-motion-control {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 40;
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  background: var(--color-canvas);
+  color: var(--color-bark);
+  box-shadow: 0 2px 12px rgb(27 46 37 / 6%);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+}
+
+.seuil-motion-control:hover {
+  border-color: var(--color-bark);
+}
+
+.seuil-motion-control[aria-disabled="true"] {
+  cursor: default;
+}
+
+@media (max-width: 47.99rem) {
+  .seuil-motion-control {
+    position: absolute;
+    right: var(--page-gutter);
+    bottom: 1rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  [data-seuil-ambient="canopy"] .seuil-motion-control {
+    color: var(--color-linen);
+    border-color: rgb(244 236 224 / 35%);
+  }
+}
+
+@keyframes seuil-copy-arrive {
+  from {
+    transform: translateY(var(--seuil-arrival-distance));
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* The cream opening is part of the photograph: keep its centre stationary
+   while the material approaches. Its full sweep remains readable. */
+@keyframes seuil-pilot-approach {
+  from {
+    transform: scale(var(--seuil-material-scale));
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes seuil-reveal {
+  from {
+    transform: translateY(var(--seuil-reveal-distance));
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes seuil-rule-draw {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes seuil-rule-trace {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes seuil-light-breathe {
+  0%,
+  100% {
+    transform: translate(-2%, 1%);
+    opacity: 0.22;
+  }
+  50% {
+    transform: translate(2%, -1%);
+    opacity: 0.72;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body[data-seuil-profile][data-seuil-motion="normal"][data-seuil-enter]
+    [data-seuil-decor-ready]
+    [data-seuil-decor] {
+    transform-origin: 76% 50%;
+    animation-name: seuil-pilot-approach;
+    animation-timing-function: var(--seuil-ease-material);
+  }
+
+  body[data-seuil-profile][data-seuil-motion="normal"]:is(
+      [data-seuil-enter],
+      [data-seuil-copy-enter]
+    )
+    [data-seuil-intro] {
+    animation: seuil-copy-arrive var(--seuil-duration-arrival)
+      var(--seuil-ease-out) both;
+    animation-delay: var(--seuil-delay-title);
+  }
+
+  body[data-seuil-profile] [data-seuil-intro="copy"] {
+    animation-delay: var(--seuil-delay-copy) !important;
+  }
+
+  body[data-seuil-profile] [data-seuil-intro="action"] {
+    animation-delay: var(--seuil-delay-action) !important;
+  }
+
+  /* The status remains stationary inside the original cream safe area. */
+  body[data-seuil-profile] [data-seuil-status] {
+    position: relative;
+    animation: none !important;
+  }
+
+  body[data-seuil-profile][data-seuil-motion="normal"][data-seuil-enter]
+    [data-seuil-status]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1px;
+    width: 1px;
+    background: var(--color-bark);
+    transform-origin: top;
+    animation: seuil-rule-draw 1600ms 400ms var(--seuil-ease-material) both;
+  }
+
+  body[data-seuil-profile][data-seuil-motion="normal"]
+    [data-seuil-arrive]:not([data-seuil-reveal="door"]):not(
+      [data-seuil-reveal="filet"]
+    ):not(.inversion-card) {
+    animation: seuil-reveal var(--seuil-duration-reveal) var(--seuil-ease-out)
+      both;
+    animation-delay: var(--seuil-reveal-delay, 0ms);
+  }
+
+  body[data-seuil-profile][data-seuil-motion="normal"]
+    [data-seuil-arrive="door"]
+    :is(.door-index, .door-content) {
+    animation: seuil-reveal var(--seuil-duration-reveal)
+      var(--seuil-reveal-delay, 0ms) var(--seuil-ease-out) both;
+  }
+
+  body[data-seuil-profile][data-seuil-motion="normal"]
+    [data-seuil-arrive="door"]
+    [data-seuil-door-arrow] {
+    animation: seuil-door-greet var(--seuil-duration-reveal)
+      calc(var(--seuil-reveal-delay, 0ms) + 100ms) var(--seuil-ease-out) both;
+  }
+
+  body[data-seuil-profile] .inversion-card[data-seuil-reveal="rule"] {
+    position: relative;
+  }
+
+  body[data-seuil-profile][data-seuil-motion="normal"]
+    .inversion-card[data-seuil-arrive]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 1px;
+    background: var(--color-bark);
+    transform-origin: left;
+    animation: seuil-rule-trace 800ms var(--seuil-ease-out) both;
+  }
+
+  body[data-seuil-pilot-ready] .seuil-light::before {
+    animation: seuil-light-breathe var(--seuil-duration-ambient) ease-in-out
+      infinite both paused;
+  }
+
+  body[data-seuil-pilot-ready][data-seuil-motion="normal"]
+    [data-seuil-ambient-running]
+    .seuil-light::before {
+    animation-play-state: running;
+  }
+
+  /* Keyboard focus is a stationary target, including during an arrival. */
+  body[data-seuil-profile]
+    :is([data-seuil-intro], [data-seuil-arrive]):focus-within,
+  body[data-seuil-profile] [data-seuil-arrive]:focus-within *,
+  body[data-seuil-profile]
+    :is([data-seuil-button], [data-seuil-link-arrow]):focus-visible {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  body[data-seuil-profile] a:focus-visible [data-seuil-link-arrow] {
+    transform: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body[data-seuil-profile] [data-seuil-status] {
+    isolation: isolate;
+  }
+
+  /* Keep the readable fallback plate while the image decodes, then blend it
+     into the photographed paper on the same entrance clock. */
+  body[data-seuil-profile] [data-seuil-status]::before {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--seuil-safe-inset));
+    z-index: -1;
+    background: var(--color-linen);
+    border-radius: 20%;
+    filter: blur(18px);
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  body[data-seuil-profile][data-seuil-opening="settled"]
+    [data-seuil-decor-ready]
+    [data-seuil-status]::before {
+    opacity: 0;
+  }
+
+  body[data-seuil-profile]
+    [data-seuil-hero]:not([data-seuil-decor-ready])
+    [data-seuil-status]::before {
+    filter: none;
+  }
+}
+
+@media (min-width: 1200px) and (prefers-reduced-motion: no-preference) {
+  body[data-seuil-profile][data-seuil-motion="normal"][data-seuil-enter]
+    [data-seuil-decor-ready]
+    [data-seuil-status]::before {
+    opacity: 0;
+    transition: opacity 2200ms var(--seuil-ease-material);
+  }
+}
+
+body[data-seuil-profile][data-seuil-motion="reduce"]
+  :is([data-seuil-intro], [data-seuil-arrive], [data-seuil-arrive] *),
+body[data-seuil-profile][data-seuil-motion="reduce"] [data-seuil-status]::after,
+body[data-seuil-profile][data-seuil-motion="reduce"]
+  [data-seuil-arrive]::after {
+  animation: none !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  body[data-seuil-profile]
+    :is([data-seuil-intro], [data-seuil-arrive], [data-seuil-arrive] *),
+  body[data-seuil-profile] [data-seuil-status]::after,
+  body[data-seuil-profile] [data-seuil-arrive]::after,
+  body[data-seuil-profile] .seuil-light::before {
+    animation: none !important;
+    transform: none !important;
+  }
+  body[data-seuil-profile] .seuil-light {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  body[data-seuil-profile] [data-seuil-status]::before {
+    display: none;
+  }
+}
+
+/* Shared profiles: destinations remain stationary, decoration responds. */
+.seuil-motion-control--inline {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  display: inline-flex;
+  align-items: center;
+  margin-block: 1rem;
+  box-shadow: none;
+  background: transparent;
+}
+.seuil-motion-control[hidden] {
+  display: none !important;
+}
+body[data-seuil-profile]
+  main
+  :is(a, button, summary):is(:hover, :active, :focus-visible) {
+  transform: none !important;
+}
+body[data-seuil-profile] [data-seuil-details][open] > :not(summary) {
+  animation: none;
+}
+body[data-seuil-profile] [data-seuil-reveal="choice"] {
+  display: block;
+}
+body[data-seuil-profile] [data-seuil-reveal="filet"] {
+  position: relative;
+}
+body[data-seuil-profile="discovery"] .seuil-light::before {
+  mask-image: linear-gradient(to right, transparent 40%, #000 85%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  body[data-seuil-profile][data-seuil-motion="normal"]
+    [data-seuil-arrive="filet"]::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: min(100%, 14rem);
+    height: 1px;
+    background: var(--color-bark);
+    pointer-events: none;
+    transform-origin: left;
+    animation: seuil-rule-trace 450ms var(--seuil-ease-out) both;
+  }
+  body[data-seuil-profile="discovery"]
+    main
+    :is(.intent-grid > li, .question-list > li) {
+    transition:
+      border-color 220ms ease-out,
+      background-color 220ms ease-out;
+  }
+  body[data-seuil-profile="discovery"] main .intent-grid > li:hover {
+    border-color: var(--color-bark);
+  }
+}
+@media (max-width: 47.99rem) {
+  body[data-seuil-profile="discovery"] .seuil-light {
+    opacity: 0.45;
+  }
+}

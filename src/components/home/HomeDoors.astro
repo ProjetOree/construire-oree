@@ -13,13 +13,18 @@ const { doors } = Astro.props;
 
 <section class="home-orientation" aria-labelledby="orientation-title">
   <div class="container">
-    <p class="section-kicker">Orientation</p>
-    <h2 id="orientation-title">Cinq portes</h2>
-    <ol class="door-list">
+    <p class="section-kicker" data-seuil-reveal="rule">Orientation</p>
+    <h2 id="orientation-title" data-seuil-reveal>Cinq portes</h2>
+    <ol class="door-list" data-seuil-row>
       {
         doors.map((door) => (
           <li>
-            <a href={door.href} class="door-link" data-seuil-door>
+            <a
+              href={door.href}
+              class="door-link"
+              data-seuil-door
+              data-seuil-reveal="door"
+            >
               <>
                 <span class="door-index" aria-hidden="true">
                   {door.index}

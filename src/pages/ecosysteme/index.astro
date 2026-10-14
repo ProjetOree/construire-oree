@@ -1,4 +1,5 @@
 ---
+import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RoleIcon from "../../components/brand/RoleIcon.astro";
 ---
@@ -8,25 +9,29 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
   description="Le cœur, les relais humains, les fondations et les horizons collectifs que l’écosystème d’Orée cherche à construire, rôle par rôle."
 >
   <article class="page-article page-ecosysteme">
-    <header class="hero-section">
+    <header class="hero-section" data-seuil-ambient="paper">
+      <span class="seuil-light" aria-hidden="true"></span>
       <div class="container reading-width">
-        <p class="eyebrow">Écosystème</p>
-        <h1>L’écosystème qu’Orée cherche à construire</h1>
+        <p class="eyebrow" data-seuil-intro="eyebrow">Écosystème</p>
+        <h1 data-seuil-intro="title">
+          L’écosystème qu’Orée cherche à construire
+        </h1>
         <p class="repere">Vous êtes ici · Écosystème</p>
-        <p class="introduction">
+        <p class="introduction" data-seuil-intro="copy">
           Orée est au point zéro : ces rôles décrivent une structure envisagée,
           mais aucun n’est actif aujourd’hui et personne ne les occupe au nom
           d’Orée. Cette page en présente l’architecture, du cœur de la
           marketplace jusqu’aux horizons collectifs les plus lointains.
         </p>
       </div>
+      <div class="container reading-width"><MotionControl /></div>
     </header>
 
     <ol class="ecosystem-layers">
       <li>
         <section class="section-block" aria-labelledby="coeur-title">
           <div class="container reading-width">
-            <h2 id="coeur-title">Le Cœur</h2>
+            <h2 id="coeur-title" data-seuil-reveal>Le Cœur</h2>
             <p class="role-family">
               <RoleIcon role="artisan" size={28} decorative />
               <strong>Artiste ou Artisan</strong>
@@ -45,7 +50,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
       <li>
         <section class="section-block" aria-labelledby="relais-title">
           <div class="container reading-width">
-            <h2 id="relais-title">Les relais humains</h2>
+            <h2 id="relais-title" data-seuil-reveal>Les relais humains</h2>
             <div class="role-grid">
               <section class="role-item" aria-labelledby="eclaireurs-title">
                 <RoleIcon role="eclaireur" size={40} decorative />
@@ -78,7 +83,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
       <li>
         <section class="section-block" aria-labelledby="fondations-title">
           <div class="container reading-width">
-            <h2 id="fondations-title">Les fondations</h2>
+            <h2 id="fondations-title" data-seuil-reveal>Les fondations</h2>
             <p class="role-family">
               <RoleIcon role="batisseur" size={28} decorative />
               <strong>Bâtisseur</strong>
@@ -138,7 +143,9 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
       <li>
         <section class="section-block" aria-labelledby="horizons-title">
           <div class="container reading-width">
-            <h2 id="horizons-title">Les horizons collectifs</h2>
+            <h2 id="horizons-title" data-seuil-reveal>
+              Les horizons collectifs
+            </h2>
             <p>
               Sous condition que le modèle se valide, l’écosystème pourrait
               s’organiser en Clairières — des communautés locales — puis
