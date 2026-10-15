@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/DocumentLayout.astro
-title: "🛠️ Le Blueprint Technique & Fiscal d'Orée"
-seoTitle: "Blueprint technique et fiscal historique d'Orée"
+title: "🛠️ Cahier d’architecture (Blueprint) technique et fiscal d’Orée"
+seoTitle: "Cahier d’architecture (Blueprint) historique d’Orée"
 description: "Document de conception complet sur les hypothèses techniques, fiscales et opérationnelles d'Orée, avec qualification actuelle."
 contextPath: "/fondations/"
 contextLabel: "Fondations actuelles"
@@ -27,6 +27,10 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 <span id="section-1"></span>
 
 ## 1. Architecture à double flux — le cœur du système
+
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> L’hypothèse consiste à séparer la vente d’une création par son créateur et celle d’un produit édité par Orée. Les circuits de paiement proposés restent à éprouver et à faire examiner.
 
 **Deux ventes, deux régimes, jamais de mélange.** Orée distingue **vendre une création originale** et **vendre un produit édité** : deux opérations juridiquement distinctes, séparées de bout en bout par l'architecture de paiement.
 
@@ -89,6 +93,10 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 
 ## 2. La stack technique
 
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> Les outils cités forment une piste pour construire la future plateforme. Leur choix et leur assemblage restent des hypothèses à tester.
+
 **Faire simple, valider vite, rester réversible.** L'infrastructure s'appuie sur des services tiers **éprouvés** ; chaque brique est **réversible** (internalisation ultérieure sans réécriture).
 
 - **Framework — Next.js (App Router) :** SSR natif pour le SEO des fiches créations + navigation fluide.
@@ -149,6 +157,10 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 
 ## 3. Les intermédiaires (Échos & Éclaireurs) & la clôture
 
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> Le projet envisage de rémunérer les personnes qui font découvrir les créations, selon des règles de partage à définir. Ce chapitre décrit une proposition, dont le cadre juridique et fiscal reste à vérifier.
+
 **Deux rôles humains, une règle d'or.**
 
 - 📣 **Les Échos** — curateurs disposant d'une audience, qui **font connaître et vendent** les créations (côté demande).
@@ -192,6 +204,10 @@ _Document de référence — Architecture technique, montage fiscal et cadre de 
 <span id="section-4"></span>
 
 ## 4. L'accompagnement comptable des artistes
+
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> Orée envisage un accompagnement pour aider les créateurs à comprendre leurs démarches comptables. Les partenaires, les conditions et la répartition des responsabilités restent à confirmer.
 
 **Outiller, sans jamais tenir les comptes.** La **tenue de la comptabilité d'autrui** est réservée aux experts-comptables inscrits. Ligne directrice : **Orée outille l'artiste, mais ne tient jamais ses comptes à sa place.**
 
@@ -254,6 +270,10 @@ Tout acte réservé est confié à un **partenaire expert-comptable**. Grâce à
 
 ## 5. L'onboarding des créateurs — un triage à deux statuts
 
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> L’accueil envisagé chercherait à comprendre ce que chaque personne crée et vend pour orienter ses démarches. Les statuts et les règles applicables demandent une vérification professionnelle, sans décider à la place du créateur.
+
 **Le statut découle de ce que l'on fabrique, pas du flux de vente.**
 
 > **🧭**
@@ -303,6 +323,10 @@ Tout acte réservé est confié à un **partenaire expert-comptable**. Grâce à
 
 ## 6. Conformité de lancement & critères de succès
 
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> Ce chapitre recense les obligations et les contrôles envisagés avant une ouverture. Il s’agit d’un cahier d’audit à vérifier et à actualiser, sans certification de conformité.
+
 **Le socle de conformité opérationnel.** En ESS, la conformité est une **preuve de cohérence avec les valeurs** autant qu'une obligation légale.
 **📋 **Obligations en vigueur au lancement**** - 🔐 **RGPD :** consentement, registre des traitements, DPA avec chaque sous-traitant (Stripe, Cloudinary, Vercel, Resend, Plausible), hébergement UE privilégié, droit à l'effacement. Validation externe avant lancement. - 🧾 **Facturation électronique :** réception obligatoire **1ᵉʳ sept. 2026**, émission **1ᵉʳ sept. 2027**. Passage par une **Plateforme Agréée** capable d'**auto-facturation multi-émetteurs**. - 🏛️ **Urssaf Limousin (diffuseur) :** déclaration sous **8 jours**, **contribution 1,1 %** due par Orée sur le brut versé à l'artiste, **dispense de précompte** exigée à l'onboarding. - 🛡️ **Droit de la consommation (B2C) :** **rétractation 14 jours** + remboursement sous 14 j, médiateur agréé **CECMC**. Exemption œuvres sur commande / personnalisées. - ⏱️ **Délai de versement :** artiste réglé à **livraison + 14 j** (payouts manuels). - 📜 **CGV :** **deux jeux distincts** (créations originales vs produits édités), validés par avocat. - 🏷️ **Mentions légales (LCEN, art. 6-III) :** éditeur, directeur de publication, identité + coordonnées de l'hébergeur (Vercel). - 📝 **Contrat artiste-plateforme :** accord écrit (droits, prix libre, mandat de facturation), modèle inspiré du **CPGA**. - 🎨 **PI & authenticité :** **licence de reproduction non exclusive** (Flux 2) ; l'artiste garde propriété + droit moral ; déclaration de titularité, signalement PI (DSA art. 16). - 🛰️ **DSA :** en tant que petite entreprise, Orée est **exonérée de la traçabilité des vendeurs (art. 30)** au titre de l'**art. 29** — la vérification d'identité relève alors de la **DSP2 (Stripe Connect)**. Orée maintient en revanche une **conformité stricte à la modération et à l'exposé des motifs (art. 16/17)**, un point de contact et des CGU. - 🔧 **Garanties légales :** **conformité 2 ans** (art. L. 217-3) + **vices cachés** (art. 1641 C. civ.). Flux 2 : Orée vendeur ; Flux 1 : l'artiste (co-responsabilité possible, _Amazon_ C-649/17). - ♻️ **Droit de suite :** **hors périmètre** (vise les reventes via professionnel, art. L. 122-8) → Orée ne fait que des ventes primaires. - ♿ **Accessibilité :** **WCAG 2.1 AA** visé dès le design system.
 
@@ -346,6 +370,10 @@ Tout acte réservé est confié à un **partenaire expert-comptable**. Grâce à
 <span id="section-7"></span>
 
 ## 7. Cadre opérationnel de lancement
+
+> **En résumé (Langage clair)**
+> _Ajout éditorial actuel — hypothèses de conception ; le texte source ci-dessous est conservé._
+> Le lancement envisagé reposerait sur des missions limitées et une organisation progressive. Les formes de collaboration et l’horizon coopératif restent à examiner juridiquement et économiquement.
 
 **Logistique, pilotage et gouvernance des validations.**
 

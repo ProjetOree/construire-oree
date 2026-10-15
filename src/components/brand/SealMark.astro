@@ -8,9 +8,9 @@ interface Props {
 const { size = 48, title, variant = "habite" } = Astro.props;
 
 const isNegatif = variant === "negatif";
-const backdropFill = isNegatif ? "#1B2E25" : "#F4ECE0";
-const shellFill = isNegatif ? "#F4ECE0" : "#1B2E25";
-const windowFill = isNegatif ? "#1B2E25" : "#F4ECE0";
+const backdropFill = isNegatif ? "#182B22" : "#F2ECE1";
+const shellFill = isNegatif ? "#F2ECE1" : "#182B22";
+const windowFill = isNegatif ? "#182B22" : "#F2ECE1";
 ---
 
 <svg
@@ -34,5 +34,5 @@ const windowFill = isNegatif ? "#1B2E25" : "#F4ECE0";
     d="M100 66 C 126 65 144 84 144 108 C 144 134 126 146 100 147 C 74 148 56 134 56 108 C 56 84 74 67 100 66 Z"
     fill={windowFill}></path>
 
-  <circle cx="100" cy="66" r="10" fill="#E0A458"></circle>
+  <circle cx="100" cy="66" r="10" fill="#C88A56"></circle>
 </svg>

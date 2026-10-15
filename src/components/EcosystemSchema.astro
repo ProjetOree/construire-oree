@@ -1,0 +1,273 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = "ecosystem-schema" } = Astro.props;
+const titleId = `${id}-title`;
+const descriptionId = `${id}-description`;
+---
+
+<figure class="ecosystem-schema">
+  <div class="ecosystem-schema__drawing">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 520 520"
+      width="520"
+      height="520"
+      role="img"
+      aria-label="Architecture envisagée de l’écosystème Orée en quatre strates concentriques"
+      aria-describedby={descriptionId}
+      focusable="false"
+    >
+      <title id={titleId}>
+        L’écosystème Orée : quatre strates autour de la création
+      </title>
+      <desc id={descriptionId}>
+        Schéma d’une architecture envisagée, sans indication de rôles déjà
+        actifs. Du centre vers l’extérieur : 1, Le Cœur, Artistes et Artisans,
+        création originale et produits édités ; 2, Les Relais humains,
+        Éclaireurs pour repérer et Échos pour raconter ; 3, Les Fondations,
+        Bâtisseurs pour la technique, le légal et le fiscal, et la logistique ;
+        4, Les Horizons collectifs, Clairières locales et La Canopée,
+        coopérative envisagée. La légende donne le détail de chaque strate.
+      </desc>
+
+      <g aria-hidden="true">
+        <circle
+          cx="260"
+          cy="260"
+          r="244"
+          fill="#F2ECE1"
+          stroke="#182B22"
+          stroke-width="2"></circle>
+        <circle cx="260" cy="260" r="187" fill="#182B22"></circle>
+        <circle cx="260" cy="260" r="132" fill="#C88A56"></circle>
+        <circle cx="260" cy="260" r="78" fill="#9E472A"></circle>
+
+        <text class="ecosystem-schema__number" x="260" y="49" fill="#182B22"
+          >04</text
+        >
+        <text class="ecosystem-schema__number" x="260" y="106" fill="#F2ECE1"
+          >03</text
+        >
+        <text class="ecosystem-schema__number" x="260" y="161" fill="#182B22"
+          >02</text
+        >
+        <text class="ecosystem-schema__number" x="260" y="225" fill="#F2ECE1"
+          >01</text
+        >
+        <text class="ecosystem-schema__heart" x="260" y="266" fill="#F2ECE1"
+          >Le Cœur</text
+        >
+        <text class="ecosystem-schema__subtitle" x="260" y="294" fill="#F2ECE1"
+          >La création</text
+        >
+      </g>
+    </svg>
+  </div>
+
+  <figcaption class="ecosystem-schema__caption">
+    <p class="ecosystem-schema__status">Architecture envisagée</p>
+    <p class="ecosystem-schema__intro">
+      Du cœur créatif aux horizons collectifs, quatre strates pour penser les
+      liens entre les rôles.
+    </p>
+
+    <ol
+      class="ecosystem-schema__legend"
+      aria-label="Les quatre strates, du centre vers l’extérieur"
+    >
+      <li class="ecosystem-schema__layer ecosystem-schema__layer--heart">
+        <span class="ecosystem-schema__badge" aria-hidden="true">01</span>
+        <div>
+          <h3>Le Cœur</h3>
+          <p class="ecosystem-schema__roles">Artistes &amp; Artisans</p>
+          <p>Création originale &amp; Produits édités.</p>
+        </div>
+      </li>
+      <li class="ecosystem-schema__layer ecosystem-schema__layer--relays">
+        <span class="ecosystem-schema__badge" aria-hidden="true">02</span>
+        <div>
+          <h3>Les Relais humains</h3>
+          <p class="ecosystem-schema__roles">Éclaireurs &amp; Échos</p>
+          <p>Les Éclaireurs pour repérer ; les Échos pour raconter.</p>
+        </div>
+      </li>
+      <li class="ecosystem-schema__layer ecosystem-schema__layer--foundations">
+        <span class="ecosystem-schema__badge" aria-hidden="true">03</span>
+        <div>
+          <h3>Les Fondations</h3>
+          <p class="ecosystem-schema__roles">Bâtisseurs</p>
+          <p>Tech, Légal/Fiscal et Logistique.</p>
+        </div>
+      </li>
+      <li class="ecosystem-schema__layer ecosystem-schema__layer--horizons">
+        <span class="ecosystem-schema__badge" aria-hidden="true">04</span>
+        <div>
+          <h3>Les Horizons collectifs</h3>
+          <p class="ecosystem-schema__roles">
+            Clairières locales &amp; La Canopée
+          </p>
+          <p>Des ancrages locaux et une coopérative envisagée.</p>
+        </div>
+      </li>
+    </ol>
+    <p class="ecosystem-schema__note">
+      Ce schéma présente une organisation à construire ; il ne décrit pas des
+      équipes ou des structures déjà en activité.
+    </p>
+  </figcaption>
+</figure>
+
+<style>
+  .ecosystem-schema {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    margin: 0;
+    color: #182b22;
+    font-family: var(--font-body);
+  }
+
+  .ecosystem-schema__drawing {
+    min-width: 0;
+  }
+
+  .ecosystem-schema svg {
+    display: block;
+    width: 100%;
+    max-width: 36rem;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .ecosystem-schema__number {
+    font-family: var(--font-mono);
+    font-size: 26px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+
+  .ecosystem-schema__heart {
+    font-family: var(--font-display);
+    font-size: 31px;
+    text-anchor: middle;
+  }
+
+  .ecosystem-schema__subtitle {
+    font-family: var(--font-body);
+    font-size: 20px;
+    text-anchor: middle;
+  }
+
+  .ecosystem-schema__caption {
+    min-width: 0;
+  }
+
+  .ecosystem-schema__status {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .ecosystem-schema__intro {
+    max-width: 42ch;
+    margin: 0 0 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .ecosystem-schema__legend {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ecosystem-schema__layer {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.875rem;
+  }
+
+  .ecosystem-schema__badge {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .ecosystem-schema__layer--heart .ecosystem-schema__badge {
+    background: #9e472a;
+    color: #f2ece1;
+  }
+
+  .ecosystem-schema__layer--relays .ecosystem-schema__badge {
+    background: #c88a56;
+    color: #182b22;
+  }
+
+  .ecosystem-schema__layer--foundations .ecosystem-schema__badge {
+    background: #182b22;
+    color: #f2ece1;
+  }
+
+  .ecosystem-schema__layer--horizons .ecosystem-schema__badge {
+    border: 1px solid #182b22;
+    background: #f2ece1;
+    color: #182b22;
+  }
+
+  .ecosystem-schema__layer h3 {
+    margin: 0 0 0.25rem;
+    color: #182b22;
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    line-height: 1.25;
+  }
+
+  .ecosystem-schema__layer p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .ecosystem-schema__roles {
+    font-weight: 600;
+  }
+
+  .ecosystem-schema__note {
+    margin: 1.5rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid #c88a56;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 48rem) {
+    .ecosystem-schema {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+
+    .ecosystem-schema svg {
+      max-width: 28rem;
+    }
+  }
+
+  @media (max-width: 24rem) {
+    .ecosystem-schema__subtitle {
+      display: none;
+    }
+  }
+</style>

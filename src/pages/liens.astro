@@ -1,5 +1,4 @@
 ---
-import MotionControl from "../components/motion/MotionControl.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SealMark from "../components/brand/SealMark.astro";
 import { siteConfig } from "../config/site";
@@ -23,7 +22,7 @@ const links = [
   },
   {
     id: "suivre",
-    label: "Suis l’aventure — newsletter",
+    label: "Suivez l’aventure — newsletter",
     url: siteConfig.links.follow + utm,
     type: "primary",
     detail: "Formulaire de suivi par courriel · Tally",
@@ -45,11 +44,7 @@ const links = [
 ];
 ---
 
-<BaseLayout
-  title="Liens"
-  description="Retrouvez tous les liens d’Orée."
-  hideChrome={true}
->
+<BaseLayout title="Liens" description="Retrouvez tous les liens d’Orée.">
   <div class="liens-wrapper">
     <div class="liens-container">
       <header class="liens-header" data-seuil-intro="title">
@@ -84,7 +79,6 @@ const links = [
           ))
         }
       </nav>
-      <MotionControl />
     </div>
   </div>
 </BaseLayout>

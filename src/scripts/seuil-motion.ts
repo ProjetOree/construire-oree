@@ -15,22 +15,11 @@ function initializeSeuil() {
         : profile === "utility"
           ? 650
           : 1180;
-  const control = body.querySelector<HTMLButtonElement>(
-    "[data-seuil-motion-control]",
-  );
   const ambientSurfaces = motion
     ? Array.from(body.querySelectorAll<HTMLElement>("[data-seuil-ambient]"))
     : [];
   const ambientVisibility = new Map<Element, number>();
   let pageActive = true;
-  let paused = false;
-  if (motion) {
-    try {
-      paused = sessionStorage.getItem("oree-motion-paused") === "true";
-    } catch {
-      // Private browsing or denied storage does not prevent a local pause.
-    }
-  }
   const hero = document.querySelector<HTMLElement>("[data-seuil-hero]");
   const decor = hero?.querySelector<HTMLImageElement>("img[data-seuil-decor]");
   const doors = Array.from(
@@ -49,10 +38,9 @@ function initializeSeuil() {
     !location.hash &&
     window.scrollY === 0 &&
     navigation?.type !== "back_forward" &&
-    !preference.matches &&
-    !paused;
+    !preference.matches;
   let fontsReady = !motion;
-  let copyEntranceAllowed = pilotArrivalsAllowed && !paused;
+  let copyEntranceAllowed = pilotArrivalsAllowed;
   let openingSettled = !copyEntranceAllowed;
   let openingDeadline: ReturnType<typeof setTimeout> | undefined;
   if (motion)
@@ -109,7 +97,6 @@ function initializeSeuil() {
     if (
       openingSettled &&
       !preference.matches &&
-      !paused &&
       pageActive &&
       !document.hidden
     ) {
@@ -162,25 +149,10 @@ function initializeSeuil() {
   }
 
   function updatePreference() {
-    const reduced = preference.matches || paused;
+    const reduced = preference.matches;
     body.dataset.seuilMotion = reduced ? "reduce" : "normal";
     // Returning to normal enables local responses, never replays an arrival.
     if (reduced) stopArrivals();
-    if (control) {
-      control.hidden = false;
-      control.setAttribute("aria-pressed", String(!reduced));
-      control.setAttribute("aria-disabled", String(preference.matches));
-      control.textContent = preference.matches
-        ? "Animations · réduites"
-        : paused
-          ? "Animations · en pause"
-          : "Animations · actives";
-      control.title = preference.matches
-        ? "La réduction des animations suit la préférence de votre appareil."
-        : paused
-          ? "Reprendre les animations"
-          : "Mettre les animations en pause";
-    }
     updateAmbient();
   }
   updatePreference();
@@ -192,7 +164,6 @@ function initializeSeuil() {
       entranceStarted ||
       !fontsReady ||
       preference.matches ||
-      paused ||
       (motion && (openingSettled || performance.now() > 2500)) ||
       location.hash ||
       window.scrollY > 0
@@ -322,16 +293,6 @@ function initializeSeuil() {
     body.setAttribute("data-seuil-pilot-ready", "");
     // A missing or very late image must not hold the scroll/ambient phases.
     if (!openingSettled) openingDeadline = setTimeout(settleOpening, 2500);
-    control?.addEventListener("click", () => {
-      if (preference.matches) return;
-      paused = !paused;
-      try {
-        sessionStorage.setItem("oree-motion-paused", String(paused));
-      } catch {
-        // The control also works without persistent storage.
-      }
-      updatePreference();
-    });
 
     // A short font barrier avoids animating the title through a font swap.
     // No visibility gate: slow fonts/images leave the final HTML readable.
@@ -349,7 +310,6 @@ function initializeSeuil() {
         body.dataset.seuilPage === "internal" &&
         copyEntranceAllowed &&
         !preference.matches &&
-        !paused &&
         !document.hidden &&
         !location.hash &&
         window.scrollY === 0 &&
@@ -481,7 +441,6 @@ function initializeSeuil() {
               !openingSettled ||
               !pilotArrivalsAllowed ||
               preference.matches ||
-              paused ||
               document.hidden ||
               body.querySelector("[data-seuil-arrive]")
             )
@@ -672,9 +631,7 @@ function initializeSeuil() {
       event.target
         .closest("[data-seuil-arrive]")
         ?.removeAttribute("data-seuil-arrive");
-      if (
-        event.target.closest("[data-seuil-intro], [data-seuil-motion-control]")
-      ) {
+      if (event.target.closest("[data-seuil-intro]")) {
         entranceAllowed = false;
         finishEntrance();
         finishCopyEntrance();
@@ -689,7 +646,7 @@ function initializeSeuil() {
     );
     if (!target) return;
     stabilizeGroup(target);
-    if (target.closest("[data-seuil-intro], [data-seuil-motion-control]")) {
+    if (target.closest("[data-seuil-intro]")) {
       entranceAllowed = false;
       finishEntrance();
       finishCopyEntrance();
@@ -710,13 +667,6 @@ function initializeSeuil() {
   });
   window.addEventListener("pageshow", (event) => {
     pageActive = true;
-    if (motion) {
-      try {
-        paused = sessionStorage.getItem("oree-motion-paused") === "true";
-      } catch {
-        /* Keep the current in-memory choice. */
-      }
-    }
     if (event.persisted || location.hash || window.scrollY > 0) stopArrivals();
     updatePreference();
     void inspectDecor();

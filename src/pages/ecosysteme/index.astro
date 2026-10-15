@@ -1,6 +1,6 @@
 ---
-import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EcosystemSchema from "../../components/EcosystemSchema.astro";
 import RoleIcon from "../../components/brand/RoleIcon.astro";
 ---
 
@@ -18,63 +18,81 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
         </h1>
         <p class="repere">Vous êtes ici · Écosystème</p>
         <p class="introduction" data-seuil-intro="copy">
-          Orée est au point zéro : ces rôles décrivent une structure envisagée,
-          mais aucun n’est actif aujourd’hui et personne ne les occupe au nom
-          d’Orée. Cette page en présente l’architecture, du cœur de la
-          marketplace jusqu’aux horizons collectifs les plus lointains.
+          Cette page présente l’architecture humaine envisagée pour Orée :
+          quatre rôles complémentaires, du cœur de l’atelier jusqu’aux horizons
+          coopératifs, conçus pour que créer ne signifie plus s’épuiser à tout
+          gérer seul.
         </p>
       </div>
-      <div class="container reading-width"><MotionControl /></div>
     </header>
+
+    <section
+      class="ecosystem-overview container"
+      aria-label="Schéma de l’écosystème envisagé"
+    >
+      <EcosystemSchema id="page-ecosystem-schema" />
+    </section>
 
     <ol class="ecosystem-layers">
       <li>
         <section class="section-block" aria-labelledby="coeur-title">
-          <div class="container reading-width">
-            <h2 id="coeur-title" data-seuil-reveal>Le Cœur</h2>
-            <p class="role-family">
-              <RoleIcon role="artisan" size={28} decorative />
-              <strong>Artiste ou Artisan</strong>
-            </p>
-            <p>
-              Au centre de l’écosystème se trouvent deux gestes simples : créer
-              et découvrir. Une personne crée une œuvre originale ; une autre la
-              découvre et choisit de la soutenir. Tout le reste de l’écosystème
-              existe pour rendre ce geste plus simple et plus sûr, sans jamais
-              le remplacer.
-            </p>
+          <div class="container ecosystem-layer-grid">
+            <header class="ecosystem-layer-heading">
+              <h2 id="coeur-title" data-seuil-reveal>Le Cœur</h2>
+              <p class="role-family">
+                <RoleIcon role="artisan" size={28} decorative />
+                <strong>Artiste ou Artisan</strong>
+              </p>
+            </header>
+            <div class="ecosystem-layer-content">
+              <p>
+                Au centre de l’écosystème se trouvent deux gestes simples :
+                créer et découvrir. Une personne crée une œuvre originale ; une
+                autre la découvre et choisit de la soutenir. Tout le reste de
+                l’écosystème existe pour rendre ce geste plus simple et plus
+                sûr, sans jamais le remplacer.
+              </p>
+            </div>
           </div>
         </section>
       </li>
 
       <li>
         <section class="section-block" aria-labelledby="relais-title">
-          <div class="container reading-width">
-            <h2 id="relais-title" data-seuil-reveal>Les relais humains</h2>
-            <div class="role-grid">
-              <section class="role-item" aria-labelledby="eclaireurs-title">
-                <RoleIcon role="eclaireur" size={40} decorative />
-                <div>
-                  <h3 class="role-name" id="eclaireurs-title">
-                    Les Éclaireurs
-                  </h3>
-                  <p>
-                    Les Éclaireurs pourraient repérer des talents qui n’ont pas
-                    encore osé se présenter et leur ouvrir une porte.
-                  </p>
-                </div>
-              </section>
-              <section class="role-item" aria-labelledby="echos-title">
-                <RoleIcon role="echo" size={40} decorative />
-                <div>
-                  <h3 class="role-name" id="echos-title">Les Échos</h3>
-                  <p>
-                    Les Échos pourraient faire connaître les créations et les
-                    histoires d’Orée sans se substituer aux personnes qui
-                    créent.
-                  </p>
-                </div>
-              </section>
+          <div class="container ecosystem-layer-grid">
+            <header class="ecosystem-layer-heading">
+              <h2 id="relais-title" data-seuil-reveal>Les relais humains</h2>
+              <p class="role-family">
+                <RoleIcon role="eclaireur" size={28} decorative />
+                <strong>Éclaireurs et Échos</strong>
+              </p>
+            </header>
+            <div class="ecosystem-layer-content">
+              <div class="role-grid">
+                <section class="role-item" aria-labelledby="eclaireurs-title">
+                  <RoleIcon role="eclaireur" size={40} decorative />
+                  <div>
+                    <h3 class="role-name" id="eclaireurs-title">
+                      Les Éclaireurs
+                    </h3>
+                    <p>
+                      Les Éclaireurs pourraient repérer des talents qui n’ont
+                      pas encore osé se présenter et leur ouvrir une porte.
+                    </p>
+                  </div>
+                </section>
+                <section class="role-item" aria-labelledby="echos-title">
+                  <RoleIcon role="echo" size={40} decorative />
+                  <div>
+                    <h3 class="role-name" id="echos-title">Les Échos</h3>
+                    <p>
+                      Les Échos pourraient faire connaître les créations et les
+                      histoires d’Orée sans se substituer aux personnes qui
+                      créent.
+                    </p>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </section>
@@ -82,59 +100,63 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
 
       <li>
         <section class="section-block" aria-labelledby="fondations-title">
-          <div class="container reading-width">
-            <h2 id="fondations-title" data-seuil-reveal>Les fondations</h2>
-            <p class="role-family">
-              <RoleIcon role="batisseur" size={28} decorative />
-              <strong>Bâtisseur</strong>
-            </p>
-            <p>
-              Ce qui doit exister avant que l’écosystème puisse fonctionner
-              reste à construire. Les sujets techniques, juridiques, fiscaux,
-              opérationnels et logistiques sont encore à cadrer.
-            </p>
-            <div class="role-grid role-grid--triple">
-              <section class="role-item" aria-labelledby="tech-donnees-title">
-                <RoleIcon role="batisseur" size={40} decorative />
-                <div>
-                  <h3 class="role-name" id="tech-donnees-title">
-                    Tech et Données
-                  </h3>
-                  <p>
-                    Le site, les outils internes et la fiabilité des données de
-                    construction.
-                  </p>
-                </div>
-              </section>
-              <section class="role-item" aria-labelledby="legal-fiscal-title">
-                <RoleIcon role="batisseur" size={40} decorative />
-                <div>
-                  <h3 class="role-name" id="legal-fiscal-title">
-                    Légal et Fiscal
-                  </h3>
-                  <p>
-                    Les statuts, les contrats et le cadre fiscal restent à
-                    valider ; voir <a href="/fondations/"
-                      >les Fondations et leur état</a
-                    >.
-                  </p>
-                </div>
-              </section>
-              <section
-                class="role-item"
-                aria-labelledby="operations-logistique-title"
-              >
-                <RoleIcon role="batisseur" size={40} decorative />
-                <div>
-                  <h3 class="role-name" id="operations-logistique-title">
-                    Opérations et Logistique
-                  </h3>
-                  <p>
-                    Le paiement, la facturation et la livraison, encore à
-                    concevoir.
-                  </p>
-                </div>
-              </section>
+          <div class="container ecosystem-layer-grid">
+            <header class="ecosystem-layer-heading">
+              <h2 id="fondations-title" data-seuil-reveal>Les fondations</h2>
+              <p class="role-family">
+                <RoleIcon role="batisseur" size={28} decorative />
+                <strong>Bâtisseur</strong>
+              </p>
+            </header>
+            <div class="ecosystem-layer-content">
+              <p>
+                Ce qui doit exister avant que l’écosystème puisse fonctionner
+                reste à construire. Les sujets techniques, juridiques, fiscaux,
+                opérationnels et logistiques sont encore à cadrer.
+              </p>
+              <div class="role-grid role-grid--triple">
+                <section class="role-item" aria-labelledby="tech-donnees-title">
+                  <RoleIcon role="batisseur" size={40} decorative />
+                  <div>
+                    <h3 class="role-name" id="tech-donnees-title">
+                      Tech et Données
+                    </h3>
+                    <p>
+                      Le site, les outils internes et la fiabilité des données
+                      de construction.
+                    </p>
+                  </div>
+                </section>
+                <section class="role-item" aria-labelledby="legal-fiscal-title">
+                  <RoleIcon role="batisseur" size={40} decorative />
+                  <div>
+                    <h3 class="role-name" id="legal-fiscal-title">
+                      Légal et Fiscal
+                    </h3>
+                    <p>
+                      Les statuts, les contrats et le cadre fiscal restent à
+                      valider ; voir <a href="/fondations/"
+                        >les Fondations et leur état</a
+                      >.
+                    </p>
+                  </div>
+                </section>
+                <section
+                  class="role-item"
+                  aria-labelledby="operations-logistique-title"
+                >
+                  <RoleIcon role="batisseur" size={40} decorative />
+                  <div>
+                    <h3 class="role-name" id="operations-logistique-title">
+                      Opérations et Logistique
+                    </h3>
+                    <p>
+                      Le paiement, la facturation et la livraison, encore à
+                      concevoir.
+                    </p>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </section>
@@ -142,17 +164,22 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
 
       <li>
         <section class="section-block" aria-labelledby="horizons-title">
-          <div class="container reading-width">
-            <h2 id="horizons-title" data-seuil-reveal>
-              Les horizons collectifs
-            </h2>
-            <p>
-              Sous condition que le modèle se valide, l’écosystème pourrait
-              s’organiser en Clairières — des communautés locales — puis
-              converger vers La Canopée, un horizon coopératif où chaque
-              personne pèserait une voix, indépendamment de sa contribution
-              financière.
-            </p>
+          <div class="container ecosystem-layer-grid">
+            <header class="ecosystem-layer-heading">
+              <h2 id="horizons-title" data-seuil-reveal>
+                Les horizons collectifs
+              </h2>
+              <p class="layer-status">Horizon conditionnel</p>
+            </header>
+            <div class="ecosystem-layer-content">
+              <p>
+                Sous condition que le modèle se valide, l’écosystème pourrait
+                s’organiser en Clairières — des communautés locales — puis
+                converger vers La Canopée, un horizon coopératif où chaque
+                personne pèserait une voix, indépendamment de sa contribution
+                financière.
+              </p>
+            </div>
           </div>
         </section>
       </li>
@@ -221,7 +248,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
         </p>
         <p>
           Pour partager une expérience, éclairer un choix ou proposer un appui
-          aujourd’hui, consulte <a href="/rejoindre/">Participer</a>.
+          aujourd’hui, consultez <a href="/rejoindre/">Participer</a>.
         </p>
         <div class="actions">
           <a data-seuil-button class="button button-primary" href="/rejoindre/"
@@ -280,6 +307,51 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     list-style: none;
   }
 
+  .ecosystem-overview {
+    padding-block: clamp(2rem, 4vw, 3rem);
+  }
+  .ecosystem-layers > li {
+    width: 100%;
+    max-width: none;
+    border-top: 1px solid rgba(24, 43, 34, 0.12);
+    background: var(--color-canvas);
+  }
+  .ecosystem-layers > li:nth-child(2) {
+    background: var(--color-linen);
+  }
+  .ecosystem-layers > li:nth-child(4) {
+    background: var(--color-linen);
+  }
+  .ecosystem-layer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 2rem 4rem;
+    align-items: start;
+  }
+  .ecosystem-layer-heading,
+  .ecosystem-layer-content {
+    min-width: 0;
+  }
+  .ecosystem-layer-heading h2 {
+    margin-bottom: 0.75rem;
+  }
+  .layer-status {
+    margin-bottom: 0;
+    color: var(--color-terracotta);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  .ecosystem-layer-content > :last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 56rem) {
+    .ecosystem-layer-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+  }
   .role-grid {
     display: grid;
     gap: var(--space-6);
@@ -406,7 +478,7 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     }
 
     .role-grid--triple {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .persona-grid {

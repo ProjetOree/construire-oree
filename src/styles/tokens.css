@@ -5,13 +5,13 @@
    * Palette officielle d’Orée
    */
 
-  --color-canopy: #1b2e25;
+  --color-canopy: #182b22;
   --color-moss: #4a6a4f;
-  --color-terracotta: #c4724e;
+  --color-terracotta: #9e472a;
   --color-terracotta-hover: #a85d3c;
   --color-terracotta-light: #f5e6dd;
-  --color-dawn: #e0a458;
-  --color-linen: #f4ece0;
+  --color-dawn: #c88a56;
+  --color-linen: #f2ece1;
   --color-charcoal: #2c2825;
   --color-bark: #6b4a2f;
   --color-burgundy: #6b2d3e;
@@ -40,7 +40,7 @@
   --color-primary: var(--color-canopy);
   --color-primary-hover: #0f1d16;
 
-  --color-action: #a54d2c;
+  --color-action: #9e472a;
   --color-action-hover: #813a21;
   --color-action-soft: var(--color-terracotta-light);
 
