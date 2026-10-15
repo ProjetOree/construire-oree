@@ -62,14 +62,6 @@ import texture from "../../assets/seuil/texture-mobile.webp";
       >
     </div>
   </div>
-  <button
-    class="seuil-motion-control"
-    data-seuil-motion-control
-    type="button"
-    aria-label="Animations"
-    aria-pressed="true"
-    hidden>Animations · actives</button
-  >
 </section>
 
 <style>
@@ -113,12 +105,22 @@ import texture from "../../assets/seuil/texture-mobile.webp";
   .section-kicker {
     margin: 0;
     padding-left: 0.75rem;
-    border-left: 1px solid var(--seuil-rule);
+    position: relative;
+    align-self: start;
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    line-height: 1.6;
+    line-height: 1.2;
     letter-spacing: 0.13em;
     text-transform: uppercase;
+  }
+  .section-kicker::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    width: 2px;
+    height: 1em;
+    background: #c88a56;
   }
   .threshold-introduction {
     margin: 0;
@@ -132,8 +134,7 @@ import texture from "../../assets/seuil/texture-mobile.webp";
     border-left: 1px solid var(--seuil-rule);
   }
   .threshold-status .section-kicker {
-    border: 0;
-    padding: 0;
+    padding-left: 0.75rem;
   }
   .threshold-status h2 {
     color: var(--color-linen);

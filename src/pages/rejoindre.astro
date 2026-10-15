@@ -1,5 +1,4 @@
 ---
-import MotionControl from "../components/motion/MotionControl.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RoleIcon from "../components/brand/RoleIcon.astro";
 import { siteConfig } from "../config/site";
@@ -7,7 +6,7 @@ import { siteConfig } from "../config/site";
 
 <BaseLayout
   title="Participer à la construction d’Orée"
-  description="Partage une expérience, une expertise ou une question pour aider à construire Orée, sans promesse de mission, de rémunération ou d’accès à une marketplace."
+  description="Partagez une expérience, une expertise ou une question pour aider à construire Orée, en toute liberté et sans engagement."
 >
   <div class="page-rejoindre">
     <section class="join-hero">
@@ -18,14 +17,10 @@ import { siteConfig } from "../config/site";
         <h1 data-seuil-intro="title">Aider à construire Orée, aujourd’hui</h1>
         <p class="repere">Vous êtes ici · Participer</p>
         <p class="introduction" data-seuil-intro="copy">
-          Orée est au point zéro : la marketplace n’est pas ouverte. Tu peux
-          pourtant déjà partager une expérience, éclairer un choix, proposer un
-          appui ou un partenariat, poser une question en privé ou suivre la
-          construction. Tu n’as pas besoin de choisir un rôle maintenant.
-        </p>
-        <p class="introduction">
-          Ces échanges ne constituent ni une offre d’emploi, ni une mission, ni
-          une promesse de rémunération ou de réponse.
+          Orée est au point zéro : la marketplace n’est pas encore ouverte. Vous
+          pouvez déjà nous aider à comprendre ce qui compte, à vérifier une
+          piste ou à faire connaître la démarche. Un premier geste suffit ; vous
+          n’avez pas besoin de choisir un rôle maintenant.
         </p>
         <a
           data-seuil-button
@@ -34,164 +29,74 @@ import { siteConfig } from "../config/site";
           href="#agir-maintenant">Voir ce qui est utile aujourd’hui</a
         >
       </div>
-      <div class="container reading-width"><MotionControl /></div>
-    </section>
-
-    <section id="agir-maintenant" class="join-summary">
-      <div class="container reading-width">
-        <h2>Choisir un premier geste</h2>
-        <p>
-          Le projet cherche des expériences, des questions et des appuis
-          concrets, pas une disponibilité à plein temps. Choisis le geste le
-          plus simple pour commencer.
-        </p>
-
-        <ul class="intent-grid" role="list" data-seuil-row>
-          <li>
-            <strong data-seuil-reveal="choice"
-              >Partager une expérience de création</strong
-            >
-            <p>
-              Ce qui complique le fait de créer, montrer, vendre ou gérer
-              l’administratif.
-            </p>
-            <div class="intent-actions">
-              <a href={siteConfig.links.join}
-                >Partager ton expérience — formulaire externe</a
-              >
-            </div>
-          </li>
-          <li>
-            <strong data-seuil-reveal="choice">Éclairer un arbitrage</strong>
-            <p>
-              Un regard technique, juridique, fiscal, opérationnel ou issu du
-              terrain.
-            </p>
-            <div class="intent-actions">
-              <a href={siteConfig.links.join}
-                >Proposer un éclairage — formulaire externe</a
-              >
-            </div>
-          </li>
-          <li>
-            <strong data-seuil-reveal="choice"
-              >Aider à repérer ou mettre en lumière</strong
-            >
-            <p>
-              Ce qui rend le repérage, la curation ou la recommandation utile et
-              juste.
-            </p>
-            <div class="intent-actions">
-              <a href={siteConfig.links.join}
-                >Partager ton regard — formulaire externe</a
-              >
-            </div>
-          </li>
-          <li>
-            <strong data-seuil-reveal="choice"
-              >Proposer un appui ou un partenariat</strong
-            >
-            <p>
-              Une expertise, une ressource, une mise en relation ou un soutien
-              institutionnel ou non.
-            </p>
-            <div class="intent-actions">
-              <a href={siteConfig.links.contact}
-                >Écrire à Orée — formulaire externe</a
-              >
-            </div>
-          </li>
-          <li>
-            <strong data-seuil-reveal="choice"
-              >Poser une question ou suivre sans s’engager</strong
-            >
-            <p>
-              Tu peux écrire en privé ou lire les nouvelles publiques sans
-              choisir de rôle.
-            </p>
-            <div class="intent-actions">
-              <a href={siteConfig.links.contact}
-                >Écrire en privé — formulaire externe</a
-              >
-              <a href="/journal/">Lire le Journal et suivre par RSS</a>
-            </div>
-          </li>
-        </ul>
-        <p class="actions-note">
-          Les trois premières actions ouvrent le même formulaire de
-          contribution. Le libellé précise ton intention mais ne crée ni routage
-          automatique ni traitement différencié. Écrire à Orée ouvre un
-          formulaire de contact distinct. Aucun délai de réponse n’est promis et
-          aucun formulaire n’engage l’une ou l’autre partie.
-        </p>
-      </div>
     </section>
 
     <section
-      class="discussion-section bloc-inverse"
-      data-seuil-ambient="canopy"
-      aria-labelledby="discussions-title"
+      id="agir-maintenant"
+      class="join-summary"
+      aria-labelledby="premier-geste-title"
     >
       <div class="container">
-        <div class="discussion-grid">
-          <span class="seuil-light" aria-hidden="true"></span>
-          <div class="discussion-copy">
-            <p class="discussion-kicker" data-seuil-reveal>
-              Discussions publiques
-            </p>
-            <h2 id="discussions-title" data-seuil-reveal>
-              Lire les échanges et prendre part aux arbitrages
-            </h2>
+        <h2 id="premier-geste-title">Choisir un premier geste</h2>
+        <p class="section-lead">
+          Une expérience, une expertise ou un relais : choisissez la porte qui
+          vous ressemble aujourd’hui.
+        </p>
+        <ul class="intent-grid" role="list" data-seuil-row>
+          <li class="intent-card intent-card--heart">
+            <p class="intent-kicker">~ LE CŒUR · ARTISTE OU ARTISAN</p>
+            <h3 data-seuil-reveal="choice">Vous créez des œuvres ou objets</h3>
             <p>
-              Le forum Construire Orée rassemble les questions ouvertes, les
-              propositions, les retours d’expérience et les décisions
-              documentées. La lecture est publique. Pour répondre ou ouvrir un
-              sujet, un compte Discourse est nécessaire. Une discussion peut
-              éclairer une décision ; elle ne vaut ni vote ni représentation de
-              l’ensemble des artistes, artisans ou futurs usagers.
+              Racontez-nous un moment précis où montrer, vendre, tarifer ou
+              expédier une création vous a semblé trop lourd ou injuste.
             </p>
-          </div>
-          <div class="discussion-actions">
-            <a class="discussion-primary" href={siteConfig.links.forumWelcome}
-              >Commencer par le sujet de bienvenue</a
+            <a class="button button-primary" href={siteConfig.links.join}
+              >Raconter mon expérience (5 min) →</a
             >
-            <div class="discussion-paths">
-              <a href={siteConfig.links.forumProject}
-                >Discuter d’un choix ou d’une hypothèse</a
-              >
-              <a href={siteConfig.links.forumExperiences}
-                >Partager une expérience ou un besoin</a
-              >
-            </div>
-            <p class="discussion-responsibility">
-              Le forum est accueilli, modéré et suivi par la personne qui porte
-              actuellement le projet. Aucun délai de réponse n’est promis.
+          </li>
+          <li class="intent-card">
+            <p class="intent-kicker">⚒ LES FONDATIONS · BÂTISSEUR</p>
+            <h3 data-seuil-reveal="choice">Vous avez une expertise métier</h3>
+            <p>
+              Droit, fiscalité, comptabilité, logistique, ESS ou développement :
+              aidez-nous à vérifier nos pistes et à sécuriser le modèle.
             </p>
-          </div>
-        </div>
+            <a class="button button-secondary" href={siteConfig.links.join}
+              >Donner mon avis sur un sujet →</a
+            >
+          </li>
+          <li class="intent-card">
+            <p class="intent-kicker">» LES RELAIS · ÉCLAIREUR &amp; ÉCHO</p>
+            <h3 data-seuil-reveal="choice">Vous voulez soutenir ou relayer</h3>
+            <p>
+              Aidez à repérer des talents restés dans l’ombre, partagez la
+              démarche autour de vous ou posez-nous une question.
+            </p>
+            <a class="button button-secondary" href={siteConfig.links.contact}
+              >Proposer un relais ou écrire →</a
+            >
+          </li>
+        </ul>
+        <p class="human-note">
+          Chaque message est lu attentivement par Jérémy pour nourrir la
+          conception du projet, en toute liberté et sans engagement mutuel.
+        </p>
       </div>
     </section>
 
     <section class="section-block roles-intro-section">
       <div class="container">
-        <h2>Comprendre les rôles, ensuite</h2>
+        <h2>Comprendre les rôles</h2>
         <p class="roles-lead reading-width">
-          Les rôles donnent un vocabulaire aux besoins du projet ; ils ne
-          désignent ni une équipe ni des personnes déjà engagées. Chaque section
-          présente le besoin actuel, ce que tu peux faire maintenant, puis
-          l’horizon possible du rôle.
-        </p>
-        <p class="roles-lead reading-width">
-          Les situations sont des personas de conception, pas des personnes
-          réelles ni des témoignages. Les rôles ne constituent ni une offre
-          d’emploi, ni une promesse de rémunération, ni une place acquise dans
-          le projet.
+          Les rôles donnent un vocabulaire aux besoins du projet. Découvrez pour
+          chacun le besoin actuel, ce que vous pouvez faire aujourd’hui et
+          l’horizon possible. Vous pouvez contribuer sans vous définir par un
+          rôle.
         </p>
         <nav class="roles-index" aria-label="Accès direct aux rôles">
-          <a href="#batisseur">Bâtisseur</a>
-          <a href="#artiste-ou-artisan">Artiste ou Artisan</a>
-          <a href="#eclaireur">Éclaireur</a>
-          <a href="#echo">Écho</a>
+          <a href="#artiste-ou-artisan">Artiste ou Artisan</a><a
+            href="#eclaireur">Éclaireur</a
+          ><a href="#echo">Écho</a><a href="#batisseur">Bâtisseur</a>
         </nav>
         <p class="document-door">
           <a href="/documents/rejoindre/"
@@ -226,42 +131,6 @@ import { siteConfig } from "../config/site";
     </section>
 
     <div class="roles-container">
-      <section id="batisseur" class="role-section role-section--batisseur">
-        <div class="container reading-width">
-          <h2 data-seuil-reveal>
-            <RoleIcon role="batisseur" size={28} decorative /> Bâtisseur
-          </h2>
-
-          <h3>Ce dont le projet a besoin maintenant</h3>
-          <p>
-            Des personnes capables de regarder un problème précis, de signaler
-            une contrainte, de proposer une approche proportionnée ou d’indiquer
-            ce qui demande une expertise que le projet ne possède pas encore.
-          </p>
-
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Décris le domaine dans lequel tu pourrais aider et le type de
-            contribution que tu envisages. Le formulaire sert à ouvrir un
-            premier échange.
-          </p>
-
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Proposer une contribution de Bâtisseur</a
-            >
-          </div>
-
-          <h3>Ce que ce rôle pourrait devenir</h3>
-          <p>
-            Les Bâtisseurs pourraient contribuer aux fondations techniques,
-            juridiques, fiscales, opérationnelles et logistiques d’Orée. À long
-            terme, ces sujets appartiennent à la vision coopérative du projet ;
-            ils ne décrivent pas un statut existant aujourd’hui.
-          </p>
-        </div>
-      </section>
-
       <section
         id="artiste-ou-artisan"
         class="role-section role-section--artisan"
@@ -270,55 +139,60 @@ import { siteConfig } from "../config/site";
           <h2 data-seuil-reveal>
             <RoleIcon role="artisan" size={28} decorative /> Artiste ou Artisan
           </h2>
+          <div class="role-columns">
+            <div class="role-main">
+              <h3>Ce dont le projet a besoin maintenant</h3>
+              <p>
+                Des retours sur les difficultés concrètes rencontrées pour
+                créer, montrer, vendre ou gérer l’administratif. Ces retours
+                peuvent éclairer les choix du projet sans être présentés comme
+                une étude menée auprès d’utilisateurs.
+              </p>
 
-          <h3>Ce dont le projet a besoin maintenant</h3>
-          <p>
-            Des retours sur les difficultés concrètes rencontrées pour créer,
-            montrer, vendre ou gérer l’administratif. Ces retours peuvent
-            éclairer les choix du projet sans être présentés comme une étude
-            menée auprès d’utilisateurs.
-          </p>
+              <h3>Ce que vous pouvez faire aujourd’hui</h3>
+              <p>
+                Partager votre expérience, signaler votre intérêt pour suivre le
+                projet ou indiquer si vous souhaiteriez être recontacté lorsque
+                le contexte sera plus clair.
+              </p>
 
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Partager ton expérience, signaler ton intérêt pour suivre le projet
-            ou indiquer si tu souhaiterais être recontacté lorsque le contexte
-            sera plus clair.
-          </p>
+              <div class="role-action">
+                <a href={siteConfig.links.join} class="button button-secondary"
+                  >Partager votre intérêt ou votre expérience</a
+                >
+              </div>
 
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Partager ton intérêt ou ton expérience</a
-            >
+              <h3>Ce que ce rôle pourrait devenir</h3>
+              <p>
+                Les artistes et artisans pourraient, lorsque la marketplace
+                existera, aider à éprouver la manière dont le projet accueille
+                les créations, la vente et les contraintes administratives.
+                Aucun rôle de vendeur, de pilote ou d’utilisateur n’est ouvert
+                aujourd’hui.
+              </p>
+            </div><aside class="role-example" aria-label="Exemple illustratif">
+              <details data-seuil-details class="persona">
+                <summary
+                  >Situation illustrative — Marc
+                  <span class="persona-optional">(facultatif)</span></summary
+                >
+                <div class="persona-body">
+                  <p>
+                    Marc représente une personne qui crée, mais qui peut se
+                    heurter à tout ce qui entoure la création : la montrer, la
+                    présenter, la vendre ou comprendre les démarches
+                    nécessaires. Il n’est ni artiste inscrit sur Orée ni
+                    créateur pilote.
+                  </p>
+                  <p><strong>Tension illustrée</strong></p>
+                  <p>
+                    Accueillir un retour sur la création, la visibilité ou
+                    l’administratif sans promettre l’accès à une marketplace.
+                  </p>
+                </div>
+              </details>
+            </aside>
           </div>
-
-          <h3>Ce que ce rôle pourrait devenir</h3>
-          <p>
-            Les artistes et artisans pourraient, lorsque la marketplace
-            existera, aider à éprouver la manière dont le projet accueille les
-            créations, la vente et les contraintes administratives. Aucun rôle
-            de vendeur, de pilote ou d’utilisateur n’est ouvert aujourd’hui.
-          </p>
-
-          <details data-seuil-details class="persona">
-            <summary
-              >Situation illustrative — Marc
-              <span class="persona-optional">(facultatif)</span></summary
-            >
-            <div class="persona-body">
-              <p>
-                Marc représente une personne qui crée, mais qui peut se heurter
-                à tout ce qui entoure la création : la montrer, la présenter, la
-                vendre ou comprendre les démarches nécessaires. Il n’est ni
-                artiste inscrit sur Orée ni créateur pilote.
-              </p>
-              <p><strong>Tension illustrée</strong></p>
-              <p>
-                Accueillir un retour sur la création, la visibilité ou
-                l’administratif sans promettre l’accès à une marketplace.
-              </p>
-            </div>
-          </details>
         </div>
       </section>
 
@@ -327,53 +201,58 @@ import { siteConfig } from "../config/site";
           <h2 data-seuil-reveal>
             <RoleIcon role="eclaireur" size={28} decorative /> Éclaireur
           </h2>
+          <div class="role-columns">
+            <div class="role-main">
+              <h3>Ce dont le projet a besoin maintenant</h3>
+              <p>
+                Un regard de terrain : ce qui aide une personne créative à se
+                sentir légitime, les lieux ou réseaux où le talent reste peu
+                visible, et les conditions nécessaires pour qu’une mise en
+                relation reste juste.
+              </p>
 
-          <h3>Ce dont le projet a besoin maintenant</h3>
-          <p>
-            Un regard de terrain : ce qui aide une personne créative à se sentir
-            légitime, les lieux ou réseaux où le talent reste peu visible, et
-            les conditions nécessaires pour qu’une mise en relation reste juste.
-          </p>
+              <h3>Ce que vous pouvez faire aujourd’hui</h3>
+              <p>
+                Indiquer ce que vous observez, les communautés ou contextes que
+                vous connaissez et la manière dont vous aimeriez contribuer.
+              </p>
 
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Indiquer ce que tu observes, les communautés ou contextes que tu
-            connais et la manière dont tu aimerais contribuer.
-          </p>
+              <div class="role-action">
+                <a href={siteConfig.links.join} class="button button-secondary"
+                  >Partager un regard d’Éclaireur</a
+                >
+              </div>
 
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Partager un regard d’Éclaireur</a
-            >
+              <h3>Ce que ce rôle pourrait devenir</h3>
+              <p>
+                Les Éclaireurs pourraient aider Orée à mieux comprendre comment
+                les talents sont repérés, rencontrés et accompagnés. Les
+                modalités éventuelles de reconnaissance ou de rémunération
+                appartiennent au projet futur : elles ne sont pas actives
+                aujourd’hui.
+              </p>
+            </div><aside class="role-example" aria-label="Exemple illustratif">
+              <details data-seuil-details class="persona">
+                <summary
+                  >Situation illustrative — Camille
+                  <span class="persona-optional">(facultatif)</span></summary
+                >
+                <div class="persona-body">
+                  <p>
+                    Camille représente une personne attentive aux talents
+                    discrets, aux ateliers, aux réseaux locaux et aux occasions
+                    de mise en relation. Camille n’est ni membre d’un réseau
+                    associé à Orée ni preuve d’un programme de repérage actif.
+                  </p>
+                  <p><strong>Tension illustrée</strong></p>
+                  <p>
+                    Penser une mise en lumière juste sans prétendre qu’un
+                    système d’attribution ou de commission existe déjà.
+                  </p>
+                </div>
+              </details>
+            </aside>
           </div>
-
-          <h3>Ce que ce rôle pourrait devenir</h3>
-          <p>
-            Les Éclaireurs pourraient aider Orée à mieux comprendre comment les
-            talents sont repérés, rencontrés et accompagnés. Les modalités
-            éventuelles de reconnaissance ou de rémunération appartiennent au
-            projet futur : elles ne sont pas actives aujourd’hui.
-          </p>
-
-          <details data-seuil-details class="persona">
-            <summary
-              >Situation illustrative — Camille
-              <span class="persona-optional">(facultatif)</span></summary
-            >
-            <div class="persona-body">
-              <p>
-                Camille représente une personne attentive aux talents discrets,
-                aux ateliers, aux réseaux locaux et aux occasions de mise en
-                relation. Camille n’est ni membre d’un réseau associé à Orée ni
-                preuve d’un programme de repérage actif.
-              </p>
-              <p><strong>Tension illustrée</strong></p>
-              <p>
-                Penser une mise en lumière juste sans prétendre qu’un système
-                d’attribution ou de commission existe déjà.
-              </p>
-            </div>
-          </details>
         </div>
       </section>
 
@@ -382,385 +261,289 @@ import { siteConfig } from "../config/site";
           <h2 data-seuil-reveal>
             <RoleIcon role="echo" size={28} decorative /> Écho
           </h2>
-
-          <h3>Ce dont le projet a besoin maintenant</h3>
-          <p>
-            Un retour sur les pratiques de curation, de recommandation et de
-            transparence : ce qui rend un relais utile, crédible et respectueux
-            des personnes qui créent.
-          </p>
-
-          <h3>Ce que tu peux faire aujourd’hui</h3>
-          <p>
-            Expliquer ce que tu partages déjà, les communautés que tu connais ou
-            les questions que tu juges importantes.
-          </p>
-
-          <div class="role-action">
-            <a href={siteConfig.links.join} class="button button-secondary"
-              >Partager un regard d’Écho</a
-            >
-          </div>
-
-          <h3>Ce que ce rôle pourrait devenir</h3>
-          <p>
-            Les Échos pourraient aider à penser la recommandation, la médiation
-            et la mise en lumière de créations auprès de communautés
-            pertinentes. Il n’existe actuellement ni catalogue, ni vitrine, ni
-            vente générée par Orée.
-          </p>
-
-          <details data-seuil-details class="persona">
-            <summary
-              >Situation illustrative — Julien
-              <span class="persona-optional">(facultatif)</span></summary
-            >
-            <div class="persona-body">
+          <div class="role-columns">
+            <div class="role-main">
+              <h3>Ce dont le projet a besoin maintenant</h3>
               <p>
-                Julien représente une personne qui aime raconter ce qui mérite
-                d’être découvert et qui s’interroge sur la transparence d’une
-                recommandation. Julien n’est ni partenaire d’Orée ni preuve
-                d’une audience ou d’un dispositif de recommandation actif.
+                Un retour sur les pratiques de curation, de recommandation et de
+                transparence : ce qui rend un relais utile, crédible et
+                respectueux des personnes qui créent.
               </p>
-              <p><strong>Tension illustrée</strong></p>
+
+              <h3>Ce que vous pouvez faire aujourd’hui</h3>
               <p>
-                Réfléchir à la recommandation sans annoncer de catalogue, de
-                vitrine, d’audience ou de vente.
+                Expliquer ce que vous partagez déjà, les communautés que vous
+                connaissez ou les questions que vous jugez importantes.
+              </p>
+
+              <div class="role-action">
+                <a href={siteConfig.links.join} class="button button-secondary"
+                  >Partager un regard d’Écho</a
+                >
+              </div>
+
+              <h3>Ce que ce rôle pourrait devenir</h3>
+              <p>
+                Les Échos pourraient aider à penser la recommandation, la
+                médiation et la mise en lumière de créations auprès de
+                communautés pertinentes. Il n’existe actuellement ni catalogue,
+                ni vitrine, ni vente générée par Orée.
+              </p>
+            </div><aside class="role-example" aria-label="Exemple illustratif">
+              <details data-seuil-details class="persona">
+                <summary
+                  >Situation illustrative — Julien
+                  <span class="persona-optional">(facultatif)</span></summary
+                >
+                <div class="persona-body">
+                  <p>
+                    Julien représente une personne qui aime raconter ce qui
+                    mérite d’être découvert et qui s’interroge sur la
+                    transparence d’une recommandation. Julien n’est ni
+                    partenaire d’Orée ni preuve d’une audience ou d’un
+                    dispositif de recommandation actif.
+                  </p>
+                  <p><strong>Tension illustrée</strong></p>
+                  <p>
+                    Réfléchir à la recommandation sans annoncer de catalogue, de
+                    vitrine, d’audience ou de vente.
+                  </p>
+                </div>
+              </details>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="batisseur" class="role-section role-section--batisseur">
+        <div class="container reading-width">
+          <h2 data-seuil-reveal>
+            <RoleIcon role="batisseur" size={28} decorative /> Bâtisseur
+          </h2>
+          <div class="role-columns">
+            <div class="role-main">
+              <h3>Ce dont le projet a besoin maintenant</h3>
+              <p>
+                Des personnes capables de regarder un problème précis, de
+                signaler une contrainte, de proposer une approche proportionnée
+                ou d’indiquer ce qui demande une expertise que le projet ne
+                possède pas encore.
+              </p>
+
+              <h3>Ce que vous pouvez faire aujourd’hui</h3>
+              <p>
+                Décrivez le domaine dans lequel vous pourriez aider et le type
+                de contribution que vous envisagez. Le formulaire sert à ouvrir
+                un premier échange.
+              </p>
+
+              <div class="role-action">
+                <a href={siteConfig.links.join} class="button button-secondary"
+                  >Proposer une contribution de Bâtisseur</a
+                >
+              </div>
+
+              <h3>Ce que ce rôle pourrait devenir</h3>
+              <p>
+                Les Bâtisseurs pourraient contribuer aux fondations techniques,
+                juridiques, fiscales, opérationnelles et logistiques d’Orée. À
+                long terme, ces sujets appartiennent à la vision coopérative du
+                projet ; ils ne décrivent pas un statut existant aujourd’hui.
               </p>
             </div>
-          </details>
+          </div>
         </div>
       </section>
     </div>
 
-    <section class="join-closure">
-      <div class="container reading-width">
-        <h2>Avant d’envoyer</h2>
-        <p>
-          Les formulaires externes servent à ouvrir un échange. Aucune
-          proposition ne garantit une mission, une rémunération, une commission,
-          une place ou une réponse. Aucun délai n’est promis.
+    <section
+      class="join-closure"
+      aria-label="Charte d’écoute et autres façons de suivre"
+    >
+      <div class="container">
+        <details class="listening-charter" data-seuil-details>
+          <summary
+            >Notre charte d’écoute : comment vos messages sont lus et utilisés
+            (en toute liberté et sans engagement)</summary
+          >
+          <div class="charter-body">
+            <p>
+              Chaque message est lu attentivement par Jérémy pour nourrir la
+              conception du projet, en toute liberté et sans engagement mutuel.
+            </p>
+            <p>
+              Les deux premières portes ouvrent le même formulaire de
+              contribution ; leur libellé précise votre intention sans créer de
+              routage automatique ni de traitement différencié. La troisième
+              ouvre un formulaire de contact distinct. Ces formulaires sont
+              hébergés sur Tally.
+            </p>
+            <p>
+              Les formulaires servent à ouvrir un échange. Aucune proposition ne
+              garantit une mission, une rémunération, une commission, une place
+              ou une réponse. Aucun délai n’est promis.
+            </p>
+            <p>
+              Les rôles décrivent des besoins et un horizon possible ; ils ne
+              constituent ni une offre d’emploi ni un statut acquis. Les
+              situations illustratives sont des personas de conception, pas des
+              personnes engagées ni des témoignages.
+            </p>
+            <p>
+              Une discussion publique peut éclairer une décision ; elle ne vaut
+              ni vote ni représentation de l’ensemble des artistes, artisans ou
+              futurs usagers. Pour répondre ou ouvrir un sujet sur le forum, un
+              compte Discourse est nécessaire. Le forum est accueilli, modéré et
+              suivi par la personne qui porte actuellement le projet.
+            </p>
+            <p>
+              Vous ne savez pas encore quel rôle vous correspond ? Le <a
+                href={siteConfig.links.join}>formulaire de contribution</a
+              > conserve l’option « Autre / je ne sais pas encore ». Pour une question
+              ou un partenariat, vous pouvez <a href={siteConfig.links.contact}
+                >écrire en privé</a
+              >.
+            </p>
+          </div>
+        </details>
+        <p class="follow-paths">
+          Vous préférez observer pour l’instant ? Lisez le <a href="/journal/"
+            >Journal</a
+          >, suivez son <a href="/rss.xml">flux RSS</a> ou choisissez de <a
+            href={siteConfig.links.follow}>recevoir les nouvelles par email</a
+          > (formulaire externe, facultatif).
         </p>
-        <p class="context-note">
-          Tu ne sais pas encore quel rôle te correspond ? Le <a
-            href={siteConfig.links.join}
-            >formulaire de contribution — formulaire externe</a
-          > conserve l’option « Autre / je ne sais pas encore ». Pour une question
-          ou un partenariat, tu peux <a href={siteConfig.links.contact}
-            >écrire en privé — formulaire externe</a
-          >. Pour suivre sans formulaire, le <a href="/journal/">Journal</a> et son
-          <a href="/rss.xml">flux RSS</a> restent publics ; l’inscription aux nouvelles
-          par email demeure facultative et distincte : <a
-            href={siteConfig.links.follow}
-            >recevoir les nouvelles — formulaire externe</a
-          >.
-        </p>
+      </div>
+    </section>
+
+    <section class="discussion-section" aria-labelledby="discussions-title">
+      <div class="container discussion-grid">
+        <div class="discussion-copy">
+          <p class="discussion-kicker">Continuons la conversation</p>
+          <h2 id="discussions-title">Un message suffit pour commencer</h2>
+          <p>
+            Vous pouvez répondre sans compte avec un formulaire simple, ou
+            prendre le temps de lire les échanges publics.
+          </p>
+          <p class="discussion-note">
+            Les échanges publics se lisent sans compétence technique. Les
+            discussions GitHub ne sont pas ouvertes à ce jour.
+          </p>
+        </div>
+        <div class="discussion-actions">
+          <a class="button discussion-primary" href={siteConfig.links.join}
+            >Répondre sans compte →</a
+          >
+          <a
+            class="button discussion-secondary"
+            href={siteConfig.links.forumWelcome}>Lire les échanges publics →</a
+          >
+          <div class="discussion-paths">
+            <a href={siteConfig.links.forumProject}
+              >Questions et pistes du projet</a
+            ><a href={siteConfig.links.forumExperiences}
+              >Expériences et besoins</a
+            ><a href={siteConfig.repository.url}
+              >Consulter le dépôt public GitHub</a
+            >
+          </div>
+        </div>
       </div>
     </section>
   </div>
 </BaseLayout>
 
 <style>
+  .page-rejoindre {
+    color: #182b22;
+    background: #faf8f5;
+  }
+  .page-rejoindre .container {
+    max-width: 68.75rem;
+  }
   .join-hero {
     padding-block: clamp(3rem, 5vw, 4rem) 3.25rem;
-    background: var(--color-linen);
-    border-bottom: 1px solid var(--color-border);
+    background: #f2ece1;
+    border-bottom: 1px solid rgba(24, 43, 34, 0.2);
   }
-
-  .eyebrow {
-    margin-bottom: var(--space-4);
-    color: var(--color-bark);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    margin-bottom: var(--space-6);
-  }
-
-  .repere {
-    margin-bottom: 0;
-  }
-
-  .introduction {
-    margin-bottom: var(--space-4);
-    color: var(--color-text-muted);
-    font-size: var(--text-md);
-  }
-
-  .join-summary {
-    scroll-margin-top: 2rem;
-    padding-block: var(--space-12);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .join-hero .container.reading-width,
-  .join-summary .container.reading-width,
-  .role-section .container.reading-width,
-  .join-closure .container.reading-width {
-    max-width: 68.75rem;
-  }
-
-  .intent-grid {
-    display: flex;
-    flex-direction: column;
-    margin: var(--space-6) 0 var(--space-8);
-    padding: 0;
-    counter-reset: intention;
-    list-style: none;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .intent-grid li {
-    display: grid;
-    width: 100%;
-    max-width: none;
-    grid-template-columns: 3rem minmax(0, 1fr);
-    column-gap: var(--space-3);
-    align-items: start;
-    padding-block: 1.625rem;
-    counter-increment: intention;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .intent-grid li::before {
-    grid-row: 1 / span 3;
-    color: var(--color-action);
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-variant-numeric: tabular-nums;
-    line-height: 1;
-    content: counter(intention, decimal-leading-zero);
-  }
-
-  .intent-grid strong {
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: 1.5625rem;
-    line-height: 1.15;
-  }
-
-  .intent-grid p {
-    margin-bottom: var(--space-2);
-    color: var(--color-text-muted);
-  }
-
-  .intent-grid a {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    border-bottom: 2px solid currentColor;
-    color: var(--color-primary);
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .intent-grid a:hover {
-    color: var(--color-primary-hover);
-  }
-
-  .intent-grid a:focus-visible {
-    outline-color: var(--color-primary);
-  }
-
-  .intent-actions {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
-  }
-
-  .actions-note {
-    max-width: 58rem;
-    margin-bottom: 0;
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-  }
-
-  .page-rejoindre .discussion-section {
-    background: var(--color-canopy);
-    padding-block: var(--space-12);
-  }
-
-  .discussion-section .container {
-    max-width: 68.75rem;
-  }
-
-  .discussion-grid {
-    display: grid;
-    gap: var(--space-8);
-    align-items: start;
-  }
-
-  .discussion-copy h2 {
-    max-width: 18ch;
-    margin-bottom: var(--space-6);
-  }
-
-  .discussion-copy p:last-child {
-    margin-bottom: 0;
-  }
-
+  .eyebrow,
+  .intent-kicker,
   .discussion-kicker {
-    margin-bottom: var(--space-4);
-    color: var(--color-dawn);
     font-family: var(--font-mono);
-    font-size: var(--text-sm);
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  .eyebrow {
+    color: #9e472a;
     text-transform: uppercase;
+    margin-bottom: 1rem;
   }
-
-  .discussion-actions,
-  .discussion-paths {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  h1 {
+    max-width: 17ch;
+    margin-bottom: 1.5rem;
   }
-
-  .discussion-actions {
-    gap: var(--space-6);
+  .repere {
+    margin-bottom: 1rem;
   }
-
-  .discussion-paths {
-    gap: var(--space-2);
-  }
-
-  .discussion-primary,
-  .discussion-paths a {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    font-weight: 700;
-  }
-
-  .discussion-section .discussion-primary {
-    padding: var(--space-3) var(--space-4);
-    border: 2px solid var(--color-linen);
-    border-radius: 3px;
-    background: var(--color-linen);
-    color: var(--color-canopy);
-    text-decoration: none;
-  }
-
-  .discussion-section .discussion-primary:visited {
-    color: var(--color-canopy);
-  }
-
-  .discussion-section .discussion-primary:hover {
-    background: transparent;
-    color: var(--color-linen);
-  }
-
-  .discussion-paths a {
-    color: var(--color-linen);
-    text-decoration-color: var(--color-dawn);
-  }
-
-  .discussion-paths a:hover {
-    color: var(--color-white);
-  }
-
-  .discussion-responsibility {
-    margin-bottom: 0;
-    color: var(--color-linen);
-    font-size: var(--text-sm);
-  }
-
-  .claire-persona {
-    margin-top: var(--space-6);
-  }
-
-  .roles-intro-section {
-    padding-block: var(--space-12) 0;
-  }
-
-  .roles-lead {
-    margin-top: var(--space-2);
-    color: var(--color-text-muted);
-  }
-
-  .roles-index {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-4);
-    margin-top: var(--space-6);
-  }
-
-  .roles-index a {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    border-bottom: 2px solid currentColor;
-    color: var(--color-primary);
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .roles-index a:hover {
-    color: var(--color-primary-hover);
-  }
-
-  .roles-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-block: var(--space-8);
-    counter-reset: role;
-  }
-
-  .role-section {
-    scroll-margin-top: 6rem;
-    padding-block: var(--space-12);
-    counter-increment: role;
-    border-top: 2px solid var(--color-border);
-  }
-
-  /* L’arrivée par ancre ajoute un trait intérieur sans déplacer la lecture. */
-  .role-section:target {
-    background-color: var(--color-surface-emphasis);
-    border-top-color: var(--color-primary);
-    box-shadow: inset 5px 0 0 var(--color-primary);
-  }
-
-  @media (forced-colors: active) {
-    .role-section:target {
-      outline: 3px solid Highlight;
-      outline-offset: -3px;
-    }
-  }
-
-  .role-section h2 {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    margin-bottom: var(--space-8);
-  }
-
-  .role-section h3 {
-    margin-top: 0;
-    margin-bottom: var(--space-2);
+  .introduction {
+    max-width: 65ch;
+    margin-block: 1.25rem;
     font-size: var(--text-md);
   }
-
-  .role-section p {
-    color: var(--color-text-muted);
+  .hero-action {
+    margin-top: 0.5rem;
   }
-
-  .role-section h3 + p {
-    margin-bottom: var(--space-6);
+  .join-summary {
+    padding-block: 3rem;
+    scroll-margin-top: 6rem;
+    border-bottom: 1px solid rgba(24, 43, 34, 0.2);
   }
-
-  .role-action {
-    margin-top: var(--space-6);
-    margin-bottom: var(--space-2);
+  .section-lead {
+    max-width: 65ch;
   }
-
+  .intent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin-block: 2rem;
+  }
+  .intent-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid rgba(24, 43, 34, 0.2);
+    border-radius: 3px;
+    background: #faf8f5;
+  }
+  .intent-card--heart {
+    border: 2px solid #9e472a;
+  }
+  .intent-kicker {
+    color: #9e472a;
+    margin-bottom: 1rem;
+  }
+  .intent-card h3 {
+    font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .intent-card > p:not(.intent-kicker) {
+    margin-bottom: 1.5rem;
+  }
+  .intent-card .button {
+    margin-top: auto;
+    padding-inline: 0.875rem;
+    text-align: center;
+  }
+  .human-note {
+    max-width: 70ch;
+    margin-bottom: 0;
+  }
   .button {
     display: inline-flex;
     min-height: 44px;
@@ -770,181 +553,252 @@ import { siteConfig } from "../config/site";
     border: 2px solid transparent;
     border-radius: 3px;
     font-weight: 700;
+    line-height: 1.4;
     text-decoration: none;
   }
-
-  .button-secondary {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-
-  .button-primary {
-    background: var(--color-action);
-    color: var(--color-white);
-  }
-
+  .button-primary,
   .button-primary:visited {
-    color: var(--color-white);
+    background: #9e472a;
+    color: #faf8f5;
   }
-
   .button-primary:hover {
-    background: var(--color-canopy);
-    color: var(--color-linen);
+    background: #182b22;
+    color: #faf8f5;
   }
-
+  .button-secondary,
+  .button-secondary:visited {
+    border-color: #182b22;
+    color: #182b22;
+  }
   .button-secondary:hover {
-    background: var(--color-primary);
-    color: var(--color-linen);
+    background: #182b22;
+    color: #faf8f5;
   }
-
-  @media (max-width: 30rem) {
-    .button-secondary {
-      width: 100%;
-    }
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid #9e472a;
+    outline-offset: 5px;
   }
-
-  .context-note {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
+  .roles-intro-section {
+    padding-block: 3rem 0;
   }
-
-  .join-closure {
-    padding-block: var(--space-12);
-    border-top: 2px solid var(--color-border);
+  .roles-lead {
+    max-width: 70ch;
+    margin-left: 0;
+    margin-top: 0.75rem;
   }
-
-  .join-closure h2 {
-    margin-bottom: var(--space-4);
+  .roles-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
   }
-
-  .join-closure p {
-    margin-bottom: var(--space-3);
-  }
-
-  .persona {
-    margin-top: var(--space-6);
-    padding: var(--space-3) 0;
-    border-block: 1px solid var(--color-border);
-    background: transparent;
-  }
-
-  .persona summary {
+  .roles-index a {
+    display: inline-flex;
     min-height: 44px;
+    align-items: center;
+    font-weight: 700;
+  }
+  .document-door {
+    margin-top: 1rem;
+  }
+  .claire-persona {
+    max-width: 70ch;
+    margin-left: 0;
+  }
+  .roles-container {
+    padding-top: 1.5rem;
+  }
+  .role-section {
+    padding-block: 3rem;
+    scroll-margin-top: 6rem;
+    border-bottom: 1px solid rgba(24, 43, 34, 0.2);
+  }
+  .role-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .role-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  .role-columns:not(:has(.role-example)) {
+    grid-template-columns: 1fr;
+  }
+  .role-main,
+  .role-example {
+    min-width: 0;
+  }
+  .role-main h3 {
+    font-size: var(--text-md);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .role-main h3:first-child {
+    margin-top: 0;
+  }
+  .role-main p {
+    max-width: 65ch;
+    margin-bottom: 0.75rem;
+  }
+  .role-action {
+    margin-block: 1.25rem 1.5rem;
+  }
+  .role-example {
+    margin-top: 0.75rem;
+    border-left: 2px solid #c88a56;
+    padding-left: 1.5rem;
+  }
+  .persona {
+    margin-top: 0.75rem;
+    padding-block: 0.75rem;
+    border-block: 1px solid rgba(24, 43, 34, 0.2);
+  }
+  .role-example .persona {
+    margin-top: 0;
+    border: 0;
+    padding-top: 0;
+  }
+  .persona summary,
+  .listening-charter summary {
     display: list-item;
-    padding-block: var(--space-2);
+    min-height: 44px;
+    padding-block: 0.75rem;
     list-style-position: inside;
     cursor: pointer;
     font-weight: 700;
-    color: var(--color-text);
   }
-
   .persona[open] summary {
-    margin-bottom: var(--space-3);
+    margin-bottom: 0.75rem;
   }
-
   .persona-optional {
-    margin-left: var(--space-1);
+    font-size: 0.875rem;
     font-weight: 400;
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
   }
-
   .persona-body p {
-    margin-bottom: var(--space-2);
+    margin-bottom: 0.75rem;
   }
-
-  @media (min-width: 48rem) {
+  .join-closure {
+    padding-block: 3rem;
+  }
+  .listening-charter {
+    max-width: 75ch;
+    border-block: 1px solid rgba(24, 43, 34, 0.2);
+  }
+  .charter-body {
+    padding-block: 1rem 0.5rem;
+  }
+  .follow-paths {
+    max-width: 70ch;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  .discussion-section {
+    padding-block: 3rem;
+    background: #182b22;
+    color: #faf8f5;
+  }
+  .discussion-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 3rem;
+    align-items: center;
+  }
+  .discussion-copy h2 {
+    max-width: 20ch;
+    color: #faf8f5;
+    margin-bottom: 1rem;
+  }
+  .discussion-copy p {
+    max-width: 58ch;
+  }
+  .discussion-kicker {
+    color: #c88a56;
+    text-transform: uppercase;
+  }
+  .discussion-note {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+  }
+  .discussion-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .discussion-primary,
+  .discussion-primary:visited {
+    background: #f2ece1;
+    border-color: #f2ece1;
+    color: #182b22;
+  }
+  .discussion-primary:hover {
+    background: #faf8f5;
+    color: #182b22;
+  }
+  .discussion-secondary,
+  .discussion-secondary:visited {
+    border-color: #f2ece1;
+    color: #faf8f5;
+  }
+  .discussion-secondary:hover {
+    background: #f2ece1;
+    color: #182b22;
+  }
+  .discussion-paths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+  .discussion-paths a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: #faf8f5;
+    font-size: 0.875rem;
+  }
+  .discussion-section a:focus-visible {
+    outline-color: #f2ece1;
+  }
+  @media (max-width: 55rem) {
+    .intent-grid {
+      grid-template-columns: 1fr;
+    }
+    .intent-card .button {
+      align-self: flex-start;
+    }
+    .role-columns,
     .discussion-grid {
-      grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
-      gap: clamp(var(--space-8), 7vw, var(--space-16));
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-
-    .join-hero .container {
-      max-width: 68.75rem;
-    }
-    .join-hero h1 {
-      max-width: 17ch;
-    }
-    .join-hero .introduction {
-      max-width: 65ch;
-      margin-top: 1.25rem;
-    }
-    .join-hero .hero-action {
-      margin-top: 1.75rem;
-    }
-    .intent-grid li {
-      grid-template-columns: 3.5rem minmax(0, 1fr);
-      column-gap: 1.5rem;
-      align-items: start;
-    }
-    .intent-grid li::before {
-      grid-row: 1 / span 3;
-    }
-    .intent-grid strong,
-    .intent-grid p,
-    .intent-actions {
-      grid-column: 2;
-    }
-    .intent-actions {
-      grid-row: auto;
-    }
-
-    .role-section .container {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: clamp(var(--space-8), 7vw, var(--space-16));
-    }
-
-    .role-section h2,
-    .role-section details,
-    .role-section .role-action,
-    .role-section h3:nth-of-type(3),
-    .role-section h3:nth-of-type(3) + p {
-      grid-column: 1 / -1;
-    }
-
-    .role-section h3:nth-of-type(1),
-    .role-section h3:nth-of-type(1) + p {
-      grid-column: 1;
-    }
-
-    .role-section h3:nth-of-type(2),
-    .role-section h3:nth-of-type(2) + p {
-      grid-column: 2;
-    }
-
-    .role-section h3:nth-of-type(2) {
-      border-left: 2px solid var(--color-action);
-      padding-left: var(--space-6);
-    }
-
-    .role-section h3:nth-of-type(2) + p {
-      border-left: 2px solid var(--color-action);
-      padding-left: var(--space-6);
+    .role-example {
+      padding-left: 1rem;
     }
   }
-
   @media (max-width: 30rem) {
     .join-hero {
-      padding-top: var(--space-8);
+      padding-top: 2rem;
     }
-
-    .intent-grid li {
-      grid-template-columns: 2.5rem minmax(0, 1fr);
-      column-gap: var(--space-2);
+    .intent-card {
+      padding: 1.25rem;
     }
-
-    .intent-grid strong {
-      font-size: var(--text-md);
+    .intent-card .button {
+      width: 100%;
     }
-
-    .role-section h2::before {
-      flex: 0 0 auto;
-      color: var(--color-action);
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      font-variant-numeric: tabular-nums;
-      content: counter(role, decimal-leading-zero);
+    .role-section h2 {
+      align-items: flex-start;
+    }
+    .role-section h2 :global(svg) {
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+    .role-action .button {
+      width: 100%;
     }
   }
 </style>

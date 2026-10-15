@@ -1,5 +1,4 @@
 ---
-import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
@@ -40,7 +39,6 @@ const publishedDate = entry.data.publishedAt?.toLocaleDateString("fr-FR", {
           <time datetime={dateTime}>{publishedDate}</time>
         )
       }
-      <MotionControl />
     </header>
 
     <aside class="entry-context" aria-label="Contexte du billet">

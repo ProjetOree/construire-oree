@@ -1,6 +1,6 @@
 ---
-import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../config/site";
 import { getCollection } from "astro:content";
 
 const allEntries = await getCollection("journal");
@@ -31,15 +31,12 @@ const publishedEntries = allEntries
           Ce Journal rassemble les billets réellement publiés sur la
           construction de Construire Orée. Chaque billet distingue ce qui
           existe, ce qui reste à construire pour Orée et les décisions qui ne
-          sont pas encore prises. Aucun rythme de publication n’est promis.
-        </p>
-        <p>
-          Orée est une future marketplace éthique au point zéro. Construire Orée
-          est son site statique et son journal public : ici, une intention ne
-          devient jamais un résultat par simple formulation.
+          sont pas encore prises. Nous publions uniquement lorsqu’une étape
+          réelle est franchie, sans imposer de calendrier artificiel.
         </p>
         <p class="rss-follow">
           <a href="/rss.xml">Suivre les billets par RSS</a>
+          <a href={siteConfig.links.follow}>S’abonner par courriel</a>
           <span
             >Le flux contient uniquement les billets publiés et se lit sans
             compte.</span
@@ -47,7 +44,6 @@ const publishedEntries = allEntries
         </p>
       </div>
     </div>
-    <div class="container reading-width"><MotionControl /></div>
   </section>
 
   <div class="container journal-index">
@@ -152,13 +148,21 @@ const publishedEntries = allEntries
   }
 
   .entries-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 40rem;
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+    max-width: none;
+  }
+
+  .entries-list li > :not(time) {
+    grid-column: 2;
   }
 
   .entries-list time {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    font-family: var(--font-mono);
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     margin-bottom: var(--space-2);
@@ -182,5 +186,15 @@ const publishedEntries = allEntries
     font-weight: 600;
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.18em;
+  }
+  @media (max-width: 48rem) {
+    .entries-list li {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .entries-list li > :not(time),
+    .entries-list time {
+      grid-column: 1;
+      grid-row: auto;
+    }
   }
 </style>

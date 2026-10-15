@@ -15,24 +15,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <p class="repere">Vous êtes ici · Projet</p>
         <p class="introduction" data-seuil-intro="copy">
           Orée part d’un problème simple à observer et difficile à résoudre :
-          vendre une création originale oblige aujourd’hui à cumuler création,
-          vente et administratif. Ce texte explique pourquoi ce constat justifie
-          un projet et la direction qu’il cherche à prendre.
+          vendre une création originale (ex. : pièce unique façonnée à
+          l’atelier, céramique, toile, sculpture) oblige aujourd’hui à cumuler
+          création, vente et administratif. Ce texte explique pourquoi ce
+          constat justifie un projet et la direction qu’il cherche à prendre.
         </p>
-        <aside class="point-zero-note" aria-label="Point zéro">
-          <p class="introduction">
-            Orée est au point zéro : rien de ce qui suit ne décrit un service
-            disponible aujourd’hui. C’est une vision à construire, pas une
-            fonctionnalité déjà livrée.
-          </p>
-        </aside>
         <nav class="summary-nav" aria-labelledby="page-title">
           <a href="#probleme">Le problème</a>
           <a href="#premier-appel">Le premier appel</a>
           <a href="#reponse">La réponse envisagée</a>
           <a href="#modele-inverse">Le modèle inversé</a>
           <a href="#horizon-ess">L’horizon ESS</a>
-          <a href="#ce-qui-nexiste-pas">Ce qui n’existe pas encore</a>
         </nav>
         <p class="document-door">
           <a href="/documents/">Lire les documents de conception complets →</a>
@@ -41,14 +34,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           >
         </p>
       </div>
-      <button
-        class="seuil-motion-control"
-        data-seuil-motion-control
-        type="button"
-        aria-label="Animations"
-        aria-pressed="true"
-        hidden>Animations · actives</button
-      >
     </header>
 
     <section
@@ -92,7 +77,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             Pour éprouver le point de départ du projet sans le présenter comme
             une étude, Orée ouvre une première question : à quel moment concret
             le passage entre créer, montrer et vendre s’est-il compliqué pour
-            toi ?
+            vous ?
           </p>
           <p>
             Un exemple court suffit. Jérémy lira les réponses pour faire émerger
@@ -103,7 +88,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <a
               class="first-call-link first-call-link--primary"
               href="https://construire-oree.discourse.group/t/qu-est-ce-qui-a-rendu-une-creation-difficile-a-montrer-ou-a-vendre/16"
-              >Partager une expérience publiquement</a
+              >Raconter mon expérience →</a
             >
             <a class="first-call-link" href="https://tally.so/r/q4eVx7"
               >Répondre en privé</a
@@ -127,10 +112,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <h2 id="reponse-title" data-seuil-reveal>La réponse envisagée</h2>
         <p>
           Le modèle envisagé cherche à limiter les frais avant qu’une première
-          vente n’ait eu lieu. La communication, le paiement, la facturation et
-          le service après-vente sont des services que le projet cherche à
-          étudier ; ce ne sont pas des capacités actuellement actives sur
-          Construire Orée.
+          vente n’ait eu lieu. Le projet distingue aussi les produits édités
+          (ex. : tirage d’art numéroté, livre illustré, petite série). La
+          communication, le paiement, la facturation et le service après-vente
+          sont des services que le projet cherche à étudier ; ce ne sont pas des
+          capacités actuellement actives sur Construire Orée.
         </p>
         <p>
           L’intention qui guide ces choix est de laisser davantage de place à la
@@ -198,38 +184,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           soumises à une validation juridique et économique qui n’a pas encore
           eu lieu.
         </p>
-      </div>
-    </section>
-
-    <section
-      class="section-block point-zero-block numbered-section"
-      id="ce-qui-nexiste-pas"
-      aria-labelledby="ce-qui-nexiste-pas-title"
-      data-seuil-ambient="paper"
-    >
-      <div class="seuil-light" aria-hidden="true"></div>
-      <div class="container chapter-grid">
-        <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="ce-qui-nexiste-pas-title" data-seuil-reveal>
-          Ce qui n’existe pas encore
-        </h2>
-        <p>
-          Pour que cette page reste honnête sur l’état réel du projet : aucun
-          service actif de paiement, de facturation ou de SAV n’existe
-          aujourd’hui ; aucune structure coopérative n’est constituée ; aucune
-          protection sociale n’est fournie ; et aucun calendrier de mise en
-          œuvre n’est promis.
-        </p>
-        <div class="actions" id="sorties">
-          <a data-seuil-button class="button button-primary" href="/ecosysteme/"
-            >Écosystème</a
-          >
-          <a
-            data-seuil-button
-            class="button button-secondary"
-            href="/avancement/">Avancement</a
-          >
-        </div>
       </div>
     </section>
   </article>
@@ -315,9 +269,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   .chapter-number::before {
     content: counter(chapter, decimal-leading-zero);
-    color: var(--color-bark);
+    color: var(--color-terracotta);
     font-family: var(--font-display);
-    font-size: var(--text-md);
+    font-size: 1.75rem;
     line-height: 1;
   }
 
@@ -370,12 +324,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   .first-call-section {
     border-block: 1px solid var(--color-dawn);
-    background: var(--color-surface-soft);
+    background: var(--color-linen);
+  }
+
+  .first-call-section .container {
+    max-width: var(--layout-width);
+    padding-left: var(--space-8);
   }
 
   .first-call-frame {
     position: relative;
-    padding-left: var(--space-6);
+    padding-left: calc(var(--space-4) - 3px);
     border-left: 3px solid var(--color-dawn);
   }
 
@@ -405,7 +364,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   }
 
   .first-call-link--primary {
-    color: var(--color-action-hover);
+    padding: 0.875rem 1.5rem;
+    border-radius: 3px;
+    background: var(--color-action);
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
+  .first-call-link--primary:visited {
+    color: var(--color-white);
+  }
+
+  .first-call-link--primary:hover {
+    background: var(--color-action-hover);
+    color: var(--color-white);
   }
 
   .first-call-note {
@@ -456,11 +428,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   @media (min-width: 48rem) {
     .inversion-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  @media (max-width: 47.99rem) {
-    .hero-section {
-      padding-bottom: 5.25rem;
     }
   }
 </style>

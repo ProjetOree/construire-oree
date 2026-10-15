@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SeuilHero from "../components/home/SeuilHero.astro";
+import EcosystemSchema from "../components/EcosystemSchema.astro";
 import HomeDoors from "../components/home/HomeDoors.astro";
 import { siteConfig } from "../config/site";
 
@@ -160,6 +161,7 @@ const doors = [
         Des communautés locales envisagées et un horizon coopératif à long
         terme, tous deux conditionnels.
       </p>
+      <EcosystemSchema id="home-ecosystem-schema" />
       <a class="text-link" href="/ecosysteme/"
         >Comprendre l’écosystème en détail</a
       >
@@ -207,19 +209,21 @@ const doors = [
     <div class="container reading-width">
       <p class="section-kicker" data-seuil-reveal="rule">Participer</p>
       <h2 id="participate-title" data-seuil-reveal>Participer ou suivre</h2>
-      <p>Tu veux comprendre où ta contribution pourrait être utile ?</p>
+      <p>
+        Vous souhaitez comprendre où votre contribution pourrait être utile ?
+      </p>
       <div class="participate-actions">
         <a class="button button-primary" href="/rejoindre/" data-seuil-button
           >Participer</a
         >
         <a class="text-link" href={siteConfig.links.follow}
-          >Suis l’aventure (formulaire externe)</a
+          >Suivez l’aventure (formulaire externe)</a
         >
       </div>
       <p class="participate-note">
-        Le lien « Suis l’aventure » ouvre un formulaire Tally externe. Son envoi
-        n’emporte ni réponse automatique ni engagement de part et d’autre. La
-        page Participer reste sur ce site.
+        Le lien « Suivez l’aventure » ouvre un formulaire Tally externe. Son
+        envoi n’emporte ni réponse automatique ni engagement de part et d’autre.
+        La page Participer reste sur ce site.
       </p>
     </div>
   </section>
@@ -227,19 +231,30 @@ const doors = [
 
 <style>
   .section-kicker {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     padding-left: 0.75rem;
-    border-left: 1px solid var(--seuil-rule);
+    position: relative;
+    align-self: start;
+    line-height: 1.2;
     color: var(--color-bark);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
   }
+  .section-kicker::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    width: 2px;
+    height: 1em;
+    background: #c88a56;
+  }
   .seuil-documents {
     padding-block: 2.25rem;
     background: var(--color-surface-soft);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid rgba(24, 43, 34, 0.12);
   }
   .document-gateway {
     display: grid;
@@ -254,7 +269,7 @@ const doors = [
     margin-bottom: 0;
   }
   .home-section {
-    padding-block: clamp(3rem, 6vw, 5rem);
+    padding-block: clamp(1.5rem, 3vw, 2.5rem);
   }
   .home-section h2 {
     margin-bottom: 1.5rem;
@@ -266,14 +281,16 @@ const doors = [
     max-width: var(--layout-width);
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 1rem 4rem;
+    grid-template-rows: 0.9rem auto;
+    gap: 0.5rem 4rem;
+    align-items: start;
   }
   .home-section .reading-width > .section-kicker {
     grid-column: 1;
   }
   .home-section .reading-width > h2 {
     grid-column: 1;
-    grid-row: 2 / span 8;
+    grid-row: 2;
     max-width: 17ch;
   }
   .home-section
@@ -285,11 +302,16 @@ const doors = [
   .home-section .reading-width > p:not(.section-kicker) {
     margin: 0 0 0.5rem;
   }
-  .home-section .reading-width > p:not(.section-kicker):first-of-type {
-    grid-row: 1;
+  .home-section .reading-width > .section-kicker + h2 + p {
+    grid-row: 1 / span 2;
+  }
+  .home-section .reading-width > :global(.ecosystem-schema) {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-block: 1rem;
   }
   .home-section--ruled {
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid rgba(24, 43, 34, 0.12);
   }
   .context-grid {
     display: grid;
@@ -304,7 +326,7 @@ const doors = [
   }
   .seuil-context {
     background: var(--color-canvas);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid rgba(24, 43, 34, 0.12);
   }
   .text-link {
     display: inline-flex;

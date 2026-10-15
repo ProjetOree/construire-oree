@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import SiteHeader from "../components/layout/SiteHeader.astro";
+import StatusBanner from "../components/layout/StatusBanner.astro";
 import { siteConfig } from "../config/site";
 import "../styles/global.css";
 import "../styles/motion.css";
@@ -98,6 +99,7 @@ const socialImageAlt =
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     {!hideChrome && <SiteHeader />}
+    {!hideChrome && route !== "/" && <StatusBanner />}
 
     <main id="contenu" tabindex="-1">
       <slot />

@@ -58,12 +58,23 @@ const { doors } = Astro.props;
   .section-kicker {
     margin: 0 0 0.375rem;
     padding-left: 0.75rem;
-    border-left: 1px solid var(--seuil-rule);
+    position: relative;
+    align-self: start;
+    line-height: 1.2;
     color: var(--color-bark);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
+  }
+  .section-kicker::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    width: 2px;
+    height: 1em;
+    background: #c88a56;
   }
   h2 {
     font-size: 1.875rem;

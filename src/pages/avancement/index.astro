@@ -1,5 +1,4 @@
 ---
-import MotionControl from "../../components/motion/MotionControl.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -22,7 +21,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           la vérification de cette page ; elle n’est ni la date de lancement d’Orée
           ni un calendrier.
         </p>
-        <MotionControl />
       </header>
     </section>
 
@@ -33,15 +31,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <div class="state-row" data-state="published">
             <dt>Éléments publiés</dt>
             <dd>
-              Le site public comprend <a href="/">l’Accueil</a>,
-              <a href="/projet/">Projet</a>,
-              <a href="/avancement/">Avancement</a>, le
-              <a href="/journal/">Journal</a> avec un billet publié,
-              <a href="/fondations/">Fondations</a>,
-              <a href="/rejoindre/">Participer</a> et
-              <a href="/documents/">cinq documents complets</a>. Ces pages
-              documentent la construction ; elles ne constituent pas une
-              marketplace ouverte.
+              Le <a href="/documents/">manifeste et la vision éthique</a> posent les
+              intentions d’Orée, sans constituer une charte validée. L’<a
+                href="/ecosysteme/">architecture des rôles</a
+              > décrit l’organisation envisagée. Le <a
+                href="/documents/blueprint-technique-fiscal/"
+                >Cahier d’architecture (Blueprint)</a
+              > rassemble les hypothèses techniques, juridiques et fiscales à auditer.
             </dd>
           </div>
           <div class="state-row" data-state="absent">
@@ -69,10 +65,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="container reading-width">
         <h2 data-seuil-reveal>Prochaine étape documentable</h2>
         <p>
-          Aucun prochain sujet n’est arrêté à la date de cette vérification. Le
-          projet reste porté en solo, sans équipe constituée. Le prochain
-          résultat sera nommé ici lorsqu’un sujet et sa prise en charge seront
-          réellement décidés ; aucune date n’est fixée à l’avance.
+          Priorité actuelle : recueillir les premiers témoignages d’artisans et
+          consolider les règles juridiques et fiscales de base.
         </p>
       </div>
     </section>
@@ -88,8 +82,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <li>
             <p class="trajectory-label">Phase 1</p>
             <p>
-              Tester un premier MVP, une fois les fondations prioritaires
-              résolues.
+              Tester une première version d’essai à taille réduite, une fois les
+              fondations prioritaires résolues.
             </p>
           </li>
           <li>
@@ -113,13 +107,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <section class="section-block follow-up-block">
       <div class="container reading-width">
         <h2 data-seuil-reveal>Trois vues de suivi en préparation</h2>
-        <p>
-          Ces pages conservent leurs URL pour rendre visible ce qui n’est pas
-          encore publié. La Roadmap donne aussi accès à la feuille de route
-          historique ; Décisions et Tableau de bord n’ajoutent aujourd’hui
-          aucune donnée à l’état ci-dessus. Avancement reste la synthèse de
-          l’état présent.
-        </p>
         <ul class="follow-up-list" role="list">
           <li><a href="/roadmap/">Voir la Roadmap en préparation</a></li>
           <li><a href="/decisions/">Voir les décisions en préparation</a></li>
@@ -323,6 +310,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   }
 
   @media (min-width: 48rem) {
+    .trajectory-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+    }
+    .trajectory-list li {
+      border-bottom: 1px solid var(--color-border);
+    }
     .state-row {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: var(--space-8);

@@ -210,47 +210,6 @@ body[data-seuil-profile] [data-seuil-ambient="paper"] .seuil-light::before {
   );
 }
 
-.seuil-motion-control {
-  position: fixed;
-  right: max(1rem, env(safe-area-inset-right));
-  bottom: max(1rem, env(safe-area-inset-bottom));
-  z-index: 40;
-  min-height: 44px;
-  padding: 0.6rem 0.9rem;
-  border: 1px solid var(--color-border);
-  border-radius: 3px;
-  background: var(--color-canvas);
-  color: var(--color-bark);
-  box-shadow: 0 2px 12px rgb(27 46 37 / 6%);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.025em;
-  cursor: pointer;
-}
-
-.seuil-motion-control:hover {
-  border-color: var(--color-bark);
-}
-
-.seuil-motion-control[aria-disabled="true"] {
-  cursor: default;
-}
-
-@media (max-width: 47.99rem) {
-  .seuil-motion-control {
-    position: absolute;
-    right: var(--page-gutter);
-    bottom: 1rem;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  [data-seuil-ambient="canopy"] .seuil-motion-control {
-    color: var(--color-linen);
-    border-color: rgb(244 236 224 / 35%);
-  }
-}
-
 @keyframes seuil-copy-arrive {
   from {
     transform: translateY(var(--seuil-arrival-distance));
@@ -493,19 +452,6 @@ body[data-seuil-profile][data-seuil-motion="reduce"]
 }
 
 /* Shared profiles: destinations remain stationary, decoration responds. */
-.seuil-motion-control--inline {
-  position: relative;
-  inset: auto;
-  z-index: auto;
-  display: inline-flex;
-  align-items: center;
-  margin-block: 1rem;
-  box-shadow: none;
-  background: transparent;
-}
-.seuil-motion-control[hidden] {
-  display: none !important;
-}
 body[data-seuil-profile]
   main
   :is(a, button, summary):is(:hover, :active, :focus-visible) {

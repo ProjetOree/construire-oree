@@ -129,8 +129,7 @@ h3 {
   letter-spacing: -0.01em;
 }
 
-p,
-li {
+p {
   max-width: 70ch;
 }
 
@@ -481,7 +480,6 @@ main .home-participate,
 main .page-projet .hero-section,
 main .page-projet #reponse,
 main .page-projet #ce-qui-nexiste-pas,
-main .page-ecosysteme .ecosystem-layers > li:first-child,
 main .page-ecosysteme section[aria-labelledby="profils-title"],
 main .page-about .hero-section,
 main .page-about section[aria-labelledby="methode-title"],
@@ -495,7 +493,6 @@ main .page-rejoindre .role-section--eclaireur {
 }
 
 main .page-projet #modele-inverse,
-main .page-ecosysteme .ecosystem-layers > li:nth-child(3),
 main .page-about .section-block:nth-of-type(2),
 main .page-avancement > .section-block:nth-of-type(2),
 main .page-fondations .audit-block,
