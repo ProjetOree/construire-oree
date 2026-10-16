@@ -54,6 +54,26 @@ const ids = Object.entries(entries)
         (details === initialTarget || details.contains(initialTarget));
     });
   revealFragment();
+  // Remote font loading and the browser's native fragment jump can occur
+  // after the first reveal. Align the destination once the initial page settles.
+  if (location.hash) {
+    let readerMoved = false;
+    const markReaderMovement = () => {
+      readerMoved = true;
+    };
+    window.addEventListener("wheel", markReaderMovement, { passive: true });
+    window.addEventListener("touchmove", markReaderMovement, { passive: true });
+    window.addEventListener("keydown", markReaderMovement);
+    const settleInitialFragment = async () => {
+      await document.fonts.ready;
+      if (!readerMoved) revealFragment();
+      window.removeEventListener("wheel", markReaderMovement);
+      window.removeEventListener("touchmove", markReaderMovement);
+      window.removeEventListener("keydown", markReaderMovement);
+    };
+    if (document.readyState === "complete") void settleInitialFragment();
+    else window.addEventListener("load", settleInitialFragment, { once: true });
+  }
   window.addEventListener("hashchange", revealFragment);
   document.addEventListener("click", (event) => {
     const link =
