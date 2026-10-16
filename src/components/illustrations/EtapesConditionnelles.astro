@@ -1,0 +1,181 @@
+---
+interface Props {
+  id?: string;
+}
+const { id = "etapes-conditionnelles" } = Astro.props;
+const steps = [
+  {
+    state: "Actuel",
+    title: "Documenter le projet",
+    text: "Rendre les intentions, les questions et l’état de la construction lisibles.",
+    condition: null,
+  },
+  {
+    state: "Envisagé",
+    title: "Un essai limité",
+    text: "Éprouver une première expérience dans un périmètre défini.",
+    condition:
+      "Avant un essai : validations juridiques, techniques et économiques.",
+  },
+  {
+    state: "Envisagé",
+    title: "Développer et s’ancrer localement",
+    text: "Envisager un développement du projet et une première Clairière locale.",
+    condition: "Avant ce développement : viabilité observée de l’essai.",
+  },
+  {
+    state: "Envisagé",
+    title: "Examiner la coopérative",
+    text: "Étudier La Canopée et les modalités d’une gouvernance partagée.",
+    condition:
+      "Avant une coopérative : décision collective et examen juridique du cadre.",
+  },
+];
+---
+
+<figure class="steps" aria-labelledby={`${id}-title`}>
+  <figcaption>
+    <p class="steps__eyebrow">Une trajectoire conditionnelle</p>
+    <h3 id={`${id}-title`}>Des étapes à examiner, sans calendrier acquis</h3>
+    <p>
+      Le travail actuel est documentaire. Les étapes suivantes dépendent de
+      validations et de décisions à venir.
+    </p>
+  </figcaption>
+  <ol
+    class="steps__list"
+    aria-label="Ordre de lecture des étapes, sans mesure de progression"
+  >
+    {
+      steps.map((step, index) => (
+        <li
+          class:list={["steps__item", { "steps__item--current": index === 0 }]}
+        >
+          <span class="steps__number" aria-hidden="true">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div class="steps__content">
+            <p class="steps__state">{step.state}</p>
+            <p class="steps__title">{step.title}</p>
+            <p>{step.text}</p>
+            {step.condition && <p class="steps__condition">{step.condition}</p>}
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+  <p class="steps__note">
+    Les numéros indiquent un ordre de lecture, sans mesurer l’avancement. Aucun
+    passage à l’étape suivante, ouverture de service, ancrage local ou création
+    de coopérative n’est acquis.
+  </p>
+</figure>
+
+<style>
+  .steps {
+    margin: 0;
+    color: var(--color-canopy);
+    font-family: var(--font-body);
+  }
+  .steps__eyebrow {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .steps h3 {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+  }
+  .steps figcaption > p:last-child {
+    max-width: 65ch;
+    margin: 0 0 1.5rem;
+    line-height: 1.65;
+  }
+  .steps__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .steps__item {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    align-content: start;
+    gap: 0.875rem;
+    padding: 1.25rem;
+    border: 1px dashed var(--color-canopy);
+    background: var(--color-canvas);
+  }
+  .steps__item--current {
+    border-style: solid;
+    background: var(--color-linen);
+  }
+  .steps__number {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+  .steps__item--current .steps__number {
+    background: var(--color-canopy);
+    color: var(--color-linen);
+  }
+  .steps__content {
+    min-width: 0;
+  }
+  .steps__content p {
+    margin: 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .steps__state {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+  .steps__content .steps__title {
+    margin-block: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1.25;
+  }
+  .steps__content .steps__condition {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-dawn);
+    font-size: 0.9375rem;
+  }
+  .steps__note {
+    margin: 1.25rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-dawn);
+    line-height: 1.65;
+    font-size: 0.9375rem;
+  }
+  @media (max-width: 48rem) {
+    .steps__list {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (max-width: 24rem) {
+    .steps__item {
+      padding: 1rem;
+      gap: 0.75rem;
+      grid-template-columns: 2rem minmax(0, 1fr);
+    }
+    .steps__number {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+</style>

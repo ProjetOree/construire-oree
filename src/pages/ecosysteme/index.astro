@@ -1,12 +1,13 @@
 ---
+import AnchorAliases from "../../components/editorial/AnchorAliases.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import EcosystemSchema from "../../components/EcosystemSchema.astro";
+import RelationsEnvisagees from "../../components/illustrations/RelationsEnvisagees.astro";
 import RoleIcon from "../../components/brand/RoleIcon.astro";
 ---
 
 <BaseLayout
-  title="Écosystème d’Orée : relations envisagées"
-  description="Le cœur, les relais humains, les fondations et les horizons collectifs que l’écosystème d’Orée cherche à construire, rôle par rôle."
+  title="Écosystème d’Orée : créateurs, acheteurs et rôles envisagés"
+  description="Comprendre les relations envisagées entre artistes, artisans, acheteurs, Éclaireurs, Échos et Bâtisseurs à travers quatre portraits de conception."
 >
   <article class="page-article page-ecosysteme">
     <header class="hero-section" data-seuil-ambient="paper">
@@ -18,20 +19,21 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
         </h1>
         <p class="repere">Vous êtes ici · Écosystème</p>
         <p class="introduction" data-seuil-intro="copy">
-          Cette page présente l’architecture humaine envisagée pour Orée :
-          quatre rôles complémentaires, du cœur de l’atelier jusqu’aux horizons
-          coopératifs, conçus pour que créer ne signifie plus s’épuiser à tout
-          gérer seul.
+          Qui créerait, qui achèterait et qui aiderait à faire le lien ? Orée
+          envisage de répartir le travail autour de la rencontre entre une
+          personne qui crée et une personne qui découvre sa pièce. Les rôles
+          ci-dessous expliquent cette organisation ; quatre portraits permettent
+          ensuite d’en examiner les besoins concrets.
         </p>
+        <nav class="summary-nav" aria-label="Dans cette page">
+          <a href="#coeur-title">Créateurs et acheteurs</a>
+          <a href="#relais-title">Éclaireurs et Échos</a>
+          <a href="#fondations-title">Les Bâtisseurs</a>
+          <a href="#horizons-title">Les horizons collectifs</a>
+          <a href="#profils-title">Les relations et les quatre portraits</a>
+        </nav>
       </div>
     </header>
-
-    <section
-      class="ecosystem-overview container"
-      aria-label="Schéma de l’écosystème envisagé"
-    >
-      <EcosystemSchema id="page-ecosystem-schema" />
-    </section>
 
     <ol class="ecosystem-layers">
       <li>
@@ -41,16 +43,23 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
               <h2 id="coeur-title" data-seuil-reveal>Le Cœur</h2>
               <p class="role-family">
                 <RoleIcon role="artisan" size={28} decorative />
-                <strong>Artiste ou Artisan</strong>
+                <strong>Artiste ou artisan, et acheteur</strong>
               </p>
             </header>
             <div class="ecosystem-layer-content">
               <p>
-                Au centre de l’écosystème se trouvent deux gestes simples :
-                créer et découvrir. Une personne crée une œuvre originale ; une
-                autre la découvre et choisit de la soutenir. Tout le reste de
-                l’écosystème existe pour rendre ce geste plus simple et plus
-                sûr, sans jamais le remplacer.
+                Une personne créerait une pièce originale ; une autre pourrait
+                la découvrir, comprendre son histoire et choisir de l’acheter.
+                Le créateur aurait besoin de présenter son travail sans tout
+                gérer seul. L’acheteur aurait besoin d’informations précises sur
+                la pièce, son origine, son prix et les conditions de la vente.
+              </p>
+              <p>
+                Ces deux points de vue orientent le modèle. Faciliter la vie du
+                créateur ne doit pas laisser l’acheteur sans interlocuteur ;
+                faciliter l’achat ne doit pas masquer le travail ou la
+                rémunération de la personne qui crée. Les responsabilités
+                restent à organiser avant l’ouverture d’un service de vente.
               </p>
             </div>
           </div>
@@ -76,8 +85,10 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
                       Les Éclaireurs
                     </h3>
                     <p>
-                      Les Éclaireurs pourraient repérer des talents qui n’ont
-                      pas encore osé se présenter et leur ouvrir une porte.
+                      Les Éclaireurs pourraient rencontrer des personnes qui
+                      créent, leur présenter Orée et faciliter un premier
+                      échange. Ils interviendraient en amont, en respectant la
+                      liberté d’accepter ou de refuser cette proposition.
                     </p>
                   </div>
                 </section>
@@ -86,13 +97,21 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
                   <div>
                     <h3 class="role-name" id="echos-title">Les Échos</h3>
                     <p>
-                      Les Échos pourraient faire connaître les créations et les
-                      histoires d’Orée sans se substituer aux personnes qui
-                      créent.
+                      Les Échos pourraient sélectionner des créations et les
+                      faire découvrir à leur entourage ou à leur audience. Ils
+                      expliqueraient ce qui les intéresse dans une pièce, en
+                      rendant visible toute rémunération liée à leur
+                      recommandation.
                     </p>
                   </div>
                 </section>
               </div>
+              <p class="context-note">
+                Les commissions sur ventes évoquées pour ces deux rôles sont des
+                hypothèses. Leur montant, leur durée, leur attribution et leur
+                effet sur la rémunération du créateur restent à examiner dans
+                les <a href="/fondations/">Fondations</a>.
+              </p>
             </div>
           </div>
         </section>
@@ -173,11 +192,14 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
             </header>
             <div class="ecosystem-layer-content">
               <p>
-                Sous condition que le modèle se valide, l’écosystème pourrait
-                s’organiser en Clairières — des communautés locales — puis
-                converger vers La Canopée, un horizon coopératif où chaque
-                personne pèserait une voix, indépendamment de sa contribution
-                financière.
+                Si l’utilité et la viabilité du modèle sont établies, une «
+                Clairière » pourrait réunir localement des personnes autour des
+                créations et de tâches partagées. « La Canopée » désigne
+                l’horizon d’une structure coopérative. L’intention est de donner
+                une place aux participants dans les décisions, indépendamment de
+                leur apport financier ; les règles et le cadre juridique restent
+                à définir. La <a href="/roadmap/">feuille de route</a>
+                présente les conditions à examiner avant ces étapes.
               </p>
             </div>
           </div>
@@ -187,55 +209,156 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
 
     <section class="section-block" aria-labelledby="profils-title">
       <div class="container reading-width">
-        <h2 id="profils-title">Profils de conception</h2>
-        <p class="context-note">
-          Lecture facultative. Ces profils sont des personas de conception — des
-          situations illustratives utilisées pour penser les rôles ci-dessus —
-          et non des personnes réelles ni des statistiques.
+        <h2 id="profils-title">
+          <AnchorAliases target="profils-title" />
+          Quatre portraits pour éprouver le fonctionnement envisagé
+        </h2>
+        <p>
+          Marc, Claire, Camille et Julien sont quatre portraits imaginés pour
+          concevoir Orée. Ils aident à suivre une rencontre, une recommandation
+          et un achat possibles. Ce sont des scénarios, pas des témoignages ou
+          des utilisateurs attestés.
         </p>
-        <p class="document-door">
-          <a href="/documents/profils/"
-            >Lire les quatre portraits du document d’origine →</a
-          >
+        <p>
+          Ces quatre portraits ne correspondent pas aux quatre rôles proposés
+          pour participer. Claire représente le point de vue de l’acheteuse. Les
+          Bâtisseurs, eux, contribuent à concevoir le fonctionnement commun et
+          n’ont pas de portrait dans cette série.
         </p>
-        <details data-seuil-details class="personas-details">
-          <summary>Voir les quatre profils de conception</summary>
-          <div class="details-content persona-grid">
-            <article class="persona">
-              <h3 class="persona-name">Marc — Persona de conception</h3>
-              <p>
-                Une personne qui crée depuis longtemps, mais qui n’a jamais osé
-                vendre par peur du jugement.
-              </p>
-            </article>
-            <article class="persona">
-              <h3 class="persona-name">Claire — Persona de conception</h3>
-              <p>
-                Une personne qui découvre des créations et cherche à soutenir
-                directement qui les fait.
-              </p>
-            </article>
-            <article class="persona">
-              <h3 class="persona-name">Camille — Persona de conception</h3>
-              <p>
-                Une personne qui repère des talents autour d’elle et pourrait
-                devenir Éclaireuse.
-              </p>
-            </article>
-            <article class="persona">
-              <h3 class="persona-name">Julien — Persona de conception</h3>
-              <p>
-                Une personne qui aime raconter ce qui mérite d’être découvert et
-                qui pourrait devenir Écho.
-              </p>
-            </article>
-          </div>
-          <p class="context-note">
-            Retrouver ces situations en détail sur la page <a href="/rejoindre/"
-              >Participer</a
-            >.
-          </p>
-        </details>
+        <AnchorAliases target="relations-envisagees" />
+        <RelationsEnvisagees />
+        <div class="persona-list">
+          <section class="persona" aria-labelledby="portrait-marc">
+            <h3 class="persona-name" id="portrait-marc">
+              <AnchorAliases target="portrait-marc" />
+              Marc : créer dans plusieurs domaines, sans savoir comment vendre
+            </h3>
+            <p>
+              Dans ce portrait, Marc a connu plusieurs reconversions et se forme
+              à l’ébénisterie. Il peint, forge des couteaux, dessine, sculpte de
+              petites pièces en bois et pratique la musique. Il offre parfois
+              ses créations à ses proches, mais ne les montre pas publiquement.
+              Sans formation artistique reconnue ni réseau commercial, il doute
+              de sa légitimité à les vendre.
+            </p>
+            <p>
+              Son besoin serait de trouver un appui concret pour présenter et
+              vendre une pièce, sans devoir commencer par apprendre le marketing
+              ou multiplier les outils. Il voudrait comprendre ce qu’il doit
+              fournir, qui prendrait en charge les autres tâches et ce qui lui
+              resterait après les frais. Un accompagnement ne ferait pas
+              disparaître ses choix ni ses obligations.
+            </p>
+            <p>
+              La scène imaginée commence par un couteau offert à une amie.
+              Camille le remarque et propose à Marc un échange sur son travail.
+              S’il le souhaite et si le cadre est prêt, il pourrait ensuite
+              proposer une pièce. Cette scène invite à examiner les premières
+              étapes, le temps administratif et la façon dont il se sent
+              accueilli. Elle ne permet pas de prévoir si une vente aurait lieu,
+              ni quand.
+            </p>
+          </section>
+          <section class="persona" aria-labelledby="portrait-claire">
+            <h3 class="persona-name" id="portrait-claire">
+              <AnchorAliases target="portrait-claire" />
+              Claire : comprendre une pièce et savoir à qui faire confiance
+            </h3>
+            <p>
+              Claire cherche aussi bien un cadeau qu’une pièce à conserver. Elle
+              aimerait connaître la personne qui a fabriqué l’objet, ses
+              matériaux et sa démarche. Son problème serait de trouver des
+              informations fiables parmi les créations qu’elle découvre, sans
+              devoir déjà connaître les ateliers ou les circuits de vente.
+            </p>
+            <p>
+              Dans le scénario, une recommandation de Julien la conduirait vers
+              le travail de Marc. Elle regarderait le couteau, lirait sa
+              présentation et pourrait explorer ses autres créations. Pour
+              décider, une histoire attachante ne suffirait pas : elle devrait
+              pouvoir identifier le vendeur, comprendre le prix, les conditions
+              de paiement, la livraison, les retours et le suivi d’un éventuel
+              problème.
+            </p>
+            <p>
+              On peut imaginer une réception accompagnée d’un mot du créateur et
+              un retour pour choisir un cadeau. Cela exprime un besoin de
+              continuité entre la découverte, l’achat et l’après-vente. Le
+              certificat d’authenticité, le paiement fractionné et le suivi
+              d’artisans sont des pistes à évaluer, pas des services disponibles
+              ni des garanties établies.
+            </p>
+          </section>
+          <section class="persona" aria-labelledby="portrait-camille">
+            <h3 class="persona-name" id="portrait-camille">
+              <AnchorAliases target="portrait-camille" />
+              Camille : faire reconnaître le travail de mise en relation
+            </h3>
+            <p>
+              Camille aime rencontrer des personnes et faire découvrir leur
+              travail, dans son quartier, sur un marché ou par une connaissance.
+              Elle ne crée pas elle-même les pièces. Son apport serait de
+              repérer un travail peu montré, d’écouter la personne qui le
+              réalise et de lui présenter une possibilité adaptée à ses envies.
+            </p>
+            <p>
+              En découvrant le couteau de Marc chez une amie, elle pourrait lui
+              demander s’il souhaite parler de ses créations. Son rôle
+              d’Éclaireure consisterait à faciliter ce premier échange, sans
+              promettre une vente ni pousser quelqu’un à s’inscrire. Marc
+              garderait le choix de donner suite.
+            </p>
+            <p>
+              Une piste serait une commission plafonnée sur les ventes liées aux
+              créateurs mis en relation. Pour examiner cette idée, il faudrait
+              définir comment attribuer la rencontre, pendant combien de temps
+              et avec quel plafond, puis expliquer son coût et son financement.
+              Camille aurait besoin d’un relevé compréhensible de ses
+              contributions. Ce mécanisme ne garantit ni revenu, ni activité
+              régulière.
+            </p>
+          </section>
+          <section class="persona" aria-labelledby="portrait-julien">
+            <h3 class="persona-name" id="portrait-julien">
+              <AnchorAliases target="portrait-julien" />
+              Julien : recommander des créations avec transparence
+            </h3>
+            <p>
+              Dans ce portrait, Julien est designer de formation. Il visite des
+              ateliers, des marchés et des galeries, puis partage ses
+              découvertes avec une audience qui s’intéresse à ses choix. Il
+              voudrait composer une sélection personnelle et expliquer ce qui le
+              touche dans une création, sans se présenter comme son fabricant ou
+              son vendeur.
+            </p>
+            <p>
+              Il pourrait découvrir le couteau de Marc, le présenter sur un
+              réseau social ou dans une lettre d’information, puis orienter
+              Claire vers sa fiche. Son rôle d’Écho serait de faire circuler une
+              recommandation argumentée. Toute commission éventuelle devrait
+              être annoncée clairement, pour que le lecteur comprenne l’intérêt
+              économique associé au partage.
+            </p>
+            <p>
+              Un lien attribué à Julien et une sélection de coups de cœur sont
+              des pistes à examiner. Leur mise en place demanderait de préciser
+              comment relier une vente à un partage, traiter les attributions
+              concurrentes et restituer les informations utiles. La rémunération
+              devrait rester lisible pour le créateur et l’acheteur. Aucun taux,
+              délai de versement ou résultat de recommandation n’est acquis.
+            </p>
+          </section>
+        </div>
+        <h3 id="questions-des-portraits">
+          Ce que ces portraits aident à examiner
+        </h3>
+        <p>
+          Une proposition rend-elle le premier pas plus clair pour Marc ?
+          Aide-t-elle Claire à comprendre ce qu’elle achèterait ? Rend-elle la
+          contribution de Camille ou de Julien explicite et vérifiable ? Ces
+          questions orientent la conception et devront être confrontées à de
+          vraies expériences.
+        </p>
       </div>
     </section>
 
@@ -387,35 +510,29 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     font-size: var(--text-sm);
   }
 
-  .personas-details {
-    margin-top: var(--space-4);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: 3px;
-    background: var(--color-surface);
+  .summary-nav {
+    display: grid;
+    gap: var(--space-1);
+    margin-block: var(--space-6);
+    padding-block: var(--space-3);
+    border-block: 1px solid var(--color-dawn);
   }
 
-  .personas-details summary {
+  .summary-nav a {
+    display: flex;
+    align-items: center;
     min-height: 44px;
-    padding-block: 0.5rem;
-    font-weight: 650;
-    cursor: pointer;
     color: var(--color-canopy);
   }
 
-  .details-content {
-    margin-top: var(--space-4);
-    padding-top: var(--space-4);
+  .persona {
+    min-width: 0;
+    padding-block: var(--space-8);
     border-top: 1px solid var(--color-border);
   }
 
-  .persona-grid {
-    display: grid;
-    gap: var(--space-4);
-  }
-
   .persona-name {
-    margin-bottom: var(--space-1);
+    margin-bottom: var(--space-4);
     font-weight: 700;
     color: var(--color-canopy);
   }
@@ -478,10 +595,6 @@ import RoleIcon from "../../components/brand/RoleIcon.astro";
     }
 
     .role-grid--triple {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .persona-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }

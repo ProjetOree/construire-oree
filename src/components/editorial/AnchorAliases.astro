@@ -1,0 +1,80 @@
+---
+import aliases from "../../data/anchor-aliases.json";
+interface Props {
+  target: string;
+}
+const { target } = Astro.props;
+const entries = aliases[Astro.url.pathname as keyof typeof aliases] ?? {};
+const ids = Object.entries(entries)
+  .filter(([, destination]) => destination === target)
+  .map(([id]) => id);
+---
+
+{
+  ids.map((id) => (
+    <span
+      id={id}
+      class="anchor-alias"
+      data-anchor-target={target}
+      aria-hidden="true"
+    />
+  ))
+}
+<script>
+  function fragmentTarget() {
+    try {
+      const anchor = document.getElementById(
+        decodeURIComponent(location.hash.slice(1)),
+      );
+      return anchor?.dataset.anchorTarget
+        ? document.getElementById(anchor.dataset.anchorTarget)
+        : anchor;
+    } catch {
+      return null;
+    }
+  }
+  function revealFragment() {
+    const target = fragmentTarget();
+    if (!target) return;
+    let parent: HTMLElement | null = target;
+    while (parent) {
+      if (parent instanceof HTMLDetailsElement) parent.open = true;
+      parent = parent.parentElement;
+    }
+    requestAnimationFrame(() =>
+      target.scrollIntoView({ block: "start", behavior: "instant" }),
+    );
+  }
+  const initialTarget = fragmentTarget();
+  document
+    .querySelectorAll<HTMLDetailsElement>("[data-editorial-details]")
+    .forEach((details) => {
+      details.open =
+        !!initialTarget &&
+        (details === initialTarget || details.contains(initialTarget));
+    });
+  revealFragment();
+  window.addEventListener("hashchange", revealFragment);
+  document.addEventListener("click", (event) => {
+    const link =
+      event.target instanceof Element
+        ? event.target.closest<HTMLAnchorElement>("a[href]")
+        : null;
+    if (
+      link?.hash &&
+      link.origin === location.origin &&
+      link.pathname === location.pathname &&
+      link.hash === location.hash
+    )
+      revealFragment();
+  });
+</script>
+<style>
+  .anchor-alias {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    scroll-margin-top: 2rem;
+  }
+</style>

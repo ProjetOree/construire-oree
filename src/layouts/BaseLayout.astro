@@ -59,6 +59,12 @@ const socialImageAlt =
 
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {
+      !route.startsWith("/documents/") &&
+        !["/404.html", "/404/"].includes(route) && (
+          <link rel="canonical" href={pageURL} />
+        )
+    }
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1" />
 

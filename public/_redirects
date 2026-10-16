@@ -1,0 +1,16 @@
+# Documentary content is integrated in the five main pages. Fragment IDs are preserved there.
+/documents /projet/ 301
+/documents/ /projet/ 301
+/documents/index.html /projet/ 301
+/documents/profils /ecosysteme/ 301
+/documents/profils/ /ecosysteme/ 301
+/documents/profils/index.html /ecosysteme/ 301
+/documents/blueprint-technique-fiscal /fondations/ 301
+/documents/blueprint-technique-fiscal/ /fondations/ 301
+/documents/blueprint-technique-fiscal/index.html /fondations/ 301
+/documents/roadmap /roadmap/ 301
+/documents/roadmap/ /roadmap/ 301
+/documents/roadmap/index.html /roadmap/ 301
+/documents/rejoindre /rejoindre/ 301
+/documents/rejoindre/ /rejoindre/ 301
+/documents/rejoindre/index.html /rejoindre/ 301

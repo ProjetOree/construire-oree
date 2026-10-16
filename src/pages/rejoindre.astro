@@ -1,12 +1,14 @@
 ---
+import AnchorAliases from "../components/editorial/AnchorAliases.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RoleIcon from "../components/brand/RoleIcon.astro";
+
 import { siteConfig } from "../config/site";
 ---
 
 <BaseLayout
   title="Participer à la construction d’Orée"
-  description="Partagez une expérience, une expertise ou une question pour aider à construire Orée, en toute liberté et sans engagement."
+  description="Artiste, artisan, Bâtisseur, Éclaireur ou Écho : découvrez comment contribuer à Orée aujourd’hui et les rôles envisagés pour la suite."
 >
   <div class="page-rejoindre">
     <section class="join-hero">
@@ -17,10 +19,11 @@ import { siteConfig } from "../config/site";
         <h1 data-seuil-intro="title">Aider à construire Orée, aujourd’hui</h1>
         <p class="repere">Vous êtes ici · Participer</p>
         <p class="introduction" data-seuil-intro="copy">
-          Orée est au point zéro : la marketplace n’est pas encore ouverte. Vous
-          pouvez déjà nous aider à comprendre ce qui compte, à vérifier une
+          Vous pouvez aider Orée à comprendre ce qui compte, à vérifier une
           piste ou à faire connaître la démarche. Un premier geste suffit ; vous
-          n’avez pas besoin de choisir un rôle maintenant.
+          n’avez pas besoin de choisir un rôle maintenant. La place de marché
+          n’est pas encore ouverte : il s’agit aujourd’hui de construire le
+          projet ensemble.
         </p>
         <a
           data-seuil-button
@@ -36,6 +39,7 @@ import { siteConfig } from "../config/site";
       class="join-summary"
       aria-labelledby="premier-geste-title"
     >
+      <AnchorAliases target="agir-maintenant" />
       <div class="container">
         <h2 id="premier-geste-title">Choisir un premier geste</h2>
         <p class="section-lead">
@@ -51,15 +55,15 @@ import { siteConfig } from "../config/site";
               expédier une création vous a semblé trop lourd ou injuste.
             </p>
             <a class="button button-primary" href={siteConfig.links.join}
-              >Raconter mon expérience (5 min) →</a
+              >Raconter mon expérience →</a
             >
           </li>
           <li class="intent-card">
             <p class="intent-kicker">⚒ LES FONDATIONS · BÂTISSEUR</p>
             <h3 data-seuil-reveal="choice">Vous avez une expertise métier</h3>
             <p>
-              Droit, fiscalité, comptabilité, logistique, ESS ou développement :
-              aidez-nous à vérifier nos pistes et à sécuriser le modèle.
+              Droit, fiscalité, comptabilité, logistique, économie sociale et
+              solidaire ou développement : aidez à examiner un point précis.
             </p>
             <a class="button button-secondary" href={siteConfig.links.join}
               >Donner mon avis sur un sujet →</a
@@ -69,7 +73,7 @@ import { siteConfig } from "../config/site";
             <p class="intent-kicker">» LES RELAIS · ÉCLAIREUR &amp; ÉCHO</p>
             <h3 data-seuil-reveal="choice">Vous voulez soutenir ou relayer</h3>
             <p>
-              Aidez à repérer des talents restés dans l’ombre, partagez la
+              Partagez votre regard sur la création, faites connaître la
               démarche autour de vous ou posez-nous une question.
             </p>
             <a class="button button-secondary" href={siteConfig.links.contact}
@@ -77,9 +81,11 @@ import { siteConfig } from "../config/site";
             >
           </li>
         </ul>
-        <p class="human-note">
-          Chaque message est lu attentivement par Jérémy pour nourrir la
-          conception du projet, en toute liberté et sans engagement mutuel.
+        <p id="porteur-du-projet">
+          <AnchorAliases target="porteur-du-projet" />
+          Vos messages sont adressés à Jérémy, qui porte le projet. Vous pouvez proposer
+          une aide ponctuelle, à votre rythme, sans engagement mutuel.
+          <a href="/a-propos/">Découvrir pourquoi il construit Orée</a>.
         </p>
       </div>
     </section>
@@ -88,21 +94,18 @@ import { siteConfig } from "../config/site";
       <div class="container">
         <h2>Comprendre les rôles</h2>
         <p class="roles-lead reading-width">
-          Les rôles donnent un vocabulaire aux besoins du projet. Découvrez pour
-          chacun le besoin actuel, ce que vous pouvez faire aujourd’hui et
-          l’horizon possible. Vous pouvez contribuer sans vous définir par un
-          rôle.
+          Les artistes et artisans créent ; les Éclaireurs vont à leur rencontre
+          ; les Échos font découvrir leurs créations ; les Bâtisseurs préparent
+          les outils et l’organisation. Ces rôles décrivent le fonctionnement
+          envisagé. Aujourd’hui, vous pouvez apporter une expérience ou une
+          idée, et cumuler plusieurs centres d’intérêt.
         </p>
         <nav class="roles-index" aria-label="Accès direct aux rôles">
           <a href="#artiste-ou-artisan">Artiste ou Artisan</a><a
             href="#eclaireur">Éclaireur</a
           ><a href="#echo">Écho</a><a href="#batisseur">Bâtisseur</a>
         </nav>
-        <p class="document-door">
-          <a href="/documents/rejoindre/"
-            >Lire le document d’origine complet sur les rôles →</a
-          >
-        </p>
+
         <details
           data-seuil-details
           class="persona claire-persona reading-width"
@@ -113,17 +116,21 @@ import { siteConfig } from "../config/site";
           >
           <div class="persona-body">
             <p>
-              Claire représente une personne qui pourrait un jour chercher une
-              création originale, un savoir-faire et l’histoire qui
-              l’accompagne. Elle n’est ni cliente d’Orée ni preuve d’une demande
-              existante. Sa place dans cette carte sert à rappeler que la
-              découverte et la confiance devront être pensées sans effacer le
-              travail des personnes qui créent.
+              Claire est un portrait de conception : elle pourrait chercher une
+              création originale et l’histoire qui l’accompagne. Dans le projet
+              envisagé, acheter ne demanderait pas de prendre un rôle de
+              contributeur. Aujourd’hui, si vous vous reconnaissez dans cette
+              attente, vous pouvez <a href={siteConfig.links.follow}
+                >suivre les nouvelles</a
+              >
+              ou expliquer ce qui vous aiderait à choisir une création en confiance.
             </p>
             <p><strong>Tension illustrée</strong></p>
             <p>
-              Réfléchir à une future expérience de découverte sans annoncer de
-              catalogue, d’achat ou de service déjà disponible.
+              Comprendre le point de vue de l’acheteur, même avant l’existence
+              d’un catalogue. <a href="/ecosysteme/"
+                >Découvrir les quatre portraits de conception</a
+              >.
             </p>
           </div>
         </details>
@@ -135,6 +142,7 @@ import { siteConfig } from "../config/site";
         id="artiste-ou-artisan"
         class="role-section role-section--artisan"
       >
+        <AnchorAliases target="artiste-ou-artisan" />
         <div class="container reading-width">
           <h2 data-seuil-reveal>
             <RoleIcon role="artisan" size={28} decorative /> Artiste ou Artisan
@@ -143,17 +151,20 @@ import { siteConfig } from "../config/site";
             <div class="role-main">
               <h3>Ce dont le projet a besoin maintenant</h3>
               <p>
-                Des retours sur les difficultés concrètes rencontrées pour
-                créer, montrer, vendre ou gérer l’administratif. Ces retours
-                peuvent éclairer les choix du projet sans être présentés comme
-                une étude menée auprès d’utilisateurs.
+                Votre expérience de la création et de ce qui l’entoure : fixer
+                un prix, photographier une pièce, trouver un public, préparer un
+                colis ou comprendre une démarche administrative. Un exemple
+                concret aide à identifier ce qu’Orée devrait prendre en charge
+                et ce qui doit rester votre choix.
               </p>
 
               <h3>Ce que vous pouvez faire aujourd’hui</h3>
               <p>
-                Partager votre expérience, signaler votre intérêt pour suivre le
-                projet ou indiquer si vous souhaiteriez être recontacté lorsque
-                le contexte sera plus clair.
+                Racontez ce qui vous freine, ce qui vous aide déjà et ce qui
+                vous manque. Vous pouvez aussi indiquer votre intérêt pour un
+                futur essai. Peinture, photographie, céramique, bijoux, bois,
+                textile, illustration ou autres formes de création : le projet
+                cherche à comprendre des pratiques diverses.
               </p>
 
               <div class="role-action">
@@ -164,12 +175,45 @@ import { siteConfig } from "../config/site";
 
               <h3>Ce que ce rôle pourrait devenir</h3>
               <p>
-                Les artistes et artisans pourraient, lorsque la marketplace
-                existera, aider à éprouver la manière dont le projet accueille
-                les créations, la vente et les contraintes administratives.
-                Aucun rôle de vendeur, de pilote ou d’utilisateur n’est ouvert
-                aujourd’hui.
+                Un premier groupe pourrait essayer la présentation de quelques
+                créations et donner des retours sur la vente et l’administratif.
+                L’intention est de permettre un essai accessible, sans imposer
+                une présence quotidienne. Les conditions, les frais éventuels et
+                les engagements devront être définis avant toute invitation à
+                vendre ; le formulaire n’inscrit pas à un programme pilote.
               </p>
+              <details
+                class="persona"
+                data-seuil-details
+                id="creation-et-statut"
+              >
+                <summary
+                  >Créations, statuts et conditions d’un futur essai</summary
+                >
+                <div class="persona-body">
+                  <p>
+                    Une œuvre originale, un objet artisanal et un produit édité
+                    ne soulèvent pas toujours les mêmes questions. Le
+                    fonctionnement envisagé distingue ces activités, y compris
+                    lorsqu’une personne en cumule plusieurs. Le régime
+                    applicable, la facturation et les démarches restent à
+                    examiner selon chaque situation ; Orée ne choisit pas un
+                    statut à votre place.
+                  </p>
+                  <p>
+                    Vos retours peuvent aider à préciser ce qui rendrait un
+                    essai utile et accessible : aide pour présenter une pièce,
+                    frais compréhensibles, temps à prévoir. Vous restez libre de
+                    ne pas participer à la suite du projet.
+                  </p>
+                  <p>
+                    <a href="/fondations/"
+                      >Examiner les conditions de vente et les questions de
+                      statut</a
+                    >.
+                  </p>
+                </div>
+              </details>
             </div><aside class="role-example" aria-label="Exemple illustratif">
               <details data-seuil-details class="persona">
                 <summary
@@ -197,6 +241,7 @@ import { siteConfig } from "../config/site";
       </section>
 
       <section id="eclaireur" class="role-section role-section--eclaireur">
+        <AnchorAliases target="eclaireur" />
         <div class="container reading-width">
           <h2 data-seuil-reveal>
             <RoleIcon role="eclaireur" size={28} decorative /> Éclaireur
@@ -206,15 +251,19 @@ import { siteConfig } from "../config/site";
               <h3>Ce dont le projet a besoin maintenant</h3>
               <p>
                 Un regard de terrain : ce qui aide une personne créative à se
-                sentir légitime, les lieux ou réseaux où le talent reste peu
-                visible, et les conditions nécessaires pour qu’une mise en
-                relation reste juste.
+                sentir légitime, les lieux où elle présente son travail et les
+                conditions d’une mise en relation respectueuse. Vous fréquentez
+                des marchés, des ateliers ouverts ou des événements culturels ?
+                Vous animez une communauté ou enseignez une pratique artistique
+                ? Ces expériences peuvent éclairer le projet.
               </p>
 
               <h3>Ce que vous pouvez faire aujourd’hui</h3>
               <p>
-                Indiquer ce que vous observez, les communautés ou contextes que
-                vous connaissez et la manière dont vous aimeriez contribuer.
+                Indiquez ce que vous observez, les contextes que vous connaissez
+                et ce qui donnerait envie à une personne de présenter son
+                travail. Le rôle envisagé consiste à rencontrer des créateurs et
+                à les aider à découvrir Orée, sans les pousser à participer.
               </p>
 
               <div class="role-action">
@@ -225,12 +274,35 @@ import { siteConfig } from "../config/site";
 
               <h3>Ce que ce rôle pourrait devenir</h3>
               <p>
-                Les Éclaireurs pourraient aider Orée à mieux comprendre comment
-                les talents sont repérés, rencontrés et accompagnés. Les
-                modalités éventuelles de reconnaissance ou de rémunération
-                appartiennent au projet futur : elles ne sont pas actives
-                aujourd’hui.
+                Une mise en relation pourrait être reconnue lorsqu’un créateur
+                rejoint le projet puis réalise des ventes. La piste envisagée
+                est une commission limitée dans le temps ou en montant, suivie
+                manuellement au début. Aucun code, suivi de vente ou paiement de
+                commission n’est actif aujourd’hui.
               </p>
+              <details
+                class="persona"
+                data-seuil-details
+                id="reconnaissance-eclaireur"
+              >
+                <summary>Comment reconnaître une mise en relation ?</summary>
+                <div class="persona-body">
+                  <p>
+                    Il faudrait définir ce qui constitue une découverte,
+                    recueillir l’accord des personnes concernées, conserver la
+                    trace de l’attribution et expliquer le taux et le plafond
+                    avant toute participation. Un suivi manuel ne dispense pas
+                    de règles vérifiables.
+                  </p>
+                  <p>
+                    Si plusieurs personnes présentent le même créateur, ou si un
+                    Écho recommande ensuite sa création, les règles de partage
+                    et de cumul devront être explicites. La
+                    <a href="/roadmap/">feuille de route</a> replace ces décisions
+                    parmi les conditions d’un premier essai.
+                  </p>
+                </div>
+              </details>
             </div><aside class="role-example" aria-label="Exemple illustratif">
               <details data-seuil-details class="persona">
                 <summary
@@ -257,6 +329,7 @@ import { siteConfig } from "../config/site";
       </section>
 
       <section id="echo" class="role-section role-section--echo">
+        <AnchorAliases target="echo" />
         <div class="container reading-width">
           <h2 data-seuil-reveal>
             <RoleIcon role="echo" size={28} decorative /> Écho
@@ -265,15 +338,19 @@ import { siteConfig } from "../config/site";
             <div class="role-main">
               <h3>Ce dont le projet a besoin maintenant</h3>
               <p>
-                Un retour sur les pratiques de curation, de recommandation et de
-                transparence : ce qui rend un relais utile, crédible et
-                respectueux des personnes qui créent.
+                Un retour sur la manière de sélectionner et de recommander des
+                créations : ce qui rend un conseil utile, crédible et
+                respectueux du travail présenté. L’Éclaireur va à la rencontre
+                des créateurs ; l’Écho fait découvrir des créations à un public.
               </p>
 
               <h3>Ce que vous pouvez faire aujourd’hui</h3>
               <p>
-                Expliquer ce que vous partagez déjà, les communautés que vous
-                connaissez ou les questions que vous jugez importantes.
+                Expliquez ce que vous partagez déjà dans une newsletter, un
+                blog, une communauté, un événement ou par le bouche-à-oreille.
+                La taille de votre audience n’est pas le sujet : ce qui compte
+                pour la conception est la qualité de la recommandation et la
+                confiance de ses destinataires.
               </p>
 
               <div class="role-action">
@@ -284,11 +361,45 @@ import { siteConfig } from "../config/site";
 
               <h3>Ce que ce rôle pourrait devenir</h3>
               <p>
-                Les Échos pourraient aider à penser la recommandation, la
-                médiation et la mise en lumière de créations auprès de
-                communautés pertinentes. Il n’existe actuellement ni catalogue,
-                ni vitrine, ni vente générée par Orée.
+                Un Écho pourrait composer une sélection de créations, la
+                partager et recevoir une commission sur les ventes qui lui
+                seraient attribuées. L’hypothèse est de financer cette
+                commission sur la part d’Orée, en rendant la rémunération
+                visible pour l’acheteur et le créateur. La vitrine, le code de
+                recommandation et les commissions restent à concevoir.
               </p>
+              <details
+                class="persona"
+                data-seuil-details
+                id="recommandation-transparente"
+              >
+                <summary>Rémunération, transparence et cumul des rôles</summary>
+                <div class="persona-body">
+                  <p>
+                    Avant un essai, il faudrait préciser comment une vente est
+                    attribuée, le taux et le montant sur lequel la commission
+                    serait calculée, le traitement d’un retour ou d’une
+                    annulation, ainsi que les éventuels plafonds. L’équilibre
+                    économique devra permettre de vérifier l’intention de
+                    préserver la rémunération du créateur.
+                  </p>
+                  <p>
+                    Un règlement manuel pourrait précéder un outil de suivi
+                    automatisé. Cette piste ne constitue ni une garantie de
+                    revenu ni une validation du cadre applicable. Une personne
+                    pourrait être à la fois Écho et Éclaireur ; les règles de
+                    cumul devront éviter les attributions ambiguës et être
+                    connues de tous.
+                  </p>
+                  <p>
+                    La recommandation rémunérée devrait être signalée
+                    clairement, et la liberté de choisir les créations rester
+                    entière. Le statut, les contrats et les justificatifs
+                    nécessaires à une rémunération seraient à vérifier avant
+                    tout versement.
+                  </p>
+                </div>
+              </details>
             </div><aside class="role-example" aria-label="Exemple illustratif">
               <details data-seuil-details class="persona">
                 <summary
@@ -316,6 +427,7 @@ import { siteConfig } from "../config/site";
       </section>
 
       <section id="batisseur" class="role-section role-section--batisseur">
+        <AnchorAliases target="batisseur" />
         <div class="container reading-width">
           <h2 data-seuil-reveal>
             <RoleIcon role="batisseur" size={28} decorative /> Bâtisseur
@@ -329,12 +441,31 @@ import { siteConfig } from "../config/site";
                 ou d’indiquer ce qui demande une expertise que le projet ne
                 possède pas encore.
               </p>
+              <ul class="contribution-list">
+                <li>
+                  <strong>Technique et données :</strong> examiner les deux circuits
+                  de vente, l’accessibilité des parcours, la protection des données,
+                  les tests et la fiabilité des outils.
+                </li>
+                <li>
+                  <strong>Droit, fiscalité et comptabilité :</strong> clarifier qui
+                  vend, facture et assume les obligations ; examiner les contrats
+                  et les situations des artistes et artisans.
+                </li>
+                <li>
+                  <strong>Opérations et logistique :</strong> décrire une expédition,
+                  un retour ou un litige, et organiser le suivi des paiements et des
+                  documents comptables.
+                </li>
+              </ul>
 
               <h3>Ce que vous pouvez faire aujourd’hui</h3>
               <p>
-                Décrivez le domaine dans lequel vous pourriez aider et le type
-                de contribution que vous envisagez. Le formulaire sert à ouvrir
-                un premier échange.
+                Lisez les <a href="/fondations/">fondations du projet</a>, puis
+                choisissez une question sur laquelle vous pourriez apporter un
+                avis. Décrivez votre approche et le temps que vous souhaitez y
+                consacrer. Une remarque argumentée ou un point de vigilance peut
+                déjà être une contribution utile.
               </p>
 
               <div class="role-action">
@@ -345,11 +476,61 @@ import { siteConfig } from "../config/site";
 
               <h3>Ce que ce rôle pourrait devenir</h3>
               <p>
-                Les Bâtisseurs pourraient contribuer aux fondations techniques,
-                juridiques, fiscales, opérationnelles et logistiques d’Orée. À
-                long terme, ces sujets appartiennent à la vision coopérative du
-                projet ; ils ne décrivent pas un statut existant aujourd’hui.
+                Les Bâtisseurs pourraient prendre part à la réalisation des
+                outils et à l’organisation quotidienne d’Orée. Une piste serait
+                de commencer par des interventions indépendantes, puis
+                d’examiner une place de salarié associé dans un horizon
+                coopératif. Aucune mission rémunérée, aucun partenariat ni
+                statut futur ne découle du formulaire de contribution.
               </p>
+              <details
+                class="persona"
+                data-seuil-details
+                id="contribuer-aux-fondations"
+              >
+                <summary
+                  >Préparer une contribution et comprendre les chantiers</summary
+                >
+                <div class="persona-body">
+                  <p>
+                    Avant de construire quelque chose d’important, proposez un
+                    périmètre à Jérémy : le problème traité, les choix possibles
+                    et les conséquences pour les personnes concernées.
+                    Documenter pourquoi une décision est prise permet de la
+                    discuter et de la reprendre plus tard. Une procédure
+                    manuelle peut suffire pour un premier essai si elle reste
+                    fiable et compréhensible.
+                  </p>
+                  <p>
+                    Les pistes techniques envisagées comprennent Next.js et
+                    React pour les interfaces, Stripe Connect pour les
+                    paiements, Cloudinary pour les images, PostgreSQL pour la
+                    recherche et Vercel pour l’hébergement. Elles ne décrivent
+                    pas le site public actuel, construit avec Astro, et doivent
+                    être réévaluées avant un développement de la place de
+                    marché.
+                  </p>
+                  <p>
+                    Les sujets juridiques incluent la taxe sur la valeur ajoutée
+                    (TVA), les obligations éventuelles de diffuseur, la
+                    facturation électronique, les conditions générales de vente,
+                    les contrats de participation, la protection des données et
+                    les règles applicables aux plateformes. Les opérations
+                    couvrent aussi les rapprochements comptables, les relations
+                    avec les transporteurs et l’étude d’un éventuel lieu
+                    physique. Ces sujets demandent des vérifications
+                    spécialisées ; aucun expert-comptable, avocat ou
+                    transporteur partenaire n’est annoncé comme acquis.
+                  </p>
+                  <p>
+                    Pour commencer, les accès proposés sont les formulaires, le
+                    forum public et le dépôt consultable ci-dessous. Si une
+                    mission se précise, son périmètre, la disponibilité
+                    attendue, les responsabilités et une éventuelle rémunération
+                    devront être convenus avant de la réaliser.
+                  </p>
+                </div>
+              </details>
             </div>
           </div>
         </div>
@@ -363,20 +544,20 @@ import { siteConfig } from "../config/site";
       <div class="container">
         <details class="listening-charter" data-seuil-details>
           <summary
-            >Notre charte d’écoute : comment vos messages sont lus et utilisés
-            (en toute liberté et sans engagement)</summary
+            >Vos messages : destinataire, liberté de participation et suites
+            possibles</summary
           >
           <div class="charter-body">
             <p>
-              Chaque message est lu attentivement par Jérémy pour nourrir la
-              conception du projet, en toute liberté et sans engagement mutuel.
+              Vos messages sont adressés à Jérémy avec l’intention de nourrir la
+              conception d’Orée. Vous pouvez contribuer ponctuellement ou
+              simplement poser une question, sans vous engager dans la durée.
             </p>
             <p>
-              Les deux premières portes ouvrent le même formulaire de
-              contribution ; leur libellé précise votre intention sans créer de
-              routage automatique ni de traitement différencié. La troisième
-              ouvre un formulaire de contact distinct. Ces formulaires sont
-              hébergés sur Tally.
+              Les deux premières portes ouvrent un formulaire de contribution.
+              La troisième ouvre le formulaire de contact. Tous sont hébergés
+              sur Tally : indiquez le sujet qui vous intéresse dans votre
+              message.
             </p>
             <p>
               Les formulaires servent à ouvrir un échange. Aucune proposition ne
@@ -385,16 +566,15 @@ import { siteConfig } from "../config/site";
             </p>
             <p>
               Les rôles décrivent des besoins et un horizon possible ; ils ne
-              constituent ni une offre d’emploi ni un statut acquis. Les
-              situations illustratives sont des personas de conception, pas des
-              personnes engagées ni des témoignages.
+              constituent ni une offre d’emploi ni un statut acquis. Marc,
+              Claire, Camille et Julien sont des portraits de conception, pas
+              des personnes engagées ni des témoignages.
             </p>
             <p>
               Une discussion publique peut éclairer une décision ; elle ne vaut
               ni vote ni représentation de l’ensemble des artistes, artisans ou
               futurs usagers. Pour répondre ou ouvrir un sujet sur le forum, un
-              compte Discourse est nécessaire. Le forum est accueilli, modéré et
-              suivi par la personne qui porte actuellement le projet.
+              compte Discourse est nécessaire.
             </p>
             <p>
               Vous ne savez pas encore quel rôle vous correspond ? Le <a
@@ -420,14 +600,18 @@ import { siteConfig } from "../config/site";
       <div class="container discussion-grid">
         <div class="discussion-copy">
           <p class="discussion-kicker">Continuons la conversation</p>
-          <h2 id="discussions-title">Un message suffit pour commencer</h2>
+          <h2 id="discussions-title">
+            <AnchorAliases target="discussions-title" />Un message suffit pour
+            commencer
+          </h2>
           <p>
             Vous pouvez répondre sans compte avec un formulaire simple, ou
             prendre le temps de lire les échanges publics.
           </p>
           <p class="discussion-note">
-            Les échanges publics se lisent sans compétence technique. Les
-            discussions GitHub ne sont pas ouvertes à ce jour.
+            Le forum permet de consulter les sujets publics ; un compte est
+            nécessaire pour y participer. Le dépôt GitHub donne accès au code du
+            site.
           </p>
         </div>
         <div class="discussion-actions">
@@ -643,6 +827,14 @@ import { siteConfig } from "../config/site";
   }
   .role-main p {
     max-width: 65ch;
+    margin-bottom: 0.75rem;
+  }
+  .contribution-list {
+    max-width: 70ch;
+    padding-left: 1.25rem;
+    margin-block: 1rem;
+  }
+  .contribution-list li {
     margin-bottom: 0.75rem;
   }
   .role-action {

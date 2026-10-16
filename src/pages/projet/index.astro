@@ -1,10 +1,11 @@
 ---
+import AnchorAliases from "../../components/editorial/AnchorAliases.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Pourquoi Orée : le modèle inversé"
-  description="Le manifeste, la promesse zéro frais et le modèle inversé qu’Orée cherche à construire, sans confondre vision cible et service disponible aujourd’hui."
+  title="Le projet Orée : créer, vendre et partager les tâches"
+  description="Pourquoi Orée veut faciliter la vente des créations d’artistes et d’artisans : entraide, partage des tâches, modèle envisagé et horizon coopératif."
 >
   <article class="page-article page-projet">
     <header class="hero-section" data-seuil-ambient="paper">
@@ -14,23 +15,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <h1 id="page-title" data-seuil-intro="title">Pourquoi Orée</h1>
         <p class="repere">Vous êtes ici · Projet</p>
         <p class="introduction" data-seuil-intro="copy">
-          Orée part d’un problème simple à observer et difficile à résoudre :
-          vendre une création originale (ex. : pièce unique façonnée à
-          l’atelier, céramique, toile, sculpture) oblige aujourd’hui à cumuler
-          création, vente et administratif. Ce texte explique pourquoi ce
-          constat justifie un projet et la direction qu’il cherche à prendre.
+          Créer une pièce et la vendre demandent des savoir-faire différents.
+          Orée explore une façon de partager les tâches autour des artistes et
+          des artisans, pour que montrer leur travail et rencontrer des
+          acheteurs deviennent plus accessibles. Vous pouvez aujourd’hui
+          contribuer à cette construction en racontant votre expérience ou en
+          apportant un regard.
         </p>
         <nav class="summary-nav" aria-labelledby="page-title">
-          <a href="#probleme">Le problème</a>
+          <a href="#probleme">Pourquoi partager les tâches</a>
           <a href="#premier-appel">Le premier appel</a>
-          <a href="#reponse">La réponse envisagée</a>
-          <a href="#modele-inverse">Le modèle inversé</a>
-          <a href="#horizon-ess">L’horizon ESS</a>
+          <a href="#reponse">Le fonctionnement envisagé</a>
+          <a href="#modele-inverse">Proposer une rencontre, laisser le choix</a>
+          <a href="#horizon-ess">L’horizon coopératif</a>
         </nav>
         <p class="document-door">
-          <a href="/documents/">Lire les documents de conception complets →</a>
+          <a href="/avancement/">Voir ce qui existe aujourd’hui →</a>
           <span
-            >Textes issus de Notion, accompagnés de notes sur l’état actuel.</span
+            >Le site présente un projet en construction ; la vente et les
+            services associés restent à concevoir.</span
           >
         </p>
       </div>
@@ -41,23 +44,33 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       id="probleme"
       aria-labelledby="probleme-title"
     >
+      <AnchorAliases target="probleme" />
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="probleme-title" data-seuil-reveal>Le problème</h2>
+        <h2 id="probleme-title" data-seuil-reveal>
+          Créer ne devrait pas obliger à tout gérer seul
+        </h2>
         <p>
-          Beaucoup de personnes créatives n’osent pas encore commencer à vendre
-          leur travail. Quatre freins reviennent régulièrement : la peur du
-          jugement, la peur de l’échec, la complexité administrative et le
-          sentiment de ne pas être légitime. Ce constat vient de situations
-          observées au fil du temps ; il ne s’appuie sur aucun chiffre non
-          sourcé, et Orée ne prétend pas parler au nom d’un volume de personnes
-          précis.
+          On peut savoir façonner une céramique, peindre une toile ou travailler
+          le bois sans savoir comment proposer sa première pièce à la vente.
+          Montrer son travail expose au regard des autres. Fixer un prix,
+          expliquer sa démarche ou comprendre les démarches administratives peut
+          aussi sembler difficile, surtout sans réseau ni expérience
+          commerciale.
         </p>
         <p>
-          Le parcours actuel demande d’accumuler plusieurs métiers à la fois :
-          créer, communiquer, vendre et administrer. Cette accumulation
-          décourage des personnes qui ont du talent avant même qu’elles aient pu
-          le montrer.
+          Orée part de ces difficultés : peur du jugement ou de l’échec,
+          sentiment de ne pas être légitime, tâches qui s’accumulent. Ces
+          besoins restent à confronter à des expériences concrètes. Le projet
+          s’intéresse en particulier aux personnes qui créent déjà et n’ont pas
+          encore osé vendre.
+        </p>
+        <p>
+          Son principe est de respecter le travail créatif, sans demander à
+          chacun de maîtriser seul la communication, la vente et la gestion.
+          Accueillir sans jugement, rendre les conditions compréhensibles et
+          chercher une rémunération juste doivent guider les choix à venir. Cela
+          suppose d’écouter aussi les personnes qui achèteraient ces créations.
         </p>
       </div>
     </section>
@@ -67,6 +80,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       id="premier-appel"
       aria-labelledby="premier-appel-title"
     >
+      <AnchorAliases target="premier-appel" />
       <div class="container reading-width">
         <div class="first-call-frame">
           <p class="eyebrow" data-seuil-reveal="rule">Premier appel</p>
@@ -107,21 +121,64 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       id="reponse"
       aria-labelledby="reponse-title"
     >
+      <AnchorAliases target="reponse" />
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="reponse-title" data-seuil-reveal>La réponse envisagée</h2>
+        <h2 id="reponse-title" data-seuil-reveal>
+          Partager le travail autour d’une création
+        </h2>
         <p>
-          Le modèle envisagé cherche à limiter les frais avant qu’une première
-          vente n’ait eu lieu. Le projet distingue aussi les produits édités
-          (ex. : tirage d’art numéroté, livre illustré, petite série). La
-          communication, le paiement, la facturation et le service après-vente
-          sont des services que le projet cherche à étudier ; ce ne sont pas des
-          capacités actuellement actives sur Construire Orée.
+          Au centre du modèle envisagé, une personne proposerait sa création et
+          une autre choisirait de l’acheter. Autour d’elles, les Éclaireurs
+          faciliteraient les premières rencontres avec des créateurs ; les Échos
+          feraient découvrir les pièces à travers leurs sélections et leurs
+          recommandations. Les Bâtisseurs prépareraient les outils, les contrats
+          et l’organisation nécessaires à ces échanges.
         </p>
         <p>
-          L’intention qui guide ces choix est de laisser davantage de place à la
-          création elle-même, plutôt que d’ajouter une charge de gestion à des
-          personnes qui n’ont pas demandé à devenir gestionnaires.
+          La communication, le paiement, la facturation, la livraison et le
+          service après-vente feraient ainsi l’objet d’une répartition explicite
+          des tâches. Pour le créateur, cela pourrait laisser plus de temps à
+          l’atelier. Pour l’acheteur, cela devrait permettre de comprendre qui a
+          fabriqué la pièce, ce qu’il achète et à qui s’adresser en cas de
+          problème. Les responsabilités de chacun restent à définir avant toute
+          vente.
+        </p>
+        <h3 id="frais-envisages">
+          Limiter les frais d’entrée, expliquer les coûts
+        </h3>
+        <p>
+          L’intention est de ne pas facturer de frais de plateforme avant une
+          vente. Cette intention doit encore trouver un équilibre économique :
+          le travail des relais, les outils et les opérations ont un coût. Les
+          commissions envisagées, leur répartition et le montant restant au
+          créateur doivent être examinés et rendus compréhensibles avant tout
+          engagement. Aucun tarif n’est acquis aujourd’hui.
+        </p>
+        <p>
+          L’absence de frais de plateforme au départ ne supprimerait ni le coût
+          des matériaux, ni le temps de création, ni les obligations liées à
+          l’activité. Le projet ne peut donc promettre une participation sans
+          risque financier ou un revenu garanti.
+        </p>
+        <h3 id="creations-et-editions">
+          Distinguer la pièce originale et le produit édité
+        </h3>
+        <p>
+          Vendre une pièce originale et éditer un dessin sous forme de tirages
+          n’engagent pas les mêmes tâches. Dans le premier cas, il faut
+          organiser la vente d’une création existante. Dans le second, il faut
+          aussi prévoir les droits d’utilisation, la fabrication et la
+          rémunération de la personne qui a créé l’œuvre. Les <a
+            href="/fondations/">Fondations</a
+          >
+          expliquent ces deux circuits et les questions encore à résoudre.
+        </p>
+        <p>
+          Les <a href="/ecosysteme/"
+            >rôles et les quatre portraits de conception</a
+          >
+          permettent de suivre ce fonctionnement à partir de situations concrètes.
         </p>
       </div>
     </section>
@@ -131,32 +188,43 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       id="modele-inverse"
       aria-labelledby="modele-inverse-title"
     >
+      <AnchorAliases target="modele-inverse" />
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="modele-inverse-title" data-seuil-reveal>Le modèle inversé</h2>
+        <h2 id="modele-inverse-title" data-seuil-reveal>
+          Proposer une rencontre, laisser le choix
+        </h2>
         <p>
-          Le parcours courant demande à la personne qui crée de se présenter,
-          puis laisse un système la juger. Le modèle qu’Orée cherche à
-          construire fonctionnerait à l’inverse : un système qui repère un
-          talent, lui ouvre une porte, et laisse la personne choisir d’y entrer
-          ou non.
+          Orée envisage d’aller à la rencontre des personnes qui créent, y
+          compris lorsqu’elles ne pensent pas à proposer leur travail. Un
+          Éclaireur pourrait découvrir un objet dans un atelier ou chez un
+          proche, puis inviter son créateur à parler de son travail et de ses
+          besoins.
         </p>
         <div class="inversion-grid" data-seuil-row>
           <div class="inversion-card" data-seuil-reveal="rule">
-            <h3>Parcours courant</h3>
-            <p>La personne se présente seule ; le système évalue et juge.</p>
+            <h3>Le besoin</h3>
+            <p>
+              Une personne crée, mais ne sait pas encore comment montrer ou
+              proposer son travail.
+            </p>
           </div>
           <div
             class="inversion-card inversion-card--cible"
             data-seuil-reveal="rule"
           >
-            <h3>Parcours cible</h3>
-            <p>Le système repère et ouvre une porte ; la personne choisit.</p>
+            <h3>La relation envisagée</h3>
+            <p>
+              Un relais lui présente une possibilité ; elle en comprend les
+              conditions et choisit librement.
+            </p>
           </div>
         </div>
         <p class="context-note">
-          Orée ouvrirait une porte ; elle ne déciderait pas à la place de la
-          personne qui crée.
+          Une mise en relation ne vaudrait ni inscription automatique, ni
+          promesse de vente. La personne resterait libre de refuser ou de
+          prendre le temps de réfléchir. Les conditions de participation et de
+          retrait sont à définir.
         </p>
       </div>
     </section>
@@ -166,23 +234,43 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       id="horizon-ess"
       aria-labelledby="horizon-ess-title"
     >
+      <AnchorAliases target="horizon-ess" />
       <div class="container chapter-grid">
         <span class="chapter-number" aria-hidden="true"></span>
-        <h2 id="horizon-ess-title" data-seuil-reveal>L’horizon ESS</h2>
+        <h2 id="horizon-ess-title" data-seuil-reveal>
+          Construire un horizon coopératif
+        </h2>
         <p>
-          Orée démarre comme un projet solo, avec une approche volontairement
-          légère et progressive (« lean »). Dans la logique de l’économie
-          sociale et solidaire (ESS), et sous condition que le modèle se valide,
-          l’horizon envisagé irait vers une première Clairière locale, puis vers
-          La Canopée, un horizon coopératif où le principe serait une personne
-          égale une voix.
+          Orée est aujourd’hui porté par Jérémy. L’ambition s’inscrit dans
+          l’économie sociale et solidaire : organiser l’entraide, partager les
+          décisions et rechercher un équilibre économique au service des
+          personnes qui créent et contribuent. La construction publique permet
+          d’exposer les hypothèses et les arbitrages au fil du projet.
         </p>
         <p>
-          Cet horizon pourrait inclure une protection sociale pensée pour les
-          personnes qui construisent Orée : statut salarié-associé, mutuelle,
-          prévoyance et chômage. Rien de cela n’est acquis : ces pistes restent
-          soumises à une validation juridique et économique qui n’a pas encore
-          eu lieu.
+          Si des essais établissent l’utilité et la viabilité du modèle, une
+          première « Clairière » pourrait devenir un lieu local de rencontre et
+          de travail partagé. « La Canopée » désigne l’horizon d’une structure
+          coopérative commune. La piste envisagée est une société coopérative
+          d’intérêt collectif (SCIC), mais aucun statut de ce type n’est acquis
+          pour Orée.
+        </p>
+        <p>
+          Donner une place aux différentes personnes dans les décisions et
+          dissocier leur voix de leur apport financier est une intention de
+          gouvernance. Sa traduction dans des règles concrètes reste à étudier.
+          Le souhait d’une meilleure protection sociale — salariat associé,
+          mutuelle, prévoyance, droits éventuels au chômage, prise en compte du
+          statut d’artiste-auteur — dépendrait des situations et du cadre
+          retenu. Ce ne sont pas des droits ouverts par la participation
+          actuelle au projet.
+        </p>
+        <p>
+          La <a href="/roadmap/">feuille de route</a> présente les étapes et leurs
+          conditions. Pour contribuer maintenant, vous pouvez
+          <a href="/rejoindre/"
+            >partager une expérience, suivre le projet ou proposer un appui</a
+          >. Le <a href="/journal/">Journal</a> conserve les étapes de cette construction.
         </p>
       </div>
     </section>

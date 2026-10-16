@@ -1,336 +1,452 @@
 ---
+import AnchorAliases from "../../components/editorial/AnchorAliases.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ReadingSection from "../../components/editorial/ReadingSection.astro";
+
+import DeuxCircuits from "../../components/illustrations/DeuxCircuits.astro";
+import ParcoursPaiement from "../../components/illustrations/ParcoursPaiement.astro";
 ---
 
 <BaseLayout
-  title="Fondations d’Orée : contraintes à résoudre"
-  description="Les contraintes techniques, juridiques, fiscales et opérationnelles qu’Orée doit résoudre avant d’opérer, avec le statut de validation de chaque point."
+  title="Fonctionnement d’Orée : ventes, outils et conditions à examiner"
+  description="Comprendre les deux circuits de vente envisagés par Orée, le partage des tâches et les questions techniques, juridiques et fiscales avant tout essai."
 >
-  <div class="page-fondations">
-    <section class="page-intro">
-      <header class="container reading-width">
+  <article class="page-fondations">
+    <header class="page-intro">
+      <div class="container reading-width">
         <p class="eyebrow" data-seuil-intro="eyebrow">Fondations</p>
-        <h1 data-seuil-intro="title">
-          Ce qu’Orée doit résoudre avant d’opérer
-        </h1>
+        <h1 data-seuil-intro="title">Comment Orée pourrait fonctionner</h1>
         <p class="repere">Vous êtes ici · Fondations</p>
         <p class="introduction" data-seuil-intro="copy">
-          Cette page adapte le document de travail technique et fiscal interne
-          d’Orée en deux profondeurs : une synthèse compréhensible, puis des
-          détails d’audit repliables.
+          Aider à vendre une création demande de savoir qui vend, qui fait quoi
+          et qui assume les difficultés. Voici le modèle envisagé, ses
+          conséquences pour les personnes et les questions à résoudre avant un
+          premier essai.
         </p>
-        <div class="actions">
-          <a
-            data-seuil-button
-            class="button button-primary"
-            href="#details-audit">Examiner les détails</a
-          >
-          <a
-            data-seuil-button
-            class="button button-secondary"
-            href="/avancement/">Voir l’avancement</a
-          >
-        </div>
-        <p class="document-door">
-          <a href="/documents/blueprint-technique-fiscal/"
-            >Lire le Cahier d’architecture (Blueprint) de conception complet →</a
-          >
+        <p>
+          Les circuits décrits restent à éprouver. Le site que vous lisez est
+          réalisé avec Astro ; il ne comporte aucun système de vente.
         </p>
-      </header>
-    </section>
-
-    <section class="section-block">
-      <div class="container reading-width">
-        <h2>Synthèse compréhensible</h2>
-        <dl class="foundation-list">
-          <div class="foundation-row">
-            <dt>Deux parcours envisagés</dt>
-            <dd>
-              Un parcours pour les personnes qui créent — dépôt, présentation,
-              statut — et un parcours pour les personnes qui découvrent —
-              recherche, confiance, paiement. Aucun des deux parcours n’est
-              actif aujourd’hui. Ils décrivent les publics ; le Cahier
-              d’architecture (Blueprint) présente séparément deux circuits de
-              vente envisagés, l’un pour une création originale (ex. : pièce
-              unique façonnée à l’atelier, céramique, toile, sculpture) et
-              l’autre pour un produit édité (ex. : tirage d’art numéroté, livre
-              illustré, petite série).
-            </dd>
-          </div>
-          <div class="foundation-row">
-            <dt>Statuts des personnes qui créent</dt>
-            <dd>
-              Plusieurs statuts (micro-entreprise, société, structure
-              associative) pourraient être accueillis. Le cadre exact reste à
-              valider juridiquement.
-            </dd>
-          </div>
-          <div class="foundation-row">
-            <dt>Paiement, facturation, livraison et conformité</dt>
-            <dd>
-              Un prestataire de paiement tiers, une facturation automatisée à
-              étudier, une livraison d’abord laissée aux personnes qui créent,
-              et une conformité (RGPD, CGV, TVA) à sécuriser avant toute
-              ouverture.
-            </dd>
-          </div>
-          <div class="foundation-row">
-            <dt>Reporté après le lancement initial</dt>
-            <dd>
-              Le stockage et la logistique centralisés, un SAV proactif et une
-              ouverture internationale restent volontairement hors du premier
-              périmètre, le temps de sécuriser les fondations prioritaires.
-            </dd>
-          </div>
-        </dl>
+        <nav class="summary-nav" aria-label="Sommaire des fondations">
+          <a href="#circuits">Deux circuits de vente</a><a href="#outils"
+            >Outils et fiabilité</a
+          ><a href="#remuneration">Rémunération et coûts</a><a
+            href="#accompagnement">Démarches et accompagnement</a
+          ><a href="#operations">Livraison et suivi</a><a
+            href="#conditions-lancement">Conditions d’un essai</a
+          >
+        </nav>
       </div>
-    </section>
-
-    <section id="details-audit" class="section-block audit-block">
-      <div class="container reading-width">
-        <h2 data-seuil-reveal>Détails d’audit</h2>
-        <p class="context-note">
-          Chaque point porte un statut de validation explicite. Aucun de ces
-          points ne décrit une capacité déjà livrée.
+    </header>
+    <ReadingSection
+      id="circuits"
+      title="Deux ventes possibles, des responsabilités différentes"
+    >
+      <p>
+        Un tableau vendu par la personne qui l’a peint et un produit fabriqué à
+        partir de son illustration ne posent pas les mêmes questions. Le modèle
+        envisagé distingue deux circuits pour identifier le vendeur, la facture
+        et le revenu associé à chaque opération.
+      </p>
+      <DeuxCircuits />
+      <h3>Une création originale vendue par son créateur</h3>
+      <p>
+        Dans le premier circuit, l’artiste ou l’artisan fixerait son prix et
+        resterait vendeur de sa création. Orée chercherait à faciliter la
+        présentation, le paiement et les documents de vente, en contrepartie
+        d’une commission à définir. Le créateur conserverait des responsabilités
+        : décrire sa pièce, vérifier ses informations et préparer son
+        expédition, notamment.
+      </p>
+      <p>
+        Cette intention ne suffit pas à garantir un statut ou un régime fiscal.
+        Le contrat, la présentation de la vente, la facturation et le traitement
+        du paiement devront être examinés ensemble.
+      </p>
+      <h3>Un produit édité à partir d’une création</h3>
+      <p>
+        Dans le second circuit, Orée vendrait un produit édité, par exemple un
+        objet portant une illustration. Un accord de reproduction préciserait
+        l’usage autorisé, les droits conservés par le créateur et sa
+        rémunération. Il faudrait désigner qui fabrique, contrôle la qualité,
+        expédie et répond en cas de problème.
+      </p>
+      <p>
+        Un exemple d’objet ne suffit pas à décider d’un régime : un tirage peut
+        appeler des qualifications différentes selon ses conditions de
+        réalisation et de commercialisation. Pour une première version d’essai,
+        la piste retenue pour la conception est de séparer les commandes par
+        circuit. Un panier réunissant les deux ajouterait des difficultés de
+        paiement et de remboursement ; il appartient à un horizon ultérieur.
+      </p>
+      <details open data-editorial-details id="reservation-et-paiement">
+        <summary
+          ><AnchorAliases target="reservation-et-paiement" />Réserver une pièce
+          unique et gérer un paiement échoué</summary
+        >
+        <ParcoursPaiement />
+        <p>
+          Un futur panier réunissant les deux circuits demanderait des paiements
+          séparés. Si l’un échoue après que l’autre a été encaissé, il faudrait
+          pouvoir rembourser, corriger la commande et informer l’acheteur. Deux
+          opérations ne forment pas une transaction unique garantie : ces cas
+          doivent être testés.
+        </p><p>
+          Avec Stripe, il resterait à choisir le montage Connect, désigner le
+          compte qui encaisse et vérifier qui supporte les litiges. Un paramètre
+          technique ne suffit pas à déterminer le vendeur ni son régime fiscal.
         </p>
-        <details data-seuil-details class="audit-details">
-          <summary
-            >Voir les paramètres techniques, juridiques, fiscaux et
-            opérationnels</summary
-          >
-          <div class="details-content">
-            <ul class="audit-list" role="list">
-              <li>
-                <p class="qualification">Décision actée</p>
-                <p>
-                  Construire Orée reste un site statique Astro, distinct des
-                  choix techniques de la future marketplace.
-                </p>
-              </li>
-              <li>
-                <p class="qualification">Hypothèse technique</p>
-                <p>
-                  Deux circuits de vente sont envisagés dans le Cahier
-                  d’architecture (Blueprint) : l’un pour une création originale
-                  (ex. : pièce unique façonnée à l’atelier, céramique, toile,
-                  sculpture), l’autre pour un produit édité (ex. : tirage d’art
-                  numéroté, livre illustré, petite série). Leur architecture de
-                  paiement n’est pas arrêtée.
-                </p>
-              </li>
-              <li>
-                <p class="qualification">À valider juridiquement</p>
-                <p>
-                  Le statut salarié-associé envisagé pour l’horizon coopératif
-                  n’a pas été validé par un conseil juridique.
-                </p>
-              </li>
-              <li>
-                <p class="qualification">À valider fiscalement</p>
-                <p>
-                  Les seuils et le régime de TVA applicables à une marketplace
-                  de création originale restent à confirmer.
-                </p>
-              </li>
-              <li>
-                <p class="qualification">À tester</p>
-                <p>
-                  Le parcours de paiement avec un prestataire tiers n’a fait
-                  l’objet d’aucun test à ce stade.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </details>
-      </div>
-    </section>
-  </div>
+      </details>
+    </ReadingSection>
+    <ReadingSection
+      id="outils"
+      title="Des outils pour suivre une vente de bout en bout"
+      warm
+    >
+      <p>
+        Pour l’acheteur, la fiabilité signifie qu’une pièce unique ne sera pas
+        vendue deux fois, qu’un paiement échoué ne deviendra pas une commande
+        confirmée et qu’un remboursement restera traçable. Pour le créateur,
+        elle signifie pouvoir comprendre l’état de sa vente et de son versement.
+      </p>
+      <p>
+        Les outils envisagés comprennent une application Next.js, une base
+        PostgreSQL, Stripe pour les paiements, Cloudinary pour les images,
+        Resend pour les courriels et Vercel pour l’hébergement. Ce sont des
+        choix de conception à comparer et à tester, distincts du site Astro
+        actuel. Aucun prestataire cité ne constitue un partenariat annoncé.
+      </p>
+      <h3>Les informations à relier</h3>
+      <ol>
+        <li>
+          <strong>La création et son vendeur :</strong> disponibilité, description,
+          prix et informations nécessaires à la vente.
+        </li><li>
+          <strong>La commande et le paiement :</strong> confirmation reçue du prestataire,
+          réservation de la pièce et gestion des échecs.
+        </li><li>
+          <strong>Les documents et l’expédition :</strong> facture, éventuel certificat,
+          suivi de livraison et demandes de retour.
+        </li><li>
+          <strong>Le versement et le contrôle :</strong> rapprochement des sommes,
+          commissions éventuelles, corrections et historique.
+        </li>
+      </ol>
+      <p>
+        Un certificat généré automatiquement ne prouverait pas, à lui seul,
+        l’authenticité d’une pièce. Il faudrait établir ce qui est vérifié, par
+        qui et avec quels éléments.
+      </p>
+      <h3>Les essais techniques nécessaires</h3>
+      <p>
+        La conception prévoit des messages signés du prestataire de paiement —
+        les <em>webhooks</em> — et des identifiants empêchant de traiter deux fois
+        la même opération. Il faudra tester les doublons, les messages reçus dans
+        le désordre, une panne entre paiement et réservation, un remboursement partiel
+        et un versement refusé.
+      </p>
+      <p>
+        Les sauvegardes devront pouvoir être restaurées et les incidents
+        signalés. Recherche dans le catalogue, courriels et tâches périodiques
+        devraient rester simples au début. Les tableaux de bord en temps réel et
+        les automatisations supplémentaires ne se justifieraient que par un
+        besoin observé.
+      </p>
+      <details open data-editorial-details id="donnees-et-fiabilite">
+        <summary
+          ><AnchorAliases target="donnees-et-fiabilite" />Quelles données relier
+          et quels contrôles prévoir ?</summary
+        ><p>
+          Chaque commande devrait relier la création, son vendeur, le circuit
+          choisi, le prix, les commissions éventuelles, le paiement et
+          l’expédition. Les factures et remboursements auraient leurs propres
+          références pour retrouver chaque correction sans perdre la trace de
+          l’opération initiale.
+        </p><p>
+          La facturation demanderait des informations cohérentes sur l’émetteur
+          et le destinataire, une numérotation suivie, les montants et le
+          traitement fiscal vérifié. Les mandats éventuels, versions des
+          conditions acceptées et dates de validation devraient aussi être
+          traçables.
+        </p><p>
+          Côté sécurité, les clés d’accès resteraient hors du code public, les
+          opérations sensibles seraient protégées contre les abus et les accès
+          limités aux personnes qui en ont besoin. Il faudrait distinguer les
+          données à conserver des données personnelles à supprimer, tester la
+          restauration des sauvegardes et contrôler que les courriels importants
+          arrivent.
+        </p><p>
+          Recherche, images et mesure d’audience devraient répondre à un besoin
+          réel. Les données et fichiers devraient pouvoir être exportés pour
+          limiter la dépendance aux prestataires.
+        </p>
+      </details>
+    </ReadingSection>
+    <ReadingSection
+      id="remuneration"
+      title="Partager les revenus sans masquer les coûts"
+    >
+      <p>
+        L’intention est de ne pas demander de frais avant une première vente.
+        Elle doit être confrontée aux coûts de paiement, au travail
+        d’accompagnement, aux retours et au fonctionnement du projet. Elle ne
+        signifie ni vente garantie ni absence de risque.
+      </p>
+      <p>
+        Les Éclaireurs pourraient être reconnus pour une mise en relation ; les
+        Échos, pour une recommandation ayant conduit à une vente. L’hypothèse
+        est de financer leurs commissions sur la part d’Orée, sans prélèvement
+        supplémentaire sur le revenu convenu avec le créateur. Il reste à
+        déterminer si cette répartition serait viable.
+      </p>
+      <h3>Les règles à comprendre avant toute participation rémunérée</h3>
+      <ul>
+        <li>
+          La base de calcul, le taux, la durée d’une commission et les cas où
+          elle ne serait pas due.
+        </li><li>
+          L’attribution d’une mise en relation ou d’une recommandation, leur
+          cumul et les moyens de contester une erreur.
+        </li><li>
+          Les effets d’un retour, d’un remboursement ou d’un litige sur les
+          sommes annoncées.
+        </li><li>
+          Le statut et les documents attendus de chaque intervenant, après
+          examen professionnel.
+        </li>
+      </ul>
+      <p>
+        Pour fixer une commission, il faudrait comparer plusieurs prix de vente,
+        avec et sans relais, puis déduire les frais de paiement, les charges
+        applicables et le coût du travail effectué. Une petite vente peut
+        laisser peu de marge lorsque plusieurs personnes interviennent. Les
+        taux, les éventuels plafonds et la trésorerie nécessaire restent à
+        déterminer.
+      </p>
+      <details open data-editorial-details id="suivi-des-ventes">
+        <summary
+          ><AnchorAliases target="suivi-des-ventes" />Comment vérifier ventes,
+          factures et versements ?</summary
+        ><p>
+          Une clôture régulière permettrait de rapprocher ce qui a été vendu,
+          facturé, encaissé et effectivement versé. Au début, un tableur et des
+          exports pourraient suffire, avec une procédure examinée par un
+          professionnel.
+        </p><ol>
+          <li>
+            Relier chaque vente à son circuit, sa facture, ses frais et ses
+            commissions.
+          </li><li>
+            Comparer les montants attendus aux mouvements du prestataire de
+            paiement et expliquer les écarts.
+          </li><li>
+            Vérifier les justificatifs des rémunérations et préparer les
+            informations nécessaires aux déclarations.
+          </li><li>
+            Rattacher les retours, remboursements et corrections à l’opération
+            concernée, y compris lorsqu’ils arrivent le mois suivant.
+          </li>
+        </ol><p>
+          Si Orée émettait des factures au nom d’un créateur, un mandat et les
+          responsabilités devraient être définis. Celui-ci devrait pouvoir les
+          consulter, être informé de leur émission et signaler une erreur. La
+          facture de vente et la facture de commission d’Orée resteraient
+          distinctes.
+        </p><p>
+          Le calendrier et les formats de <a
+            href="https://www.impots.gouv.fr/facturation-electronique-qu-est-ce-que-ca-change-pour-moi"
+            >facturation électronique sont à vérifier auprès des impôts</a
+          > selon les opérations retenues.
+        </p>
+      </details>
+    </ReadingSection>
+    <ReadingSection
+      id="accompagnement"
+      title="Aider aux démarches, sans décider à la place des personnes"
+      warm
+    >
+      <p>
+        Une personne peut peindre, fabriquer des objets et céder des droits de
+        reproduction. Son parcours ne devrait pas être réduit à une case choisie
+        trop vite. Avant une mise en vente, il faudrait comprendre ses
+        activités, sa situation et les opérations envisagées.
+      </p>
+      <p>
+        Le parcours commencerait par les créations et la situation de la
+        personne, puis les démarches éventuelles et les informations nécessaires
+        à la vente. Les contrôles d’identité demandés par un prestataire de
+        paiement sont souvent désignés par KYC pour une personne et KYB pour une
+        entreprise.
+      </p>
+      <h3 id="creation-demarches">
+        <AnchorAliases target="creation-demarches" />Accueillir une personne qui
+        n’a pas encore commencé
+      </h3>
+      <p>
+        Une personne sans activité déclarée pourrait d’abord découvrir le projet
+        et préparer la présentation de ses créations. Le moment où elle pourrait
+        vendre, les démarches et les justificatifs nécessaires restent à
+        examiner. Préparer un profil ne vaudrait pas autorisation de vendre.
+      </p>
+      <h3>Répartir l’aide et les responsabilités</h3>
+      <p>
+        Orée envisage des outils pour rassembler les ventes, préparer des
+        informations et signaler une question. La personne concernée garderait
+        la possibilité de vérifier ce qu’elle transmet. Les choix de statut, le
+        conseil et les actes comptables demandent de définir le rôle de
+        professionnels qualifiés. Aucun cabinet ni service d’accompagnement
+        n’est présenté comme disponible.
+      </p>
+      <p>
+        Les pistes vont d’une orientation vers un professionnel à une
+        intégration technique de ses services. Mandat, lettre de mission,
+        responsabilités, partage des données et coût seraient à préciser avant
+        toute utilisation.
+      </p>
+      <p>
+        Pour chaque fonction proposée, il faudrait préciser qui agit, qui
+        vérifie et qui assume la responsabilité : un outil prépare-t-il des
+        informations, ou une personne intervient-elle à la place du créateur ?
+        Cette distinction aiderait à définir le travail d’Orée et celui d’un
+        professionnel, sans promettre de prendre en charge toute la
+        comptabilité.
+      </p><p>
+        Les activités multiples devraient être examinées séparément. Les
+        obligations éventuelles liées à la rémunération d’artistes-auteurs sont
+        à vérifier auprès de <a
+          href="https://www.secu-artistes-auteurs.fr/diffuseur"
+          >la Sécurité sociale des artistes auteurs</a
+        >, selon le rôle réel d’Orée.
+      </p>
+    </ReadingSection>
+    <ReadingSection
+      id="operations"
+      title="Préparer la livraison, les retours et la continuité"
+    >
+      <p>
+        La vente ne s’arrêterait pas au paiement. Pour une création originale,
+        la piste envisagée est une expédition par son créateur avec des
+        consignes d’emballage, un suivi et une assurance à étudier. Pour un
+        produit édité, un traitement manuel serait envisagé au départ, avant
+        d’envisager une fabrication et une expédition reliées aux outils.
+      </p>
+      <p>
+        L’acheteur aurait besoin de connaître le vendeur, les frais, les
+        conditions de livraison, l’interlocuteur en cas de dommage et les
+        modalités de retour avant de payer. Le rôle d’Orée et celui du créateur
+        doivent être définis pour chaque circuit.
+      </p>
+      <h3>Un versement différé n’efface pas le risque</h3>
+      <p>
+        Un versement après la livraison est envisagé, avec un délai
+        supplémentaire. Il faut vérifier les contraintes du prestataire, les
+        droits des parties et la trésorerie nécessaire. Un litige peut survenir
+        après le versement : le blocage des fonds ne doit pas être présenté
+        comme une protection totale.
+      </p>
+      <p>
+        Le suivi du transporteur pourrait servir à constater la livraison. Si ce
+        suivi manque ou se contredit, une procédure de vérification serait
+        nécessaire pour éviter qu’un versement reste bloqué sans explication. Il
+        faudrait aussi traiter les annulations, les remboursements partiels, la
+        remise en disponibilité d’une pièce retournée et le départ d’un
+        créateur.
+      </p>
+      <p>
+        Pour un colis endommagé ou une pièce contestée, une procédure devrait
+        préciser les éléments à recueillir, la personne qui répond, le rôle de
+        l’assurance et les recours possibles. Un créateur qui quitte le projet
+        devrait pouvoir connaître le sort de ses créations en ligne, de ses
+        versements en attente et de ses documents.
+      </p>
+      <h3>Continuer en cas d’absence</h3>
+      <p>
+        Le projet étant porté par une personne, les gestes critiques devraient
+        être écrits : traiter un incident, suivre les versements et rapprocher
+        les comptes. Des alertes et un relais de secours avec des accès limités
+        seraient à organiser.
+      </p>
+    </ReadingSection>
+    <ReadingSection
+      id="conditions-lancement"
+      title="Ce qu’il faut examiner avant un essai"
+      warm
+    >
+      <p>
+        Une fonction qui marche en démonstration ne suffit pas à autoriser une
+        vente réelle. Un premier essai demande des décisions techniques,
+        économiques et professionnelles cohérentes.
+      </p>
+      <ul>
+        <li>
+          <strong>Vente :</strong> vendeur de chaque circuit, contrats, prix, droits
+          de reproduction, réclamations, garanties et médiation.
+        </li><li>
+          <strong>Fiscalité et protection sociale :</strong> activités et statuts,
+          taxe sur la valeur ajoutée (TVA), facturation et déclarations pour les situations
+          retenues. Examiner aussi les obligations possibles de diffuseur, liées à
+          la rémunération d’artistes-auteurs selon le montage.
+        </li><li>
+          <strong>Données et modération :</strong> informations nécessaires, sécurité,
+          conservation, droits des personnes et traitement des signalements.
+        </li><li>
+          <strong>Fiabilité :</strong> essais de réservation, paiement, remboursement,
+          versement et restauration des données.
+        </li><li>
+          <strong>Capacité à tenir le service :</strong> coûts, assurance, livraison,
+          support et continuité.
+        </li>
+      </ul>
+      <p>
+        Ces questions demandent un examen par un avocat, un expert-comptable et
+        un assureur. Des essais avec les personnes concernées permettraient
+        aussi de repérer les étapes incompréhensibles ou bloquantes. Leurs
+        conclusions restent à obtenir.
+      </p><p>
+        Pour les données personnelles et les obligations d’une plateforme, les
+        points de départ sont <a
+          href="https://www.cnil.fr/fr/thematiques/commerce-et-publicite"
+          >les ressources de la CNIL</a
+        > et <a href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj?locale=fr"
+          >le règlement européen sur les services numériques</a
+        >. Les règles applicables dépendront du fonctionnement retenu : aucune
+        exemption ou conformité n’est considérée comme acquise.
+      </p>
+      <p>
+        <a href="/roadmap/#essai-limite"
+          >Voir les conditions de la première étape</a
+        > · <a href="/rejoindre/#batisseur"
+          >Proposer une expertise sur un point précis</a
+        >.
+      </p>
+    </ReadingSection>
+  </article>
 </BaseLayout>
-
 <style>
   .page-intro {
     padding-block: clamp(3rem, 5vw, 4rem) 3rem;
     background: var(--color-linen);
   }
-
-  .page-intro h1 {
-    margin-bottom: var(--space-6);
-  }
-
-  .page-intro .eyebrow {
-    margin-bottom: var(--space-4);
+  .eyebrow {
     color: var(--color-bark);
     font-size: var(--text-sm);
     font-weight: 700;
-    letter-spacing: 0.12em;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
-
-  .introduction {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
-    font-size: var(--text-md);
-  }
-
-  .section-block {
-    padding-block: var(--space-12);
-  }
-
-  .section-block h2 {
+  h1 {
     margin-bottom: var(--space-6);
   }
-
-  .foundation-list {
-    margin: 0;
+  .introduction {
+    font-size: var(--text-md);
   }
-
-  .foundation-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-2);
-    padding-block: var(--space-6);
-    border-top: 1px solid var(--color-border);
+  .page-intro p {
+    margin-bottom: 1.25rem;
   }
-
-  .foundation-row:last-child {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .foundation-row dt {
-    color: var(--color-canopy);
-    font-weight: 700;
-  }
-
-  .foundation-row dd {
-    margin: 0;
-    color: var(--color-text-muted);
-  }
-
-  #details-audit {
-    scroll-margin-top: 6rem;
-  }
-
-  #details-audit:target {
-    background-color: var(--color-surface-emphasis);
-  }
-
-  .context-note {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
-  }
-
-  .audit-details {
-    margin-top: var(--space-6);
-    padding-left: var(--space-4);
-    border-left: 3px solid var(--color-bark);
-  }
-
-  .audit-details summary {
-    min-height: 44px;
-    padding-block: var(--space-2);
-    color: var(--color-canopy);
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .details-content {
-    margin-top: var(--space-4);
-    padding-top: var(--space-2);
-  }
-
-  .audit-list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .audit-list li {
-    padding-block: var(--space-4);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .audit-list li:last-child {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .audit-list p:last-child {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
-  }
-
-  .qualification {
-    margin-bottom: var(--space-2);
-    color: var(--color-canopy);
-    font-family: var(--font-mono);
-    font-size: var(--text-caption);
-    font-weight: 700;
-  }
-
-  .actions {
+  .summary-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-6);
-  }
-
-  .button {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    padding: 0.875rem 1.5rem;
-    border: 2px solid transparent;
-    border-radius: 3px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  .button-primary {
-    background: var(--color-action);
-    color: var(--color-white);
-  }
-
-  .button-primary:visited {
-    color: var(--color-white);
-  }
-
-  .button-primary:hover {
-    background: var(--color-canopy);
-    color: var(--color-linen);
-  }
-
-  .button-secondary {
-    border-color: var(--color-canopy);
-    color: var(--color-canopy);
-  }
-
-  .button-secondary:hover {
-    background: var(--color-canopy);
-    color: var(--color-linen);
-  }
-
-  @media (min-width: 48rem) {
-    .foundation-row {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: var(--space-8);
-    }
-  }
-
-  @media (forced-colors: active) {
-    #details-audit:target {
-      outline: 2px solid Highlight;
-      outline-offset: -2px;
-    }
-
-    .foundation-row,
-    .audit-details,
-    .audit-list li,
-    .button {
-      border-color: CanvasText;
-    }
+    gap: 0.75rem 1.5rem;
+    margin-top: 2rem;
   }
 </style>
