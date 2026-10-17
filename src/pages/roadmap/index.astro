@@ -1,116 +1,314 @@
 ---
+import AnchorAliases from "../../components/editorial/AnchorAliases.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ReadingSection from "../../components/editorial/ReadingSection.astro";
+
+import EtapesConditionnelles from "../../components/illustrations/EtapesConditionnelles.astro";
 ---
 
 <BaseLayout
-  title="Roadmap : jalons à documenter"
-  description="Les étapes d’Orée seront publiées ici lorsqu’elles pourront être documentées avec leurs preuves, leurs limites et leur statut réel."
+  title="Feuille de route d’Orée : étapes et conditions"
+  description="De la conception actuelle à un essai limité, puis aux horizons locaux et coopératifs : les étapes envisagées d’Orée et les conditions à examiner."
 >
-  <section class="absence-page">
-    <div class="container reading-width">
-      <header class="page-header">
-        <p class="eyebrow" data-seuil-intro="eyebrow">En préparation</p>
-        <h1 data-seuil-intro="title">Roadmap</h1>
-        <p class="repere">Vous êtes ici · Roadmap</p>
-      </header>
-
-      <div class="roadmap-copy">
-        <p>
-          La trajectoire d’Orée ne peut pas encore être présentée comme une
-          feuille de route publique : le projet est au point zéro et ses étapes
-          doivent être documentées avant d’être annoncées.
+  <article>
+    <header class="page-intro">
+      <div class="container reading-width">
+        <p class="eyebrow" data-seuil-intro="eyebrow">Feuille de route</p>
+        <h1 data-seuil-intro="title">
+          Avancer lorsque les conditions sont réunies
+        </h1>
+        <p class="repere">Vous êtes ici · Feuille de route</p>
+        <p class="introduction" data-seuil-intro="copy">
+          Orée se construit d’abord par la compréhension des besoins et l’examen
+          de son fonctionnement. Cette feuille de route explique les étapes
+          envisagées, leur utilité et ce qui permettrait de décider de la suite.
         </p>
         <p>
-          Cette page accueillera les jalons réellement retenus, avec ce qu’ils
-          impliquent et ce qui reste à vérifier.
+          Aucune date d’ouverture n’est annoncée. Les étapes ci-dessous sont des
+          hypothèses de travail ; <a href="/avancement/"
+            >Avancement indique ce qui existe aujourd’hui</a
+          >.
         </p>
-        <p>
-          Tant que ces éléments ne sont pas prêts à être publiés, il serait plus
-          honnête de ne pas les simuler.
-        </p>
+        <nav class="summary-nav" aria-label="Étapes et approfondissements">
+          <a href="#aujourdhui">Aujourd’hui</a><a href="#essai-limite"
+            >Un essai limité</a
+          ><a href="#developpement">Développer ce qui fonctionne</a><a
+            href="#cooperative">L’horizon coopératif</a
+          ><a href="#criteres">Décider de continuer ou de revoir</a>
+        </nav>
       </div>
-      <p class="document-door">
-        <a href="/documents/roadmap/"
-          >Lire la feuille de route de conception historique →</a
-        >
+    </header>
+    <ReadingSection
+      id="aujourdhui"
+      title="Aujourd’hui : comprendre et rendre les choix discutables"
+    >
+      <p>
+        Le site, les textes de conception, le Journal et les portes de
+        participation constituent le point de départ. Ils permettent de lire une
+        proposition et de la questionner. Ils ne prouvent pas qu’un marché, une
+        équipe ou un service commercial existe.
       </p>
-
-      <div class="actions">
-        <a class="button button-secondary" href="/avancement/"
-          >Voir l’avancement</a
-        >
-      </div>
-    </div>
-  </section>
+      <p>
+        Le travail utile maintenant consiste à recueillir des expériences de
+        création, de découverte et de vente, à préciser les responsabilités et à
+        examiner les questions techniques, juridiques et fiscales. Un retour
+        peut modifier une hypothèse ; il ne vaut pas validation de l’ensemble du
+        modèle.
+      </p>
+      <EtapesConditionnelles />
+      <p>
+        <a href="/rejoindre/">Partager une expérience ou proposer un appui</a> · <a
+          href="/fondations/#conditions-lancement"
+          >Examiner les conditions d’un essai</a
+        >.
+      </p>
+    </ReadingSection>
+    <ReadingSection
+      id="essai-limite"
+      title="Étape envisagée 1 : essayer à petite échelle"
+      warm
+    >
+      <p>
+        L’objectif serait de vérifier trois choses : des créateurs peuvent
+        présenter leur travail, des personnes peuvent le découvrir et l’acheter
+        en comprenant les conditions, et l’organisation peut suivre ces ventes
+        correctement. Il s’agirait d’une première version d’essai à taille
+        réduite.
+      </p>
+      <h3 id="avant-essai">
+        <AnchorAliases target="avant-essai" />Avant de décider de cet essai
+      </h3>
+      <ul>
+        <li>
+          Définir le périmètre avec les personnes concernées et obtenir des
+          retours sur leurs besoins.
+        </li><li>
+          Faire examiner les vendeurs, contrats, statuts, fiscalité, droits des
+          acheteurs et protection des données pour les situations retenues.
+        </li><li>
+          Tester réservation, paiement, facturation, retour et versement, y
+          compris les échecs et les remboursements.
+        </li><li>
+          Établir les coûts, les responsabilités d’expédition et de support, les
+          assurances nécessaires et un moyen de poursuivre en cas d’absence.
+        </li>
+      </ul>
+      <h3 id="perimetre-essai">
+        <AnchorAliases target="perimetre-essai" />Un périmètre volontairement
+        réduit
+      </h3>
+      <p>
+        La piste est un premier essai limité à la France, avec des commandes
+        séparées selon les deux circuits de vente. Les premières rencontres
+        seraient organisées directement, à partir du réseau du porteur de projet
+        et de relais à trouver. Ce n’est pas l’annonce d’un groupe de créateurs
+        pilotes ou d’Éclaireurs déjà constitué.
+      </p>
+      <p>
+        Pour les acheteurs, la piste est un parcours sans compte obligatoire,
+        des informations lisibles sur la création et le vendeur, puis un suivi
+        par courriel. Un paiement fractionné et un certificat sont des options à
+        examiner, pas des fonctions promises.
+      </p>
+      <h3 id="suivi-manuel">
+        <AnchorAliases target="suivi-manuel" />Accepter le manuel, avec des
+        règles explicites
+      </h3>
+      <p>
+        Un suivi manuel est d’abord envisagé pour les mises en relation et les
+        recommandations. Un code identifierait l’origine d’une contribution ; un
+        relevé permettrait de comprendre son attribution. Il faudrait définir le
+        cumul des commissions, les corrections et la manière de contester une
+        décision avant toute rémunération.
+      </p>
+      <p>
+        La clôture mensuelle rapprocherait ventes, factures, remboursements et
+        versements. Un tableur alimenté par des exports permettrait de garder la
+        trace des corrections. Cette organisation devra être testée avec les
+        professionnels concernés, sans supposer qu’un export suffit à faire une
+        comptabilité conforme.
+      </p>
+      <p>
+        Les tableaux de bord en temps réel, le panier mixte, la fabrication à la
+        demande automatisée, le chat, la blockchain, un lieu physique et la
+        coopérative restent en dehors de ce premier périmètre envisagé.
+      </p>
+      <h3 id="outils-essai">
+        <AnchorAliases target="outils-essai" />Construire seulement ce qui
+        permet de suivre l’essai
+      </h3><p>
+        Le premier outil devrait relier les créations, les commandes, les
+        paiements et les documents de vente. Il faudrait tester ce parcours avec
+        quelques personnes volontaires, repérer les abandons et les difficultés,
+        puis le corriger avant de l’élargir. Les <a
+          href="/fondations/#donnees-et-fiabilite"
+          >données et contrôles nécessaires</a
+        > sont détaillés dans Fondations.
+      </p>
+    </ReadingSection>
+    <ReadingSection
+      id="developpement"
+      title="Étape envisagée 2 : développer ce qui fonctionne"
+    >
+      <p>
+        Cette étape dépendrait d’un essai documenté : des ventes correctement
+        suivies, une utilité reconnue par les personnes, des coûts supportables
+        et une capacité à traiter les problèmes. Ajouter des outils ne
+        remplacerait pas ces preuves.
+      </p>
+      <h3 id="automatiser">
+        <AnchorAliases target="automatiser" />Automatiser à partir d’une
+        difficulté observée
+      </h3>
+      <p>
+        La facturation, le calcul des commissions et la fabrication à la demande
+        pourraient être automatisés lorsque leur gestion manuelle devient trop
+        lourde. Une recherche plus fine se justifierait par un catalogue qui en
+        a besoin ; des échanges en temps réel, par un usage démontré.
+      </p>
+      <p>
+        Un panier réunissant création originale et produit édité nécessiterait
+        de traiter deux opérations de paiement et leurs échecs partiels. Les <a
+          href="/fondations/#reservation-et-paiement"
+          >conditions de réservation et de remboursement</a
+        > devraient être éprouvées avant de proposer ce parcours.
+      </p>
+      <h3 id="lieu-local">
+        <AnchorAliases target="lieu-local" />Examiner un premier lieu local
+      </h3>
+      <p>
+        La « Clairière » désigne un lieu envisagé pour exposer, se rencontrer,
+        partager des outils et éventuellement organiser des expéditions. Son
+        ouverture demanderait un besoin local, un financement, des personnes
+        responsables et des conditions d’accueil adaptées. Aucun lieu n’est
+        annoncé comme acquis.
+      </p>
+      <h3 id="extensions">
+        <AnchorAliases target="extensions" />Examiner chaque extension
+        séparément
+      </h3><p>
+        Une ouverture européenne, des services destinés aux entreprises ou un
+        accompagnement comptable plus intégré demanderaient chacun des moyens et
+        une vérification propre. Ils ne découleraient pas automatiquement d’une
+        hausse des ventes.
+      </p><p>
+        Avant une transformation coopérative, des consultations sur des choix
+        concrets pourraient aider à préparer la participation aux décisions. Il
+        faudrait préciser qui est consulté, comment les avis sont pris en compte
+        et qui reste responsable de la décision.
+      </p>
+    </ReadingSection>
+    <ReadingSection
+      id="cooperative"
+      title="Étape envisagée 3 : examiner un fonctionnement coopératif"
+      warm
+    >
+      <p>
+        La « Canopée » exprime un horizon : permettre aux personnes qui créent,
+        achètent, recommandent et construisent de participer à la direction du
+        projet. La forme de société coopérative d’intérêt collectif (SCIC) est
+        une piste à étudier.
+      </p>
+      <p>
+        Le passage demanderait un modèle économique viable, une décision
+        collective et un examen des statuts, des modalités d’association, de la
+        gouvernance et du travail. Le principe d’une participation démocratique
+        ne signifie pas que chaque contribution donne automatiquement une part,
+        un emploi ou des droits sociaux.
+      </p>
+      <p>
+        Des Bâtisseurs pourraient devenir salariés-associés. Des ateliers
+        partagés, une production plus locale et d’autres Clairières sont aussi
+        envisagés, selon les moyens et les choix de la structure. La
+        compatibilité des activités et protections des personnes reste à
+        examiner ; aucun statut coopératif ou social n’est acquis aujourd’hui.
+      </p>
+    </ReadingSection>
+    <ReadingSection
+      id="criteres"
+      title="Décider de continuer, d’attendre ou de revoir le modèle"
+    >
+      <p>
+        La question centrale reste la place de la création dans la vie des
+        personnes : le projet leur permettrait-il de consacrer plus de temps à
+        leur travail créatif et d’en tirer un revenu satisfaisant ? Les ventes
+        seules ne suffiraient pas à le démontrer.
+      </p>
+      <ul>
+        <li>
+          <strong>Côté créateur :</strong> première vente, temps administratif, revenu
+          après coûts et sentiment de pouvoir participer.
+        </li><li>
+          <strong>Côté acheteur :</strong> découverte utile, confiance, livraison
+          et envie de revenir.
+        </li><li>
+          <strong>Côté relais :</strong> attribution compréhensible, transparence
+          et rémunération éventuelle soutenable.
+        </li><li>
+          <strong>Côté organisation :</strong> incidents traités, coûts couverts,
+          charge de travail et continuité.
+        </li>
+      </ul>
+      <p>
+        Avant de retenir un indicateur, il faudrait définir ce qu’il mesure,
+        comment les informations sont recueillies et ce qu’elles permettent
+        réellement de conclure. Une vente ne prouve pas à elle seule qu’une
+        personne peut vivre de sa création ; le revenu doit être rapproché du
+        temps consacré et des coûts.
+      </p>
+      <p>
+        Une absence de ventes malgré des créations disponibles, un manque
+        d’intérêt pour les échanges ou des coûts durablement supérieurs aux
+        revenus conduiraient à examiner les causes et à réduire, modifier ou
+        arrêter un essai. Les critères et le moment de cette réévaluation
+        seraient à convenir avant l’essai.
+      </p>
+      <p>
+        <a href="/tableau-de-bord/">Consulter l’état des mesures publiques</a>.
+      </p>
+      <h3 id="echeances-legales">
+        <AnchorAliases target="echeances-legales" />Vérifier les obligations au
+        moment de préparer l’essai
+      </h3>
+      <p>
+        Le calendrier de facturation électronique et les autres obligations
+        doivent être vérifiés selon les opérations et la situation retenues. Ils
+        servent à préparer un essai conforme ; ils ne fixent pas une date
+        d’ouverture d’Orée.
+      </p>
+      <p>
+        <a href="/fondations/#suivi-des-ventes"
+          >Examiner la facturation et le suivi des ventes</a
+        >.
+      </p>
+    </ReadingSection>
+  </article>
 </BaseLayout>
-
 <style>
-  .absence-page {
-    padding-block: clamp(4rem, 10vw, 8rem);
+  .page-intro {
+    padding-block: clamp(3rem, 5vw, 4rem) 3rem;
+    background: var(--color-linen);
   }
-
-  .page-header h1 {
-    margin-bottom: var(--space-6);
-  }
-
-  .page-header .eyebrow {
-    margin-bottom: var(--space-4);
+  .eyebrow {
     color: var(--color-bark);
     font-size: var(--text-sm);
     font-weight: 700;
-    letter-spacing: 0.12em;
     text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
-
-  .roadmap-copy {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-6);
-    margin-top: var(--space-8);
-    padding-left: var(--space-6);
-    border-left: 3px solid var(--color-bark);
+  h1 {
+    margin-bottom: var(--space-6);
   }
-
-  .roadmap-copy p {
-    margin-bottom: 0;
-    color: var(--color-text-muted);
+  .introduction {
+    font-size: var(--text-md);
   }
-
-  .actions {
-    margin-top: var(--space-8);
+  .page-intro p {
+    margin-bottom: 1.25rem;
   }
-
-  .button {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-3) var(--space-6);
-    border: 2px solid transparent;
-    border-radius: var(--radius-md);
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      border-color var(--transition-fast),
-      color var(--transition-fast);
-  }
-
-  .button-secondary {
-    border-color: var(--color-canopy);
-    color: var(--color-canopy);
-  }
-
-  .button-secondary:hover {
-    background: var(--color-canopy);
-    color: var(--color-linen);
-  }
-
-  @media (forced-colors: active) {
-    .roadmap-copy,
-    .button {
-      border-color: CanvasText;
-    }
+  .summary-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 2rem;
   }
 </style>

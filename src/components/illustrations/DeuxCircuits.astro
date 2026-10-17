@@ -1,0 +1,161 @@
+---
+interface Props {
+  id?: string;
+}
+const { id = "deux-circuits" } = Astro.props;
+---
+
+<figure class="circuits" aria-labelledby={`${id}-title`}>
+  <figcaption>
+    <p class="circuits__eyebrow">Hypothèses de conception</p>
+    <h3 id={`${id}-title`}>Deux ventes envisagées, deux vendeurs distincts</h3>
+    <p>
+      Le projet distingue la vente d’une création originale de celle d’un
+      produit édité à partir d’une création.
+    </p>
+  </figcaption>
+  <ul class="circuits__list" aria-label="Les deux circuits envisagés">
+    <li class="circuits__lane">
+      <div class="circuits__mark" aria-hidden="true">
+        <svg viewBox="0 0 80 80" width="80" height="80" focusable="false"
+          ><path
+            d="M18 63V17h44v46H18Zm8-8 13-19 10 12 6-7M28 27h1"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path><circle
+            cx="29"
+            cy="28"
+            r="3"
+            fill="currentColor"></circle></svg
+        >
+      </div>
+      <div class="circuits__content">
+        <p class="circuits__label">Création originale</p>
+        <p class="circuits__seller">Le créateur vendrait sa création.</p>
+        <p>
+          Son revenu correspondrait au prix de vente après une commission
+          envisagée pour Orée, dont les conditions restent à définir.
+        </p>
+      </div>
+    </li>
+    <li class="circuits__lane circuits__lane--edition">
+      <div class="circuits__mark" aria-hidden="true">
+        <svg viewBox="0 0 80 80" width="80" height="80" focusable="false"
+          ><path
+            d="m22 19 18-6 18 6 10 14-12 8-5-7v31H29V34l-5 7-12-8 10-14Zm10-3c1 10 15 10 16 0M35 38h10v13H35z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path></svg
+        >
+      </div>
+      <div class="circuits__content">
+        <p class="circuits__label">Produit édité</p>
+        <p class="circuits__seller">Orée vendrait le produit édité.</p>
+        <p>
+          Le revenu du créateur serait lié à des droits de reproduction, selon
+          un accord et des conditions à définir.
+        </p>
+      </div>
+    </li>
+  </ul>
+  <p class="circuits__note">
+    Ces circuits ne sont pas en service. Paiements, contrats, commissions et
+    droits restent à examiner avant tout essai. Ce dessin ne représente aucun
+    versement garanti.
+  </p>
+</figure>
+
+<style>
+  .circuits {
+    margin: 0;
+    color: var(--color-canopy);
+    font-family: var(--font-body);
+  }
+  .circuits__eyebrow {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .circuits h3 {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+  }
+  .circuits figcaption > p:last-child {
+    max-width: 65ch;
+    margin: 0 0 1.5rem;
+    line-height: 1.65;
+  }
+  .circuits__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .circuits__lane {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--color-canopy);
+    border-left: 0.3rem solid var(--color-terracotta);
+    background: var(--color-linen);
+  }
+  .circuits__lane--edition {
+    border-left-color: var(--color-canopy);
+    background: var(--color-canvas);
+  }
+  .circuits__mark {
+    color: var(--color-terracotta);
+  }
+  .circuits__lane--edition .circuits__mark {
+    color: var(--color-canopy);
+  }
+  .circuits svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .circuits__content {
+    min-width: 0;
+  }
+  .circuits__content p {
+    margin: 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .circuits__label {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+  .circuits__seller {
+    padding-block: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+  }
+  .circuits__note {
+    margin: 1.25rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-dawn);
+    line-height: 1.65;
+    font-size: 0.9375rem;
+  }
+  @media (max-width: 30rem) {
+    .circuits__lane {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.5rem;
+    }
+    .circuits__mark {
+      width: 3.5rem;
+    }
+  }
+</style>

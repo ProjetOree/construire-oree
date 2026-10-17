@@ -1,0 +1,172 @@
+---
+interface Props {
+  id?: string;
+}
+const { id = "relations-envisagees" } = Astro.props;
+---
+
+<figure id={id} class="relations" aria-labelledby={`${id}-title`}>
+  <figcaption>
+    <p class="relations__eyebrow">Deux liens possibles autour d’une création</p>
+    <h3 id={`${id}-title`}>Faire un premier pas, faire découvrir une pièce</h3>
+    <p>
+      Ces relations envisagées s’appuient sur quatre portraits de conception.
+      Elles ne forment pas une suite obligatoire.
+    </p>
+  </figcaption>
+  <ul class="relations__list" aria-label="Les deux relations envisagées">
+    <li class="relations__lane">
+      <div class="relations__person">
+        <p class="relations__role">Éclaireure</p>
+        <a href="#portrait-camille">Camille</a>
+      </div>
+      <div class="relations__link">
+        <span class="relations__arrow" aria-hidden="true">→</span>
+        <p>Proposerait un premier échange</p>
+      </div>
+      <div class="relations__person">
+        <p class="relations__role">Créateur</p>
+        <a href="#portrait-marc">Marc</a>
+        <p>Il resterait libre de donner suite.</p>
+      </div>
+    </li>
+    <li class="relations__lane">
+      <div class="relations__person">
+        <p class="relations__role">Écho</p>
+        <a href="#portrait-julien">Julien</a>
+      </div>
+      <div class="relations__link">
+        <span class="relations__arrow" aria-hidden="true">→</span>
+        <p>Ferait découvrir le travail de Marc</p>
+      </div>
+      <div class="relations__person">
+        <p class="relations__role">Acheteuse</p>
+        <a href="#portrait-claire">Claire</a>
+        <p>Elle choisirait après lecture des conditions.</p>
+      </div>
+    </li>
+  </ul>
+  <div class="relations__foundation">
+    <p class="relations__role">Un appui commun à construire</p>
+    <p>
+      Les <a href="#fondations-title">Bâtisseurs</a> prépareraient les outils, les
+      contrats et les opérations nécessaires à ces échanges.
+    </p>
+  </div>
+  <p class="relations__note">
+    Ces scènes ne décrivent ni une équipe active ni une vente réalisée.
+  </p>
+</figure>
+
+<style>
+  .relations {
+    margin: 2rem 0;
+    color: var(--color-canopy);
+    font-family: var(--font-body);
+  }
+  .relations__eyebrow,
+  .relations__role {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  .relations__eyebrow {
+    margin: 0 0 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .relations h3 {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+  }
+  .relations figcaption > p:last-child {
+    margin: 0 0 1.5rem;
+    line-height: 1.65;
+  }
+  .relations__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .relations__lane {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border-block: 1px solid var(--color-dawn);
+    background: var(--color-linen);
+  }
+  .relations__person,
+  .relations__link {
+    min-width: 0;
+  }
+  .relations__person p,
+  .relations__link p,
+  .relations__foundation p {
+    margin: 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .relations__person a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--color-canopy);
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    text-underline-offset: 0.2em;
+  }
+  .relations__person p:last-child:not(.relations__role) {
+    font-size: 0.9375rem;
+  }
+  .relations__link {
+    color: var(--color-terracotta);
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+  .relations__arrow {
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .relations__foundation {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    border-left: 3px solid var(--color-canopy);
+    background: var(--color-canvas);
+  }
+  .relations__foundation .relations__role {
+    margin-bottom: 0.4rem;
+  }
+  .relations__foundation a {
+    color: var(--color-canopy);
+    font-weight: 700;
+  }
+  .relations__note {
+    margin: 1rem 0 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  @media (max-width: 36rem) {
+    .relations__lane {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+    .relations__link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+    }
+    .relations__arrow {
+      margin: 0;
+      transform: rotate(90deg);
+    }
+  }
+</style>

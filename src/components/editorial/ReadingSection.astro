@@ -1,0 +1,60 @@
+---
+import AnchorAliases from "./AnchorAliases.astro";
+interface Props {
+  id: string;
+  title: string;
+  warm?: boolean;
+}
+const { id, title, warm = false } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["reading-section", { warm }]}
+  aria-labelledby={`${id}-title`}
+>
+  <div class="container reading-width">
+    <AnchorAliases target={id} />
+    <h2 id={`${id}-title`} data-seuil-reveal>{title}</h2>
+    <div class="reading-copy"><slot /></div>
+  </div>
+</section>
+<style>
+  .reading-section {
+    padding-block: var(--space-12);
+    border-top: 1px solid var(--color-border);
+    scroll-margin-top: 2rem;
+  }
+  .warm {
+    background: var(--color-linen);
+  }
+  h2 {
+    margin-bottom: var(--space-6);
+  }
+  .reading-copy :global(p),
+  .reading-copy :global(ul),
+  .reading-copy :global(ol) {
+    margin-block: 0 1.25rem;
+  }
+  .reading-copy :global(li) {
+    margin-block: 0.5rem;
+  }
+  .reading-copy :global(h3) {
+    margin-block: 2rem 1rem;
+  }
+  .reading-copy :global(details) {
+    margin-block: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid var(--color-dawn);
+    background: var(--color-linen);
+  }
+  .reading-copy :global(summary) {
+    cursor: pointer;
+    min-height: 44px;
+    padding-block: 0.75rem;
+    font-weight: 700;
+  }
+  .reading-copy :global(code) {
+    overflow-wrap: anywhere;
+  }
+</style>

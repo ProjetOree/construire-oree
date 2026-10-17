@@ -1,0 +1,141 @@
+---
+interface Props {
+  id?: string;
+}
+const { id = "parcours-paiement" } = Astro.props;
+---
+
+<figure id={id} class="payment" aria-labelledby={`${id}-title`}>
+  <figcaption>
+    <p id={`${id}-title`} class="payment__title">
+      Une pièce unique : autoriser, réserver, demander le débit
+    </p>
+    <p>
+      Piste technique à tester : une autorisation de paiement n’est pas un
+      débit.
+    </p>
+  </figcaption>
+  <ol class="payment__steps" aria-label="Le parcours de paiement envisagé">
+    <li class="payment__step">
+      <span class="payment__number" aria-hidden="true">01</span>
+      <div>
+        <p class="payment__label">Obtenir une autorisation de paiement</p>
+        <p>Le montant ne serait pas encore débité.</p>
+      </div>
+    </li>
+    <li class="payment__step">
+      <span class="payment__number" aria-hidden="true">02</span>
+      <div>
+        <p class="payment__label">Réserver la pièce si elle est disponible</p>
+        <p class="payment__branch">
+          Si la réservation échoue, l’autorisation serait annulée.
+        </p>
+      </div>
+    </li>
+    <li class="payment__step">
+      <span class="payment__number" aria-hidden="true">03</span>
+      <div>
+        <p class="payment__condition">Seulement si la réservation a réussi</p>
+        <p class="payment__label">Demander la confirmation du débit</p>
+        <p>Cette étape pourrait elle aussi échouer.</p>
+      </div>
+    </li>
+  </ol>
+  <p class="payment__expiry">
+    <strong>Si une réservation expire :</strong> vérifier l’état du paiement avant
+    de libérer la pièce.
+  </p>
+  <p class="payment__note">
+    <a href="/fondations/#donnees-et-fiabilite">Voir les contrôles à prévoir</a
+    >.
+  </p>
+</figure>
+
+<style>
+  .payment {
+    margin: 1.5rem 0;
+    padding-block: 1.25rem;
+    border-block: 1px solid var(--color-dawn);
+    color: var(--color-canopy);
+    font-family: var(--font-body);
+  }
+  .payment figcaption p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+  }
+  .payment figcaption .payment__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: 1.3;
+  }
+  .payment__steps {
+    display: grid;
+    gap: 1rem;
+    margin: 1.25rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .payment__step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.875rem;
+    padding: 1rem;
+    border-left: 2px solid var(--color-canopy);
+    background: var(--color-linen);
+  }
+  .payment__step:not(:last-child)::after {
+    position: absolute;
+    bottom: -1rem;
+    left: 2rem;
+    height: 1rem;
+    border-left: 1px dashed var(--color-canopy);
+    content: "";
+  }
+  .payment__step > div {
+    min-width: 0;
+  }
+  .payment__number {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .payment__step p {
+    margin: 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .payment__step .payment__label {
+    font-weight: 700;
+  }
+  .payment__step .payment__branch {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--color-terracotta);
+  }
+  .payment__step .payment__condition {
+    margin-bottom: 0.4rem;
+    color: var(--color-terracotta);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+  .payment__expiry,
+  .payment__note {
+    margin: 1rem 0 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .payment__note {
+    font-size: 0.9375rem;
+  }
+  .payment__note a {
+    color: var(--color-canopy);
+  }
+  @media (max-width: 24rem) {
+    .payment__step {
+      grid-template-columns: 1.5rem minmax(0, 1fr);
+      gap: 0.5rem;
+      padding: 0.875rem;
+    }
+  }
+</style>
