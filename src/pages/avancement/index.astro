@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Avancement d’Orée : état et suivi"
-  description="L’état actuel vérifiable de Construire Orée, la prochaine étape documentable et la trajectoire conditionnelle, avec des vues de suivi détaillées."
+  description="Ce qui existe aujourd’hui pour Orée, les questions en cours d’examen et les conditions des prochaines étapes. Accès aux décisions et au suivi du projet."
 >
   <div class="page-avancement">
     <section class="page-intro">
@@ -13,8 +13,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <h1 data-seuil-intro="title">Orée est au point zéro</h1>
         <p class="repere">Vous êtes ici · Avancement</p>
         <p class="introduction" data-seuil-intro="copy">
-          Cette page dit ce qui existe, ce qui n’existe pas, et ce qui est en
-          cours d’examen — sans date inventée et sans promesse de calendrier.
+          Voici ce qui existe aujourd’hui, ce qui reste à construire et les
+          questions en cours d’examen. Aucune date d’ouverture n’est annoncée.
         </p>
         <p class="verification-note">
           <strong>Révision éditoriale du 16 octobre 2026.</strong> Le point zéro reste
@@ -44,7 +44,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <dt>Capacités absentes</dt>
             <dd>
               Aucune marketplace ouverte ; aucun catalogue, aucune vente, aucun
-              utilisateur de marketplace ; aucune structure coopérative
+              utilisateur de marketplace ; aucune structure coopérative
               constituée.
             </dd>
           </div>
@@ -63,7 +63,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <section class="section-block next-step">
       <div class="container reading-width">
-        <h2 data-seuil-reveal>Prochaine étape documentable</h2>
+        <h2 data-seuil-reveal>Le travail à mener maintenant</h2>
         <p>
           Priorité actuelle : recueillir les premiers témoignages d’artisans et
           consolider les règles juridiques et fiscales de base.
@@ -204,6 +204,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   .state-row dd {
     margin: 0;
+    max-width: var(--content-width);
     color: var(--color-text-muted);
   }
 
@@ -324,7 +325,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       border-bottom: 1px solid var(--color-border);
     }
     .state-row {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(10rem, 1fr) minmax(0, 3fr);
       gap: var(--space-8);
     }
   }

@@ -28,11 +28,9 @@ const publishedEntries = allEntries
       <p class="repere">Vous êtes ici · Journal</p>
       <div class="introduction">
         <p>
-          Ce Journal rassemble les billets réellement publiés sur la
-          construction de Construire Orée. Chaque billet distingue ce qui
-          existe, ce qui reste à construire pour Orée et les décisions qui ne
-          sont pas encore prises. Nous publions uniquement lorsqu’une étape
-          réelle est franchie, sans imposer de calendrier artificiel.
+          Ce Journal garde une trace datée de la construction d’Orée : les pages
+          publiées, les choix faits et les questions encore ouvertes. Un billet
+          paraît lorsqu’une étape est franchie, sans rythme de publication fixé.
         </p>
         <p class="rss-follow">
           <a href="/rss.xml">Suivre les billets par RSS</a>
@@ -59,12 +57,14 @@ const publishedEntries = allEntries
                   <time
                     datetime={entry.data.publishedAt.toISOString().slice(0, 10)}
                   >
-                    {entry.data.publishedAt.toLocaleDateString("fr-FR", {
-                      timeZone: "UTC",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                    {entry.data.publishedAt
+                      .toLocaleDateString("fr-FR", {
+                        timeZone: "UTC",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })
+                      .replace(/^1 /, "1er ")}
                   </time>
                 )}
                 <h2>{entry.data.title}</h2>

@@ -17,7 +17,7 @@ Voici ce qui est réellement en place aujourd’hui.
 
 La première fondation concerne la forme du site.
 
-Le site utilise désormais les typographies Fraunces, Hanken Grotesk et JetBrains Mono, ainsi que la palette définie pour Orée. Le Sceau — la marque qui encadre une fenêtre et son aube ambre — est utilisé comme signe visuel du projet. Un layout commun, un en-tête, un pied de page et des styles globaux donnent une structure cohérente aux pages versionnées sur `main`.
+Le site utilise désormais les typographies Fraunces, Hanken Grotesk et JetBrains Mono, ainsi que la palette définie pour Orée. Le Sceau, la marque qui encadre une fenêtre et son aube ambre, est utilisé comme signe visuel du projet. Un layout commun, un en-tête, un pied de page et des styles globaux donnent une structure cohérente aux pages versionnées sur `main`.
 
 Ce socle ne prouve pas qu’Orée est prête. Il prouve seulement qu’un espace existe pour documenter sa construction avec une identité claire et sobre.
 
@@ -63,13 +63,13 @@ Ce Journal consigne des faits vérifiables : une page publiée, une décision pr
 
 Il ne servira pas à fabriquer une chronologie plus flatteuse que la réalité. Une intention restera une intention tant qu’elle n’aura pas été transformée en élément public, vérifiable et utile à montrer.
 
-Pour l’instant, les faits sont simples :
+Pour l’instant, les faits sont simples :
 
 - un socle visuel et structurel est versionné sur `main` ;
 - l’Accueil, l’avancement, le Journal et Participer rendent le point zéro plus lisible ;
 - À propos explique qui porte le projet et comment celui-ci est construit ;
 - la marketplace Orée reste à construire.
 
-Tu peux revenir à l’[Accueil](/) pour situer le projet, lire [À propos](/a-propos/) pour comprendre son origine ou consulter [Participer](/rejoindre/) pour voir les formes de contribution envisagées aujourd’hui.
+Vous pouvez revenir à l’[Accueil](/) pour situer le projet, lire [À propos](/a-propos/) pour comprendre son origine ou consulter [Participer](/rejoindre/) pour voir les formes de contribution envisagées aujourd’hui.
 
 [Revenir au Journal](/journal/).

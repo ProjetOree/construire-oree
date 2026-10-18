@@ -19,12 +19,14 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const shortTitle = entry.data.title.replace(/\s+sur Construire Orée$/u, "");
 const dateTime = entry.data.publishedAt?.toISOString().slice(0, 10);
-const publishedDate = entry.data.publishedAt?.toLocaleDateString("fr-FR", {
-  timeZone: "UTC",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+const publishedDate = entry.data.publishedAt
+  ?.toLocaleDateString("fr-FR", {
+    timeZone: "UTC",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+  .replace(/^1 /, "1er ");
 ---
 
 <BaseLayout title={shortTitle} description={entry.data.description}>
