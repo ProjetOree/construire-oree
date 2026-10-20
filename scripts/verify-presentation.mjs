@@ -21,7 +21,7 @@ const read = (route, directory = buildDir) =>
   );
 const text = (html) =>
   unescape(html.replace(/<[^>]*>/g, "")).replace(/\s+/g, " ");
-const sitemap = fs.readFileSync(path.join(root, "dist/sitemap-0.xml"), "utf8");
+const sitemap = fs.readFileSync(path.join(buildDir, "sitemap-0.xml"), "utf8");
 const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(
   (match) => new URL(match[1]).pathname,
 );

@@ -11,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "verify:current": "node scripts/verify-current.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint ."
