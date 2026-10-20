@@ -14,6 +14,15 @@ const publishedEntries = (await getCollection("journal"))
     return dateB - dateA;
   });
 const latestEntry = publishedEntries[0];
+const latestDate = latestEntry?.data.publishedAt;
+const latestPublishedDate = latestDate
+  ?.toLocaleDateString("fr-FR", {
+    timeZone: "UTC",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+  .replace(/^1 /, "1er ");
 
 const doors = [
   {
@@ -167,11 +176,24 @@ const doors = [
   </section>
 
   <section
-    class="home-section home-section--ruled"
+    class="home-section home-section--ruled home-journal"
     aria-labelledby="journal-title"
   >
     <div class="container reading-width">
-      <p class="section-kicker" data-seuil-reveal="rule">Journal</p>
+      <p class="section-kicker" data-seuil-reveal="rule">
+        {
+          latestDate ? (
+            <>
+              Dernier billet ·{" "}
+              <time datetime={latestDate.toISOString().slice(0, 10)}>
+                {latestPublishedDate}
+              </time>
+            </>
+          ) : (
+            "Journal"
+          )
+        }
+      </p>
       {
         latestEntry ? (
           <>
@@ -181,6 +203,9 @@ const doors = [
             <p>{latestEntry.data.description}</p>
             <a class="text-link" href={`/journal/${latestEntry.id}/`}>
               Lire l’article
+            </a>
+            <a class="text-link" href="/avancement/">
+              Voir l’état actuel du projet
             </a>
           </>
         ) : (
@@ -310,6 +335,9 @@ const doors = [
   }
   .home-section--ruled {
     border-top: 1px solid rgba(24, 43, 34, 0.12);
+  }
+  .home-journal .reading-width {
+    grid-template-rows: auto auto;
   }
   .context-grid {
     display: grid;

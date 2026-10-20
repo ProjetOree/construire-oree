@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../config/site";
 ---
 
 <BaseLayout
@@ -67,6 +68,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <p>
           Priorité actuelle : recueillir les premiers témoignages d’artisans et
           consolider les règles juridiques et fiscales de base.
+        </p>
+        <p>
+          Une première question est ouverte : qu’est-ce qui a rendu une création
+          difficile à montrer ou à vendre ? Vous pouvez <a
+            href="https://construire-oree.discourse.group/t/qu-est-ce-qui-a-rendu-une-creation-difficile-a-montrer-ou-a-vendre/16"
+            >lire l’appel et répondre publiquement sur le forum</a
+          >, avec un compte Discourse, ou <a href={siteConfig.links.contact}
+            >écrire à Jérémy en privé par le formulaire Contact externe</a
+          >.
         </p>
       </div>
     </section>
