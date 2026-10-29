@@ -95,6 +95,19 @@ for (const { status, file } of changed) {
   }
 }
 
+// Explicit, one-time initial submission: only a commit deliberately marked
+// [indexnow:initial] sends every live URL. Normal deployments remain incremental.
+const commitMessage = execFileSync("git", ["log", "-1", "--format=%B"], {
+  encoding: "utf8",
+});
+const initialSync = commitMessage
+  .split(/\r?\n/)
+  .some((line) => line.trim() === "[indexnow:initial]");
+if (initialSync) {
+  addAll();
+  console.log("IndexNow initial submission requested; sending all published URLs.");
+}
+
 const urlList = [...routes].sort().map((route) => ORIGIN + route);
 if (urlList.length === 0) {
   console.log("IndexNow ownership verified; no changed public page URLs in this deployment.");
