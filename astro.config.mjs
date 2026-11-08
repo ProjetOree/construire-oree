@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://construire-oree.pages.dev",
+  site: "https://construire-oree.litique.net",
   integrations: [sitemap()],
 });

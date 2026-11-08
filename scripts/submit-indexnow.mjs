@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { basename } from "node:path";
 
-const ORIGIN = "https://construire-oree.pages.dev";
+const ORIGIN = "https://construire-oree.litique.net";
 const HOST = new URL(ORIGIN).host;
 
 // IndexNow keys are public ownership proofs, not private API credentials.

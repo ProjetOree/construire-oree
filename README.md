@@ -2,7 +2,7 @@
 
 **Construire Orée** est le journal public de la construction d’**Orée**, un projet de future plateforme pour la création originale, l’art et l’artisanat d’art.
 
-**[Visiter Construire Orée](https://construire-oree.pages.dev/)** · [Lire le Journal](https://construire-oree.pages.dev/journal/) · [Suivre les publications par RSS](https://construire-oree.pages.dev/rss.xml)
+**[Visiter Construire Orée](https://construire-oree.litique.net/)** · [Lire le Journal](https://construire-oree.litique.net/journal/) · [Suivre les publications par RSS](https://construire-oree.litique.net/rss.xml)
 
 > **État du projet : point zéro.** Construire Orée est un site éditorial, pas une marketplace. Orée ne dispose encore d’aucun catalogue, compte utilisateur de marketplace, commande ou vente. Aucune date d’ouverture n’est annoncée. Le modèle coopératif, notamment une éventuelle SCIC, reste un horizon à étudier, et non une structure déjà constituée.
 
@@ -14,13 +14,13 @@ Construire Orée rend ce travail visible et discutable : intentions, documents d
 
 ## Explorer Construire Orée
 
-- [Projet](https://construire-oree.pages.dev/projet/) : intention, problème de départ et fonctionnement envisagé.
-- [Avancement](https://construire-oree.pages.dev/avancement/) : état actuel, capacités absentes et sujets en examen.
-- [Journal](https://construire-oree.pages.dev/journal/) : billets datés, publiés au fil des étapes, sans fréquence imposée.
-- [Fondations](https://construire-oree.pages.dev/fondations/) : hypothèses et contraintes techniques, juridiques, fiscales et opérationnelles.
-- [Écosystème](https://construire-oree.pages.dev/ecosysteme/) : rôles et relations envisagés.
-- [Feuille de route](https://construire-oree.pages.dev/roadmap/) : étapes conditionnelles, sans calendrier de lancement promis.
-- [Participer](https://construire-oree.pages.dev/rejoindre/) : partager une expérience ou proposer une contribution.
+- [Projet](https://construire-oree.litique.net/projet/) : intention, problème de départ et fonctionnement envisagé.
+- [Avancement](https://construire-oree.litique.net/avancement/) : état actuel, capacités absentes et sujets en examen.
+- [Journal](https://construire-oree.litique.net/journal/) : billets datés, publiés au fil des étapes, sans fréquence imposée.
+- [Fondations](https://construire-oree.litique.net/fondations/) : hypothèses et contraintes techniques, juridiques, fiscales et opérationnelles.
+- [Écosystème](https://construire-oree.litique.net/ecosysteme/) : rôles et relations envisagés.
+- [Feuille de route](https://construire-oree.litique.net/roadmap/) : étapes conditionnelles, sans calendrier de lancement promis.
+- [Participer](https://construire-oree.litique.net/rejoindre/) : partager une expérience ou proposer une contribution.
 
 Les documents de conception sont intégrés aux pages thématiques. Les anciennes URL sous `/documents/` sont redirigées vers leurs destinations actuelles via `public/_redirects`.
 
@@ -31,8 +31,10 @@ Le site repose sur **[Astro](https://astro.build/)** et est généré **statique
 - **Pages et contenus** : pages Astro sous `src/pages/`, billets Markdown sous `src/content/journal/` et documents de référence sous `src/data/sources/`.
 - **Présentation** : CSS et composants Astro, identité visuelle du Sceau, typographies Fraunces, Hanken Grotesk et JetBrains Mono.
 - **JavaScript côté navigateur limité** : le script `src/scripts/seuil-motion.ts` améliore l’animation et certains comportements de navigation. Le site n’est donc **pas** « zéro JavaScript client » ; le contenu principal est produit en HTML statique, et le script prend en compte la préférence `prefers-reduced-motion`.
-- **Diffusion** : configuration de site pour **Cloudflare Pages** sur `https://construire-oree.pages.dev`. La sortie de compilation Astro est `dist/`.
-- **Découvrabilité** : métadonnées canoniques et sociales, sitemap Astro, `robots.txt`, [flux RSS](https://construire-oree.pages.dev/rss.xml) et intégration **IndexNow**. La publication ou la soumission d’URL ne garantit pas leur indexation.
+- **Diffusion** : configuration de site pour **Cloudflare Pages** sur `https://construire-oree.litique.net`. La sortie de compilation Astro est `dist/`.
+- **Découvrabilité** : métadonnées canoniques et sociales, sitemap Astro, `robots.txt`, [flux RSS](https://construire-oree.litique.net/rss.xml) et intégration **IndexNow**. La publication ou la soumission d’URL ne garantit pas leur indexation.
+
+L'ancienne adresse `https://construire-oree.pages.dev` est redirigée en HTTP 301 vers le domaine public ; les chemins et paramètres de requête sont conservés par une règle **Bulk Redirects** au niveau du compte Cloudflare. Les autres services de `litique.net` restent indépendants.
 
 Le workflow `.github/workflows/indexnow.yml` prévoit une soumission incrémentale des URL modifiées à IndexNow après un contrôle **Cloudflare Pages** réussi sur `main`, ainsi qu’un déclenchement manuel. Le script `scripts/submit-indexnow.mjs` vérifie la clé publique, lit les sitemaps publiés et détermine les URL à signaler.
 

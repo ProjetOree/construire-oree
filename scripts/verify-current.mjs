@@ -98,6 +98,7 @@ try {
   );
   if (!urls.length) throw new Error("Empty sitemap; run npm run build first");
   const origin = urls[0].origin;
+  check("Sitemap: expected public origin", origin === "https://construire-oree.litique.net");
   const routes = urls.map((url) => url.pathname);
   check("Sitemap: unique routes", new Set(routes).size === routes.length);
   check(
